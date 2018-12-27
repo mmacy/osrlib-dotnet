@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\tbrpg.CoreRules\tbrpg.CoreRules.csproj" />
+    <ProjectReference Include="..\tbrpg.SaveLoad\tbrpg.SaveLoad.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>
