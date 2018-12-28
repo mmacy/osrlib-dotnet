@@ -15,8 +15,15 @@ namespace tbrpg.Dice
     /// <param name="e">The information for the event.</param>
     public delegate void DiceRolledEventHandler(Object sender, DiceRolledEventArgs e);
 
+    /// <summary>
+    /// Event arguments for the <see cref="DiceRoll.DiceRolled"/> event.
+    /// </summary>
     public class DiceRolledEventArgs : EventArgs
     {
+        /// <summary>
+        /// Creates event arguments for the specified roll.
+        /// </summary>
+        /// <param name="roll"></param>
         public DiceRolledEventArgs(DiceRoll roll)
         {
             this.RolledDice = roll;

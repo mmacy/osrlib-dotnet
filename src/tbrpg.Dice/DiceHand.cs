@@ -17,9 +17,11 @@ namespace tbrpg.Dice
     /// <see cref="DiceRoll.RollDice"/> method to get the result.
     /// </remarks>
     /// <example>
+    /// <code>
     /// DiceHand hand = new DiceHand(1, 20);
     /// DiceRoll roll = new DiceRoll(hand);
     /// int result = roll.RollDice();
+    /// </code>
     /// </example>
     public class DiceHand
     {

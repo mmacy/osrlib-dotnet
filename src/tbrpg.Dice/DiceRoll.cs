@@ -16,13 +16,16 @@ namespace tbrpg.Dice
     /// result by calling  <see cref="RollDice"/>.
     /// </remarks>
     /// <example>
+    /// <code>
+    /// // DiceRoll with explicit number of dice and sides
     /// DiceHand hand = new DiceHand(1, 20);
     /// DiceRoll roll = new DiceRoll(hand);
     /// int result = roll.RollDice();
     ///
+    /// // DiceRoll using a die code
     /// DiceRoll roll = new DiceRoll("1d20");
     /// int result = roll.RollDice();
-    /// </example>
+    /// </code>
     /// </example>
     public class DiceRoll
     {
@@ -177,7 +180,7 @@ namespace tbrpg.Dice
         }
 
         /// <summary>
-        /// Raises the <see cref="DicedRolled"/> event.
+        /// Raises the <see cref="DiceRoll.DiceRolled"/> event.
         /// </summary>
         private void OnDicedRolled()
         {
