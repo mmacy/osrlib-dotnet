@@ -9,9 +9,18 @@ using System;
 namespace tbrpg.Dice
 {
     /// <summary>
-    /// The DiceHand is a type representation of the Dice code, e.g. "1d4", "2d6", and is the preferred
-    /// parameter for use in the creation of a Dice object.
+    /// Represents a "handful of dice."
     /// </summary>
+    /// <remarks>
+    /// The DiceHand is a type representation of a Dice code ("1d4", "2d6") and is the preferred parameter for
+    /// use in the creation of a Dice object. Create a DiceHand, add it to a <see cref="DiceRoll"/>, then call its
+    /// <see cref="DiceRoll.RollDice"/> method to get the result.
+    /// </remarks>
+    /// <example>
+    /// DiceHand hand = new DiceHand(1, 20);
+    /// DiceRoll roll = new DiceRoll(hand);
+    /// int result = roll.RollDice();
+    /// </example>
     public class DiceHand
     {
         /// <summary>

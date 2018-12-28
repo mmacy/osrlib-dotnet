@@ -9,10 +9,21 @@ using System;
 namespace tbrpg.Dice
 {
     /// <summary>
-    /// The DiceRoll owns a set of Dice, and contains methods to allow for interacting with them such as
-    /// adding, removing, and rolling the Dice. A DiceRoll is typically created by adding valid Die objects
-    /// to the DiceRoll using its member methods, then calling RollDice().
+    /// The DiceRoll owns a set of <see cref="Dice"/> that can be rolled for result.
     /// </summary>
+    /// <remarks>
+    /// Add dice to the DiceRoll as a <see cref="DiceHand"/> or with a die code ("1d20"). Get a
+    /// result by calling  <see cref="RollDice"/>.
+    /// </remarks>
+    /// <example>
+    /// DiceHand hand = new DiceHand(1, 20);
+    /// DiceRoll roll = new DiceRoll(hand);
+    /// int result = roll.RollDice();
+    ///
+    /// DiceRoll roll = new DiceRoll("1d20");
+    /// int result = roll.RollDice();
+    /// </example>
+    /// </example>
     public class DiceRoll
     {
         #region Fields
@@ -29,7 +40,7 @@ namespace tbrpg.Dice
         private int _lastRoll  = 0;
 
         /// <summary>
-        /// Event raised immediately after <see cref="DiceRoll.RollDice"/> was called.
+        /// Event raised immediately after <see cref="DiceRoll.RollDice"/> is called.
         /// </summary>
         public event DiceRolledEventHandler DiceRolled;
         #endregion
@@ -139,8 +150,7 @@ namespace tbrpg.Dice
         }
 
         /// <summary>
-        /// Returns a value obained from the totaling the random result of each Die in this
-        /// DiceRolls's Dice collection.
+        /// Rolls each <see cref="Die"/> in this DiceRolls's <see cref="Dice"/> collection and returns the aggregate.
         /// </summary>
         /// <returns>The sum of the result of a roll of each Die in this DiceRoll's Dice collection.</returns>
         public int RollDice()
