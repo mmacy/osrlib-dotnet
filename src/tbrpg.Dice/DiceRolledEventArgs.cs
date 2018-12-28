@@ -9,7 +9,7 @@ using System;
 namespace tbrpg.Dice
 {
     /// <summary>
-    /// Represents the method that handles a DiceRolled event.
+    /// Represents the method that handles a <see cref="DiceRoll.DiceRolled"/> event.
     /// </summary>
     /// <param name="sender">The object that generated the event.</param>
     /// <param name="e">The information for the event.</param>
@@ -23,7 +23,7 @@ namespace tbrpg.Dice
         }
 
         /// <summary>
-        /// Gets or sets the <see cref="DiceRoll"/> for the 
+        /// Gets or sets the <see cref="DiceRoll"/> for the event.
         /// </summary>
         public DiceRoll RolledDice { get; internal set; }
     }

@@ -10,7 +10,7 @@ using System.Collections.Generic;
 namespace tbrpg.Dice
 {
     /// <summary>
-    /// Represents a collection of Die objects, suitable for usage with DiceRoll.
+    /// Represents a collection of <see cref="Die"/> objects.
     /// </summary>
     public class Dice : List<Die>
     {

@@ -9,7 +9,7 @@ using System;
 namespace tbrpg.Dice
 {
     /// <summary>
-    /// Represents a single Die, appropriate for adding to a DiceRoll.
+    /// Represents a single Die with a given number of sides.
     /// </summary>
     public class Die
     {
@@ -17,7 +17,6 @@ namespace tbrpg.Dice
         private int _sides = 0;
         private int _minValue = 1; //All Die should have default minVal of 1
         private int _rolledValue = 0;
-        private bool _wasRolled;
         #endregion
 
         /// <summary>
@@ -71,9 +70,6 @@ namespace tbrpg.Dice
         /// <returns>int value of the rolled Die.</returns>
         internal int Roll()
         {
-
-            _wasRolled = true;
-
             _rolledValue = Utility.Randomizer.GetRandomInt(_minValue, _sides);
 
             return _rolledValue;
