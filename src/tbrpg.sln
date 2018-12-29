@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tbrpg.SaveLoad", "tbrpg.Sav
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tbrpg.Utility", "tbrpg.Utility\tbrpg.Utility.csproj", "{77F30D2B-5930-4202-8C8C-C9F53E0A877F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tbrpg.Tests", "tbrpg.Tests\tbrpg.Tests.csproj", "{91439B1D-2790-4A62-B84C-AA87E0A61BCB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,5 +88,17 @@ Global
 		{77F30D2B-5930-4202-8C8C-C9F53E0A877F}.Release|x64.Build.0 = Release|Any CPU
 		{77F30D2B-5930-4202-8C8C-C9F53E0A877F}.Release|x86.ActiveCfg = Release|Any CPU
 		{77F30D2B-5930-4202-8C8C-C9F53E0A877F}.Release|x86.Build.0 = Release|Any CPU
+		{91439B1D-2790-4A62-B84C-AA87E0A61BCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91439B1D-2790-4A62-B84C-AA87E0A61BCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91439B1D-2790-4A62-B84C-AA87E0A61BCB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{91439B1D-2790-4A62-B84C-AA87E0A61BCB}.Debug|x64.Build.0 = Debug|Any CPU
+		{91439B1D-2790-4A62-B84C-AA87E0A61BCB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{91439B1D-2790-4A62-B84C-AA87E0A61BCB}.Debug|x86.Build.0 = Debug|Any CPU
+		{91439B1D-2790-4A62-B84C-AA87E0A61BCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91439B1D-2790-4A62-B84C-AA87E0A61BCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91439B1D-2790-4A62-B84C-AA87E0A61BCB}.Release|x64.ActiveCfg = Release|Any CPU
+		{91439B1D-2790-4A62-B84C-AA87E0A61BCB}.Release|x64.Build.0 = Release|Any CPU
+		{91439B1D-2790-4A62-B84C-AA87E0A61BCB}.Release|x86.ActiveCfg = Release|Any CPU
+		{91439B1D-2790-4A62-B84C-AA87E0A61BCB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
