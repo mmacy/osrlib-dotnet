@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace tbrpg.CoreRules
+﻿namespace tbrpg.CoreRules
 {
     public class User
     {

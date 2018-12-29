@@ -1,7 +1,5 @@
 # Turn-based RPG
 
-Build, share, and play turn-based RPG adventures--easily!
-
 | Branch | Build status |
 | ------ | ------------ |
 | master | [![Build Status](https://marshallmacy.visualstudio.com/tbrpg/_apis/build/status/mmacy.tbrpg?branchName=master)](https://marshallmacy.visualstudio.com/tbrpg/_build/latest?definitionId=1?branchName=master) |

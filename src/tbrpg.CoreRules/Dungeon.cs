@@ -65,7 +65,7 @@ namespace tbrpg.CoreRules
 
             // Check Encounters to see if there is an Encounter at this position
             Encounter enc = this.Encounters.Find(e => e.Position.Equals(this.CurrentPosition));
-            
+
             // If so, call OnEncountered to raise Encountered event
             if (enc != null)
             {
