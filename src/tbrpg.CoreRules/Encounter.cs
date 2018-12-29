@@ -30,7 +30,7 @@ namespace tbrpg.CoreRules
         /// the encounter is stopped in some other manner.
         /// </summary>
         public event EventHandler EncounterEnded;
-        
+
         /// <summary>
         /// Gets or sets the position within the <see cref="Model.Dungeon"/> of this Encounter.
         /// </summary>

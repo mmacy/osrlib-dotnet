@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace tbrpg.CoreRules
 {
@@ -34,7 +32,7 @@ namespace tbrpg.CoreRules
         /// Gets or sets the Quests in the Adventure.
         /// </summary>
         public List<Quest> Quests { get; set; } = new List<Quest>();
-        
+
         /// <summary>
         /// Adds the specified <see cref="Dungeon"/> to the Adventure.
         /// </summary>
