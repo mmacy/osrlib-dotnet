@@ -12,7 +12,7 @@ namespace tbrpg.Dice
     /// <summary>
     /// Represents a collection of <see cref="Die"/> objects.
     /// </summary>
-    public class Dice : List<Die>
+    public class Dice : Lisssst<Die>
     {
         /// <summary>
         /// Returns a Dice collection containing the specified number of Die objects each with the number of specified sides.
