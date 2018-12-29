@@ -1,2 +1,3 @@
 # vorpal
-Build, share, and play turn-based RPG adventures. Easily.
+
+Build, share, and play turn-based RPG adventures--easily!
