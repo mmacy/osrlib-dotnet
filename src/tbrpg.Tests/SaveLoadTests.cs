@@ -12,18 +12,16 @@ namespace tbrpg.Tests
         private string _saveFile = "tbrpg_adventure.json";
 
         [Fact]
-        public void SaveAdventureToFile()
+        public void SaveLoadAdventureFile()
         {
+            // Since xUnit runs all tests in parallel, we can't guarantee that the save-to-file test would be
+            // completed prior to the load-from-file test, so run them both here so that the load-from-file has
+            // a file to load.
+
             Adventure adventure = GetInitializedAdventure();
-
             Assert.True(SaveLoadLocal.Save(adventure, Path.Combine(_saveDir, _saveFile)));
-        }
 
-        [Fact]
-        public void LoadAdventureFromFile()
-        {
             Adventure loadedAdventure = SaveLoadLocal.Load(Path.Combine(_saveDir, _saveFile));
-
             Assert.NotNull(loadedAdventure);
         }
 
