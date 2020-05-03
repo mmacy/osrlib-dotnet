@@ -1,15 +1,13 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using tbrpg.CoreRules;
 using tbrpg.Controllers;
 
 namespace tbrpg.Tests
 {
-    [TestClass]
     public class CoreRulesTests
     {
-        [TestMethod]
-        [TestCategory("CoreRules")]
+        [Fact]
         public void InitMajorGameEntities()
         {
             // TODO: This is not exactly a "unit test." Should break these out
@@ -40,11 +38,10 @@ namespace tbrpg.Tests
             // Set active Party for Adventure
             GameManager.Instance.StartAdventure();
 
-            Assert.IsNotNull(GameManager.Instance.ActiveAdventure);
+            Assert.NotNull(GameManager.Instance.ActiveAdventure);
         }
 
-        [TestMethod]
-        [TestCategory("CoreRules")]
+        [Fact(Skip = "Test not yet implemented.")]
         public void ExecuteAdventureBattle()
         {
             // Get fully initialized GameManager (from InitGameSystemModel?)
@@ -54,19 +51,17 @@ namespace tbrpg.Tests
             // Add active Adventure party to active Encounter
             // Perform battle
 
-            Assert.Inconclusive("Test not yet implemented.");
+            Assert.NotNull("Test not yet implemented.");
         }
 
-        [TestMethod]
-        [TestCategory("CoreRules")]
+        [Fact]
         public void InitGameManager()
         {
             // TODO: Get fully initialized GameManager (from InitCoreRulesModel?)
-            Assert.IsNotNull(GameManager.Instance);
+            Assert.NotNull(GameManager.Instance);
         }
 
-        [TestMethod]
-        [TestCategory("CoreRules")]
+        [Fact]
         public void DoEncounterAutoBattle()
         {
             Party playerParty = PartyGenerator.GetPlayerParty();
@@ -80,7 +75,7 @@ namespace tbrpg.Tests
             encounter.EncounterEnded += (object sender, EventArgs e) =>
             {
                 Encounter enc = sender as Encounter;
-                Assert.IsTrue(enc.IsEncounterEnded);
+                Assert.True(enc.IsEncounterEnded);
             };
 
             // Add the adventuring party and specify AutoBattle = true
