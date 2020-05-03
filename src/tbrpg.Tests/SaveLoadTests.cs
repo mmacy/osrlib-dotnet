@@ -1,35 +1,30 @@
 ﻿using System;
 using System.IO;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 using tbrpg.SaveLoad;
 using tbrpg.CoreRules;
 
 namespace tbrpg.Tests
 {
-    [TestClass]
     public class SaveLoadTests
     {
         private string _saveDir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         private string _saveFile = "tbrpg_adventure.json";
 
-        [TestMethod]
-        [TestCategory("ExternalSystems")]
-        public void SaveAdventureToFile()
+        [Fact]
+        public void SaveLoadAdventureFile()
         {
+            // Since xUnit runs all tests in parallel, we can't guarantee that the save-to-file test would be
+            // completed prior to the load-from-file test, so run them both here so that the load-from-file has
+            // a file to load.
+
             Adventure adventure = GetInitializedAdventure();
+            Assert.True(SaveLoadLocal.Save(adventure, Path.Combine(_saveDir, _saveFile)));
 
-            Assert.IsTrue(SaveLoadLocal.Save(adventure, Path.Combine(_saveDir, _saveFile)));
-        }
-
-        [TestMethod]
-        [TestCategory("ExternalSystems")]
-        public void LoadAdventureFromFile()
-        {
             Adventure loadedAdventure = SaveLoadLocal.Load(Path.Combine(_saveDir, _saveFile));
-
-            Assert.IsNotNull(loadedAdventure);
+            Assert.NotNull(loadedAdventure);
         }
-        
+
         private Adventure GetInitializedAdventure()
         {
             Encounter encounter = new Encounter
