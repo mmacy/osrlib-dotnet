@@ -15,12 +15,12 @@ namespace tbrpg.CoreRules
         public string Description { get; set; } = "This is a generic weapon.";
 
         /// <summary>
-        /// The die code for the weapon. The default is "1d6".
+        /// The die code for the weapon. Default: <c>1d6</c>.
         /// </summary>
         public string DamageDie { get; set; } = "1d6";
 
         /// <summary>
-        /// The number of targets <see cref="IGamePiece"/>s this weapon can attack in one round. The default is 1.
+        /// The number of targets <see cref="IGamePiece"/>s this weapon can attack in one round. Default: <c>1</c>.
         /// </summary>
         public int NumberOfAttacks { get; set; } = 1;
 
@@ -37,11 +37,9 @@ namespace tbrpg.CoreRules
 
             return _damageRoll.RollDice();
         }
+
         private DiceRoll _damageRoll;
 
-        public override string ToString()
-        {
-            return this.Name;
-        }
+        public override string ToString() => this.Name;
     }
 }

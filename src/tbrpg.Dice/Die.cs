@@ -76,7 +76,7 @@ namespace tbrpg.Dice
         }
 
         /// <summary>
-        /// Sets the minimum value for the Die. This value must be equal to or greater than 0. The default is 1.
+        /// Sets the minimum value for the Die. This value must be equal to or greater than 0. Default: 1.
         /// </summary>
         /// <param name="minValue">The minimum int value of the Die, typically 1.</param>
         internal void SetMinimumValue(int minValue)

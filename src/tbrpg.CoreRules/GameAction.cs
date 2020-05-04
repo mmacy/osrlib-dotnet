@@ -46,7 +46,7 @@ namespace tbrpg.CoreRules
         public IGamePiece Victor { get; private set; }
 
         /// <summary>
-        /// Peforms the <see cref="GameAction"/> by applying the attacker's attack roll to the defender's defense value.
+        /// Performs the <see cref="GameAction"/> by applying the attacker's attack roll to the defender's defense value.
         /// </summary>
         /// <returns>The victor in the GameAction.</returns>
         /// <remarks>The victor in the GameAction can be the defending GamePiece.</remarks>
@@ -81,17 +81,11 @@ namespace tbrpg.CoreRules
         /// <summary>
         /// Raises the <see cref="ActionPerformed"/> event, signifying that this action was just performed.
         /// </summary>
-        private void OnActionPerformed()
-        {
-            ActionPerformed?.Invoke(this, new EventArgs());
-        }
+        private void OnActionPerformed() => ActionPerformed?.Invoke(this, new EventArgs());
 
         /// <summary>
         /// Raises the <see cref="PerformingAction"/> event, signifying that this action is about to be performed.
         /// </summary>
-        private void OnPerformingAction()
-        {
-            PerformingAction?.Invoke(this, new EventArgs());
-        }
+        private void OnPerformingAction() => PerformingAction?.Invoke(this, new EventArgs());
     }
 }

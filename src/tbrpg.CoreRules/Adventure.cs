@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace tbrpg.CoreRules
 {
     /// <summary>
-    /// The Adventure contains one or more <see cref="Dungeon"/> and <see cref="Quest"/> objects.
+    /// An Adventure contains one or more <see cref="Dungeon"/> and <see cref="Quest"/> objects.
     /// </summary>
     public class Adventure
     {
@@ -12,11 +11,6 @@ namespace tbrpg.CoreRules
         /// Gets or sets the active player <see cref="Party"/>.
         /// </summary>
         public Party ActiveParty { get; set; }
-
-        /// <summary>
-        /// Gets or sets the ID of the <see cref="Dungeon"/> currently being explored by the player's <see cref="Party"/>.
-        /// </summary>
-        public string ActiveDungeonId { get; set; }
 
         /// <summary>
         /// Gets the active <see cref="Dungeon"/>.
@@ -36,7 +30,7 @@ namespace tbrpg.CoreRules
         /// <summary>
         /// Adds the specified <see cref="Dungeon"/> to the Adventure.
         /// </summary>
-        /// <param name="dungeon"></param>
+        /// <param name="dungeon">The <see cref="Dungeon"/> to add to the Adventure.</param>
         public void AddDungeon(Dungeon dungeon)
         {
             this.Dungeons.Add(dungeon);
@@ -49,7 +43,6 @@ namespace tbrpg.CoreRules
         public void SetActiveDungeon(Dungeon dungeon)
         {
             this.ActiveDungeon = dungeon;
-            this.ActiveDungeonId = dungeon.DungeonId;
         }
 
         /// <summary>

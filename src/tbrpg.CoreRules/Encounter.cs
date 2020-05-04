@@ -48,12 +48,12 @@ namespace tbrpg.CoreRules
         public Party AdventuringParty { get; private set; }
 
         /// <summary>
-        /// Gets a value indicating whether this Encounter has been started.
+        /// Gets whether this Encounter has been started.
         /// </summary>
         public bool IsEncounterStarted { get; private set; }
 
         /// <summary>
-        /// Gets a value indicating whether this Encounter has been completed.
+        /// Gets whether this Encounter has been completed.
         /// </summary>
         public bool IsEncounterEnded { get; private set; }
 
@@ -67,7 +67,7 @@ namespace tbrpg.CoreRules
         /// Adds the specified <see cref="Party"/> of adventurers that will perform GameActions on the <see cref="EncounterParty"/>.
         /// </summary>
         /// <param name="adventurers">The <see cref="Party"/> of adventurers to act upon the <see cref="EncounterParty"/> in this <see cref="Encounter"/>.</param>
-        /// <param name="startEncounter">Specifies whether the Encounter should be started immediately upon adding the adventuring party. The default is <c>false</c>.</param>
+        /// <param name="startEncounter">Specifies whether the Encounter should be started immediately upon adding the adventuring party. Default: <c>false</c>.</param>
         public void SetAdventuringParty(Party adventurers, bool startEncounter = false)
         {
             if (this.AdventuringParty == null)
@@ -199,7 +199,7 @@ namespace tbrpg.CoreRules
         /// </summary>
         private void FillAttackQueue()
         {
-            // TODO: Fill the Encounter _attackQueue in order of initiative (right now it just fills in order of characters 0 to x, then monsters 0 to x)
+            // TODO: Fill the Encounter _attackQueue in order of initiative (right now it just fills in order of characters 0 to N, then monsters 0 to N)
 
             foreach (Being adventurer in this.AdventuringParty.LivingMembers)
             {
@@ -215,10 +215,7 @@ namespace tbrpg.CoreRules
         /// <summary>
         /// Raises the <see cref="EncounterStarted"/> event.
         /// </summary>
-        private void OnEncounterStarted()
-        {
-            EncounterStarted?.Invoke(this, new EventArgs());
-        }
+        private void OnEncounterStarted() => EncounterStarted?.Invoke(this, new EventArgs());
 
         /// <summary>
         /// Raises the <see cref="EncounterEnded"/> event.
@@ -231,7 +228,7 @@ namespace tbrpg.CoreRules
         }
 
         /// <summary>
-        /// Fills the attack queues, creates GameActions for each matchup, executes those GameActions,
+        /// Fills the attack queues, creates GameActions for each matchup, executes those GameActions, and
         /// resolves the encounter if one of the parties has been defeated.
         /// </summary>
         internal void PerformAutoBattle()

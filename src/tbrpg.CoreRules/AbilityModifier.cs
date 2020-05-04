@@ -25,14 +25,8 @@ namespace tbrpg.CoreRules
         public int ModifierValue { get; set; }
 
         /// <summary>
-        /// Gets a value indicating whether the Modifier is configured with both a source and value.
+        /// Gets whether the Modifier is configured with both a source and value.
         /// </summary>
-        public bool IsValid
-        {
-            get
-            {
-                return (ModifierSource != null && (ModifierValue >= 0 || ModifierValue <= 0));
-            }
-        }
+        public bool IsValid => ModifierSource != null && (ModifierValue >= 0 || ModifierValue <= 0);
     }
 }

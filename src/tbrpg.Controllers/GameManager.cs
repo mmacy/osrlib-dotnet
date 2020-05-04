@@ -28,6 +28,11 @@ namespace tbrpg.Controllers
         public event EventHandler AdventureSaved;
 
         /// <summary>
+        /// Event raised when the <see cref="ActiveAdventure"/> is started.
+        /// </summary>
+        public event EventHandler AdventureStarted;
+
+        /// <summary>
         /// Creates a new instance of the GameManager class.
         /// </summary>
         /// <remarks>Private constructor to enforce singleton usage via the <see cref="GameManager.Instance"/> property.</remarks>
@@ -46,8 +51,8 @@ namespace tbrpg.Controllers
         /// Loads the specified <see cref="Adventure"/> into the GameManager, and sets it as the <see cref="ActiveAdventure"/>.
         /// </summary>
         /// <param name="saveType">The type of save/load operation.</param>
-        /// <param name="adventureId">The path or URL to the <see cref="Adventure"/> to load.</param>
-        /// <returns>Value indicating whether the operation was successful.</returns>
+        /// <param name="path">The path or URL to the <see cref="Adventure"/> to load.</param>
+        /// <returns>Whether the operation was successful.</returns>
         public bool LoadAdventure(SaveType saveType, string path)
         {
             bool loaded = true;
@@ -93,8 +98,8 @@ namespace tbrpg.Controllers
         /// Saves the <see cref="ActiveAdventure"/> to the specified storage location.
         /// </summary>
         /// <param name="saveType">The type of save/load operation.</param>
-        /// <param name="adventureId">The path or URL to which to save the <see cref="Adventure"/>.</param>
-        /// <returns>Value indicating whether the operation was successful.</returns>
+        /// <param name="path">The path or URL to which to save the <see cref="Adventure"/>.</param>
+        /// <returns>Whether the operation was successful.</returns>
         public bool SaveActiveAdventure(SaveType saveType, string path)
         {
             bool saved = true;
@@ -137,13 +142,21 @@ namespace tbrpg.Controllers
         }
 
         /// <summary>
+        /// Raises the <see cref="AdventureSaved"/> event.
+        /// </summary>
+        private void OnAdventureStarted()
+        {
+            this.AdventureStarted?.Invoke(this, new EventArgs());
+        }
+
+        /// <summary>
         /// Starts the active <see cref="Adventure"/>.
         /// </summary>
         public void StartAdventure()
         {
             if (this.ActiveAdventure != null)
             {
-                Console.WriteLine("Adventure started.");
+                OnAdventureStarted();
             }
             else
             {
