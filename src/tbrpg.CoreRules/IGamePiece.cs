@@ -13,7 +13,7 @@
         string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether the GamePiece can be the target of an attack.
+        /// Gets or sets whether the GamePiece can be the target of an attack.
         /// </summary>
         bool IsTargetable { get; set; }
 
@@ -28,7 +28,7 @@
         int MaxHitPoints { get; set; }
 
         /// <summary>
-        /// Gets or sets a value specifying the minimum attack roll needed to hit the GamePiece.
+        /// Gets or sets the minimum attack roll needed to hit the GamePiece.
         /// </summary>
         int Defense { get; set; }
 
@@ -48,7 +48,7 @@
         /// Applies the specified amount of damage to this GamePiece.
         /// </summary>
         /// <param name="damage">The amount of damage to apply.</param>
-        /// <returns>Value indicating whether the GamePiece was killed.</returns>
+        /// <returns>Whether the GamePiece was killed.</returns>
         bool ApplyDamage(int damage);
     }
 }

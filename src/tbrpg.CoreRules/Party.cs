@@ -73,7 +73,7 @@ namespace tbrpg.CoreRules
         /// Gets a string showing each party member and their health status.
         /// </summary>
         /// <param name="beings">A collection of party members.</param>
-        /// <returns>String showing the list of party members and their health state (remaining hit points, or "DEAD").</returns>
+        /// <returns>String showing the list of party members and their remaining hit points (or "DEAD").</returns>
         private static string GetPartyString(List<Being> beings)
         {
             StringBuilder sb = new StringBuilder();
@@ -89,10 +89,8 @@ namespace tbrpg.CoreRules
             return sb.ToString();
         }
 
-        public override string ToString()
-        {
-            return GetPartyString(_partyMembers);
-        }
+        public override string ToString() => GetPartyString(_partyMembers);
+
         #endregion
 
         /// <summary>
@@ -113,10 +111,7 @@ namespace tbrpg.CoreRules
         /// Raises the <see cref="Defeated"/> event, notifying subscribers that the last living
         /// <see cref="Being"/> in this party was <see cref="Being.Killed"/>.
         /// </summary>
-        private void OnDefeated()
-        {
-            Defeated?.Invoke(this, new EventArgs());
-        }
+        private void OnDefeated() => Defeated?.Invoke(this, new EventArgs());
 
         #region Public Properties
 
@@ -126,31 +121,19 @@ namespace tbrpg.CoreRules
         public User UserId { get; set; }
 
         /// <summary>
-        /// Gets a value indicating whether at least one member of this Party is alive. If there are no
+        /// Gets whether at least one member of this Party is alive. If there are no
         /// Beings alive in a Party, the Party is considered dead.
         /// </summary>
-        public bool IsAlive
-        {
-            get
-            {
-                return this.LivingMembers.Any();
-            }
-        }
+        public bool IsAlive => this.LivingMembers.Any();
 
         /// <summary>
         /// Gets a collection of all Beings in this party, living or otherwise.
         /// </summary>
         /// <remarks>To add or remove party members, use <see cref="AddPartyMember(Being)"/> and <see cref="RemovePartyMember(Being)"/>.</remarks>
-        public List<Being> Members
-        {
-            get
-            {
-                return _partyMembers;
-            }
-        }
+        public List<Being> Members => _partyMembers;
 
         /// <summary>
-        /// Gets a collection of all Beings in this party, living or otherwise.
+        /// Gets a collection of Beings in this party that are alive.
         /// </summary>
         /// <remarks>To add or remove party members, use <see cref="AddPartyMember(Being)"/> and <see cref="RemovePartyMember(Being)"/>.</remarks>
         public ReadOnlyCollection<Being> LivingMembers

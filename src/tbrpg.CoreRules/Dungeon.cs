@@ -17,22 +17,22 @@ namespace tbrpg.CoreRules
         public event EventHandler Encountered;
 
         /// <summary>
-        /// Gets or sets the width of the Dungeon. The default value is 15.
+        /// Gets or sets the width of the Dungeon. Default: <c>15</c>.
         /// </summary>
         public int Width { get; set; } = 15;
 
         /// <summary>
-        /// Gets or sets the height of the dungeon. The default value is 15.
+        /// Gets or sets the height of the dungeon. Default: <c>15</c>.
         /// </summary>
         public int Height { get; set; } = 15;
 
         /// <summary>
-        /// Gets or sets the starting position of the <see cref="Party"/>. The default is 0,0.
+        /// Gets or sets the starting position of the <see cref="Party"/>. Default: <c>0,0</c>.
         /// </summary>
         public GamePosition StartPosition { get; set; } = new GamePosition(0, 0);
 
         /// <summary>
-        /// Gets or sets the current <see cref="GamePosition"/> of the <see cref="Party"/> within the Dungeon. The default is 0,0.
+        /// Gets or sets the current <see cref="GamePosition"/> of the <see cref="Party"/> within the Dungeon. Default: <c>0,0</c>.
         /// </summary>
         public GamePosition CurrentPosition { get; set; } = new GamePosition(0, 0);
 
@@ -80,10 +80,7 @@ namespace tbrpg.CoreRules
         /// Raises the event signifying that the <see cref="Party"/> has moved to a <see cref="GamePosition"/>
         /// that is occupied by an <see cref="Encounter"/>.
         /// </summary>
-        private void OnEncountered()
-        {
-            Encountered?.Invoke(this, new EventArgs());
-        }
+        private void OnEncountered() => Encountered?.Invoke(this, new EventArgs());
 
         /// <summary>
         /// Gets or sets the active <see cref="Encounter"/>.

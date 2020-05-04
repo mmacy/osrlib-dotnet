@@ -109,7 +109,7 @@ namespace tbrpg.Dice
         /// <param name="dieCode">The string containing the Die code.</param>
         /// <param name="dieCount">The Die count parameter to be populated.</param>
         /// <param name="dieSides">The number of sides per Die parameter to be populated.</param>
-        /// <returns>Value indicating whether the Die code was parsed successfully. A value of true indicates two
+        /// <returns>Whether the Die code was parsed successfully. A value of true indicates two
         /// values - both greater than 0 - were obtained.</returns>
         internal static bool TryParseDieCode(string dieCode, out int dieCount, out int dieSides)
         {

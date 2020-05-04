@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace tbrpg.CoreRules
 {
     /// <summary>
     /// A Being has one or more Abilities. An Ability is used when performing checks to
-    /// test success of a GameAction as well as to modify DiceRolls via the Ability's Mods.
+    /// test success of a GameAction as well as to modify DiceRolls via the Ability's Modifiers.
     /// </summary>
     public class Ability
     {
@@ -29,9 +27,6 @@ namespace tbrpg.CoreRules
         /// <summary>
         /// Gets the total value of this ability - the BaseValue plus its <see cref="Modifiers"/>.
         /// </summary>
-        public int Value
-        {
-            get { return BaseValue + Modifiers.Select(m => m.ModifierValue).Aggregate((x, y) => x + y); }
-        }
+        public int Value => BaseValue + Modifiers.Select(m => m.ModifierValue).Aggregate((x, y) => x + y);
     }
 }

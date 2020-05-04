@@ -13,7 +13,7 @@ namespace tbrpg.CoreRules
         private DiceRoll _attackRoll = new DiceRoll("1d20");
 
         /// <summary>
-        /// Event raised when the Being's HitPoints hit zero or below.
+        /// Event raised when the Being's HitPoints reach zero or below.
         /// </summary>
         public event EventHandler Killed;
 
@@ -73,15 +73,12 @@ namespace tbrpg.CoreRules
         public int ExperiencePoints { get; set; }
 
         /// <summary>
-        /// Gets a value indicating whether this Being is alive (has greater than zero hit points).
+        /// Gets whether this Being is alive (has greater than zero hit points).
         /// </summary>
-        public bool IsAlive
-        {
-            get { return (HitPoints > 0); }
-        }
+        public bool IsAlive => HitPoints > 0;
 
         /// <summary>
-        /// Gets or sets a value indicating whether this Being can be attacked.
+        /// Gets or sets whether this Being can be attacked.
         /// </summary>
         public bool IsTargetable { get; set; }
 
@@ -91,32 +88,31 @@ namespace tbrpg.CoreRules
         public IGameItem ActiveItem { get; set; } =
             new Weapon
             {
-                Name = "Hands",
+                Name = "Fist",
                 Description = "Default weapon.",
                 DamageDie = "1d2",
                 NumberOfAttacks = 1
             };
 
         /// <summary>
-        /// Gets or sets a value specifying the minimum attack roll needed to hit the GamePiece.
+        /// Gets or sets the minimum attack roll needed to hit the GamePiece.
         /// </summary>
         public int Defense { get; set; } //TODO: Defense to take into account armor and all modifiers such as magic items or enchantments/spells.
 
         /// <summary>
         /// Gets the list of targets from which this Being can select one or more targets before calling <see cref="PerformActionOnSelectedTargets"/>.
         /// </summary>
-        /// <remarks>You cannot populate this list directly; use <see cref="AddPotentialTargets(List{Being})"/> instead.</remarks>
-        public ReadOnlyCollection<Being> PotentialTargets
-        {
-            get { return _potentialTargets.AsReadOnly(); }
-        }
+        /// <remarks>You can't populate this list directly. Use <see cref="AddPotentialTargets(List{Being})"/> instead.</remarks>
+        public ReadOnlyCollection<Being> PotentialTargets => _potentialTargets.AsReadOnly();
+
         private List<Being> _potentialTargets = new List<Being>();
 
         /// <summary>
         /// Gets the list of targets that the Being has selected for its next <see cref="GameAction"/>.
-        /// Populate this list by calling <see cref="AddSelectedTarget"/>, then call <see cref="DoActionOnSelectedTargets"/>
-        /// to perform <see cref="GameAction"/>s on with the active <see cref="IGameItem"/> on the selected targets.
         /// </summary>
+        /// <remarks>You can't populate this list directly. Use <see cref="AddSelectedTarget"/>, then call <see cref="PerformActionOnSelectedTargets"/>
+        /// to perform <see cref="GameAction"/>s on the targets in the collection with this Being's <see cref="ActiveItem"/>.
+        /// </remarks>
         public ReadOnlyCollection<Being> SelectedTargets
         {
             get { return _selectedTargets.AsReadOnly(); }
@@ -150,7 +146,7 @@ namespace tbrpg.CoreRules
         /// Deducts the specified amount of HitPoints from the Being.
         /// </summary>
         /// <param name="damage">The amount of HitPoints to deduct.</param>
-        /// <returns>Value indicating whether the applied damage killed the being.</returns>
+        /// <returns>Whether the applied damage killed the being.</returns>
         /// <remarks>If the Being is killed by this damage, the <see cref="OnBeingKilled"/> event is raised.
         /// The event is only raised if the Being was previously alive. This method will return <c>true</c>
         /// only if the Being was alive prior to taking this damage.</remarks>
@@ -199,7 +195,7 @@ namespace tbrpg.CoreRules
         /// <summary>
         /// For each <see cref="Being"/> in <see cref="SelectedTargets"/>, creates and performs a <see cref="GameAction"/>.
         /// </summary>
-        /// <remarks>Call this after the <see cref="SelectedTargets"/> collection has been populated.</remarks>
+        /// <remarks>Call this after the <see cref="SelectedTargets"/> collection has been populated with <see cref="AddSelectedTarget">.</remarks>
         public void PerformActionOnSelectedTargets()
         {
             foreach (Being target in this.SelectedTargets)
@@ -209,18 +205,16 @@ namespace tbrpg.CoreRules
             }
         }
 
-        public override string ToString()
-        {
-            return String.Format($"{this.Name} ({this.HitPoints}/{this.MaxHitPoints})");
-        }
+        public override string ToString() => String.Format($"{this.Name} ({this.HitPoints}/{this.MaxHitPoints})");
+
         #endregion
 
         /// <summary>
         /// Adds the specified target Beings to the collection of potential targets for this Being.
         /// </summary>
         /// <param name="targets"></param>
-        /// <remarks>Reference <see cref="SelectedTargets"/> to obtain a list of Beings that this Being can target with
-        /// its active <see cref="IGameItem"/>.</remarks>
+        /// <remarks>Reference <see cref="PotentialTargets"/> to obtain a list of Beings that this Being can target with
+        /// its <see cref="ActiveItem"/>.</remarks>
         internal void AddPotentialTargets(List<Being> targets)
         {
             _selectedTargets.Clear();
@@ -262,20 +256,11 @@ namespace tbrpg.CoreRules
         /// <summary>
         /// Raises the <see cref="PotentialTargetsAdded"/> event.
         /// </summary>
-        private void OnPotentialTargetsAdded()
-        {
-            PotentialTargetsAdded?.Invoke(this, new EventArgs());
-        }
+        private void OnPotentialTargetsAdded() => PotentialTargetsAdded?.Invoke(this, new EventArgs());
 
         /// <summary>
         /// Raises the <see cref="BeingKilled"/> event, signifying that the Being was just killed.
         /// </summary>
-        private void OnKilled()
-        {
-            Killed?.Invoke(this, new EventArgs());
-        }
-
-
-
+        private void OnKilled() => Killed?.Invoke(this, new EventArgs());
     }
 }
