@@ -41,7 +41,7 @@ namespace tbrpg.CoreRules
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets this Being's <see cref="CharacterClass"/>.
+        /// Gets or sets the Being's <see cref="CharacterClass"/>.
         /// </summary>
         /// <remarks>This can be a player character class or a monster type.</remarks>
         public CharacterClass Class { get; set; }
@@ -52,7 +52,7 @@ namespace tbrpg.CoreRules
         public Alignment Alignment { get; set; }
 
         /// <summary>
-        /// Gets or sets this Being's <see cref="Ability"/> collection.
+        /// Gets or sets the Being's <see cref="Ability"/> collection.
         /// </summary>
         public List<Ability> Abilities { get; set; }
 
@@ -73,12 +73,12 @@ namespace tbrpg.CoreRules
         public int ExperiencePoints { get; set; }
 
         /// <summary>
-        /// Gets whether this Being is alive (has greater than zero hit points).
+        /// Gets whether the Being is alive (has greater than zero hit points).
         /// </summary>
         public bool IsAlive => HitPoints > 0;
 
         /// <summary>
-        /// Gets or sets whether this Being can be attacked.
+        /// Gets or sets whether the Being can be attacked.
         /// </summary>
         public bool IsTargetable { get; set; }
 

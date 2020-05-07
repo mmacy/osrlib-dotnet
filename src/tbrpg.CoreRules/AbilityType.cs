@@ -6,10 +6,10 @@
     public enum AbilityType
     {
         Strength,
-        Intelligence,
-        Wisdom,
         Dexterity,
         Constitution,
+        Intelligence,
+        Wisdom,
         Charisma
     }
 }

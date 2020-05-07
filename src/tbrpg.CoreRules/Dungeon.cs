@@ -56,12 +56,13 @@ namespace tbrpg.CoreRules
         /// </summary>
         /// <param name="x">The position on the x axis.</param>
         /// <param name="y">The position on the y axis.</param>
+        /// <param name="z">The position on the z axis. Default: <c>0</c>.</param>
         /// <returns>The new <see cref="GamePosition"/> of the <see cref="Party"/>.</returns>
         /// <remarks>To determine whether the party moves to a position occupied by an encounter, subscribe to
         /// the <see cref="Encountered"/> event.</remarks>
-        public GamePosition MoveParty(int x, int y)
+        public GamePosition MoveParty(int x, int y, int z = 0)
         {
-            this.CurrentPosition = new GamePosition(x, y);
+            this.CurrentPosition = new GamePosition(x, y, z);
 
             // Check Encounters to see if there is an Encounter at this position
             Encounter enc = this.Encounters.Find(e => e.Position.Equals(this.CurrentPosition));

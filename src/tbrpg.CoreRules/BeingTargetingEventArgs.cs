@@ -1,8 +1,8 @@
 ﻿namespace tbrpg.CoreRules
 {
     /// <summary>
-    /// Provides information for events in which one Being is targeting another. This is
-    /// typically done prior to performing a <see cref="GameAction"/>.
+    /// Provides information for events in which one Being is targeting another.
+    /// Such events are typically fired prior to performing a <see cref="GameAction"/>.
     /// </summary>
     public class BeingTargetingEventArgs
     {

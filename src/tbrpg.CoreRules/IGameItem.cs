@@ -3,8 +3,8 @@
     /// <summary>
     /// Specification defining any object that can appear in the game world that is not an <see cref="IGamePiece"/>.
     /// </summary>
-    /// <remarks>A class implementing the IGameItem interface indicates that the object can potentially be wielded
-    /// as an active item by a <see cref="IGamePiece"/>, such as a weapon or spell.</remarks>
+    /// <remarks>A class implementing this interface indicates that the object can be wielded
+    /// as an active item by an <see cref="IGamePiece"/>, such as a weapon or spell.</remarks>
     public interface IGameItem
     {
         /// <summary>
@@ -27,7 +27,7 @@
         /// </summary>
         /// <returns>The amount of damage rolled.</returns>
         int GetDamageRoll();
-        
+
         /// <summary>
         /// Specifies the number of <see cref="IGamePiece"/>s that can be targeted when this IGameItem is wielded as a weapon.
         /// </summary>
