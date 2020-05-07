@@ -89,10 +89,7 @@ namespace tbrpg.Controllers
         /// <summary>
         /// Raises the <see cref="AdventureLoaded"/> event.
         /// </summary>
-        private void OnAdventureLoaded()
-        {
-            this.AdventureLoaded?.Invoke(this, new EventArgs());
-        }
+        private void OnAdventureLoaded() => this.AdventureLoaded?.Invoke(this, new EventArgs());
 
         /// <summary>
         /// Saves the <see cref="ActiveAdventure"/> to the specified storage location.
@@ -136,18 +133,7 @@ namespace tbrpg.Controllers
         /// <summary>
         /// Raises the <see cref="AdventureSaved"/> event.
         /// </summary>
-        private void OnAdventureSaved()
-        {
-            this.AdventureSaved?.Invoke(this, new EventArgs());
-        }
-
-        /// <summary>
-        /// Raises the <see cref="AdventureSaved"/> event.
-        /// </summary>
-        private void OnAdventureStarted()
-        {
-            this.AdventureStarted?.Invoke(this, new EventArgs());
-        }
+        private void OnAdventureSaved() => this.AdventureSaved?.Invoke(this, new EventArgs());
 
         /// <summary>
         /// Starts the active <see cref="Adventure"/>.
@@ -163,5 +149,10 @@ namespace tbrpg.Controllers
                 throw new InvalidOperationException("There is no active Adventure. Did you call LoadAdventure or SetActiveAdventure first?");
             }
         }
+
+        /// <summary>
+        /// Raises the <see cref="AdventureStarted"/> event.
+        /// </summary>
+        private void OnAdventureStarted() => this.AdventureStarted?.Invoke(this, new EventArgs());
     }
 }

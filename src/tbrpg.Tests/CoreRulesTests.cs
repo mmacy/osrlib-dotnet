@@ -10,7 +10,7 @@ namespace tbrpg.Tests
         [Fact]
         public void InitMajorGameEntities()
         {
-            // TODO: This is not exactly a "unit test." Should break these out
+            // TODO: This isn't really a "unit test." Should break these out
             // TODO: into their own methods, and perhaps use a playlist to execute
             // TODO: them in order, populating member fields of this test class
             // TODO: and referencing those in downstream tests.
@@ -45,11 +45,11 @@ namespace tbrpg.Tests
         public void ExecuteAdventureBattle()
         {
             // Get fully initialized GameManager (from InitGameSystemModel?)
-            // Get Encounter from active Adventure, active Dungeon
-            // Set active Encounter (on Dungeon? on GameManager?)
-            // Set autobattle ON (this is on the Encounter, but where best to set?)
-            // Add active Adventure party to active Encounter
-            // Perform battle
+            // Set autobattle ON (this is on the Encounter, but where best to set? Probably at the Adventure level - maybe need an AdventureSettings class)
+            // Set active Party for Adventure
+            // Set active Dungeon for the Adventure
+            // Move Party to Encounter location
+            // Perform (auto) battle
 
             Assert.NotNull("Test not yet implemented.");
         }
@@ -78,8 +78,9 @@ namespace tbrpg.Tests
                 Assert.True(enc.IsEncounterEnded);
             };
 
-            // Add the adventuring party and specify AutoBattle = true
-            encounter.SetAdventuringParty(playerParty, true);
+            // Add the adventuring party and start the battle
+            encounter.SetAdventuringParty(playerParty);
+            encounter.StartEncounter();
         }
     }
 }

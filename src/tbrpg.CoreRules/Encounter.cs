@@ -48,12 +48,12 @@ namespace tbrpg.CoreRules
         public Party AdventuringParty { get; private set; }
 
         /// <summary>
-        /// Gets whether this Encounter has been started.
+        /// Gets whether the Encounter has been started.
         /// </summary>
         public bool IsEncounterStarted { get; private set; }
 
         /// <summary>
-        /// Gets whether this Encounter has been completed.
+        /// Gets whether the Encounter has been completed.
         /// </summary>
         public bool IsEncounterEnded { get; private set; }
 
@@ -68,7 +68,7 @@ namespace tbrpg.CoreRules
         /// </summary>
         /// <param name="adventurers">The <see cref="Party"/> of adventurers to act upon the <see cref="EncounterParty"/> in this <see cref="Encounter"/>.</param>
         /// <param name="startEncounter">Specifies whether the Encounter should be started immediately upon adding the adventuring party. Default: <c>false</c>.</param>
-        public void SetAdventuringParty(Party adventurers, bool startEncounter = false)
+        public void SetAdventuringParty(Party adventurers)
         {
             if (this.AdventuringParty == null)
             {
@@ -77,11 +77,6 @@ namespace tbrpg.CoreRules
             else
             {
                 throw new InvalidOperationException("An adventuring party has already been added to this Encounter.");
-            }
-
-            if (startEncounter)
-            {
-                StartEncounter();
             }
         }
 

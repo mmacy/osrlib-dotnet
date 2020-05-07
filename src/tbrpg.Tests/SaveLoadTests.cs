@@ -9,10 +9,10 @@ namespace tbrpg.Tests
     public class SaveLoadTests
     {
         private string _saveDir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-        private string _saveFile = "tbrpg_adventure.json";
+        private string _saveFile = "tbrpg-adventure.json";
 
         [Fact]
-        public void SaveLoadAdventureFile()
+        public void SaveAndLoadAdventureFile()
         {
             // Since xUnit runs all tests in parallel, we can't guarantee that the save-to-file test would be
             // completed prior to the load-from-file test, so run them both here so that the load-from-file has
@@ -38,9 +38,9 @@ namespace tbrpg.Tests
             dungeon.Encounters.Add(encounter);
 
             Adventure adventure = new Adventure();
-            adventure.SetActiveParty(PartyGenerator.GetPlayerParty());
             adventure.AddDungeon(dungeon);
             adventure.SetActiveDungeon(dungeon);
+            adventure.SetActiveParty(PartyGenerator.GetPlayerParty());
 
             return adventure;
         }
