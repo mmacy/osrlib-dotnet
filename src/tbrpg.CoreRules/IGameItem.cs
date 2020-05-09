@@ -1,4 +1,6 @@
-﻿namespace tbrpg.CoreRules
+﻿using tbrpg.Dice;
+
+namespace tbrpg.CoreRules
 {
     /// <summary>
     /// Specification defining any object that can appear in the game world that is not an <see cref="IGamePiece"/>.
@@ -20,7 +22,7 @@
         /// <summary>
         /// Gets or sets the die code (e.g. "1d8", "2d4") for use when computing damage dealt by this IGameItem.
         /// </summary>
-        string DamageDie { get; set; }
+        DiceHand DamageDie { get; set; }
 
         /// <summary>
         /// Returns a random amount of damage based on the <see cref="DamageDie"/>.

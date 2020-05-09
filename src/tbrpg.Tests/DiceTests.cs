@@ -15,48 +15,36 @@ namespace tbrpg.Tests
             int numRolls = 1000;
 
             int numDie = 1;
-            int numSides = 20;
-            DiceHand hand = new DiceHand(numDie, numSides);
+            DieType dieType = DieType.d20;
+            DiceHand hand = new DiceHand(numDie, dieType);
             DiceRoll roll = new DiceRoll(hand);
             int result;
             for (int i = 0; i < numRolls; i++)
             {
                 result = roll.RollDice();
                 Assert.True(result >= numDie);
-                Assert.True(result <= numDie * numSides);
+                Assert.True(result <= numDie * (int)dieType);
             }
 
             numDie = 2;
-            numSides = 10;
-            hand = new DiceHand(numDie, numSides);
+            dieType = DieType.d10;
+            hand = new DiceHand(numDie, dieType);
             roll = new DiceRoll(hand);
             for (int i = 0; i < numRolls; i++)
             {
                 result = roll.RollDice();
                 Assert.True(result >= numDie);
-                Assert.True(result <= numDie * numSides);
+                Assert.True(result <= numDie * (int)dieType);
             }
         }
 
         [Fact]
         public void InvalidDiceRollThrowsException()
         {
-            int numDie = 1;
-            int numSides = 0; // A die needs at least 1 side
+            int numDie = 0;
+            DieType dieType = DieType.d1;
 
-            Exception ex = Assert.Throws<ArgumentException>(() => new DiceHand(numDie, numSides));
-        }
-
-        [Fact]
-        public void DiceRollWithEmptyDieCodeTextConstructorThrowsException()
-        {
-            Exception ex = Assert.Throws<ArgumentNullException>(() => new DiceRoll(""));
-        }
-
-        [Fact]
-        public void DiceRollWithInvalidDieCodeTextConstructorThrowsException()
-        {
-            Exception ex = Assert.Throws<ArgumentException>(() => new DiceRoll("BLARG!"));
+            Exception ex = Assert.Throws<ArgumentException>(() => new DiceHand(numDie, dieType));
         }
     }
 }

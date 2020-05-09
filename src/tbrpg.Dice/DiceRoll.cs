@@ -48,10 +48,8 @@ namespace tbrpg.Dice
         public event DiceRolledEventHandler DiceRolled;
         #endregion
 
-        #region Constructors
         /// <summary>
         /// Creates a new instance of a DiceRoll, adding the specified dice to the DiceRoll's Dice collection.
-        /// This is the preferred method of constructing a DiceRoll.
         /// </summary>
         /// <param name="diceHand">The DiceHand specifying the Dice to add to the DiceRoll.</param>
         public DiceRoll(DiceHand diceHand)
@@ -62,34 +60,7 @@ namespace tbrpg.Dice
                 throw new ArgumentNullException("diceHand", "You must specify a valid DiceHand object.");
         }
 
-        /// <summary>
-        /// Creates a new instance of a DiceRoll, adding the Dice represented by the specified die code (e.g. "1d4", "2d6") to its Dice collection
-        /// </summary>
-        /// <param name="dieCode">The die code string representing the number of dice and the number of sides of each die in the DiceRoll, e.g. "1d4", "2d6".</param>
-        public DiceRoll(string dieCode)
-        {
-            int dieCount = 0;
-            int dieSides = 0;
-
-            if (String.IsNullOrEmpty(dieCode))
-                throw new ArgumentNullException("dieCode", "You must specify a valid die code string, e.g. \"1d4\", \"2d6\".");
-            else if (!Dice.TryParseDieCode(dieCode, out dieCount, out dieSides))
-                throw new ArgumentException("dieCode", "You must specify a valid die code string, e.g. \"1d4\", \"2d6\".");
-
-            AddDice(dieCode);
-        }
-        #endregion
-
         #region Public Methods
-        /// <summary>
-        /// Adds the Dice represented by the specified die code (e.g. "1d4", "2d6") to the Dice collection.
-        /// </summary>
-        /// <param name="dieCode">The die code string representing the number of dice and the number of sides of each die in the DiceRoll, e.g. "1d4", "2d6".</param>
-        public void AddDice(string dieCode)
-        {
-            _dice.AddDice(dieCode);
-        }
-
         /// <summary>
         /// Adds the specified Die to this DiceRoll's Dice collection.
         /// </summary>

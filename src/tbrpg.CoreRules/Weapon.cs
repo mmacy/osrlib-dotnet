@@ -17,7 +17,7 @@ namespace tbrpg.CoreRules
         /// <summary>
         /// The die code for the weapon. Default: <c>1d6</c>.
         /// </summary>
-        public string DamageDie { get; set; } = "1d6";
+        public DiceHand DamageDie { get; set; } = new DiceHand(1, DieType.d6);
 
         /// <summary>
         /// The number of targets <see cref="IGamePiece"/>s this weapon can attack in one round. Default: <c>1</c>.

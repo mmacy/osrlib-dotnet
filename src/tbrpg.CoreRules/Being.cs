@@ -10,7 +10,7 @@ namespace tbrpg.CoreRules
     /// </summary>
     public class Being : IGamePiece
     {
-        private DiceRoll _attackRoll = new DiceRoll("1d20");
+        private DiceRoll _attackRoll = new DiceRoll(new DiceHand(1, DieType.d20));
 
         /// <summary>
         /// Event raised when the Being's HitPoints reach zero or below.
@@ -90,7 +90,7 @@ namespace tbrpg.CoreRules
             {
                 Name = "Fist",
                 Description = "Default weapon.",
-                DamageDie = "1d2",
+                DamageDie = new DiceHand(1, DieType.d4),
                 NumberOfAttacks = 1
             };
 
@@ -128,7 +128,8 @@ namespace tbrpg.CoreRules
         /// <returns>Value to be compared to a Being's defense value.</returns>
         public int GetAttackRoll()
         {
-            //TODO: GetAttackRoll to take into account all modifiers, including ability modifiers and enchantments on the Being's active IGameItem.
+            //TODO: GetAttackRoll to take into account number of attacks and all modifiers, including
+            //      ability modifiers and enchantments on the Being's active IGameItem.
             return _attackRoll.RollDice();
         }
 
