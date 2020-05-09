@@ -12,13 +12,15 @@ namespace tbrpg.Dice
     /// Represents a "handful of dice."
     /// </summary>
     /// <remarks>
-    /// The DiceHand is a type representation of a Dice code ("1d4", "2d6") and is the preferred parameter for
-    /// use in the creation of a Dice object. Create a DiceHand, add it to a <see cref="DiceRoll"/>, then call its
-    /// <see cref="DiceRoll.RollDice"/> method to get the result.
+    /// The DiceHand is a type representation of the well-known NdN format for a handful of
+    /// dice. For example, "1d20", "3d6", or "4d8." It is the preferred parameter for use in
+    /// the creation of a DiceRoll. Create a DiceHand, add it to a <see cref="DiceRoll"/>, then
+    /// call its <see cref="DiceRoll.RollDice"/> method to get the result.
     /// </remarks>
     /// <example>
     /// <code>
-    /// DiceHand hand = new DiceHand(1, 20);
+    /// // Roll one twenty-sided die
+    /// DiceHand hand = new DiceHand(1, DieType.d20);
     /// DiceRoll roll = new DiceRoll(hand);
     /// int result = roll.RollDice();
     /// </code>
@@ -29,25 +31,15 @@ namespace tbrpg.Dice
         /// Creates a new instance of DiceHand, appropriate for passing to the Dice and DiceRoll constructor.
         /// </summary>
         /// <param name="count">The number of Dice in the DiceHand - the first value in the '#d#' format (e.g. the 2 in 2d6).</param>
-        /// <param name="sides">The number of sides per Die in the DiceHand - the second value in the '#d#' format (e.g. the 6 in 2d6).</param>
-        public DiceHand(int count, int sides)
+        /// <param name="sides">The number of sides per Die in the DiceHand.</param>
+        public DiceHand(int count, DieType sides)
         {
             //Perform some validity checks to ensure the count and sides params are at least 0.
-            //Obviously, it would be normal to have at least two sides per die, but we don't
-            //want to limit that far as someone might always want a value of 1.
 
             if (count > 0)
             {
                 DieCount = count;
-
-                if (sides > 0)
-                {
-                    DieSides = sides;
-                }
-                else
-                {
-                    throw new ArgumentException("The sides parameter (number of sides per Die) must be equal to or greater than 1.");
-                }
+                DieSides = sides;
             }
             else
             {
@@ -63,6 +55,6 @@ namespace tbrpg.Dice
         /// <summary>
         /// Gets or sets the number of sides of each die in the DiceHand.
         /// </summary>
-        public int DieSides { get; set; }
+        public DieType DieSides { get; set; }
     }
 }
