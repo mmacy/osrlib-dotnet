@@ -28,9 +28,9 @@ namespace tbrpg.Dice
     public class DiceHand
     {
         /// <summary>
-        /// Creates a new instance of DiceHand, appropriate for passing to the Dice and DiceRoll constructor.
+        /// Creates a new instance of DiceHand, appropriate for passing to the Dice and DiceRoll constructors.
         /// </summary>
-        /// <param name="count">The number of Dice in the DiceHand - the first value in the '#d#' format (e.g. the 2 in 2d6).</param>
+        /// <param name="count">The number of Dice in the DiceHand - the first value in the '#d#' format (the '3' in 3d6).</param>
         /// <param name="sides">The number of sides per Die in the DiceHand.</param>
         public DiceHand(int count, DieType sides)
         {

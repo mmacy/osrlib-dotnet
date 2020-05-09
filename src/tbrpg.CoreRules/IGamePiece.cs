@@ -2,7 +2,7 @@
 {
 
     /// <summary>
-    /// Specification defining any object that that is not a <see cref="IGameItem"/>.
+    /// Specification defining a game object that can move or be moved around in the world.
     /// </summary>
     /// <remarks>A class implementing IGamePiece indicates that the object can perform a <see cref="GameAction"/> on another IGamePiece.</remarks>
     public interface IGamePiece

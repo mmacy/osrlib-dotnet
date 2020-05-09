@@ -5,10 +5,15 @@
     /// </summary>
     public enum Alignment
     {
-        LawfulGood,  // Civilization and order.
-        Good,        // Freedom and kindness.
-        Evil,        // Tyranny and hatred.
-        ChaoticEvil, // Entropy and destruction.
-        Unaligned    // Having no alignment; not taking a stand.
+        ///<summary>Civilization and order.</summary>
+        LawfulGood,
+        ///<summary>Freedom and kindness.</summary>
+        Good,
+        ///<summary>Tyranny and hatred.</summary>
+        Evil,
+        ///<summary>Entropy and destruction.</summary>
+        ChaoticEvil,
+        ///<summary>Having no alignment; not taking a stand.</summary>
+        Unaligned
     }
 }

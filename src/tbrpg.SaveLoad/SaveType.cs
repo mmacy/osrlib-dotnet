@@ -1,5 +1,8 @@
 ﻿namespace tbrpg.SaveLoad
 {
+    /// <summary>
+    /// Specifies the type of save operation.
+    /// </summary>
     public enum SaveType
     {
         /// <summary>
