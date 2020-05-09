@@ -1,8 +1,8 @@
 ################################
 # Azure Pipelines build template
 ################################
-# Azure DevOps project: https://marshallmacy.visualstudio.com/tbrpg
-# Azure Pipelines build definition: https://marshallmacy.visualstudio.com/tbrpg/_build?definitionId=1
+# Azure DevOps project: https://marshallmacy.visualstudio.com/osrlib-dotnet
+# Azure Pipelines build definition: https://marshallmacy.visualstudio.com/osrlib-dotnet/_build?definitionId=1
 ################################
 
 trigger:
