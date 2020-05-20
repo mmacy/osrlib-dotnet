@@ -1,5 +1,8 @@
 ﻿namespace tbrpg.CoreRules
 {
+    /// <summary>
+    /// Represents a human player. A User can own one or more <see cref="Party"/> or <see cref="Adventure"/>.
+    /// </summary>
     public class User
     {
         /// <summary>

@@ -1,5 +1,8 @@
 ﻿namespace tbrpg.CoreRules
 {
+    /// <summary>
+    /// Represents an object's location within a <see cref="Dungeon"/>.
+    /// </summary>
     public struct GamePosition
     {
         /// <summary>

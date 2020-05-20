@@ -1,17 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using tbrpg.Dice;
 
 namespace tbrpg.CoreRules
 {
     /// <summary>
+    /// Represents the method that handles a Being's <see cref="tbrpg.CoreRules.Being.TargetSelected"/> or
+    /// <see cref="tbrpg.CoreRules.Being.SelectedAsTarget"/> event.
+    /// </summary>
+    /// <param name="sender">The object generating the event.</param>
+    /// <param name="e">The information for the event.</param>
+    public delegate void BeingTargetingEventHandler(object sender, BeingTargetingEventArgs e);
+
+    /// <summary>
     /// The Being represents a living entity in within an <see cref="Adventure"/>, and is used for both player characters and monsters.
     /// </summary>
     public class Being : IGamePiece
     {
-        private DiceRoll _attackRoll = new DiceRoll(new DiceHand(1, DieType.d20));
-
         /// <summary>
         /// Event raised when the Being's HitPoints reach zero or below.
         /// </summary>
@@ -54,7 +61,7 @@ namespace tbrpg.CoreRules
         /// <summary>
         /// Gets or sets the Being's <see cref="Ability"/> collection.
         /// </summary>
-        public List<Ability> Abilities { get; set; }
+        public List<Ability> Abilities { get; set; } = new List<Ability>();
 
         /// <summary>
         /// Gets or sets the number of hit points for the Being.
@@ -83,21 +90,21 @@ namespace tbrpg.CoreRules
         public bool IsTargetable { get; set; }
 
         /// <summary>
-        /// Gets or sets the active item (weapon, spell, etc.) for the Being.
+        /// Gets or sets the Being's active weapon or spell. The active weapon is a weapon or offensive spell, and is
+        /// used when when the Being attacks another being.
         /// </summary>
-        public IGameItem ActiveItem { get; set; } =
+        public Weapon ActiveWeapon { get; set; } =
             new Weapon
             {
-                Name = "Fist",
+                Name = "Fists",
                 Description = "Default weapon.",
-                DamageDie = new DiceHand(1, DieType.d4),
-                NumberOfAttacks = 1
+                DamageDie = new DiceHand(1, DieType.d2)
             };
 
         /// <summary>
         /// Gets or sets the minimum attack roll needed to hit the GamePiece.
         /// </summary>
-        public int Defense { get; set; } //TODO: Defense to take into account armor and all modifiers such as magic items or enchantments/spells.
+        public int Defense { get; set; } //TODO: Defense to take into account armor and all modifiers like dexterity mod and magic items or enchantments/spells.
 
         /// <summary>
         /// Gets the list of targets from which this Being can select one or more targets before calling <see cref="PerformActionOnSelectedTargets"/>.
@@ -110,8 +117,9 @@ namespace tbrpg.CoreRules
         /// <summary>
         /// Gets the list of targets that the Being has selected for its next <see cref="GameAction"/>.
         /// </summary>
-        /// <remarks>You can't populate this list directly. Use <see cref="AddSelectedTarget"/>, then call <see cref="PerformActionOnSelectedTargets"/>
-        /// to perform <see cref="GameAction"/>s on the targets in the collection with this Being's <see cref="ActiveItem"/>.
+        /// <remarks>
+        /// You can't populate this list directly. Use <see cref="AddSelectedTarget"/>, then call <see cref="PerformActionOnSelectedTargets"/>
+        /// to perform <see cref="GameAction"/>s on the targets in the collection with this Being's <see cref="ActiveWeapon"/>.
         /// </remarks>
         public ReadOnlyCollection<Being> SelectedTargets
         {
@@ -122,25 +130,49 @@ namespace tbrpg.CoreRules
         #endregion Public properties
 
         #region Public methods
+
         /// <summary>
-        /// Returns the value of an attack roll by the Being.
+        /// Adds a modifier to the specified ability's <see cref="Ability.ScoreModifiers"/> collection.
+        /// This acts as a bonus or penalty, effectively an enchantment or a curse.
+        /// </summary>
+        /// <param name="modifier">The modifier to adjust the specified ability score.</param>
+        /// <param name="abilityType">The ability to which to apply the modifier.</param>
+        public void AddAbilityModifier(Modifier modifier, AbilityType abilityType)
+        {
+            Ability abilityToMod = GetAbilityByType(abilityType);
+
+            if (abilityToMod != null)
+            {
+                abilityToMod.ScoreModifiers.Add(modifier);
+            }
+            else
+            {
+                throw new InvalidOperationException($"No ability of type {abilityType.ToString()} exists in the Being's Abilities collection. Have you called RollAbilities()?");
+            }
+        }
+
+        /// <summary>
+        /// Returns the value of an attack roll by the Being. The Being's active weapon (or spell) is used in calculating
+        /// the roll, as are any ability modifiers appropriate for the weapon type.
         /// </summary>
         /// <returns>Value to be compared to a Being's defense value.</returns>
         public int GetAttackRoll()
         {
-            //TODO: GetAttackRoll to take into account number of attacks and all modifiers, including
-            //      ability modifiers and enchantments on the Being's active IGameItem.
-            return _attackRoll.RollDice();
+            int modifierValue = GetAbilityModifierValueForWeaponType(this.ActiveWeapon.Type);
+
+            return this.ActiveWeapon.GetAttackRoll(modifierValue);
         }
 
         /// <summary>
-        /// Returns the value of a damage roll by the Being.
+        /// Returns the value of a damage roll by the Being. The Being's active weapon (or spell) is used in calculating
+        /// the roll, as are any ability modifiers appropriate for the weapon type.
         /// </summary>
-        /// <returns>Value to be deducted from a Being's hit points.</returns>
+        /// <returns>Value to be deducted from an opponent Being's hit points.</returns>
         public int GetDamageRoll()
         {
-            //TODO: GetDamageRoll to take into account type of weapon/spell and all modifiers, including ability modifiers and weapon enchantments.
-            return this.ActiveItem.GetDamageRoll();
+            int modifierValue = GetAbilityModifierValueForWeaponType(this.ActiveWeapon.Type);
+
+            return this.ActiveWeapon.GetDamageRoll(modifierValue);
         }
 
         /// <summary>
@@ -148,7 +180,7 @@ namespace tbrpg.CoreRules
         /// </summary>
         /// <param name="damage">The amount of HitPoints to deduct.</param>
         /// <returns>Whether the applied damage killed the being.</returns>
-        /// <remarks>If the Being is killed by this damage, the <see cref="OnBeingKilled"/> event is raised.
+        /// <remarks>If the Being is killed by this damage, the <see cref="OnKilled"/> event is raised.
         /// The event is only raised if the Being was previously alive. This method will return <c>true</c>
         /// only if the Being was alive prior to taking this damage.</remarks>
         public bool ApplyDamage(int damage)
@@ -196,7 +228,9 @@ namespace tbrpg.CoreRules
         /// <summary>
         /// For each <see cref="Being"/> in <see cref="SelectedTargets"/>, creates and performs a <see cref="GameAction"/>.
         /// </summary>
-        /// <remarks>Call this after the <see cref="SelectedTargets"/> collection has been populated with <see cref="AddSelectedTarget">.</remarks>
+        /// <remarks>
+        /// Call this after the <see cref="SelectedTargets"/> collection has been populated with <see cref="AddSelectedTarget"/>.
+        /// </remarks>
         public void PerformActionOnSelectedTargets()
         {
             foreach (Being target in this.SelectedTargets)
@@ -206,6 +240,50 @@ namespace tbrpg.CoreRules
             }
         }
 
+        /// <summary>
+        /// Rolls the specified ability score and adds the ability to the Being's ability collection. If an ability of
+        /// the same type is already in the <see cref="Abilities"/> collection, the existing ability is removed before
+        /// adding the new one generated by this method.
+        /// </summary>
+        /// <param name="abilityType">The type of ability to roll and add to the <see cref="Abilities"/> collection.</param>
+        /// <returns>The newly rolled Ability.</returns>
+        public Ability RollAbilityScore(AbilityType abilityType)
+        {
+            // Since we're rolling the ability score, clear it out if it already exists.
+            // This means that any modifiers on the current ability are also cleared.
+            Ability ability = GetAbilityByType(abilityType);
+            if (ability != null)
+            {
+                this.Abilities.Remove(ability);
+            }
+
+            // Create the new ability
+            ability = new Ability { Type = abilityType };
+            ability.RollAbilityScore();
+            this.Abilities.Add(ability);
+
+            return ability;
+        }
+
+        /// <summary>
+        /// Rolls the full set of ability scores for the Being. Calling this method removes any abilities currently in
+        /// the Being's <see cref="Abilities"/> collection.
+        /// </summary>
+        /// <returns>The Being's newly populated <see cref="Abilities"/> collection.</returns>
+        public List<Ability> RollAbilities()
+        {
+            foreach (AbilityType type in Enum.GetValues(typeof(AbilityType)))
+            {
+                RollAbilityScore(type);
+            }
+
+            return this.Abilities;
+        }
+
+        /// <summary>
+        /// Gets the string representation of the Being.
+        /// </summary>
+        /// <returns>Single-line text representation of the Being.</returns>
         public override string ToString() => String.Format($"{this.Name} ({this.HitPoints}/{this.MaxHitPoints})");
 
         #endregion
@@ -215,7 +293,7 @@ namespace tbrpg.CoreRules
         /// </summary>
         /// <param name="targets"></param>
         /// <remarks>Reference <see cref="PotentialTargets"/> to obtain a list of Beings that this Being can target with
-        /// its <see cref="ActiveItem"/>.</remarks>
+        /// its <see cref="ActiveWeapon"/>.</remarks>
         internal void AddPotentialTargets(List<Being> targets)
         {
             _selectedTargets.Clear();
@@ -226,6 +304,44 @@ namespace tbrpg.CoreRules
             // they can now select Beings from PotentialTargets and add them to
             // SelectedTargets, then call PerformActionOnSelectedTargets.
             OnPotentialTargetsAdded();
+        }
+
+                /// <summary>
+        /// For the given weapon type, returns the associated modifier granted by the appropriate ability. For example,
+        /// the strength modifier for a melee weapon or the dexterity modifier for a ranged weapon.
+        /// </summary>
+        /// <param name="weaponType">The type of weapon for which to obtain the associated ability modifier value.</param>
+        /// <returns>The modifier granted or imposed by the ability for the weapon type.</returns>
+        private int GetAbilityModifierValueForWeaponType(WeaponType weaponType)
+        {
+            int modValue = weaponType switch
+            {
+                WeaponType.Melee  => GetAbilityByType(AbilityType.Strength).GetModifier(),
+                WeaponType.Ranged => GetAbilityByType(AbilityType.Dexterity).GetModifier(),
+                WeaponType.Spell  => GetAbilityByType(AbilityType.Intelligence).GetModifier(),
+                _                 => 0
+            };
+
+            return modValue;
+        }
+
+        /// <summary>
+        /// Gets the ability of the specified type from the Being's abilities collection.
+        /// </summary>
+        /// <param name="abilityType">The type of the ability to obtain.</param>
+        /// <returns>The ability of the specified type from the Being's <see cref="Abilities"/> collection, or <c>null</c>
+        /// if no such ability is within the collection.
+        /// </returns>
+        private Ability GetAbilityByType(AbilityType abilityType)
+        {
+            if (this.Abilities.Any())
+            {
+                return this.Abilities.Find(a => a.Type == abilityType);
+            }
+            else
+            {
+                return null;
+            }
         }
 
         /// <summary>
@@ -244,7 +360,7 @@ namespace tbrpg.CoreRules
         /// <summary>
         /// Raises the <see cref="SelectedAsTarget"/> event.
         /// </summary>
-        /// <param name="target">The Being that selected this Being as a target.</param>
+        /// <param name="targeter">The Being that selected this Being as a target.</param>
         internal void OnSelectedAsTarget(Being targeter)
         {
             SelectedAsTarget?.Invoke(this, new BeingTargetingEventArgs
@@ -260,7 +376,7 @@ namespace tbrpg.CoreRules
         private void OnPotentialTargetsAdded() => PotentialTargetsAdded?.Invoke(this, new EventArgs());
 
         /// <summary>
-        /// Raises the <see cref="BeingKilled"/> event, signifying that the Being was just killed.
+        /// Raises the <see cref="Killed"/> event, signifying that the Being was just killed.
         /// </summary>
         private void OnKilled() => Killed?.Invoke(this, new EventArgs());
     }

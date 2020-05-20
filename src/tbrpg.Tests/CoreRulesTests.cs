@@ -2,6 +2,7 @@
 using Xunit;
 using tbrpg.CoreRules;
 using tbrpg.Controllers;
+using tbrpg.Dice;
 
 namespace tbrpg.Tests
 {
@@ -22,13 +23,15 @@ namespace tbrpg.Tests
                 AutoBattleEnabled = true,
                 Position = new GamePosition(10, 10)
             };
+            // Create Adventure
+            Adventure adventure = new Adventure();
+
             // Create Dungeon
             Dungeon dungeon = new Dungeon();
             // Add Encounter to Dungeon
             dungeon.Encounters.Add(encounter);
-            // Create Adventure
-            Adventure adventure = new Adventure();
             // Add Dungeon to Adventure
+
             adventure.AddDungeon(dungeon);
             // Set active Dungeon for Adventure
             adventure.SetActiveDungeon(dungeon);
@@ -42,7 +45,7 @@ namespace tbrpg.Tests
         }
 
         [Fact(Skip = "Test not yet implemented.")]
-        public void ExecuteAdventureBattle()
+        public void ExecuteDungeonBattle()
         {
             // Get fully initialized GameManager (from InitGameSystemModel?)
             // Set autobattle ON (this is on the Encounter, but where best to set? Probably at the Adventure level - maybe need an AdventureSettings class)
@@ -81,6 +84,46 @@ namespace tbrpg.Tests
             // Add the adventuring party and start the battle
             encounter.SetAdventuringParty(playerParty);
             encounter.StartEncounter();
+        }
+
+        [Fact]
+        public void CreateFullyInitializedCharacter()
+        {
+            // Another "unit test" that's not really a unit test.
+            // Using this temporarily (ha!) to debug modifier work.
+
+            DiceRoll roll = new DiceRoll(new DiceHand(1, DieType.d10));
+
+            Being fighter = new Being
+            {
+                Name = "Cro Mag",
+                Defense = roll.RollDice(),
+                MaxHitPoints = roll.RollDice() + 10,
+                IsTargetable = true
+            };
+            fighter.RollAbilities();
+
+            Modifier mod = new Modifier { ModifierSource = "Potion of Strength", ModifierValue = 2 };
+            fighter.AddAbilityModifier(mod, AbilityType.Strength);
+
+            Weapon sword = new Weapon
+            {
+                Name = "Long Sword + 1",
+                Description = "A finely crafted sword.",
+                Type = WeaponType.Melee,
+                DamageDie = new DiceHand(1, DieType.d8),
+            };
+            sword.AttackModifiers.Add(new Modifier { ModifierValue = 1, ModifierSource = sword });
+            sword.DamageModifiers.Add(new Modifier { ModifierValue = 1, ModifierSource = sword });
+
+            // Verify the ability collection has the expected abilities
+            Assert.Collection(fighter.Abilities,
+                ability => Assert.Equal(AbilityType.Strength, ability.Type),
+                ability => Assert.Equal(AbilityType.Dexterity, ability.Type),
+                ability => Assert.Equal(AbilityType.Constitution, ability.Type),
+                ability => Assert.Equal(AbilityType.Intelligence, ability.Type),
+                ability => Assert.Equal(AbilityType.Wisdom, ability.Type),
+                ability => Assert.Equal(AbilityType.Charisma, ability.Type));
         }
     }
 }

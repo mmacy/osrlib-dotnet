@@ -5,13 +5,6 @@ using System.Linq;
 namespace tbrpg.CoreRules
 {
     /// <summary>
-    /// Represents the method that handles the BeingTargeting event.
-    /// </summary>
-    /// <param name="sender">The object generating the event.</param>
-    /// <param name="e">The information for the event.</param>
-    public delegate void BeingTargetingEventHandler(object sender, BeingTargetingEventArgs e);
-
-    /// <summary>
     /// The Encounter contains a <see cref="Party"/>, can accept a <see cref="Party"/> to initiate a battle,
     /// and may contain a reward. The encounter also handles creating GameActions and assigning targets.
     /// </summary>
@@ -32,7 +25,7 @@ namespace tbrpg.CoreRules
         public event EventHandler EncounterEnded;
 
         /// <summary>
-        /// Gets or sets the position within the <see cref="Model.Dungeon"/> of this Encounter.
+        /// Gets or sets the position within the <see cref="tbrpg.CoreRules.Dungeon"/> of this Encounter.
         /// </summary>
         public GamePosition Position { get; set; }
 
@@ -67,7 +60,6 @@ namespace tbrpg.CoreRules
         /// Adds the specified <see cref="Party"/> of adventurers that will perform GameActions on the <see cref="EncounterParty"/>.
         /// </summary>
         /// <param name="adventurers">The <see cref="Party"/> of adventurers to act upon the <see cref="EncounterParty"/> in this <see cref="Encounter"/>.</param>
-        /// <param name="startEncounter">Specifies whether the Encounter should be started immediately upon adding the adventuring party. Default: <c>false</c>.</param>
         public void SetAdventuringParty(Party adventurers)
         {
             if (this.AdventuringParty == null)
@@ -81,14 +73,15 @@ namespace tbrpg.CoreRules
         }
 
         /// <summary>
-        /// Starts the Encounter. To resolve the Encounter, subscribe to <see cref="BeingTargeting"/> and then call <see cref="PerformStep"/> to move the Encounter forward
-        /// until the <see cref="EncounterEnded"/> is raised.
+        /// Starts the Encounter. To resolve the Encounter, subscribe to all party members' <see cref="tbrpg.CoreRules.Being.PotentialTargetsAdded"/>
+        /// event, and then call <see cref="PerformStep"/> to move the Encounter forward until the <see cref="EncounterEnded"/> is raised.
         /// </summary>
         /// <remarks>
-        /// If <see cref="AutoBattleEnabled"/> is <c>false</c>, this method will raise the <see cref="EncounterStarted"/> event, then call <see cref="PerformStep"/>.
-        /// Before calling <see cref="StartEncounter"/>, subscribe to <see cref="BeingTargeting"/> to be notified when the caller should select a target and subsequently
-        /// call <see cref="DoAction"/>. After DoAction has been called, check <see cref="IsEncounterEnded"/> before calling StepEncounter again.
-        /// If AutoBattleEnabled is <c>true</c>, this will initiate resolution of the full Encounter (e.g. resolve all combat between Encounter parties).
+        /// Before calling <see cref="StartEncounter"/>, subscribe to each party members'
+        /// <see cref="tbrpg.CoreRules.Being.PotentialTargetsAdded"/> event to be notified when the caller should select a
+        /// target and subsequently call <see cref="GameAction.PerformAction"/>. After PerformAction has been called, check
+        /// <see cref="IsEncounterEnded"/> before calling PerformStep again. If AutoBattleEnabled is <c>true</c>, this will
+        /// initiate resolution of the full Encounter (e.g. resolve all combat between Encounter parties).
         /// </remarks>
         public void StartEncounter()
         {
@@ -132,14 +125,16 @@ namespace tbrpg.CoreRules
         }
 
         /// <summary>
-        /// Moves the Encounter forward one step by dequeuing an attacker and raising the <see cref="BeingTargeting"/> event if there are any remaining targets.
+        /// Moves the Encounter forward one step by dequeuing an attacker and adding as potential targets the opposing
+        /// party's living members.
         /// </summary>
         /// <remarks>
-        /// This method first fills the Encounter's attack queue if it is empty, then dequeues a Being and populates its
+        /// This method first fills the Encounter's attack queue if it's empty, then dequeues a Being and populates its
         /// <see cref="Being.PotentialTargets"/> collection with living Beings from the opposing party. Doing so raises
         /// its <see cref="Being.PotentialTargetsAdded"/> event which allows subscribers (such as a GUI application) to
-        /// prompt for target selection. Targets are selected by adding calling its <see cref="Being.AddSelectedTarget(Being)"/>"/>
-        /// method.</remarks>
+        /// prompt for target selection. Targets are selected by adding calling <see cref="Being.AddSelectedTarget(Being)"/>"/>
+        /// method.
+        /// </remarks>
         public void PerformStep()
         {
             if (this.IsEncounterEnded)

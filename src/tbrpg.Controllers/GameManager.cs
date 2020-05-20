@@ -15,6 +15,10 @@ namespace tbrpg.Controllers
         /// </summary>
         public static GameManager Instance { get; } = new GameManager();
 
+        /// <summary>
+        /// Gets the current <see cref="Adventure"/> for the game.
+        /// </summary>
+        /// <value></value>
         public Adventure ActiveAdventure { get; private set; }
 
         /// <summary>

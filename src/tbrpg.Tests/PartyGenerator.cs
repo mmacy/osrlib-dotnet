@@ -1,4 +1,5 @@
 ﻿using tbrpg.CoreRules;
+using System;
 
 namespace tbrpg.Tests
 {
@@ -33,7 +34,8 @@ namespace tbrpg.Tests
 
             for (int i = 0; i < 4; i++)
             {
-                party.AddPartyMember(GetBeing("Monster " + i.ToString(), mn_hp, mn_df));
+                Being monster = GetBeing("Monster " + i.ToString(), mn_hp, mn_df);
+                party.AddPartyMember(monster);
             }
 
             return party;
@@ -41,7 +43,8 @@ namespace tbrpg.Tests
 
         private static Being GetBeing(string name, int hp, int defense)
         {
-            return new Being
+
+            Being being = new Being
             {
                 Name = name,
                 Defense = defense,
@@ -49,6 +52,13 @@ namespace tbrpg.Tests
                 MaxHitPoints = hp,
                 IsTargetable = true
             };
+
+            foreach (Ability ability in being.RollAbilities())
+            {
+               Console.WriteLine($"{being.Name} - {ability.ToString()}");
+            }
+
+            return being;
         }
     }
 }

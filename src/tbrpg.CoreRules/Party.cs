@@ -89,6 +89,10 @@ namespace tbrpg.CoreRules
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Gets a string representation of the Party.
+        /// </summary>
+        /// <returns>A multiline list of the party members and their health status.</returns>
         public override string ToString() => GetPartyString(_partyMembers);
 
         #endregion
