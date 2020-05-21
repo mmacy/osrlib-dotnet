@@ -15,7 +15,7 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- script: dotnet build --configuration $(buildConfiguration) src/tbrpg.sln
+- script: dotnet build --configuration $(buildConfiguration) src/osrlib.sln
   displayName: 'dotnet build $(buildConfiguration)'
 - task: DotNetCoreCLI@2
   displayName: 'dotnet test $(buildConfiguration)'
