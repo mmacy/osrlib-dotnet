@@ -72,7 +72,7 @@ namespace osrlib.Controllers
                     {
                         loaded = false;
 
-                        //TODO: Throwing load failure for now--make LoadFailed event?
+                        //TODO: Throwing on load failure for now--make LoadFailed event?
                         throw;
                     }
                     break;
@@ -116,7 +116,7 @@ namespace osrlib.Controllers
                     {
                         saved = false;
 
-                        //TODO: Throwing save failure for now--make SaveFailed event?
+                        //TODO: Throwing on save failure for now--make SaveFailed event?
                         throw;
                     }
                     break;

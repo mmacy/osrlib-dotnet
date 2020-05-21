@@ -1,10 +1,4 @@
-﻿/*************************************************************************
- * File:        Randomizer.cs
- * Author(s):   Marshall Macy II (marshallmacy@gmail.com)
- * Copyright (c) 2018 Marshall Macy II
- *************************************************************************/
-
-using System;
+﻿using System;
 
 namespace osrlib.Utility
 {

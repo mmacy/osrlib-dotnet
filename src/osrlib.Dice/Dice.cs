@@ -1,10 +1,4 @@
-﻿/*************************************************************************
- * File:        Dice.cs
- * Author(s):   Marshall Macy II (marshallmacy@gmail.com)
- * Copyright (c) 2011 Marshall Macy II
- *************************************************************************/
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace osrlib.Dice
