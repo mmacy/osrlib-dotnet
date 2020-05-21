@@ -1,10 +1,4 @@
-﻿/*************************************************************************
- * File:        DiceRolledEventArgs.cs
- * Author(s):   Marshall Macy II (marshallmacy@gmail.com)
- * Copyright (c) 2016 Marshall Macy II
- *************************************************************************/
-
-using System;
+﻿using System;
 
 namespace osrlib.Dice
 {
