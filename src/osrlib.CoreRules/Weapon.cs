@@ -5,7 +5,7 @@ using osrlib.Dice;
 namespace osrlib.CoreRules
 {
     /// <summary>
-    /// A weapon is a melee or ranged martial weapon, or an offensive spell.
+    /// A Weapon is a melee or ranged martial weapon, or an offensive spell.
     /// </summary>
     public class Weapon
     {
