@@ -13,10 +13,10 @@ namespace osrlib.Tests
 
         public static Party GetPlayerParty()
         {
-            Party party = new Party();
-
             int hp = pc_hp;
             int def = pc_df;
+
+            Party party = new Party();
 
             party.AddPartyMember(GetBeing("Blarg the Destroyer", hp, def));
             party.AddPartyMember(GetBeing("Draflonduh", hp, def));
@@ -49,10 +49,8 @@ namespace osrlib.Tests
                 Name = name,
                 Defense = defense,
                 HitPoints = hp,
-                MaxHitPoints = hp,
-                IsTargetable = true
+                MaxHitPoints = hp
             };
-
             being.RollAbilities();
 
             return being;

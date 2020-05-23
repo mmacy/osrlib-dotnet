@@ -85,9 +85,9 @@ namespace osrlib.CoreRules
         public bool IsAlive => HitPoints > 0;
 
         /// <summary>
-        /// Gets or sets whether the Being can be attacked.
+        /// Gets or sets whether the Being can be attacked. Default: <c>true</c>.
         /// </summary>
-        public bool IsTargetable { get; set; }
+        public bool IsTargetable { get; set; } = true;
 
         /// <summary>
         /// Gets or sets the Being's active weapon or spell. The active weapon is a weapon or offensive spell, and is

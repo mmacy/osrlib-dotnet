@@ -22,7 +22,7 @@ namespace osrlib.Dice
     public class DiceHand
     {
         /// <summary>
-        /// Creates a new instance of DiceHand, appropriate for passing to the Dice and DiceRoll constructors.
+        /// Creates a new instance of DiceHand, appropriate for passing to the <see cref="DiceRoll"/> constructor.
         /// </summary>
         /// <param name="count">The number of Dice in the DiceHand - the first value in the '#d#' format (the '3' in 3d6).</param>
         /// <param name="sides">The number of sides per Die in the DiceHand.</param>
