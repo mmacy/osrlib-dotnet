@@ -31,7 +31,6 @@ namespace osrlib.Tests
             // Add Encounter to Dungeon
             dungeon.Encounters.Add(encounter);
             // Add Dungeon to Adventure
-
             adventure.AddDungeon(dungeon);
             // Set active Dungeon for Adventure
             adventure.SetActiveDungeon(dungeon);
@@ -98,9 +97,9 @@ namespace osrlib.Tests
             {
                 Name = "Cro Mag",
                 Defense = roll.RollDice(),
-                MaxHitPoints = roll.RollDice() + 10,
-                IsTargetable = true
+                MaxHitPoints = roll.RollDice() + 10
             };
+            fighter.HitPoints = fighter.MaxHitPoints;
             fighter.RollAbilities();
 
             Modifier mod = new Modifier { ModifierSource = "Potion of Strength", ModifierValue = 2 };
@@ -115,6 +114,9 @@ namespace osrlib.Tests
             };
             sword.AttackModifiers.Add(new Modifier { ModifierValue = 1, ModifierSource = sword });
             sword.DamageModifiers.Add(new Modifier { ModifierValue = 1, ModifierSource = sword });
+
+            // Equip the sword
+            fighter.ActiveWeapon = sword;
 
             // Verify the ability collection has the expected abilities
             Assert.Collection(fighter.Abilities,
