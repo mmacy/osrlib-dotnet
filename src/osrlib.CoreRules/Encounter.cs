@@ -150,7 +150,6 @@ namespace osrlib.CoreRules
             if (!_attackQueue.Any())
             {
                 FillAttackQueue();
-                Console.WriteLine($"Filled attack queue: {_attackQueue.Count} combatants");
             }
 
             // Dequeue an attacker and create an appropriate target list (only if the attacker is alive, of course)
@@ -263,10 +262,6 @@ namespace osrlib.CoreRules
             if (!this.IsEncounterEnded)
             {
                 PerformAutoBattle();
-            }
-            else
-            {
-                Console.WriteLine("Encounter ended.");
             }
         }
     }

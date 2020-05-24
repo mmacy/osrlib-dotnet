@@ -70,7 +70,7 @@ namespace osrlib.CoreRules
             {
                 //TODO: Just return the defender as victor if Defender.IsAttackable == false?
 
-                throw new InvalidOperationException("The target is invalid (IsTargetable = false).");
+                throw new InvalidOperationException("The target is invalid (IsTargetable is false).");
             }
 
             OnActionPerformed();
