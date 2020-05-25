@@ -12,20 +12,28 @@ OSRLib.NET provides an API for the core rules engine for a computer role-playing
 
 Use OSRLib.NET as the engine, add your own UI to interact with its API, and you have yourself a turn-based RPG.
 
-## Getting started
-
-OSRlib.NET provides an object model representing well-known RPG entities like adventures, dungeons, beings (player characters and monsters), encounters, and weapons. It has an event-based interaction model for manipulating these entities, their relationships, and state.
-
-### Prerequisites
+## Prerequisites
 
 - Visual Studio Code or another code editor
 - .NET Core SDK 3.1+
 
-### Install the package
+## Install the package
 
 ```console
+# NOT YET IMPLEMENTED - no NuGet package (yet)
 nuget install Osrlib.Net -OutputDirectory packages
 ```
+
+## Getting started
+
+OSRlib.NET provides an object model representing well-known RPG entities like adventures, dungeons, beings (player characters and monsters), encounters, and weapons. It has an event-based interaction model for manipulating these entities, their relationships, and state.
+
+Examples of a few primary OSRlib operations follow:
+
+- [Create a character](#create-a-character)
+- [Stock the dungeon](#stock-the-dungeon)
+- [Set up a battle](#set-up-a-battle)
+- [Start the battle](#start-the-battle)
 
 ### Create a character
 
