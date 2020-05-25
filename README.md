@@ -32,7 +32,7 @@ Examples of a few primary OSRlib operations follow:
 
 - [Create a character](#create-a-character)
 - [Stock the dungeon](#stock-the-dungeon)
-- [Set up a battle](#set-up-a-battle)
+- [Subscribe to battle events](#subscribe-to-battle-events)
 - [Start the battle](#start-the-battle)
 
 ### Create a character
@@ -108,13 +108,12 @@ dungeon.Encounters.Add(encounter);
 ```
 <!-- END SECTION_STOCK_THE_DUNGEON -->
 
-### Set up a battle
+### Subscribe to battle events
 
 The `Encounter`, just like most of the top-level entities in OSRlib, exposes several events to help you update your game's UI when those events occur.
 
 <!-- START SECTION_BATTLE_SETUP -->
 ```csharp
-#region SECTION_BATTLE_SETUP
 // OSRlib is heavily event-driven and most major entities have public events. Subscribe to events
 // like these to change the state of your UI and/or prompt the player for action (such as selecting
 // a target to attack during an encounter).
