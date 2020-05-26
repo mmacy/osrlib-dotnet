@@ -10,14 +10,16 @@ namespace osrlib.CoreRules
     public class GameAction
     {
         /// <summary>
-        /// Event raised when the GameAction is about to be performed.
+        /// Gets the attack roll result of the GameAction.
         /// </summary>
-        public event EventHandler PerformingAction;
+        /// <value>The attack roll value associated with the GameAction's attack operation.</value>
+        public int AttackRoll { get; private set; } = 0;
 
         /// <summary>
-        /// Event raised when the GameAction has just been performed.
+        /// Gets the damage roll result of the GameAction.
         /// </summary>
-        public event EventHandler ActionPerformed;
+        /// <value>The damage roll value associated with the GameAction's damage operation.</value>
+        public int DamageRoll { get; private set; } = 0;
 
         /// <summary>
         /// Creates a new instance of the GameAction with the specified attacker and defender.
@@ -46,24 +48,24 @@ namespace osrlib.CoreRules
         public IGamePiece Victor { get; private set; }
 
         /// <summary>
-        /// Performs the <see cref="GameAction"/> by applying the attacker's attack roll to the defender's defense value.
+        /// Performs the <see cref="GameAction"/> by applying the attacker's attack roll to the defender's defense
+        /// value, and applying damage to the defender if the attack roll succeeded.
         /// </summary>
         /// <returns>The victor in the GameAction.</returns>
         /// <remarks>The victor in the GameAction can be the defending GamePiece.</remarks>
         public IGamePiece PerformAction()
         {
-            OnPerformingAction();
-
             // If the defender is attackable, compare an attack roll by the attacker with the
             // defender's defense value, apply damage if successful, and return the victor.
 
             if (this.ActionTarget.IsTargetable)
             {
-                this.Victor = this.ActionSource.GetAttackRoll() >= this.ActionTarget.Defense ? this.ActionSource : this.ActionTarget;
+                this.AttackRoll = this.ActionSource.GetAttackRoll();
+                this.Victor = this.AttackRoll >= this.ActionTarget.Defense ? this.ActionSource : this.ActionTarget;
 
                 if (this.Victor == this.ActionSource)
-                {
-                    this.ActionTarget.ApplyDamage(this.ActionSource.GetDamageRoll());
+                {   this.DamageRoll = this.ActionSource.GetDamageRoll();
+                    this.ActionTarget.ApplyDamage(this.DamageRoll);
                 }
             }
             else
@@ -73,19 +75,7 @@ namespace osrlib.CoreRules
                 throw new InvalidOperationException("The target is invalid (IsTargetable is false).");
             }
 
-            OnActionPerformed();
-
             return this.Victor;
         }
-
-        /// <summary>
-        /// Raises the <see cref="ActionPerformed"/> event, signifying that this action was just performed.
-        /// </summary>
-        private void OnActionPerformed() => ActionPerformed?.Invoke(this, new EventArgs());
-
-        /// <summary>
-        /// Raises the <see cref="PerformingAction"/> event, signifying that this action is about to be performed.
-        /// </summary>
-        private void OnPerformingAction() => PerformingAction?.Invoke(this, new EventArgs());
     }
 }

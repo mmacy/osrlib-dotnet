@@ -59,7 +59,7 @@ namespace osrlib.Tests
             Being orc1 = new Being
             {
                 Name = "Orc Captain",
-                Defense = 8,
+                Defense = 10,
                 HitPoints = 10,
                 MaxHitPoints = 10
             };
@@ -133,7 +133,21 @@ namespace osrlib.Tests
                         Being attackedBeing = s as Being;
                         BeingTargetingEventArgs args = e as BeingTargetingEventArgs;
 
-                        Console.WriteLine($"{attackedBeing.Name} is being targeted by {e.TargetingBeing.Name} with their {e.TargetingBeing.ActiveWeapon.Name}...");
+                        Console.WriteLine($"{e.TargetingBeing} attacks {attackedBeing} with their {e.TargetingBeing.ActiveWeapon}...");
+                    };
+                combatant.ActionPerformed += (s, e) =>
+                    {
+                        GameActionEventArgs actionArgs = e as GameActionEventArgs;
+                        GameAction action = actionArgs.Action;
+
+                        if (action.Victor.Equals(combatant))
+                        {
+                            Console.WriteLine($"{combatant} rolled a {action.AttackRoll} and hit for {action.DamageRoll} points of damage.");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"{combatant} rolled a {action.AttackRoll} and missed.");
+                        }
                     };
                 combatant.Killed += (s, e) =>
                     {
