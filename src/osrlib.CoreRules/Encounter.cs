@@ -239,6 +239,7 @@ namespace osrlib.CoreRules
                     adventurer.PerformActionOnSelectedTargets();
                 }
             }
+            targets.Clear();
 
             // 2. Monsters attack PCs
             foreach (Being monster in this.EncounterParty.LivingMembers)

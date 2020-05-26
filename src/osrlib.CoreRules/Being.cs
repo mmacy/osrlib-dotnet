@@ -15,6 +15,14 @@ namespace osrlib.CoreRules
     public delegate void BeingTargetingEventHandler(object sender, BeingTargetingEventArgs e);
 
     /// <summary>
+    /// Represents the method that handles a Being's <see cref="osrlib.CoreRules.Being.PerformingAction"/> or
+    /// <see cref="osrlib.CoreRules.Being.ActionPerformed"/> events.
+    /// </summary>
+    /// <param name="sender">The object generating the event.</param>
+    /// <param name="e">The <see cref="GameAction"/> for the event.</param>
+    public delegate void GameActionEventHandler(object sender, GameActionEventArgs e);
+
+    /// <summary>
     /// The Being represents a living entity in within an <see cref="Adventure"/>, and is used for both player characters and monsters.
     /// </summary>
     public class Being : IGamePiece
@@ -40,6 +48,29 @@ namespace osrlib.CoreRules
         /// this Being as the target.
         /// </summary>
         public event BeingTargetingEventHandler SelectedAsTarget;
+
+        /// <summary>
+        /// Event raised when this being is about to perform a <see cref="GameAction"/>, such as when the
+        /// Being is about to attack an enemy.
+        /// </summary>
+        /// <remarks>
+        /// Subscribe to this event to obtain information about the Being on which this Being is performing an action.
+        /// For example, you might use this to display the name of this Being and stats about the the weapon or spell
+        /// they're wielding (via the <see cref="ActiveWeapon"/> property).
+        /// </remarks>
+        public event GameActionEventHandler PerformingAction;
+
+        /// <summary>
+        /// Event raised when this being has performed a <see cref="GameAction"/>, such as when the
+        /// Being attacks an enemy.
+        /// </summary>
+        /// <remarks>
+        /// Subscribe to this event to obtain information about the Being on which this Being is performing an action
+        /// and determine the victor of the action. For example, you might use this to display the name of this Being,
+        /// the stats about the the weapon or spell they wielded (via the <see cref="ActiveWeapon"/> property), and
+        /// whether the action was successful (whether they hit and the damage dealt).
+        /// </remarks>
+        public event GameActionEventHandler ActionPerformed;
 
         #region Public properties
         /// <summary>
@@ -236,7 +267,10 @@ namespace osrlib.CoreRules
             foreach (Being target in this.SelectedTargets)
             {
                 GameAction action = new GameAction(this, target);
+
+                OnPerformingAction(action);
                 action.PerformAction();
+                OnActionPerformed(action);
             }
         }
 
@@ -374,6 +408,18 @@ namespace osrlib.CoreRules
         /// Raises the <see cref="PotentialTargetsAdded"/> event.
         /// </summary>
         private void OnPotentialTargetsAdded() => PotentialTargetsAdded?.Invoke(this, new EventArgs());
+
+        /// <summary>
+        /// Raises the <see cref="PerformingAction"/> event.
+        /// </summary>
+        /// <param name="action">The action associated with the event.</param>
+        private void OnPerformingAction(GameAction action) => PerformingAction?.Invoke(this, new GameActionEventArgs() { Action = action });
+
+        /// <summary>
+        /// Raises the <see cref="ActionPerformed"/> event.
+        /// </summary>
+        /// <param name="action">The action associated with the event.</param>
+        private void OnActionPerformed(GameAction action) => ActionPerformed?.Invoke(this, new GameActionEventArgs() { Action = action });
 
         /// <summary>
         /// Raises the <see cref="Killed"/> event, signifying that the Being was just killed.
