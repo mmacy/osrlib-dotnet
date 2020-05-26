@@ -15,7 +15,8 @@ namespace osrlib.CoreRules
     public delegate void BeingTargetingEventHandler(object sender, BeingTargetingEventArgs e);
 
     /// <summary>
-    /// Represents the method that handles a Being's <see cref="osrlib.CoreRules.Being.ActionPerformed"/> event.
+    /// Represents the method that handles a Being's <see cref="osrlib.CoreRules.Being.PerformingAction"/> or
+    /// <see cref="osrlib.CoreRules.Being.ActionPerformed"/> events.
     /// </summary>
     /// <param name="sender">The object generating the event.</param>
     /// <param name="e">The <see cref="GameAction"/> for the event.</param>
