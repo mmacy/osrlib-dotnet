@@ -25,7 +25,7 @@ namespace osrlib.CoreRules
     /// <summary>
     /// The Being represents a living entity in within an <see cref="Adventure"/>, and is used for both player characters and monsters.
     /// </summary>
-    public class Being : IGamePiece
+    public class Being
     {
         /// <summary>
         /// Event raised when the Being's HitPoints reach zero or below.
@@ -38,13 +38,13 @@ namespace osrlib.CoreRules
         public event EventHandler PotentialTargetsAdded;
 
         /// <summary>
-        /// Event raised when this Being selects a target with <see cref="AddSelectedTarget(Being)"/>.
+        /// Event raised when this Being selects a target with <see cref="SelectTarget(Being)"/>.
         /// </summary>
         public event BeingTargetingEventHandler TargetSelected;
 
         /// <summary>
         /// Event raised when this Being has been selected as a target; that is, the
-        /// targeting Being's <see cref="Being.AddSelectedTarget(Being)"/> was called with
+        /// targeting Being's <see cref="Being.SelectTarget(Being)"/> was called with
         /// this Being as the target.
         /// </summary>
         public event BeingTargetingEventHandler SelectedAsTarget;
@@ -149,7 +149,7 @@ namespace osrlib.CoreRules
         /// Gets the list of targets that the Being has selected for its next <see cref="GameAction"/>.
         /// </summary>
         /// <remarks>
-        /// You can't populate this list directly. Use <see cref="AddSelectedTarget"/>, then call <see cref="PerformActionOnSelectedTargets"/>
+        /// You can't populate this list directly. Use <see cref="SelectTarget"/>, then call <see cref="PerformActionOnSelectedTargets"/>
         /// to perform <see cref="GameAction"/>s on the targets in the collection with this Being's <see cref="ActiveWeapon"/>.
         /// </remarks>
         public ReadOnlyCollection<Being> SelectedTargets
@@ -183,11 +183,11 @@ namespace osrlib.CoreRules
         }
 
         /// <summary>
-        /// Returns the value of an attack roll by the Being. The Being's active weapon (or spell) is used in calculating
+        /// Returns the attack roll rolled by the Being. The Being's active weapon (or spell) is used in calculating
         /// the roll, as are any ability modifiers appropriate for the weapon type.
         /// </summary>
-        /// <returns>Value to be compared to a Being's defense value.</returns>
-        public int GetAttackRoll()
+        /// <returns>The <see cref="DiceRoll"/> to be compared to a Being's defense value.</returns>
+        public DiceRoll GetAttackRoll()
         {
             int modifierValue = GetAbilityModifierValueForWeaponType(this.ActiveWeapon.Type);
 
@@ -195,11 +195,11 @@ namespace osrlib.CoreRules
         }
 
         /// <summary>
-        /// Returns the value of a damage roll by the Being. The Being's active weapon (or spell) is used in calculating
+        /// Returns the damage roll rolled by the Being. The Being's active weapon (or spell) is used in calculating
         /// the roll, as are any ability modifiers appropriate for the weapon type.
         /// </summary>
-        /// <returns>Value to be deducted from an opponent Being's hit points.</returns>
-        public int GetDamageRoll()
+        /// <returns>The <see cref="DiceRoll"/> to be deducted from an opponent Being's hit points.</returns>
+        public DiceRoll GetDamageRoll()
         {
             int modifierValue = GetAbilityModifierValueForWeaponType(this.ActiveWeapon.Type);
 
@@ -219,14 +219,18 @@ namespace osrlib.CoreRules
             bool wasAlive = this.IsAlive;
             bool wasKilled = false;
 
-            this.HitPoints -= damage;
-
-            // Only raise the killed event if the being was alive prior to taking this damage
-            if (wasAlive && !this.IsAlive)
+            // Only apply damage if it's a positive value (otherwise the Being is HEALED)
+            if (damage > 0)
             {
-                OnKilled();
+                this.HitPoints -= damage;
 
-                wasKilled = true;
+                // Only raise the killed event if the being was alive prior to taking this damage
+                if (wasAlive && !this.IsAlive)
+                {
+                    OnKilled();
+
+                    wasKilled = true;
+                }
             }
 
             return wasKilled;
@@ -239,7 +243,7 @@ namespace osrlib.CoreRules
         /// </summary>
         /// <param name="target">The <see cref="Being"/> that will be a destination of the
         /// <see cref="GameAction"/> performed when <see cref="PerformActionOnSelectedTargets"/> is called.</param>
-        public void AddSelectedTarget(Being target)
+        public void SelectTarget(Being target)
         {
             // TODO: Need to do some sort of checking in here to
             // TODO: ensure that only the allowed number of targets
@@ -257,10 +261,25 @@ namespace osrlib.CoreRules
         }
 
         /// <summary>
+        /// Adds the specified <see cref="Being"/>s to the list of targets that will be
+        /// the destination of the <see cref="GameAction"/> executed when <see cref="PerformActionOnSelectedTargets"/>
+        /// is called.
+        /// </summary>
+        /// <param name="targets">The collection of <see cref="Being"/>s that will be a destination of the
+        /// <see cref="GameAction"/> performed when <see cref="PerformActionOnSelectedTargets"/> is called.</param>
+        public void SelectTargets(List<Being> targets)
+        {
+            foreach (Being target in targets)
+            {
+                SelectTarget(target);
+            }
+        }
+
+        /// <summary>
         /// For each <see cref="Being"/> in <see cref="SelectedTargets"/>, creates and performs a <see cref="GameAction"/>.
         /// </summary>
         /// <remarks>
-        /// Call this after the <see cref="SelectedTargets"/> collection has been populated with <see cref="AddSelectedTarget"/>.
+        /// Call this after the <see cref="SelectedTargets"/> collection has been populated with <see cref="SelectTarget"/>.
         /// </remarks>
         public void PerformActionOnSelectedTargets()
         {

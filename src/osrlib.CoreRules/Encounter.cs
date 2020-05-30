@@ -95,6 +95,31 @@ namespace osrlib.CoreRules
                 this.EncounterParty.Defeated += Party_Defeated;
                 this.AdventuringParty.Defeated += Party_Defeated;
 
+                // When PerformStep() is called, the current attacker (popped off the AttackQueue) might be
+                // in the monster party. In that case, we want that monster to select a character from the
+                // player party at random and attack that character.
+                foreach (Being monster in this.EncounterParty.Members)
+                {
+                    // TODO: Might want to make this an actual event delegate method so that
+                    // we can unsubscribe when the encounter is ended. Right now we assume that
+                    // an encounter is only ended when one party is destroyed, but that might not
+                    // always be the case. We might support the party running away, for example.
+                    monster.PotentialTargetsAdded += (s, e) =>
+                    {
+                        int targetIndex = Utility.Randomizer.GetRandomInt(0, monster.PotentialTargets.Count - 1);
+                        monster.SelectTarget(monster.PotentialTargets[targetIndex]);
+                        monster.PerformActionOnSelectedTargets();
+
+                        // AutoBattle steps the encounter automatically, so don't want to
+                        // also do that here or we get double attacks from the monsters
+                        // after the first round.
+                        if (!this.IsEncounterEnded && !this.AutoBattleEnabled)
+                        {
+                            PerformStep();
+                        }
+                    };
+                }
+
                 OnEncounterStarted();
 
                 // If autobattle is enabled rip through the whole battle in one shot
@@ -132,7 +157,7 @@ namespace osrlib.CoreRules
         /// This method first fills the Encounter's attack queue if it's empty, then dequeues a Being and populates its
         /// <see cref="Being.PotentialTargets"/> collection with living Beings from the opposing party. Doing so raises
         /// its <see cref="Being.PotentialTargetsAdded"/> event which allows subscribers (such as a GUI application) to
-        /// prompt for target selection. Targets are selected by adding calling <see cref="Being.AddSelectedTarget(Being)"/>"/>
+        /// prompt for target selection. Targets are selected by adding calling <see cref="Being.SelectTarget(Being)"/>"/>
         /// method.
         /// </remarks>
         public void PerformStep()
@@ -170,7 +195,7 @@ namespace osrlib.CoreRules
                 }
 
                 // This will raise the Being's PotentialTargetsAdded event, which can be used to
-                // tell subscribers to select target(s) via Being.AddSelectedTarget, then perform
+                // tell subscribers to select target(s) via Being.SelectTarget, then perform
                 // GameAction(s) on the selected targets via Being.PerformActionOnSelectedTargets.
                 attacker.AddPotentialTargets(targets);
             }
@@ -224,45 +249,39 @@ namespace osrlib.CoreRules
         {
             List<Being> targets = new List<Being>();
 
-            // 1. PCs attack monsters
-            foreach (Being adventurer in this.AdventuringParty.LivingMembers)
+            while (!this.IsEncounterEnded)
             {
-                // Select a random target out of the monster party and perform game action
-                targets.AddRange(this.EncounterParty.LivingMembers);
-
-                if (targets.Any())
+                // 1. PCs attack monsters
+                foreach (Being adventurer in this.AdventuringParty.LivingMembers)
                 {
-                    int targetIndex = Utility.Randomizer.GetRandomInt(0, targets.Count - 1);
+                    // First clear out any existing targets
+                    targets.Clear();
 
-                    adventurer.AddPotentialTargets(targets);
-                    adventurer.AddSelectedTarget(targets[targetIndex]);
-                    adventurer.PerformActionOnSelectedTargets();
+                    // Select a random target out of the monster party and perform game action
+                    targets.AddRange(this.EncounterParty.LivingMembers);
+
+                    if (targets.Any())
+                    {
+                        int targetIndex = Utility.Randomizer.GetRandomInt(0, targets.Count - 1);
+
+                        adventurer.AddPotentialTargets(targets);
+                        adventurer.SelectTarget(targets[targetIndex]);
+                        adventurer.PerformActionOnSelectedTargets();
+                    }
                 }
-            }
-            targets.Clear();
 
-            // 2. Monsters attack PCs
-            foreach (Being monster in this.EncounterParty.LivingMembers)
-            {
-                // Select a random target out of the player's party and perform game action
-                targets.AddRange(this.AdventuringParty.LivingMembers);
-
-                if (targets.Any())
+                // 2. Monsters attack PCs
+                foreach (Being monster in this.EncounterParty.LivingMembers)
                 {
-                    int targetIndex = Utility.Randomizer.GetRandomInt(0, targets.Count - 1);
+                    // First clear out any existing targets
+                    targets.Clear();
 
-                    monster.AddPotentialTargets(targets);
-                    monster.AddSelectedTarget(targets[targetIndex]);
-                    monster.PerformActionOnSelectedTargets();
+                    targets.AddRange(this.AdventuringParty.LivingMembers);
+                    if (targets.Any())
+                    {
+                        monster.AddPotentialTargets(targets);
+                    }
                 }
-            }
-
-            // This will be true if the last living member of either party was killed.
-            // Since each party subscribes to each members' BeingKilled event, the party
-            // knows when it's been Defeated when the last living member is killed.
-            if (!this.IsEncounterEnded)
-            {
-                PerformAutoBattle();
             }
         }
     }

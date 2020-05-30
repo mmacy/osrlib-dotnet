@@ -37,8 +37,8 @@ namespace osrlib.CoreRules
         /// enchantments/curses applied to the <see cref="Being"/> wielding the weapon or spell.
         /// </remarks>
         /// <param name="modifier">The bonus or penalty to apply to the roll. Default: <c>0</c>.</param>
-        /// <returns>The to-hit roll.</returns>
-        public int GetAttackRoll(int modifier = 0)
+        /// <returns>The to-hit roll after its <see cref="DiceRoll.RollDice()"/> has been called.</returns>
+        public DiceRoll GetAttackRoll(int modifier = 0)
         {
             DiceRoll toHitRoll = new DiceRoll(new DiceHand(1, DieType.d20));
 
@@ -49,8 +49,9 @@ namespace osrlib.CoreRules
             }
 
             toHitRoll.AddModifier(modifier);
+            toHitRoll.RollDice();
 
-            return toHitRoll.RollDice();
+            return toHitRoll;
         }
 
         /// <summary>
@@ -61,8 +62,8 @@ namespace osrlib.CoreRules
         /// enchantments/curses applied to the <see cref="Being"/> wielding the weapon or spell.
         /// </remarks>
         /// <param name="modifier">The bonus or penalty to apply to the roll. Default: <c>0</c>.</param>
-        /// <returns>The amount of damage rolled.</returns>
-        public int GetDamageRoll(int modifier = 0)
+        /// <returns>The damage roll after its <see cref="DiceRoll.RollDice()"/> has been called.</returns>
+        public DiceRoll GetDamageRoll(int modifier = 0)
         {
             DiceRoll damageRoll = new DiceRoll(this.DamageDie);
 
@@ -73,8 +74,9 @@ namespace osrlib.CoreRules
             }
 
             damageRoll.AddModifier(modifier);
+            damageRoll.RollDice();
 
-            return damageRoll.RollDice();
+            return damageRoll;
         }
 
         /// <summary>

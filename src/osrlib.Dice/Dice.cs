@@ -21,8 +21,6 @@ namespace osrlib.Dice
             //Get each Die object, each with the number of specified sides.
             for (int i = 0; i < dieCount; i++)
             {
-                //Since this is Die.Parse, we only want to return one Die object, regardless
-                //of whether multiple Dice were specified in the Die code.
                 dice.AddDie(new Die(dieType));
             }
 

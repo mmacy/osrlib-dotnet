@@ -75,26 +75,28 @@ playerParty.AddPartyMember(fighter);
 Dungeon dungeon = new Dungeon();
 
 // Create some monsters for an encounter
-Being orc1 = new Being
+Being goblin1 = new Being
 {
-    Name = "Orc Captain",
+    Name = "Goblin Chieftain",
     Defense = 10,
     HitPoints = 10,
     MaxHitPoints = 10
 };
+goblin1.RollAbilities();
 
-Being orc2 = new Being
+Being goblin2 = new Being
 {
-    Name = "Orc",
+    Name = "Goblin",
     Defense = 5,
     HitPoints = 4,
     MaxHitPoints = 4
 };
+goblin2.RollAbilities();
 
-// Add the orcs to the monster party
+// Add the goblins to the monster party
 Party monsterParty = new Party();
-monsterParty.AddPartyMember(orc1);
-monsterParty.AddPartyMember(orc2);
+monsterParty.AddPartyMember(goblin1);
+monsterParty.AddPartyMember(goblin2);
 
 // Add the monsters to an encounter
 Encounter encounter = new Encounter
@@ -122,11 +124,12 @@ encounter.EncounterStarted += (sender, eventArgs) =>
         Console.WriteLine($"Encounter has started! Monsters:\r\n{((Encounter)sender).EncounterParty}");
     };
 
-// Example of subscribing to an event that you might use to update the UI state to notify the layer
+// Example of subscribing to an event that you might use to update the UI state to notify the player
 // or make some other changes within your application.
 encounter.EncounterEnded += (sender, eventArgs) =>
     {
         Encounter enc = sender as Encounter;
+
         if (enc.AdventuringParty.IsAlive)
         {
             Console.WriteLine("Your party has won the battle!");
@@ -197,30 +200,26 @@ The battle resolves fully (because we set `Encounter.AutoBattleEnabled = true`) 
 
 ```console
 Encounter has started! Monsters:
-[0] Orc Captain	Hit points: 10
-[1] Orc	Hit points: 4
+[0] Goblin Chieftain	Hit points: 10
+[1] Goblin	Hit points: 4
 
-Blarg the Destroyer (12/12) attacks Orc (4/4) with their Long Sword + 1...
-Orc was killed!
-Blarg the Destroyer (12/12) rolled a 18 and hit for 5 points of damage.
-Orc Captain (10/10) attacks Blarg the Destroyer (12/12) with their Fists...
-Orc Captain (10/10) rolled a 7 and missed.
-Blarg the Destroyer (12/12) attacks Orc Captain (10/10) with their Long Sword + 1...
-Blarg the Destroyer (12/12) rolled a 9 and missed.
-Orc Captain (10/10) attacks Blarg the Destroyer (12/12) with their Fists...
-Orc Captain (10/10) rolled a 18 and hit for 0 points of damage.
-Blarg the Destroyer (12/12) attacks Orc Captain (10/10) with their Long Sword + 1...
-Blarg the Destroyer (12/12) rolled a 11 and hit for 2 points of damage.
-Orc Captain (8/10) attacks Blarg the Destroyer (12/12) with their Fists...
-Orc Captain (8/10) rolled a 14 and hit for 1 points of damage.
-Blarg the Destroyer (11/12) attacks Orc Captain (8/10) with their Long Sword + 1...
-Blarg the Destroyer (11/12) rolled a 12 and hit for 3 points of damage.
-Orc Captain (5/10) attacks Blarg the Destroyer (11/12) with their Fists...
-Orc Captain (5/10) rolled a 4 and missed.
-Blarg the Destroyer (11/12) attacks Orc Captain (5/10) with their Long Sword + 1...
+Blarg the Destroyer (18/18) attacks Goblin (4/4) with their Long Sword + 1...
+Goblin was killed!
+Blarg the Destroyer (18/18) rolled a 5 (1d20+1) and hit for 5 (1d8+1) points of damage.
+Goblin Chieftain (10/10) attacks Blarg the Destroyer (18/18) with their Fists...
+Goblin Chieftain (10/10) rolled a 11 (1d20-1) and hit for 0 (1d2-1) points of damage.
+Blarg the Destroyer (18/18) attacks Goblin Chieftain (10/10) with their Long Sword + 1...
+Blarg the Destroyer (18/18) rolled a 20 (1d20+1) and hit for 7 (1d8+1) points of damage.
+Goblin Chieftain (3/10) attacks Blarg the Destroyer (18/18) with their Fists...
+Goblin Chieftain (3/10) rolled a 1 (1d20-1) and missed.
+Blarg the Destroyer (18/18) attacks Goblin Chieftain (3/10) with their Long Sword + 1...
+Blarg the Destroyer (18/18) rolled a 9 (1d20+1) and missed.
+Goblin Chieftain (3/10) attacks Blarg the Destroyer (18/18) with their Fists...
+Goblin Chieftain (3/10) rolled a 15 (1d20-1) and hit for 1 (1d2-1) points of damage.
+Blarg the Destroyer (17/18) attacks Goblin Chieftain (3/10) with their Long Sword + 1...
 Your party has won the battle!
-Orc Captain was killed!
-Blarg the Destroyer (11/12) rolled a 11 and hit for 6 points of damage.
+Goblin Chieftain was killed!
+Blarg the Destroyer (17/18) rolled a 18 (1d20+1) and hit for 4 (1d8+1) points of damage.
 ```
 
 ## Next steps

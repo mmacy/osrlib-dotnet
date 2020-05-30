@@ -5,25 +5,19 @@ namespace osrlib.Tests
 {
     public static class PartyGenerator
     {
-        private static int pc_hp = 30;
-        private static int pc_df = 15;
-
-        private static int mn_hp = 20;
-        private static int mn_df = 10;
-
         public static Party GetPlayerParty()
         {
-            int hp = pc_hp;
-            int def = pc_df;
+            int hp = 30;
+            int def = 15;
 
             Party party = new Party();
 
             party.AddPartyMember(GetBeing("Blarg the Destroyer", hp, def));
-            party.AddPartyMember(GetBeing("Draflonduh", hp, def));
+            party.AddPartyMember(GetBeing("Killarvo", hp, def));
             party.AddPartyMember(GetBeing("Vizplag", hp, def));
-            party.AddPartyMember(GetBeing("Wangdu", hp, def));
-            party.AddPartyMember(GetBeing("Miss Cinnamon", hp, def));
-            party.AddPartyMember(GetBeing("Fred Garvin", hp, def));
+            party.AddPartyMember(GetBeing("Winglar", hp, def));
+            party.AddPartyMember(GetBeing("Binzo", hp, def));
+            party.AddPartyMember(GetBeing("Ceelak", hp, def));
 
             return party;
         }
@@ -32,9 +26,12 @@ namespace osrlib.Tests
         {
             Party party = new Party();
 
+            int hp = 20;
+            int defense = 10;
+
             for (int i = 0; i < 4; i++)
             {
-                Being monster = GetBeing("Monster " + i.ToString(), mn_hp, mn_df);
+                Being monster = GetBeing("Monster " + i.ToString(), hp, defense);
                 party.AddPartyMember(monster);
             }
 

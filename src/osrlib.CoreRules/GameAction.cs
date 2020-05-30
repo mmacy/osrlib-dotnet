@@ -1,4 +1,5 @@
 ﻿using System;
+using osrlib.Dice;
 
 namespace osrlib.CoreRules
 {
@@ -12,40 +13,40 @@ namespace osrlib.CoreRules
         /// <summary>
         /// Gets the attack roll result of the GameAction.
         /// </summary>
-        /// <value>The attack roll value associated with the GameAction's attack operation.</value>
-        public int AttackRoll { get; private set; } = 0;
+        /// <value>The attack roll associated with the GameAction's attack operation.</value>
+        public DiceRoll AttackRoll { get; private set; }
 
         /// <summary>
         /// Gets the damage roll result of the GameAction.
         /// </summary>
-        /// <value>The damage roll value associated with the GameAction's damage operation.</value>
-        public int DamageRoll { get; private set; } = 0;
+        /// <value>The damage roll associated with the GameAction's damage operation.</value>
+        public DiceRoll DamageRoll { get; private set; }
 
         /// <summary>
         /// Creates a new instance of the GameAction with the specified attacker and defender.
         /// </summary>
-        /// <param name="source">The GamePiece performing the action.</param>
-        /// <param name="target">The GamePiece that is the target of the action.</param>
-        public GameAction(IGamePiece source, IGamePiece target)
+        /// <param name="source">The <see cref="Being"/> performing the action.</param>
+        /// <param name="target">The <see cref="Being"/> that is the target of the action.</param>
+        public GameAction(Being source, Being target)
         {
             this.ActionSource = source;
             this.ActionTarget = target;
         }
 
         /// <summary>
-        /// Gets or sets the GamePiece performing the action.
+        /// Gets or sets the <see cref="Being"/> performing the action.
         /// </summary>
-        public IGamePiece ActionSource { get; set; }
+        public Being ActionSource { get; set; }
 
         /// <summary>
-        /// Gets or sets the target Gamepiece.
+        /// Gets or sets the target <see cref="Being"/>.
         /// </summary>
-        public IGamePiece ActionTarget { get; set; }
+        public Being ActionTarget { get; set; }
 
         /// <summary>
         /// Gets the victor of the GameAction.
         /// </summary>
-        public IGamePiece Victor { get; private set; }
+        public Being Victor { get; private set; }
 
         /// <summary>
         /// Performs the <see cref="GameAction"/> by applying the attacker's attack roll to the defender's defense
@@ -53,7 +54,7 @@ namespace osrlib.CoreRules
         /// </summary>
         /// <returns>The victor in the GameAction.</returns>
         /// <remarks>The victor in the GameAction can be the defending GamePiece.</remarks>
-        public IGamePiece PerformAction()
+        public Being PerformAction()
         {
             // If the defender is attackable, compare an attack roll by the attacker with the
             // defender's defense value, apply damage if successful, and return the victor.
@@ -61,11 +62,11 @@ namespace osrlib.CoreRules
             if (this.ActionTarget.IsTargetable)
             {
                 this.AttackRoll = this.ActionSource.GetAttackRoll();
-                this.Victor = this.AttackRoll >= this.ActionTarget.Defense ? this.ActionSource : this.ActionTarget;
+                this.Victor = this.AttackRoll.LastRoll >= this.ActionTarget.Defense ? this.ActionSource : this.ActionTarget;
 
                 if (this.Victor == this.ActionSource)
                 {   this.DamageRoll = this.ActionSource.GetDamageRoll();
-                    this.ActionTarget.ApplyDamage(this.DamageRoll);
+                    this.ActionTarget.ApplyDamage(this.DamageRoll.LastRoll);
                 }
             }
             else
