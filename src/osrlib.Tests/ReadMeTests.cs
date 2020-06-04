@@ -23,7 +23,7 @@ namespace osrlib.Tests
         [Fact]
         public void TestReadMeSnippets()
         {
-#region SECTION_CREATE_A_CHARACTER
+            #region SECTION_CREATE_A_CHARACTER
             // Get our ten-sided die ready
             DiceRoll roll = new DiceRoll(new DiceHand(1, DieType.d10));
 
@@ -50,34 +50,34 @@ namespace osrlib.Tests
             // Now, add the fighter to the player's party
             Party playerParty = new Party();
             playerParty.AddPartyMember(fighter);
-#endregion
+            #endregion
 
-#region SECTION_STOCK_THE_DUNGEON
+            #region SECTION_STOCK_THE_DUNGEON
             Dungeon dungeon = new Dungeon();
 
             // Create some monsters for an encounter
-            Being orc1 = new Being
+            Being goblin1 = new Being
             {
-                Name = "Orc Captain",
+                Name = "Goblin Chieftain",
                 Defense = 10,
                 HitPoints = 10,
                 MaxHitPoints = 10
             };
-            orc1.RollAbilities();
+            goblin1.RollAbilities();
 
-            Being orc2 = new Being
+            Being goblin2 = new Being
             {
-                Name = "Orc",
+                Name = "Goblin",
                 Defense = 5,
                 HitPoints = 4,
                 MaxHitPoints = 4
             };
-            orc2.RollAbilities();
+            goblin2.RollAbilities();
 
-            // Add the orcs to the monster party
+            // Add the goblins to the monster party
             Party monsterParty = new Party();
-            monsterParty.AddPartyMember(orc1);
-            monsterParty.AddPartyMember(orc2);
+            monsterParty.AddPartyMember(goblin1);
+            monsterParty.AddPartyMember(goblin2);
 
             // Add the monsters to an encounter
             Encounter encounter = new Encounter
@@ -88,9 +88,9 @@ namespace osrlib.Tests
 
             // Add the encounter to the dungeon
             dungeon.Encounters.Add(encounter);
-#endregion
+            #endregion
 
-#region SECTION_BATTLE_SETUP
+            #region SECTION_BATTLE_SETUP
             // OSRlib is heavily event-driven and most major entities have public events. Subscribe to events
             // like these to change the state of your UI and/or prompt the player for action (such as selecting
             // a target to attack during an encounter).
@@ -114,9 +114,9 @@ namespace osrlib.Tests
                         Console.WriteLine("Sorry, your party has been vanquished.");
                     }
                 };
-#endregion
+            #endregion
 
-#region SECTION_BATTLE_START
+            #region SECTION_BATTLE_START
             // Encounters can be set to auto-resolve the battle. This is OPTIONAL! In your game, you'd not
             // typically set this to true, and instead allow your players to select a target(s) for a character.
             encounter.AutoBattleEnabled = true;
@@ -160,7 +160,7 @@ namespace osrlib.Tests
             // AutoBattleEnabled, each member of both parties takes turns attacking each other
             // until one side has been defeated.
             encounter.StartEncounter();
-#endregion
+            #endregion
         }
     }
 }

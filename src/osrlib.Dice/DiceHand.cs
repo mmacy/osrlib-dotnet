@@ -9,7 +9,7 @@ namespace osrlib.Dice
     /// The DiceHand is a type representation of the well-known NdN format for a handful of
     /// dice. For example, "1d20", "3d6", or "4d8." It is the preferred parameter for use in
     /// the creation of a DiceRoll. Create a DiceHand, add it to a <see cref="DiceRoll"/>, then
-    /// call its <see cref="DiceRoll.RollDice"/> method to get the result.
+    /// call its <see cref="DiceRoll.RollDice()"/> method to get the result.
     /// </remarks>
     /// <example>
     /// <code>

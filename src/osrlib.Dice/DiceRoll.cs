@@ -6,18 +6,13 @@ namespace osrlib.Dice
     /// The DiceRoll owns a set of <see cref="Dice"/> that can be rolled for result.
     /// </summary>
     /// <remarks>
-    /// Add dice to the DiceRoll as a <see cref="DiceHand"/> or with a die code ("1d20"). Get a
-    /// result by calling  <see cref="RollDice"/>.
+    /// Add dice to the DiceRoll as a <see cref="DiceHand"/>, then get the roll result by calling  <see cref="RollDice()"/>.
     /// </remarks>
     /// <example>
     /// <code>
-    /// // DiceRoll with explicit number of dice and sides
-    /// DiceHand hand = new DiceHand(1, 20);
+    /// // Roll one twenty-sided die.
+    /// DiceHand hand = new DiceHand(1, DieType.d20);
     /// DiceRoll roll = new DiceRoll(hand);
-    /// int result = roll.RollDice();
-    ///
-    /// // DiceRoll using a die code
-    /// DiceRoll roll = new DiceRoll("1d20");
     /// int result = roll.RollDice();
     /// </code>
     /// </example>
@@ -30,14 +25,7 @@ namespace osrlib.Dice
         private Dice _dice = new Dice();
 
         /// <summary>
-        /// Holds any Modifiers to the DiceRoll. The value returned by the RollDice() method factors in the Modifiers.
-        /// </summary>
-        private int _modifiers = 0;
-        private int _baseRoll  = 0;
-        private int _lastRoll  = 0;
-
-        /// <summary>
-        /// Event raised immediately after <see cref="DiceRoll.RollDice"/> is called.
+        /// Event raised immediately after <see cref="DiceRoll.RollDice()"/> is called.
         /// </summary>
         public event DiceRolledEventHandler DiceRolled;
         #endregion
@@ -85,10 +73,10 @@ namespace osrlib.Dice
         /// <summary>
         /// Adds the specified modifier to the DiceRoll. The value can be negative.
         /// </summary>
-        /// <param name="modifier">A value that will modify the DiceRoll. </param>
+        /// <param name="modifier">A value that will modify the DiceRoll.</param>
         public void AddModifier(int modifier)
         {
-            _modifiers += modifier;
+            this.ModifierTotal += modifier;
         }
 
         /// <summary>
@@ -104,7 +92,7 @@ namespace osrlib.Dice
         /// </summary>
         public void ClearModifiers()
         {
-            _modifiers = 0;
+            this.ModifierTotal = 0;
         }
 
         /// <summary>
@@ -131,17 +119,31 @@ namespace osrlib.Dice
                 rollResult += die.Roll();
             }
 
-            _baseRoll = rollResult;
+            this.BaseRoll = rollResult;
 
             //Add any Modifiers
-            rollResult += _modifiers;
+            rollResult += this.ModifierTotal;
 
-            _lastRoll = rollResult;
+            this.LastRoll = rollResult;
 
             //Notify any subscribers
             OnDicedRolled();
 
             return rollResult;
+        }
+
+        /// <summary>
+        /// Rolls the dice in the specified <see cref="DiceHand"/> and returns the roll - the sum of each rolled die and the modifier, if specified.
+        /// </summary>
+        /// <param name="diceHand">The handful of dice to roll.</param>
+        /// <param name="modifier">The modifer value to apply to the roll.</param>
+        /// <returns>The resultant DiceRoll (a DiceRoll with its <see cref="DiceRoll.RollDice()"/> method having been called).</returns>
+        public static int RollDice(DiceHand diceHand, int modifier = 0)
+        {
+            DiceRoll roll = new DiceRoll(diceHand);
+            roll.AddModifier(modifier);
+
+            return roll.RollDice();
         }
 
         /// <summary>
@@ -155,12 +157,21 @@ namespace osrlib.Dice
 
         #region Public Properties
         /// <summary>
-        /// Gets the last base roll result without any Modifiers.
+        /// Gets the sum of all modifiers applied to the roll with <see cref="AddModifier"/>.
+        /// The <see cref="RollDice()"/> method adds this value to the <see cref="BaseRoll"/> to obtain its result.
         /// </summary>
-        public int BaseRoll
-        {
-            get { return _baseRoll; }
-        }
+        public int ModifierTotal { get; private set; } = 0;
+
+        /// <summary>
+        /// Gets the last roll result without any <see cref="ModifierTotal"/>.
+        /// </summary>
+        public int BaseRoll { get; private set; } = 0;
+
+        /// <summary>
+        /// Gets the result of the last time <see cref="RollDice()"/> was called.
+        /// This value includes all modifiers applied to the roll.
+        /// </summary>
+        public int LastRoll { get; private set; } = 0;
 
         /// <summary>
         /// Gets the Dice collection for the DiceRoll.
@@ -169,18 +180,10 @@ namespace osrlib.Dice
         {
             get { return _dice; }
         }
-
-        /// <summary>
-        /// Gets the value of this DiceRoll since last time RollDice() was called.
-        /// </summary>
-        public int LastRoll
-        {
-            get { return _lastRoll; }
-        }
         #endregion
 
         /// <summary>
-        /// Returns the string representation of the roll such as "1d20 + 2".
+        /// Returns the string representation of the latest roll of this DiceRoll in the format 'N (NdN +/- N)'. For example: "16 (1d20 + 2)".
         /// </summary>
         /// <returns>String representation of the roll.</returns>
         public override string ToString()
@@ -189,12 +192,14 @@ namespace osrlib.Dice
 
             if (_dice.Count > 0)
             {
-                roll = _dice.Count.ToString() + "d" + _dice[0].Sides.ToString();
+                roll = $"{this.LastRoll} ({_dice.Count.ToString()}d{_dice[0].Sides.ToString()}";
 
-                if (_modifiers > 0)
-                    roll += " + " + _modifiers.ToString();
-                else if (_modifiers < 0)
-                    roll += " - " + _modifiers.ToString();
+                if (this.ModifierTotal > 0)
+                    roll += "+" + this.ModifierTotal.ToString() + ")";
+                else if (this.ModifierTotal < 0)
+                    roll += this.ModifierTotal.ToString() + ")";
+                else
+                    roll += ")";
             }
 
             return roll;
