@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace osrlib.Dice
 {
@@ -9,11 +10,23 @@ namespace osrlib.Dice
     /// Add dice to the DiceRoll as a <see cref="DiceHand"/>, then get the roll result by calling  <see cref="RollDice()"/>.
     /// </remarks>
     /// <example>
+    /// Roll 1d20 using the DiceRoll object
     /// <code>
-    /// // Roll one twenty-sided die.
     /// DiceHand hand = new DiceHand(1, DieType.d20);
     /// DiceRoll roll = new DiceRoll(hand);
-    /// int result = roll.RollDice();
+    /// int toHitRoll = roll.RollDice();
+    /// </code>
+    /// </example>
+    /// <example>
+    /// Roll 3d6 using the static method
+    /// <code>
+    /// int strengthScore = DiceRoll.RollDice(new DiceHand(3, DieType.d6))
+    /// </code>
+    /// </example>
+    /// <example>
+    /// Roll 1d20 + 3 using the static method
+    /// <code>
+    /// int strengthScore = DiceRoll.RollDice(new DiceHand(1, DieType.d20), 3)
     /// </code>
     /// </example>
     public class DiceRoll
@@ -22,7 +35,7 @@ namespace osrlib.Dice
         /// <summary>
         /// The Dice collection managed by this DiceRoll.
         /// </summary>
-        private Dice _dice = new Dice();
+        private List<Die> _dice = new List<Die>();
 
         /// <summary>
         /// Event raised immediately after <see cref="DiceRoll.RollDice()"/> is called.
@@ -49,16 +62,16 @@ namespace osrlib.Dice
         /// <param name="die">The Dice.Die to add to the DiceRoll's Dice collection.</param>
         public void AddDie(Die die)
         {
-            _dice.AddDie(die);
+            _dice.Add(die);
         }
 
         /// <summary>
         /// Adds the Die contained in the specified Dice collection to this DiceRoll's Dice collection.
         /// </summary>
-        /// <param name="dice">The Dice.Dice containing the Die objects to add to the DiceRoll's Dice collection.</param>
-        public void AddDice(Dice dice)
+        /// <param name="dice">Collection Die objects to add to the DiceRoll's Dice collection.</param>
+        public void AddDice(List<Die> dice)
         {
-            _dice.AddDice(dice);
+            _dice.AddRange(dice);
         }
 
         /// <summary>
@@ -67,7 +80,7 @@ namespace osrlib.Dice
         /// <param name="diceHand">The DiceHand specifying the number and type (number of sides) of Die that should be added to the DiceRoll's Dice collection.</param>
         public void AddDice(DiceHand diceHand)
         {
-            _dice.AddDice(diceHand);
+            _dice.AddRange(GetDice(diceHand.DieCount, diceHand.DieSides));
         }
 
         /// <summary>
@@ -147,6 +160,28 @@ namespace osrlib.Dice
         }
 
         /// <summary>
+        /// Returns a Dice collection containing the specified number of Die objects each with the number of specified sides.
+        /// </summary>
+        /// <param name="dieCount">The number of Die objects to be added to the collection.</param>
+        /// <param name="dieType">The type (number of sides) for each Die.</param>
+        /// <returns>Dice collection.</returns>
+        private List<Die> GetDice(int dieCount, DieType dieType)
+        {
+            List<Die> dice = new List<Die>();
+
+            //Get each Die object, each with the number of specified sides.
+            for (int i = 0; i < dieCount; i++)
+            {
+                dice.Add(new Die(dieType));
+            }
+
+            if (dice.Count > 0)
+                return dice;
+            else
+                return null;
+        }
+
+        /// <summary>
         /// Raises the <see cref="DiceRoll.DiceRolled"/> event.
         /// </summary>
         private void OnDicedRolled()
@@ -176,7 +211,7 @@ namespace osrlib.Dice
         /// <summary>
         /// Gets the Dice collection for the DiceRoll.
         /// </summary>
-        public Dice Dice
+        public List<Die> Dice
         {
             get { return _dice; }
         }

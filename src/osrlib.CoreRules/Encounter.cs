@@ -104,6 +104,8 @@ namespace osrlib.CoreRules
                     // we can unsubscribe when the encounter is ended. Right now we assume that
                     // an encounter is only ended when one party is destroyed, but that might not
                     // always be the case. We might support the party running away, for example.
+                    // TODO: Might also want to make this optional - the consumer of the lib might
+                    // rather have the control over how and when the monsters in their game attack.
                     monster.PotentialTargetsAdded += (s, e) =>
                     {
                         int targetIndex = Utility.Randomizer.GetRandomInt(0, monster.PotentialTargets.Count - 1);
