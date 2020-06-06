@@ -1,4 +1,4 @@
-namespace osrlib.CoreRules
+namespace osrlib.Core
 {
     /// <summary>
     /// Specifies the type of weapon or whether the weapon is an offensive (attack) spell.

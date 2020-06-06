@@ -1,4 +1,4 @@
-﻿using osrlib.CoreRules;
+﻿using osrlib.Core;
 using System;
 
 namespace osrlib.Tests

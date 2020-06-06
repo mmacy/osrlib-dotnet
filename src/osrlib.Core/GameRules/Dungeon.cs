@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace osrlib.CoreRules
+namespace osrlib.Core
 {
     /// <summary>
     /// The Dungeon contains and manages one or more <see cref="Encounter"/> objects, and

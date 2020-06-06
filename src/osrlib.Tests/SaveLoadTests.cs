@@ -2,7 +2,7 @@
 using System.IO;
 using Xunit;
 using osrlib.SaveLoad;
-using osrlib.CoreRules;
+using osrlib.Core;
 
 namespace osrlib.Tests
 {

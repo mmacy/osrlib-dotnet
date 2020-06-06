@@ -2,7 +2,7 @@
 using System.Linq;
 using osrlib.Dice;
 
-namespace osrlib.CoreRules
+namespace osrlib.Core
 {
     /// <summary>
     /// A Being has one or more Abilities. An Ability is used when performing checks to
