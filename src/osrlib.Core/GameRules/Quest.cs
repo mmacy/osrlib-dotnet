@@ -1,4 +1,4 @@
-﻿namespace osrlib.CoreRules
+﻿namespace osrlib.Core
 {
     /// <summary>
     /// The Quest is associated with one <see cref="Adventure"/>, and one or <see cref="Dungeon"/> objects.

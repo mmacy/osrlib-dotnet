@@ -1,5 +1,5 @@
 ﻿using System;
-using osrlib.CoreRules;
+using osrlib.Core;
 using osrlib.SaveLoad;
 
 namespace osrlib.Controllers

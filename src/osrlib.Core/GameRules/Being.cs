@@ -4,19 +4,19 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using osrlib.Dice;
 
-namespace osrlib.CoreRules
+namespace osrlib.Core
 {
     /// <summary>
-    /// Represents the method that handles a Being's <see cref="osrlib.CoreRules.Being.TargetSelected"/> or
-    /// <see cref="osrlib.CoreRules.Being.SelectedAsTarget"/> event.
+    /// Represents the method that handles a Being's <see cref="osrlib.Core.Being.TargetSelected"/> or
+    /// <see cref="osrlib.Core.Being.SelectedAsTarget"/> event.
     /// </summary>
     /// <param name="sender">The object generating the event.</param>
     /// <param name="e">The information for the event.</param>
     public delegate void BeingTargetingEventHandler(object sender, BeingTargetingEventArgs e);
 
     /// <summary>
-    /// Represents the method that handles a Being's <see cref="osrlib.CoreRules.Being.PerformingAction"/> or
-    /// <see cref="osrlib.CoreRules.Being.ActionPerformed"/> events.
+    /// Represents the method that handles a Being's <see cref="osrlib.Core.Being.PerformingAction"/> or
+    /// <see cref="osrlib.Core.Being.ActionPerformed"/> events.
     /// </summary>
     /// <param name="sender">The object generating the event.</param>
     /// <param name="e">The <see cref="GameAction"/> for the event.</param>

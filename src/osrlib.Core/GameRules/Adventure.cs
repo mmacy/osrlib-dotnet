@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace osrlib.CoreRules
+namespace osrlib.Core
 {
     /// <summary>
     /// An Adventure contains one or more <see cref="Dungeon"/> and <see cref="Quest"/> objects.

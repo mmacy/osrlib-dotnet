@@ -1,4 +1,4 @@
-﻿namespace osrlib.CoreRules
+﻿namespace osrlib.Core
 {
     /// <summary>
     /// Specifies the alignment of a <see cref="Being"/>.

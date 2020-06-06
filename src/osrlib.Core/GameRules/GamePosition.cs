@@ -1,4 +1,4 @@
-﻿namespace osrlib.CoreRules
+﻿namespace osrlib.Core
 {
     /// <summary>
     /// Represents an object's location within a <see cref="Dungeon"/>.

@@ -1,7 +1,7 @@
 ﻿using System;
 using osrlib.Dice;
 
-namespace osrlib.CoreRules
+namespace osrlib.Core
 {
     /// <summary>
     /// The GameAction represents an act initiated by one entity on another, such as a

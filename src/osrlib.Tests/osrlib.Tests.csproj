@@ -12,11 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\osrlib.Controllers\osrlib.Controllers.csproj" />
-    <ProjectReference Include="..\osrlib.CoreRules\osrlib.CoreRules.csproj" />
-    <ProjectReference Include="..\osrlib.Dice\osrlib.Dice.csproj" />
-    <ProjectReference Include="..\osrlib.SaveLoad\osrlib.SaveLoad.csproj" />
-    <ProjectReference Include="..\osrlib.Utility\osrlib.Utility.csproj" />
+    <ProjectReference Include="..\osrlib.Core\osrlib.Core.csproj" />
   </ItemGroup>
 
 </Project>

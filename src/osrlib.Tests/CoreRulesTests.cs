@@ -1,7 +1,7 @@
 ﻿using System;
 using Xunit;
-using osrlib.CoreRules;
 using osrlib.Controllers;
+using osrlib.Core;
 using osrlib.Dice;
 
 namespace osrlib.Tests

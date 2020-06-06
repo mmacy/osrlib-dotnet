@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Collections.ObjectModel;
 
-namespace osrlib.CoreRules
+namespace osrlib.Core
 {
     /// <summary>
     /// Represents a collection of Beings. Two Parties are pit against each other in combat.
