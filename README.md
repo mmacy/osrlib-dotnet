@@ -6,7 +6,7 @@
 
 OSRlib.NET is a .NET Core class library written in C# that provides an API for turn-based role-playing games (RPGs) in the [old school revival](https://en.wikipedia.org/wiki/Old_School_Revival) (OSR) style.
 
-It's designed for use as the core rules engine of a computer role-playing game (CRPG) in the Dungeons & Dragons Basic/Expert (or *B/X*) flavor, and lends itself well to Bard's Tale-style turn-based game play.
+It's designed for use as the core rules engine of a computer role-playing game (CRPG) in the Dungeons & Dragons Basic/Expert (or *B/X*) flavor, and lends itself well to turn-based game play in the style of The Bard's Tale.
 
 Add your own UI to interact with the OSRlib.NET API and you have yourself a turn-based RPG.
 
@@ -43,7 +43,7 @@ DiceRoll roll = new DiceRoll(new DiceHand(1, DieType.d10));
 // Roll up a fighter-type character
 Being fighter = new Being
 {
-    Name = "Blarg the Destroyer",
+    Name = "Blarg the Destructor",
     Defense = roll.RollDice(),
     MaxHitPoints = roll.RollDice() + 10
 };
@@ -56,8 +56,10 @@ Weapon magicSword = new Weapon
     Name = "Long Sword + 1",
     Description = "A finely crafted sword, its blade dimly glows.",
     Type = WeaponType.Melee,
-    DamageDie = new DiceHand(1, DieType.d8),
+    DamageDie = new DiceHand(1, DieType.d8)
 };
+magicSword.AttackModifiers.Add(new Modifier { ModifierSource = magicSword, ModifierValue = 1 });
+magicSword.DamageModifiers.Add(new Modifier { ModifierSource = magicSword, ModifierValue = 1 });
 fighter.ActiveWeapon = magicSword;
 
 // Now, add the fighter to the player's party
@@ -142,7 +144,7 @@ encounter.EncounterEnded += (sender, eventArgs) =>
 
 ### Start the battle
 
-Finally we're ready to let the adventuring party (currently comprised of only one character, *Blarg the Destroyer*) and the encounter party (the evil orcs) battle to the death.
+Finally we're ready to let the adventuring party (currently comprised of only one character, *Blarg the Destructor*) and the encounter party (the evil orcs) battle to the death.
 
 <!-- START SECTION_BATTLE_START -->
 ```csharp
@@ -198,26 +200,22 @@ The battle resolves fully (because we set `Encounter.AutoBattleEnabled = true`) 
 
 ```console
 Encounter has started! Monsters:
-[0] Goblin Chieftain	Hit points: 10
-[1] Goblin	Hit points: 4
+[0] Goblin Chieftain    Hit points: 10
+[1] Goblin      Hit points: 4
 
-Blarg the Destroyer (18/18) attacks Goblin (4/4) with their Long Sword + 1...
+Blarg the Destructor (18/18) attacks Goblin (4/4) with their Long Sword + 1...
 Goblin was killed!
-Blarg the Destroyer (18/18) rolled a 5 (1d20+1) and hit for 5 (1d8+1) points of damage.
-Goblin Chieftain (10/10) attacks Blarg the Destroyer (18/18) with their Fists...
-Goblin Chieftain (10/10) rolled a 11 (1d20-1) and hit for 0 (1d2-1) points of damage.
-Blarg the Destroyer (18/18) attacks Goblin Chieftain (10/10) with their Long Sword + 1...
-Blarg the Destroyer (18/18) rolled a 20 (1d20+1) and hit for 7 (1d8+1) points of damage.
-Goblin Chieftain (3/10) attacks Blarg the Destroyer (18/18) with their Fists...
-Goblin Chieftain (3/10) rolled a 1 (1d20-1) and missed.
-Blarg the Destroyer (18/18) attacks Goblin Chieftain (3/10) with their Long Sword + 1...
-Blarg the Destroyer (18/18) rolled a 9 (1d20+1) and missed.
-Goblin Chieftain (3/10) attacks Blarg the Destroyer (18/18) with their Fists...
+Blarg the Destructor (18/18) rolled a 9 (1d20+1) and hit for 6 (1d8+1) points of damage.
+Goblin Chieftain (10/10) attacks Blarg the Destructor (18/18) with their Fists...
+Goblin Chieftain (10/10) rolled a 16 (1d20-1) and hit for 0 (1d2-1) points of damage.
+Blarg the Destructor (18/18) attacks Goblin Chieftain (10/10) with their Long Sword + 1...
+Blarg the Destructor (18/18) rolled a 15 (1d20+1) and hit for 7 (1d8+1) points of damage.
+Goblin Chieftain (3/10) attacks Blarg the Destructor (18/18) with their Fists...
 Goblin Chieftain (3/10) rolled a 15 (1d20-1) and hit for 1 (1d2-1) points of damage.
-Blarg the Destroyer (17/18) attacks Goblin Chieftain (3/10) with their Long Sword + 1...
+Blarg the Destructor (17/18) attacks Goblin Chieftain (3/10) with their Long Sword + 1...
 Your party has won the battle!
 Goblin Chieftain was killed!
-Blarg the Destroyer (17/18) rolled a 18 (1d20+1) and hit for 4 (1d8+1) points of damage.
+Blarg the Destructor (17/18) rolled a 13 (1d20+1) and hit for 3 (1d8+1) points of damage.
 ```
 
 ## Next steps

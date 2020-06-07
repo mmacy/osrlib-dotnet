@@ -25,6 +25,34 @@ namespace osrlib.Core
     /// <summary>
     /// The Being represents a living entity in within an <see cref="Adventure"/>, and is used for both player characters and monsters.
     /// </summary>
+    /// <example>
+    /// Create a player character
+    /// <code>
+    /// Being fighter = new Being
+    /// {
+    ///     Name = "Blarg the Destructor",
+    ///     Defense = 10,
+    ///     MaxHitPoints = DiceRoll.RollDice(new DiceHand(2, DieType.d6)),
+    ///     ActiveWeapon = new Weapon { Name = "Battle Axe", Type = WeaponType.Melee, DamageDie = new DiceHand(1, DieType.d12) }
+    /// };
+    /// fighter.HitPoints = fighter.MaxHitPoints;
+    /// fighter.RollAbilities();
+    /// </code>
+    /// </example>
+    /// <example>
+    /// Create a monster
+    /// <code>
+    /// Being goblin = new Being
+    /// {
+    ///     Name = "Goblin Chieftain",
+    ///     Defense = 12,
+    ///     MaxHitPoints = DiceRoll.RollDice(new DiceHand(4, DieType.d6)),
+    ///     ActiveWeapon = new Weapon { Name = "Javelin", Type = WeaponType.Ranged, DamageDie = new DiceHand(2, DieType.d4) }
+    /// };
+    /// goblin.HitPoints = goblin1.MaxHitPoints;
+    /// goblin.RollAbilities();
+    /// </code>
+    /// </example>
     public class Being
     {
         /// <summary>
