@@ -19,8 +19,8 @@ namespace osrlib.Core
     /// };
     /// </code>
     /// </example>
-    /// Create a magical weapon
     /// <example>
+    /// Create a magical weapon
     /// <code>
     /// Weapon magicSword = new Weapon
     /// {

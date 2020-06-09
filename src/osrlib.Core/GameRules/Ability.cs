@@ -5,35 +5,38 @@ using osrlib.Dice;
 namespace osrlib.Core
 {
     /// <summary>
-    /// A Being has one or more Abilities. An Ability is used when performing checks to
-    /// test success of a GameAction as well as to modify DiceRolls via the Ability's Modifiers.
+    /// A <see cref="Being"/> has one or more abilities (strength, dexterity, intelligence, etc.) that are
+    /// referenced when calculating the success of a <see cref="GameAction"/>. 
     /// </summary>
     public class Ability
     {
         /// <summary>
-        /// Gets or sets the type of this Ability.
+        /// Gets or sets the type (strength, dexterity, intelligence, etc.) of this Ability.
         /// </summary>
         public AbilityType Type { get; set; }
 
         /// <summary>
-        /// Gets or sets the base value of this Ability.
+        /// Gets or sets the base value of this Ability. This is raw "rolled" value set with <see cref="RollAbilityScore"/>,
+        /// without any modifiers.
         /// </summary>
         public int BaseValue { get; set; }
 
         /// <summary>
-        /// Gets or sets the collection of <see cref="Modifier"/>s that adjust the score of this Ability. These are
-        /// the modifiers that grant a bonus or a impose a penalty on the modifier value. For example, enhancements
-        /// from potions or penalties from curse-type spells.
+        /// Gets or sets the collection of <see cref="Modifier"/>s that adjust the score of this Ability.
         /// </summary>
+        /// <remarks>These are the modifiers that grant a bonus or a impose a penalty on the modifier value.
+        /// For example, enhancements from potions or penalties from curse-type spells.
+        /// </remarks>
         public List<Modifier> ScoreModifiers { get; set; } = new List<Modifier>();
 
         /// <summary>
         /// Gets the bonus granted or penalty imposed by the Ability.
         /// </summary>
         /// <remarks>
-        /// This value is based on the Ability's <see cref="BaseValue"/> and its <see cref="ScoreModifiers"/>.
+        /// This value is based on the Ability's <see cref="Value"/>, which is the sum of its <see cref="BaseValue"/>
+        /// and <see cref="ScoreModifiers"/>, if any.
         /// For example, for an Ability score of 18, this method returns 3 (that is, a +3). Use this method when
-        /// adjusting dice rolls typically affected by ability scores, for example attack (to-hit) and damage rolls.
+        /// adjusting dice rolls typically affected by ability scores, for example attack and damage rolls.
         /// </remarks>
         /// <returns>The bonus or penalty value of the Ability.</returns>
         public int GetModifier()
@@ -53,10 +56,9 @@ namespace osrlib.Core
         }
 
         /// <summary>
-        /// Rolls and sets the score for this ability. This method does not modify the <see cref="ScoreModifiers"/>
-        /// collection.
+        /// Rolls and sets the <see cref="BaseValue"/> of the Ability.
         /// </summary>
-        /// <returns>The rolled score, not including <see cref="ScoreModifiers"/>.</returns>
+        /// <returns>The rolled score.</returns>
         public int RollAbilityScore()
         {
             // Roll the base value
@@ -67,7 +69,7 @@ namespace osrlib.Core
         }
 
         /// <summary>
-        /// Gets the total value of this ability - the BaseValue plus its <see cref="ScoreModifiers"/>.
+        /// Gets the total value of the Ability, the sum of its <see cref="BaseValue"/> and <see cref="ScoreModifiers"/>, if any.
         /// </summary>
         public int Value
         {
@@ -84,7 +86,7 @@ namespace osrlib.Core
         }
 
         /// <summary>
-        /// Gets the string representation of the Ability.
+        /// Gets a string representation of the Ability. For example, <c>Strength: 18 (17 + 1)</c>.
         /// </summary>
         /// <returns>Single-line text representation of the Ability.</returns>
         public override string ToString()
