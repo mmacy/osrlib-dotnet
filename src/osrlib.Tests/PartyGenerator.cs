@@ -12,7 +12,7 @@ namespace osrlib.Tests
 
             Party party = new Party();
 
-            party.AddPartyMember(GetBeing("Blarg the Destroyer", hp, def));
+            party.AddPartyMember(GetBeing("Blarg the Destructor", hp, def));
             party.AddPartyMember(GetBeing("Killarvo", hp, def));
             party.AddPartyMember(GetBeing("Vizplag", hp, def));
             party.AddPartyMember(GetBeing("Winglar", hp, def));

@@ -24,7 +24,7 @@ namespace osrlib.Tests
             // Roll up a fighter-type character
             Being fighter = new Being
             {
-                Name = "Blarg the Destroyer",
+                Name = "Blarg the Destructor",
                 Defense = roll1d10.RollDice() + 5,
                 MaxHitPoints = roll1d10.RollDice() + 10
             };
@@ -37,8 +37,10 @@ namespace osrlib.Tests
                 Name = "Long Sword + 1",
                 Description = "A finely crafted sword, its blade dimly glows.",
                 Type = WeaponType.Melee,
-                DamageDie = new DiceHand(1, DieType.d8),
+                DamageDie = new DiceHand(1, DieType.d8)
             };
+            magicSword.AttackModifiers.Add(new Modifier { ModifierSource = magicSword, ModifierValue = 1 });
+            magicSword.DamageModifiers.Add(new Modifier { ModifierSource = magicSword, ModifierValue = 1 });
             fighter.ActiveWeapon = magicSword;
 
             // Roll up a wizard-type character

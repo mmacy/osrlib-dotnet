@@ -7,6 +7,44 @@ namespace osrlib.Core
     /// <summary>
     /// A Weapon is a melee or ranged martial weapon, or an offensive spell.
     /// </summary>
+    /// <example>
+    /// Create a basic melee weapon
+    /// <code>
+    /// Weapon dagger = new Weapon
+    /// {
+    ///     Name = "Dagger",
+    ///     Description = "A standard dagger.",
+    ///     Type = WeaponType.Melee,
+    ///     DamageDie = new DiceHand(1, DieType.d4)
+    /// };
+    /// </code>
+    /// </example>
+    /// <example>
+    /// Create a magical weapon
+    /// <code>
+    /// Weapon magicSword = new Weapon
+    /// {
+    ///     Name = "Long Sword + 1",
+    ///     Description = "A finely crafted sword, its blade dimly glows.",
+    ///     Type = WeaponType.Melee,
+    ///     DamageDie = new DiceHand(1, DieType.d8)
+    /// };
+    /// magicSword.AttackModifiers.Add(new Modifier { ModifierSource = magicSword, ModifierValue = 1 });
+    /// magicSword.DamageModifiers.Add(new Modifier { ModifierSource = magicSword, ModifierValue = 1 });
+    /// </code>
+    /// </example>
+    /// <example>
+    /// Create an offensive spell
+    /// <code>
+    /// Weapon flameJet = new Weapon
+    /// {
+    ///     Name = "Flame Jet",
+    ///     Description = "A jet of flame issues forth from the caster's hands.",
+    ///     Type = WeaponType.Spell,
+    ///     DamageDie = new DiceHand(1, DieType.d12)
+    /// };
+    /// </code>
+    /// </example>
     public class Weapon
     {
         /// <summary>
