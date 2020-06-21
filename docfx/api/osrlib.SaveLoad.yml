@@ -1,0 +1,34 @@
+### YamlMime:ManagedReference
+items:
+- uid: osrlib.SaveLoad
+  commentId: N:osrlib.SaveLoad
+  id: osrlib.SaveLoad
+  children:
+  - osrlib.SaveLoad.SaveLoadLocal
+  - osrlib.SaveLoad.SaveType
+  langs:
+  - csharp
+  - vb
+  name: osrlib.SaveLoad
+  nameWithType: osrlib.SaveLoad
+  fullName: osrlib.SaveLoad
+  type: Namespace
+  assemblies:
+  - osrlib.Core
+references:
+- uid: osrlib.SaveLoad.SaveLoadLocal
+  commentId: T:osrlib.SaveLoad.SaveLoadLocal
+  name: SaveLoadLocal
+  nameWithType: SaveLoadLocal
+  fullName: osrlib.SaveLoad.SaveLoadLocal
+- uid: osrlib.SaveLoad.SaveType
+  commentId: T:osrlib.SaveLoad.SaveType
+  parent: osrlib.SaveLoad
+  name: SaveType
+  nameWithType: SaveType
+  fullName: osrlib.SaveLoad.SaveType
+- uid: osrlib.SaveLoad
+  commentId: N:osrlib.SaveLoad
+  name: osrlib.SaveLoad
+  nameWithType: osrlib.SaveLoad
+  fullName: osrlib.SaveLoad

@@ -1,0 +1,118 @@
+### YamlMime:ManagedReference
+items:
+- uid: osrlib.SaveLoad.SaveType
+  commentId: T:osrlib.SaveLoad.SaveType
+  id: SaveType
+  parent: osrlib.SaveLoad
+  children:
+  - osrlib.SaveLoad.SaveType.Cloud
+  - osrlib.SaveLoad.SaveType.Local
+  langs:
+  - csharp
+  - vb
+  name: SaveType
+  nameWithType: SaveType
+  fullName: osrlib.SaveLoad.SaveType
+  type: Enum
+  source:
+    remote:
+      path: src/osrlib.Core/SaveLoad/SaveType.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: SaveType
+    path: SaveLoad/SaveType.cs
+    startLine: 5
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.SaveLoad
+  summary: "\nSpecifies the type of save operation.\n"
+  example: []
+  syntax:
+    content: public enum SaveType
+    content.vb: Public Enum SaveType
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: osrlib.SaveLoad.SaveType.Local
+  commentId: F:osrlib.SaveLoad.SaveType.Local
+  id: Local
+  parent: osrlib.SaveLoad.SaveType
+  langs:
+  - csharp
+  - vb
+  name: Local
+  nameWithType: SaveType.Local
+  fullName: osrlib.SaveLoad.SaveType.Local
+  type: Field
+  source:
+    remote:
+      path: src/osrlib.Core/SaveLoad/SaveType.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Local
+    path: SaveLoad/SaveType.cs
+    startLine: 10
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.SaveLoad
+  summary: "\nSpecifies that the save location is on the local computer.\n"
+  example: []
+  syntax:
+    content: Local = 0
+    return:
+      type: osrlib.SaveLoad.SaveType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: osrlib.SaveLoad.SaveType.Cloud
+  commentId: F:osrlib.SaveLoad.SaveType.Cloud
+  id: Cloud
+  parent: osrlib.SaveLoad.SaveType
+  langs:
+  - csharp
+  - vb
+  name: Cloud
+  nameWithType: SaveType.Cloud
+  fullName: osrlib.SaveLoad.SaveType.Cloud
+  type: Field
+  source:
+    remote:
+      path: src/osrlib.Core/SaveLoad/SaveType.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Cloud
+    path: SaveLoad/SaveType.cs
+    startLine: 14
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.SaveLoad
+  summary: "\nSpecifies that the save location is in the cloud.\n"
+  example: []
+  syntax:
+    content: Cloud = 1
+    return:
+      type: osrlib.SaveLoad.SaveType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: osrlib.SaveLoad
+  commentId: N:osrlib.SaveLoad
+  name: osrlib.SaveLoad
+  nameWithType: osrlib.SaveLoad
+  fullName: osrlib.SaveLoad
+- uid: osrlib.SaveLoad.SaveType
+  commentId: T:osrlib.SaveLoad.SaveType
+  parent: osrlib.SaveLoad
+  name: SaveType
+  nameWithType: SaveType
+  fullName: osrlib.SaveLoad.SaveType

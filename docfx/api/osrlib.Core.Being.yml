@@ -1,0 +1,1902 @@
+### YamlMime:ManagedReference
+items:
+- uid: osrlib.Core.Being
+  commentId: T:osrlib.Core.Being
+  id: Being
+  parent: osrlib.Core
+  children:
+  - osrlib.Core.Being.Abilities
+  - osrlib.Core.Being.ActionPerformed
+  - osrlib.Core.Being.ActiveWeapon
+  - osrlib.Core.Being.AddAbilityModifier(osrlib.Core.Modifier,osrlib.Core.AbilityType)
+  - osrlib.Core.Being.Alignment
+  - osrlib.Core.Being.ApplyDamage(System.Int32)
+  - osrlib.Core.Being.Class
+  - osrlib.Core.Being.Defense
+  - osrlib.Core.Being.ExperiencePoints
+  - osrlib.Core.Being.GetAttackRoll
+  - osrlib.Core.Being.GetDamageRoll
+  - osrlib.Core.Being.HitPoints
+  - osrlib.Core.Being.IsAlive
+  - osrlib.Core.Being.IsTargetable
+  - osrlib.Core.Being.Killed
+  - osrlib.Core.Being.MaxHitPoints
+  - osrlib.Core.Being.Name
+  - osrlib.Core.Being.PerformActionOnSelectedTargets
+  - osrlib.Core.Being.PerformingAction
+  - osrlib.Core.Being.PotentialTargets
+  - osrlib.Core.Being.PotentialTargetsAdded
+  - osrlib.Core.Being.RollAbilities
+  - osrlib.Core.Being.RollAbilityScore(osrlib.Core.AbilityType)
+  - osrlib.Core.Being.SelectedAsTarget
+  - osrlib.Core.Being.SelectedTargets
+  - osrlib.Core.Being.SelectTarget(osrlib.Core.Being)
+  - osrlib.Core.Being.SelectTargets(System.Collections.Generic.List{osrlib.Core.Being})
+  - osrlib.Core.Being.TargetSelected
+  - osrlib.Core.Being.ToString
+  langs:
+  - csharp
+  - vb
+  name: Being
+  nameWithType: Being
+  fullName: osrlib.Core.Being
+  type: Class
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Being
+    path: GameRules/Being.cs
+    startLine: 55
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nThe Being represents a living entity in within an <xref href=\"osrlib.Core.Adventure\" data-throw-if-not-resolved=\"false\"></xref>, and is used for both player characters and monsters.\n"
+  example:
+  - "\nCreate a player character\n<pre><code>Being fighter = new Being\n{\n    Name = &quot;Blarg the Destructor&quot;,\n    Defense = 10,\n    MaxHitPoints = DiceRoll.RollDice(new DiceHand(2, DieType.d6)),\n    ActiveWeapon = new Weapon { Name = &quot;Battle Axe&quot;, Type = WeaponType.Melee, DamageDie = new DiceHand(1, DieType.d12) }\n};\nfighter.HitPoints = fighter.MaxHitPoints;\nfighter.RollAbilities();</code></pre>\n"
+  - "\nCreate a monster\n<pre><code>Being goblin = new Being\n{\n    Name = &quot;Goblin Chieftain&quot;,\n    Defense = 12,\n    MaxHitPoints = DiceRoll.RollDice(new DiceHand(4, DieType.d6)),\n    ActiveWeapon = new Weapon { Name = &quot;Javelin&quot;, Type = WeaponType.Ranged, DamageDie = new DiceHand(2, DieType.d4) }\n};\ngoblin.HitPoints = goblin1.MaxHitPoints;\ngoblin.RollAbilities();</code></pre>\n"
+  syntax:
+    content: public class Being
+    content.vb: Public Class Being
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: osrlib.Core.Being.Killed
+  commentId: E:osrlib.Core.Being.Killed
+  id: Killed
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: Killed
+  nameWithType: Being.Killed
+  fullName: osrlib.Core.Being.Killed
+  type: Event
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Killed
+    path: GameRules/Being.cs
+    startLine: 60
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nEvent raised when the Being&apos;s HitPoints reach zero or below.\n"
+  example: []
+  syntax:
+    content: public event EventHandler Killed
+    return:
+      type: System.EventHandler
+    content.vb: Public Event Killed As EventHandler
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.PotentialTargetsAdded
+  commentId: E:osrlib.Core.Being.PotentialTargetsAdded
+  id: PotentialTargetsAdded
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: PotentialTargetsAdded
+  nameWithType: Being.PotentialTargetsAdded
+  fullName: osrlib.Core.Being.PotentialTargetsAdded
+  type: Event
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: PotentialTargetsAdded
+    path: GameRules/Being.cs
+    startLine: 65
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nEvent raised when the Being&apos;s <xref href=\"osrlib.Core.Being.PotentialTargets\" data-throw-if-not-resolved=\"false\"></xref> collection is populated.\n"
+  example: []
+  syntax:
+    content: public event EventHandler PotentialTargetsAdded
+    return:
+      type: System.EventHandler
+    content.vb: Public Event PotentialTargetsAdded As EventHandler
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.TargetSelected
+  commentId: E:osrlib.Core.Being.TargetSelected
+  id: TargetSelected
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: TargetSelected
+  nameWithType: Being.TargetSelected
+  fullName: osrlib.Core.Being.TargetSelected
+  type: Event
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: TargetSelected
+    path: GameRules/Being.cs
+    startLine: 70
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nEvent raised when this Being selects a target with <xref href=\"osrlib.Core.Being.SelectTarget(osrlib.Core.Being)\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public event BeingTargetingEventHandler TargetSelected
+    return:
+      type: osrlib.Core.BeingTargetingEventHandler
+    content.vb: Public Event TargetSelected As BeingTargetingEventHandler
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.SelectedAsTarget
+  commentId: E:osrlib.Core.Being.SelectedAsTarget
+  id: SelectedAsTarget
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: SelectedAsTarget
+  nameWithType: Being.SelectedAsTarget
+  fullName: osrlib.Core.Being.SelectedAsTarget
+  type: Event
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: SelectedAsTarget
+    path: GameRules/Being.cs
+    startLine: 77
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nEvent raised when this Being has been selected as a target; that is, the\ntargeting Being&apos;s <xref href=\"osrlib.Core.Being.SelectTarget(osrlib.Core.Being)\" data-throw-if-not-resolved=\"false\"></xref> was called with\nthis Being as the target.\n"
+  example: []
+  syntax:
+    content: public event BeingTargetingEventHandler SelectedAsTarget
+    return:
+      type: osrlib.Core.BeingTargetingEventHandler
+    content.vb: Public Event SelectedAsTarget As BeingTargetingEventHandler
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.PerformingAction
+  commentId: E:osrlib.Core.Being.PerformingAction
+  id: PerformingAction
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: PerformingAction
+  nameWithType: Being.PerformingAction
+  fullName: osrlib.Core.Being.PerformingAction
+  type: Event
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: PerformingAction
+    path: GameRules/Being.cs
+    startLine: 88
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nEvent raised when this being is about to perform a <xref href=\"osrlib.Core.GameAction\" data-throw-if-not-resolved=\"false\"></xref>, such as when the\nBeing is about to attack an enemy.\n"
+  remarks: "\nSubscribe to this event to obtain information about the Being on which this Being is performing an action.\nFor example, you might use this to display the name of this Being and stats about the the weapon or spell\nthey&apos;re wielding (via the <xref href=\"osrlib.Core.Being.ActiveWeapon\" data-throw-if-not-resolved=\"false\"></xref> property).\n"
+  example: []
+  syntax:
+    content: public event GameActionEventHandler PerformingAction
+    return:
+      type: osrlib.Core.GameActionEventHandler
+    content.vb: Public Event PerformingAction As GameActionEventHandler
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.ActionPerformed
+  commentId: E:osrlib.Core.Being.ActionPerformed
+  id: ActionPerformed
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: ActionPerformed
+  nameWithType: Being.ActionPerformed
+  fullName: osrlib.Core.Being.ActionPerformed
+  type: Event
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: ActionPerformed
+    path: GameRules/Being.cs
+    startLine: 100
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nEvent raised when this being has performed a <xref href=\"osrlib.Core.GameAction\" data-throw-if-not-resolved=\"false\"></xref>, such as when the\nBeing attacks an enemy.\n"
+  remarks: "\nSubscribe to this event to obtain information about the Being on which this Being is performing an action\nand determine the victor of the action. For example, you might use this to display the name of this Being,\nthe stats about the the weapon or spell they wielded (via the <xref href=\"osrlib.Core.Being.ActiveWeapon\" data-throw-if-not-resolved=\"false\"></xref> property), and\nwhether the action was successful (whether they hit and the damage dealt).\n"
+  example: []
+  syntax:
+    content: public event GameActionEventHandler ActionPerformed
+    return:
+      type: osrlib.Core.GameActionEventHandler
+    content.vb: Public Event ActionPerformed As GameActionEventHandler
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.Name
+  commentId: P:osrlib.Core.Being.Name
+  id: Name
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: Being.Name
+  fullName: osrlib.Core.Being.Name
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Name
+    path: GameRules/Being.cs
+    startLine: 106
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the name of the Being.\n"
+  example: []
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: osrlib.Core.Being.Name*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.Class
+  commentId: P:osrlib.Core.Being.Class
+  id: Class
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: Class
+  nameWithType: Being.Class
+  fullName: osrlib.Core.Being.Class
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Class
+    path: GameRules/Being.cs
+    startLine: 112
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the Being&apos;s <xref href=\"osrlib.Core.CharacterClass\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  remarks: This can be a player character class or a monster type.
+  example: []
+  syntax:
+    content: public CharacterClass Class { get; set; }
+    parameters: []
+    return:
+      type: osrlib.Core.CharacterClass
+    content.vb: Public Property Class As CharacterClass
+  overload: osrlib.Core.Being.Class*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.Alignment
+  commentId: P:osrlib.Core.Being.Alignment
+  id: Alignment
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: Alignment
+  nameWithType: Being.Alignment
+  fullName: osrlib.Core.Being.Alignment
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Alignment
+    path: GameRules/Being.cs
+    startLine: 117
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the Alignment of the Being.\n"
+  example: []
+  syntax:
+    content: public Alignment Alignment { get; set; }
+    parameters: []
+    return:
+      type: osrlib.Core.Alignment
+    content.vb: Public Property Alignment As Alignment
+  overload: osrlib.Core.Being.Alignment*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.Abilities
+  commentId: P:osrlib.Core.Being.Abilities
+  id: Abilities
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: Abilities
+  nameWithType: Being.Abilities
+  fullName: osrlib.Core.Being.Abilities
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Abilities
+    path: GameRules/Being.cs
+    startLine: 122
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the Being&apos;s <xref href=\"osrlib.Core.Ability\" data-throw-if-not-resolved=\"false\"></xref> collection.\n"
+  example: []
+  syntax:
+    content: public List<Ability> Abilities { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{osrlib.Core.Ability}
+    content.vb: Public Property Abilities As List(Of Ability)
+  overload: osrlib.Core.Being.Abilities*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.HitPoints
+  commentId: P:osrlib.Core.Being.HitPoints
+  id: HitPoints
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: HitPoints
+  nameWithType: Being.HitPoints
+  fullName: osrlib.Core.Being.HitPoints
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: HitPoints
+    path: GameRules/Being.cs
+    startLine: 127
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the number of hit points for the Being.\n"
+  example: []
+  syntax:
+    content: public int HitPoints { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property HitPoints As Integer
+  overload: osrlib.Core.Being.HitPoints*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.MaxHitPoints
+  commentId: P:osrlib.Core.Being.MaxHitPoints
+  id: MaxHitPoints
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: MaxHitPoints
+  nameWithType: Being.MaxHitPoints
+  fullName: osrlib.Core.Being.MaxHitPoints
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: MaxHitPoints
+    path: GameRules/Being.cs
+    startLine: 132
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the maximum hit points for the Being.\n"
+  example: []
+  syntax:
+    content: public int MaxHitPoints { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MaxHitPoints As Integer
+  overload: osrlib.Core.Being.MaxHitPoints*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.ExperiencePoints
+  commentId: P:osrlib.Core.Being.ExperiencePoints
+  id: ExperiencePoints
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: ExperiencePoints
+  nameWithType: Being.ExperiencePoints
+  fullName: osrlib.Core.Being.ExperiencePoints
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: ExperiencePoints
+    path: GameRules/Being.cs
+    startLine: 138
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the number of experience points for the Being.\n"
+  remarks: This is the amount of experience possessed by a player character or the XP value of a monster.
+  example: []
+  syntax:
+    content: public int ExperiencePoints { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ExperiencePoints As Integer
+  overload: osrlib.Core.Being.ExperiencePoints*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.IsAlive
+  commentId: P:osrlib.Core.Being.IsAlive
+  id: IsAlive
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: IsAlive
+  nameWithType: Being.IsAlive
+  fullName: osrlib.Core.Being.IsAlive
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: IsAlive
+    path: GameRules/Being.cs
+    startLine: 143
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets whether the Being is alive (has greater than zero hit points).\n"
+  example: []
+  syntax:
+    content: public bool IsAlive { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsAlive As Boolean
+  overload: osrlib.Core.Being.IsAlive*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: osrlib.Core.Being.IsTargetable
+  commentId: P:osrlib.Core.Being.IsTargetable
+  id: IsTargetable
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: IsTargetable
+  nameWithType: Being.IsTargetable
+  fullName: osrlib.Core.Being.IsTargetable
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: IsTargetable
+    path: GameRules/Being.cs
+    startLine: 148
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets whether the Being can be attacked. Default: <code>true</code>.\n"
+  example: []
+  syntax:
+    content: public bool IsTargetable { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsTargetable As Boolean
+  overload: osrlib.Core.Being.IsTargetable*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.ActiveWeapon
+  commentId: P:osrlib.Core.Being.ActiveWeapon
+  id: ActiveWeapon
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: ActiveWeapon
+  nameWithType: Being.ActiveWeapon
+  fullName: osrlib.Core.Being.ActiveWeapon
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: ActiveWeapon
+    path: GameRules/Being.cs
+    startLine: 154
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the Being&apos;s active weapon or spell. The active weapon is a weapon or offensive spell, and is\nused when when the Being attacks another being.\n"
+  example: []
+  syntax:
+    content: public Weapon ActiveWeapon { get; set; }
+    parameters: []
+    return:
+      type: osrlib.Core.Weapon
+    content.vb: Public Property ActiveWeapon As Weapon
+  overload: osrlib.Core.Being.ActiveWeapon*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.Defense
+  commentId: P:osrlib.Core.Being.Defense
+  id: Defense
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: Defense
+  nameWithType: Being.Defense
+  fullName: osrlib.Core.Being.Defense
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Defense
+    path: GameRules/Being.cs
+    startLine: 165
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the minimum attack roll needed to hit the GamePiece.\n"
+  example: []
+  syntax:
+    content: public int Defense { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Defense As Integer
+  overload: osrlib.Core.Being.Defense*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.PotentialTargets
+  commentId: P:osrlib.Core.Being.PotentialTargets
+  id: PotentialTargets
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: PotentialTargets
+  nameWithType: Being.PotentialTargets
+  fullName: osrlib.Core.Being.PotentialTargets
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: PotentialTargets
+    path: GameRules/Being.cs
+    startLine: 171
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets the list of targets from which this Being can select one or more targets before calling <xref href=\"osrlib.Core.Being.PerformActionOnSelectedTargets\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  remarks: You can&apos;t populate this list directly. Use <xref href="osrlib.Core.Being.AddPotentialTargets(System.Collections.Generic.List%7bosrlib.Core.Being%7d)" data-throw-if-not-resolved="false"></xref> instead.
+  example: []
+  syntax:
+    content: public ReadOnlyCollection<Being> PotentialTargets { get; }
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.ReadOnlyCollection{osrlib.Core.Being}
+    content.vb: Public ReadOnly Property PotentialTargets As ReadOnlyCollection(Of Being)
+  overload: osrlib.Core.Being.PotentialTargets*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: osrlib.Core.Being.SelectedTargets
+  commentId: P:osrlib.Core.Being.SelectedTargets
+  id: SelectedTargets
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: SelectedTargets
+  nameWithType: Being.SelectedTargets
+  fullName: osrlib.Core.Being.SelectedTargets
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: SelectedTargets
+    path: GameRules/Being.cs
+    startLine: 182
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets the list of targets that the Being has selected for its next <xref href=\"osrlib.Core.GameAction\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  remarks: "\nYou can&apos;t populate this list directly. Use <xref href=\"osrlib.Core.Being.SelectTarget(osrlib.Core.Being)\" data-throw-if-not-resolved=\"false\"></xref>, then call <xref href=\"osrlib.Core.Being.PerformActionOnSelectedTargets\" data-throw-if-not-resolved=\"false\"></xref>\nto perform <xref href=\"osrlib.Core.GameAction\" data-throw-if-not-resolved=\"false\"></xref>s on the targets in the collection with this Being&apos;s <xref href=\"osrlib.Core.Being.ActiveWeapon\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public ReadOnlyCollection<Being> SelectedTargets { get; }
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.ReadOnlyCollection{osrlib.Core.Being}
+    content.vb: Public ReadOnly Property SelectedTargets As ReadOnlyCollection(Of Being)
+  overload: osrlib.Core.Being.SelectedTargets*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: osrlib.Core.Being.AddAbilityModifier(osrlib.Core.Modifier,osrlib.Core.AbilityType)
+  commentId: M:osrlib.Core.Being.AddAbilityModifier(osrlib.Core.Modifier,osrlib.Core.AbilityType)
+  id: AddAbilityModifier(osrlib.Core.Modifier,osrlib.Core.AbilityType)
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: AddAbilityModifier(Modifier, AbilityType)
+  nameWithType: Being.AddAbilityModifier(Modifier, AbilityType)
+  fullName: osrlib.Core.Being.AddAbilityModifier(osrlib.Core.Modifier, osrlib.Core.AbilityType)
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: AddAbilityModifier
+    path: GameRules/Being.cs
+    startLine: 198
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nAdds a modifier to the specified ability&apos;s <xref href=\"osrlib.Core.Ability.ScoreModifiers\" data-throw-if-not-resolved=\"false\"></xref> collection.\nThis acts as a bonus or penalty, effectively an enchantment or a curse.\n"
+  example: []
+  syntax:
+    content: public void AddAbilityModifier(Modifier modifier, AbilityType abilityType)
+    parameters:
+    - id: modifier
+      type: osrlib.Core.Modifier
+      description: The modifier to adjust the specified ability score.
+    - id: abilityType
+      type: osrlib.Core.AbilityType
+      description: The ability to which to apply the modifier.
+    content.vb: Public Sub AddAbilityModifier(modifier As Modifier, abilityType As AbilityType)
+  overload: osrlib.Core.Being.AddAbilityModifier*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.GetAttackRoll
+  commentId: M:osrlib.Core.Being.GetAttackRoll
+  id: GetAttackRoll
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: GetAttackRoll()
+  nameWithType: Being.GetAttackRoll()
+  fullName: osrlib.Core.Being.GetAttackRoll()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: GetAttackRoll
+    path: GameRules/Being.cs
+    startLine: 217
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nReturns the attack roll rolled by the Being. The Being&apos;s active weapon (or spell) is used in calculating\nthe roll, as are any ability modifiers appropriate for the weapon type.\n"
+  example: []
+  syntax:
+    content: public DiceRoll GetAttackRoll()
+    return:
+      type: osrlib.Dice.DiceRoll
+      description: The <xref href="osrlib.Dice.DiceRoll" data-throw-if-not-resolved="false"></xref> to be compared to a Being&apos;s defense value.
+    content.vb: Public Function GetAttackRoll As DiceRoll
+  overload: osrlib.Core.Being.GetAttackRoll*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.GetDamageRoll
+  commentId: M:osrlib.Core.Being.GetDamageRoll
+  id: GetDamageRoll
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: GetDamageRoll()
+  nameWithType: Being.GetDamageRoll()
+  fullName: osrlib.Core.Being.GetDamageRoll()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: GetDamageRoll
+    path: GameRules/Being.cs
+    startLine: 229
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nReturns the damage roll rolled by the Being. The Being&apos;s active weapon (or spell) is used in calculating\nthe roll, as are any ability modifiers appropriate for the weapon type.\n"
+  example: []
+  syntax:
+    content: public DiceRoll GetDamageRoll()
+    return:
+      type: osrlib.Dice.DiceRoll
+      description: The <xref href="osrlib.Dice.DiceRoll" data-throw-if-not-resolved="false"></xref> to be deducted from an opponent Being&apos;s hit points.
+    content.vb: Public Function GetDamageRoll As DiceRoll
+  overload: osrlib.Core.Being.GetDamageRoll*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.ApplyDamage(System.Int32)
+  commentId: M:osrlib.Core.Being.ApplyDamage(System.Int32)
+  id: ApplyDamage(System.Int32)
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: ApplyDamage(Int32)
+  nameWithType: Being.ApplyDamage(Int32)
+  fullName: osrlib.Core.Being.ApplyDamage(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: ApplyDamage
+    path: GameRules/Being.cs
+    startLine: 244
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nDeducts the specified amount of HitPoints from the Being.\n"
+  remarks: >-
+    If the Being is killed by this damage, the <xref href="osrlib.Core.Being.OnKilled" data-throw-if-not-resolved="false"></xref> event is raised.
+
+    The event is only raised if the Being was previously alive. This method will return <code>true</code>
+
+    only if the Being was alive prior to taking this damage.
+  example: []
+  syntax:
+    content: public bool ApplyDamage(int damage)
+    parameters:
+    - id: damage
+      type: System.Int32
+      description: The amount of HitPoints to deduct.
+    return:
+      type: System.Boolean
+      description: Whether the applied damage killed the being.
+    content.vb: Public Function ApplyDamage(damage As Integer) As Boolean
+  overload: osrlib.Core.Being.ApplyDamage*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.SelectTarget(osrlib.Core.Being)
+  commentId: M:osrlib.Core.Being.SelectTarget(osrlib.Core.Being)
+  id: SelectTarget(osrlib.Core.Being)
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: SelectTarget(Being)
+  nameWithType: Being.SelectTarget(Being)
+  fullName: osrlib.Core.Being.SelectTarget(osrlib.Core.Being)
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: SelectTarget
+    path: GameRules/Being.cs
+    startLine: 273
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nAdds the specified <xref href=\"osrlib.Core.Being\" data-throw-if-not-resolved=\"false\"></xref> to the list of targets that will be\nthe destination of the <xref href=\"osrlib.Core.GameAction\" data-throw-if-not-resolved=\"false\"></xref> executed when <xref href=\"osrlib.Core.Being.PerformActionOnSelectedTargets\" data-throw-if-not-resolved=\"false\"></xref>\nis called.\n"
+  example: []
+  syntax:
+    content: public void SelectTarget(Being target)
+    parameters:
+    - id: target
+      type: osrlib.Core.Being
+      description: >-
+        The <xref href="osrlib.Core.Being" data-throw-if-not-resolved="false"></xref> that will be a destination of the
+
+        <xref href="osrlib.Core.GameAction" data-throw-if-not-resolved="false"></xref> performed when <xref href="osrlib.Core.Being.PerformActionOnSelectedTargets" data-throw-if-not-resolved="false"></xref> is called.
+    content.vb: Public Sub SelectTarget(target As Being)
+  overload: osrlib.Core.Being.SelectTarget*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.SelectTargets(System.Collections.Generic.List{osrlib.Core.Being})
+  commentId: M:osrlib.Core.Being.SelectTargets(System.Collections.Generic.List{osrlib.Core.Being})
+  id: SelectTargets(System.Collections.Generic.List{osrlib.Core.Being})
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: SelectTargets(List<Being>)
+  nameWithType: Being.SelectTargets(List<Being>)
+  fullName: osrlib.Core.Being.SelectTargets(System.Collections.Generic.List<osrlib.Core.Being>)
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: SelectTargets
+    path: GameRules/Being.cs
+    startLine: 297
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nAdds the specified <xref href=\"osrlib.Core.Being\" data-throw-if-not-resolved=\"false\"></xref>s to the list of targets that will be\nthe destination of the <xref href=\"osrlib.Core.GameAction\" data-throw-if-not-resolved=\"false\"></xref> executed when <xref href=\"osrlib.Core.Being.PerformActionOnSelectedTargets\" data-throw-if-not-resolved=\"false\"></xref>\nis called.\n"
+  example: []
+  syntax:
+    content: public void SelectTargets(List<Being> targets)
+    parameters:
+    - id: targets
+      type: System.Collections.Generic.List{osrlib.Core.Being}
+      description: >-
+        The collection of <xref href="osrlib.Core.Being" data-throw-if-not-resolved="false"></xref>s that will be a destination of the
+
+        <xref href="osrlib.Core.GameAction" data-throw-if-not-resolved="false"></xref> performed when <xref href="osrlib.Core.Being.PerformActionOnSelectedTargets" data-throw-if-not-resolved="false"></xref> is called.
+    content.vb: Public Sub SelectTargets(targets As List(Of Being))
+  overload: osrlib.Core.Being.SelectTargets*
+  nameWithType.vb: Being.SelectTargets(List(Of Being))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: osrlib.Core.Being.SelectTargets(System.Collections.Generic.List(Of osrlib.Core.Being))
+  name.vb: SelectTargets(List(Of Being))
+- uid: osrlib.Core.Being.PerformActionOnSelectedTargets
+  commentId: M:osrlib.Core.Being.PerformActionOnSelectedTargets
+  id: PerformActionOnSelectedTargets
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: PerformActionOnSelectedTargets()
+  nameWithType: Being.PerformActionOnSelectedTargets()
+  fullName: osrlib.Core.Being.PerformActionOnSelectedTargets()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: PerformActionOnSelectedTargets
+    path: GameRules/Being.cs
+    startLine: 311
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nFor each <xref href=\"osrlib.Core.Being\" data-throw-if-not-resolved=\"false\"></xref> in <xref href=\"osrlib.Core.Being.SelectedTargets\" data-throw-if-not-resolved=\"false\"></xref>, creates and performs a <xref href=\"osrlib.Core.GameAction\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  remarks: "\nCall this after the <xref href=\"osrlib.Core.Being.SelectedTargets\" data-throw-if-not-resolved=\"false\"></xref> collection has been populated with <xref href=\"osrlib.Core.Being.SelectTarget(osrlib.Core.Being)\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public void PerformActionOnSelectedTargets()
+    content.vb: Public Sub PerformActionOnSelectedTargets
+  overload: osrlib.Core.Being.PerformActionOnSelectedTargets*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.RollAbilityScore(osrlib.Core.AbilityType)
+  commentId: M:osrlib.Core.Being.RollAbilityScore(osrlib.Core.AbilityType)
+  id: RollAbilityScore(osrlib.Core.AbilityType)
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: RollAbilityScore(AbilityType)
+  nameWithType: Being.RollAbilityScore(AbilityType)
+  fullName: osrlib.Core.Being.RollAbilityScore(osrlib.Core.AbilityType)
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: RollAbilityScore
+    path: GameRules/Being.cs
+    startLine: 330
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nRolls the specified ability score and adds the ability to the Being&apos;s ability collection. If an ability of\nthe same type is already in the <xref href=\"osrlib.Core.Being.Abilities\" data-throw-if-not-resolved=\"false\"></xref> collection, the existing ability is removed before\nadding the new one generated by this method.\n"
+  example: []
+  syntax:
+    content: public Ability RollAbilityScore(AbilityType abilityType)
+    parameters:
+    - id: abilityType
+      type: osrlib.Core.AbilityType
+      description: The type of ability to roll and add to the <xref href="osrlib.Core.Being.Abilities" data-throw-if-not-resolved="false"></xref> collection.
+    return:
+      type: osrlib.Core.Ability
+      description: The newly rolled Ability.
+    content.vb: Public Function RollAbilityScore(abilityType As AbilityType) As Ability
+  overload: osrlib.Core.Being.RollAbilityScore*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.RollAbilities
+  commentId: M:osrlib.Core.Being.RollAbilities
+  id: RollAbilities
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: RollAbilities()
+  nameWithType: Being.RollAbilities()
+  fullName: osrlib.Core.Being.RollAbilities()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: RollAbilities
+    path: GameRules/Being.cs
+    startLine: 353
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nRolls the full set of ability scores for the Being. Calling this method removes any abilities currently in\nthe Being&apos;s <xref href=\"osrlib.Core.Being.Abilities\" data-throw-if-not-resolved=\"false\"></xref> collection.\n"
+  example: []
+  syntax:
+    content: public List<Ability> RollAbilities()
+    return:
+      type: System.Collections.Generic.List{osrlib.Core.Ability}
+      description: The Being&apos;s newly populated <xref href="osrlib.Core.Being.Abilities" data-throw-if-not-resolved="false"></xref> collection.
+    content.vb: Public Function RollAbilities As List(Of Ability)
+  overload: osrlib.Core.Being.RollAbilities*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Being.ToString
+  commentId: M:osrlib.Core.Being.ToString
+  id: ToString
+  parent: osrlib.Core.Being
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Being.ToString()
+  fullName: osrlib.Core.Being.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: ToString
+    path: GameRules/Being.cs
+    startLine: 367
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets the string representation of the Being.\n"
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: Single-line text representation of the Being.
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: osrlib.Core.Being.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: osrlib.Core.Adventure
+  commentId: T:osrlib.Core.Adventure
+  parent: osrlib.Core
+  name: Adventure
+  nameWithType: Adventure
+  fullName: osrlib.Core.Adventure
+- uid: osrlib.Core
+  commentId: N:osrlib.Core
+  name: osrlib.Core
+  nameWithType: osrlib.Core
+  fullName: osrlib.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.EventHandler
+  commentId: T:System.EventHandler
+  parent: System
+  isExternal: true
+  name: EventHandler
+  nameWithType: EventHandler
+  fullName: System.EventHandler
+- uid: osrlib.Core.Being.PotentialTargets
+  commentId: P:osrlib.Core.Being.PotentialTargets
+  isExternal: true
+- uid: osrlib.Core.Being.SelectTarget(osrlib.Core.Being)
+  commentId: M:osrlib.Core.Being.SelectTarget(osrlib.Core.Being)
+  isExternal: true
+- uid: osrlib.Core.BeingTargetingEventHandler
+  commentId: T:osrlib.Core.BeingTargetingEventHandler
+  parent: osrlib.Core
+  name: BeingTargetingEventHandler
+  nameWithType: BeingTargetingEventHandler
+  fullName: osrlib.Core.BeingTargetingEventHandler
+- uid: osrlib.Core.GameAction
+  commentId: T:osrlib.Core.GameAction
+  parent: osrlib.Core
+  name: GameAction
+  nameWithType: GameAction
+  fullName: osrlib.Core.GameAction
+- uid: osrlib.Core.Being.ActiveWeapon
+  commentId: P:osrlib.Core.Being.ActiveWeapon
+  isExternal: true
+- uid: osrlib.Core.GameActionEventHandler
+  commentId: T:osrlib.Core.GameActionEventHandler
+  parent: osrlib.Core
+  name: GameActionEventHandler
+  nameWithType: GameActionEventHandler
+  fullName: osrlib.Core.GameActionEventHandler
+- uid: osrlib.Core.Being.Name*
+  commentId: Overload:osrlib.Core.Being.Name
+  name: Name
+  nameWithType: Being.Name
+  fullName: osrlib.Core.Being.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: osrlib.Core.CharacterClass
+  commentId: T:osrlib.Core.CharacterClass
+  parent: osrlib.Core
+  name: CharacterClass
+  nameWithType: CharacterClass
+  fullName: osrlib.Core.CharacterClass
+- uid: osrlib.Core.Being.Class*
+  commentId: Overload:osrlib.Core.Being.Class
+  name: Class
+  nameWithType: Being.Class
+  fullName: osrlib.Core.Being.Class
+- uid: osrlib.Core.Being.Alignment*
+  commentId: Overload:osrlib.Core.Being.Alignment
+  name: Alignment
+  nameWithType: Being.Alignment
+  fullName: osrlib.Core.Being.Alignment
+- uid: osrlib.Core.Alignment
+  commentId: T:osrlib.Core.Alignment
+  parent: osrlib.Core
+  name: Alignment
+  nameWithType: Alignment
+  fullName: osrlib.Core.Alignment
+- uid: osrlib.Core.Ability
+  commentId: T:osrlib.Core.Ability
+  parent: osrlib.Core
+  name: Ability
+  nameWithType: Ability
+  fullName: osrlib.Core.Ability
+- uid: osrlib.Core.Being.Abilities*
+  commentId: Overload:osrlib.Core.Being.Abilities
+  name: Abilities
+  nameWithType: Being.Abilities
+  fullName: osrlib.Core.Being.Abilities
+- uid: System.Collections.Generic.List{osrlib.Core.Ability}
+  commentId: T:System.Collections.Generic.List{osrlib.Core.Ability}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Ability>
+  nameWithType: List<Ability>
+  fullName: System.Collections.Generic.List<osrlib.Core.Ability>
+  nameWithType.vb: List(Of Ability)
+  fullName.vb: System.Collections.Generic.List(Of osrlib.Core.Ability)
+  name.vb: List(Of Ability)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: osrlib.Core.Ability
+    name: Ability
+    nameWithType: Ability
+    fullName: osrlib.Core.Ability
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: osrlib.Core.Ability
+    name: Ability
+    nameWithType: Ability
+    fullName: osrlib.Core.Ability
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: osrlib.Core.Being.HitPoints*
+  commentId: Overload:osrlib.Core.Being.HitPoints
+  name: HitPoints
+  nameWithType: Being.HitPoints
+  fullName: osrlib.Core.Being.HitPoints
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: osrlib.Core.Being.MaxHitPoints*
+  commentId: Overload:osrlib.Core.Being.MaxHitPoints
+  name: MaxHitPoints
+  nameWithType: Being.MaxHitPoints
+  fullName: osrlib.Core.Being.MaxHitPoints
+- uid: osrlib.Core.Being.ExperiencePoints*
+  commentId: Overload:osrlib.Core.Being.ExperiencePoints
+  name: ExperiencePoints
+  nameWithType: Being.ExperiencePoints
+  fullName: osrlib.Core.Being.ExperiencePoints
+- uid: osrlib.Core.Being.IsAlive*
+  commentId: Overload:osrlib.Core.Being.IsAlive
+  name: IsAlive
+  nameWithType: Being.IsAlive
+  fullName: osrlib.Core.Being.IsAlive
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: osrlib.Core.Being.IsTargetable*
+  commentId: Overload:osrlib.Core.Being.IsTargetable
+  name: IsTargetable
+  nameWithType: Being.IsTargetable
+  fullName: osrlib.Core.Being.IsTargetable
+- uid: osrlib.Core.Being.ActiveWeapon*
+  commentId: Overload:osrlib.Core.Being.ActiveWeapon
+  name: ActiveWeapon
+  nameWithType: Being.ActiveWeapon
+  fullName: osrlib.Core.Being.ActiveWeapon
+- uid: osrlib.Core.Weapon
+  commentId: T:osrlib.Core.Weapon
+  parent: osrlib.Core
+  name: Weapon
+  nameWithType: Weapon
+  fullName: osrlib.Core.Weapon
+- uid: osrlib.Core.Being.Defense*
+  commentId: Overload:osrlib.Core.Being.Defense
+  name: Defense
+  nameWithType: Being.Defense
+  fullName: osrlib.Core.Being.Defense
+- uid: osrlib.Core.Being.PerformActionOnSelectedTargets
+  commentId: M:osrlib.Core.Being.PerformActionOnSelectedTargets
+  isExternal: true
+- uid: osrlib.Core.Being.AddPotentialTargets(System.Collections.Generic.List{osrlib.Core.Being})
+  commentId: M:osrlib.Core.Being.AddPotentialTargets(System.Collections.Generic.List{osrlib.Core.Being})
+  isExternal: true
+- uid: osrlib.Core.Being.PotentialTargets*
+  commentId: Overload:osrlib.Core.Being.PotentialTargets
+  name: PotentialTargets
+  nameWithType: Being.PotentialTargets
+  fullName: osrlib.Core.Being.PotentialTargets
+- uid: System.Collections.ObjectModel.ReadOnlyCollection{osrlib.Core.Being}
+  commentId: T:System.Collections.ObjectModel.ReadOnlyCollection{osrlib.Core.Being}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.ReadOnlyCollection`1
+  name: ReadOnlyCollection<Being>
+  nameWithType: ReadOnlyCollection<Being>
+  fullName: System.Collections.ObjectModel.ReadOnlyCollection<osrlib.Core.Being>
+  nameWithType.vb: ReadOnlyCollection(Of Being)
+  fullName.vb: System.Collections.ObjectModel.ReadOnlyCollection(Of osrlib.Core.Being)
+  name.vb: ReadOnlyCollection(Of Being)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: osrlib.Core.Being
+    name: Being
+    nameWithType: Being
+    fullName: osrlib.Core.Being
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: osrlib.Core.Being
+    name: Being
+    nameWithType: Being
+    fullName: osrlib.Core.Being
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+  commentId: T:System.Collections.ObjectModel.ReadOnlyCollection`1
+  isExternal: true
+  name: ReadOnlyCollection<T>
+  nameWithType: ReadOnlyCollection<T>
+  fullName: System.Collections.ObjectModel.ReadOnlyCollection<T>
+  nameWithType.vb: ReadOnlyCollection(Of T)
+  fullName.vb: System.Collections.ObjectModel.ReadOnlyCollection(Of T)
+  name.vb: ReadOnlyCollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel
+  commentId: N:System.Collections.ObjectModel
+  isExternal: true
+  name: System.Collections.ObjectModel
+  nameWithType: System.Collections.ObjectModel
+  fullName: System.Collections.ObjectModel
+- uid: osrlib.Core.Being.SelectedTargets*
+  commentId: Overload:osrlib.Core.Being.SelectedTargets
+  name: SelectedTargets
+  nameWithType: Being.SelectedTargets
+  fullName: osrlib.Core.Being.SelectedTargets
+- uid: osrlib.Core.Ability.ScoreModifiers
+  commentId: P:osrlib.Core.Ability.ScoreModifiers
+  isExternal: true
+- uid: osrlib.Core.Being.AddAbilityModifier*
+  commentId: Overload:osrlib.Core.Being.AddAbilityModifier
+  name: AddAbilityModifier
+  nameWithType: Being.AddAbilityModifier
+  fullName: osrlib.Core.Being.AddAbilityModifier
+- uid: osrlib.Core.Modifier
+  commentId: T:osrlib.Core.Modifier
+  parent: osrlib.Core
+  name: Modifier
+  nameWithType: Modifier
+  fullName: osrlib.Core.Modifier
+- uid: osrlib.Core.AbilityType
+  commentId: T:osrlib.Core.AbilityType
+  parent: osrlib.Core
+  name: AbilityType
+  nameWithType: AbilityType
+  fullName: osrlib.Core.AbilityType
+- uid: osrlib.Dice.DiceRoll
+  commentId: T:osrlib.Dice.DiceRoll
+  parent: osrlib.Dice
+  name: DiceRoll
+  nameWithType: DiceRoll
+  fullName: osrlib.Dice.DiceRoll
+- uid: osrlib.Core.Being.GetAttackRoll*
+  commentId: Overload:osrlib.Core.Being.GetAttackRoll
+  name: GetAttackRoll
+  nameWithType: Being.GetAttackRoll
+  fullName: osrlib.Core.Being.GetAttackRoll
+- uid: osrlib.Dice
+  commentId: N:osrlib.Dice
+  name: osrlib.Dice
+  nameWithType: osrlib.Dice
+  fullName: osrlib.Dice
+- uid: osrlib.Core.Being.GetDamageRoll*
+  commentId: Overload:osrlib.Core.Being.GetDamageRoll
+  name: GetDamageRoll
+  nameWithType: Being.GetDamageRoll
+  fullName: osrlib.Core.Being.GetDamageRoll
+- uid: osrlib.Core.Being.OnKilled
+  commentId: M:osrlib.Core.Being.OnKilled
+  isExternal: true
+- uid: osrlib.Core.Being.ApplyDamage*
+  commentId: Overload:osrlib.Core.Being.ApplyDamage
+  name: ApplyDamage
+  nameWithType: Being.ApplyDamage
+  fullName: osrlib.Core.Being.ApplyDamage
+- uid: osrlib.Core.Being
+  commentId: T:osrlib.Core.Being
+  parent: osrlib.Core
+  name: Being
+  nameWithType: Being
+  fullName: osrlib.Core.Being
+- uid: osrlib.Core.Being.SelectTarget*
+  commentId: Overload:osrlib.Core.Being.SelectTarget
+  name: SelectTarget
+  nameWithType: Being.SelectTarget
+  fullName: osrlib.Core.Being.SelectTarget
+- uid: osrlib.Core.Being.SelectTargets*
+  commentId: Overload:osrlib.Core.Being.SelectTargets
+  name: SelectTargets
+  nameWithType: Being.SelectTargets
+  fullName: osrlib.Core.Being.SelectTargets
+- uid: System.Collections.Generic.List{osrlib.Core.Being}
+  commentId: T:System.Collections.Generic.List{osrlib.Core.Being}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Being>
+  nameWithType: List<Being>
+  fullName: System.Collections.Generic.List<osrlib.Core.Being>
+  nameWithType.vb: List(Of Being)
+  fullName.vb: System.Collections.Generic.List(Of osrlib.Core.Being)
+  name.vb: List(Of Being)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: osrlib.Core.Being
+    name: Being
+    nameWithType: Being
+    fullName: osrlib.Core.Being
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: osrlib.Core.Being
+    name: Being
+    nameWithType: Being
+    fullName: osrlib.Core.Being
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: osrlib.Core.Being.SelectedTargets
+  commentId: P:osrlib.Core.Being.SelectedTargets
+  isExternal: true
+- uid: osrlib.Core.Being.PerformActionOnSelectedTargets*
+  commentId: Overload:osrlib.Core.Being.PerformActionOnSelectedTargets
+  name: PerformActionOnSelectedTargets
+  nameWithType: Being.PerformActionOnSelectedTargets
+  fullName: osrlib.Core.Being.PerformActionOnSelectedTargets
+- uid: osrlib.Core.Being.Abilities
+  commentId: P:osrlib.Core.Being.Abilities
+  isExternal: true
+- uid: osrlib.Core.Being.RollAbilityScore*
+  commentId: Overload:osrlib.Core.Being.RollAbilityScore
+  name: RollAbilityScore
+  nameWithType: Being.RollAbilityScore
+  fullName: osrlib.Core.Being.RollAbilityScore
+- uid: osrlib.Core.Being.RollAbilities*
+  commentId: Overload:osrlib.Core.Being.RollAbilities
+  name: RollAbilities
+  nameWithType: Being.RollAbilities
+  fullName: osrlib.Core.Being.RollAbilities
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: osrlib.Core.Being.ToString*
+  commentId: Overload:osrlib.Core.Being.ToString
+  name: ToString
+  nameWithType: Being.ToString
+  fullName: osrlib.Core.Being.ToString

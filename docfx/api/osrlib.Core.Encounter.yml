@@ -1,0 +1,862 @@
+### YamlMime:ManagedReference
+items:
+- uid: osrlib.Core.Encounter
+  commentId: T:osrlib.Core.Encounter
+  id: Encounter
+  parent: osrlib.Core
+  children:
+  - osrlib.Core.Encounter.AdventuringParty
+  - osrlib.Core.Encounter.AutoBattleEnabled
+  - osrlib.Core.Encounter.EncounterEnded
+  - osrlib.Core.Encounter.EncounterParty
+  - osrlib.Core.Encounter.EncounterStarted
+  - osrlib.Core.Encounter.IsEncounterEnded
+  - osrlib.Core.Encounter.IsEncounterStarted
+  - osrlib.Core.Encounter.PerformStep
+  - osrlib.Core.Encounter.Position
+  - osrlib.Core.Encounter.SetAdventuringParty(osrlib.Core.Party)
+  - osrlib.Core.Encounter.StartEncounter
+  langs:
+  - csharp
+  - vb
+  name: Encounter
+  nameWithType: Encounter
+  fullName: osrlib.Core.Encounter
+  type: Class
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Encounter.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Encounter
+    path: GameRules/Encounter.cs
+    startLine: 10
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nThe Encounter contains a <xref href=\"osrlib.Core.Party\" data-throw-if-not-resolved=\"false\"></xref>, can accept a <xref href=\"osrlib.Core.Party\" data-throw-if-not-resolved=\"false\"></xref> to initiate a battle,\nand may contain a reward. The encounter also handles creating GameActions and assigning targets.\n"
+  example: []
+  syntax:
+    content: public class Encounter
+    content.vb: Public Class Encounter
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: osrlib.Core.Encounter.EncounterStarted
+  commentId: E:osrlib.Core.Encounter.EncounterStarted
+  id: EncounterStarted
+  parent: osrlib.Core.Encounter
+  langs:
+  - csharp
+  - vb
+  name: EncounterStarted
+  nameWithType: Encounter.EncounterStarted
+  fullName: osrlib.Core.Encounter.EncounterStarted
+  type: Event
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Encounter.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: EncounterStarted
+    path: GameRules/Encounter.cs
+    startLine: 18
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nEvent raised when a <xref href=\"osrlib.Core.Party\" data-throw-if-not-resolved=\"false\"></xref> is added to this encounter and <xref href=\"osrlib.Core.GameAction\" data-throw-if-not-resolved=\"false\"></xref>s begin.\n"
+  example: []
+  syntax:
+    content: public event EventHandler EncounterStarted
+    return:
+      type: System.EventHandler
+    content.vb: Public Event EncounterStarted As EventHandler
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Encounter.EncounterEnded
+  commentId: E:osrlib.Core.Encounter.EncounterEnded
+  id: EncounterEnded
+  parent: osrlib.Core.Encounter
+  langs:
+  - csharp
+  - vb
+  name: EncounterEnded
+  nameWithType: Encounter.EncounterEnded
+  fullName: osrlib.Core.Encounter.EncounterEnded
+  type: Event
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Encounter.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: EncounterEnded
+    path: GameRules/Encounter.cs
+    startLine: 24
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nEvent raised when one <xref href=\"osrlib.Core.Party\" data-throw-if-not-resolved=\"false\"></xref> within the encounter is determined the victor, or\nthe encounter is stopped in some other manner.\n"
+  example: []
+  syntax:
+    content: public event EventHandler EncounterEnded
+    return:
+      type: System.EventHandler
+    content.vb: Public Event EncounterEnded As EventHandler
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Encounter.Position
+  commentId: P:osrlib.Core.Encounter.Position
+  id: Position
+  parent: osrlib.Core.Encounter
+  langs:
+  - csharp
+  - vb
+  name: Position
+  nameWithType: Encounter.Position
+  fullName: osrlib.Core.Encounter.Position
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Encounter.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Position
+    path: GameRules/Encounter.cs
+    startLine: 29
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the position within the <xref href=\"osrlib.Core.Dungeon\" data-throw-if-not-resolved=\"false\"></xref> of this Encounter.\n"
+  example: []
+  syntax:
+    content: public GamePosition Position { get; set; }
+    parameters: []
+    return:
+      type: osrlib.Core.GamePosition
+    content.vb: Public Property Position As GamePosition
+  overload: osrlib.Core.Encounter.Position*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Encounter.EncounterParty
+  commentId: P:osrlib.Core.Encounter.EncounterParty
+  id: EncounterParty
+  parent: osrlib.Core.Encounter
+  langs:
+  - csharp
+  - vb
+  name: EncounterParty
+  nameWithType: Encounter.EncounterParty
+  fullName: osrlib.Core.Encounter.EncounterParty
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Encounter.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: EncounterParty
+    path: GameRules/Encounter.cs
+    startLine: 34
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the <xref href=\"osrlib.Core.Party\" data-throw-if-not-resolved=\"false\"></xref> in this encounter.\n"
+  example: []
+  syntax:
+    content: public Party EncounterParty { get; set; }
+    parameters: []
+    return:
+      type: osrlib.Core.Party
+    content.vb: Public Property EncounterParty As Party
+  overload: osrlib.Core.Encounter.EncounterParty*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Encounter.AdventuringParty
+  commentId: P:osrlib.Core.Encounter.AdventuringParty
+  id: AdventuringParty
+  parent: osrlib.Core.Encounter
+  langs:
+  - csharp
+  - vb
+  name: AdventuringParty
+  nameWithType: Encounter.AdventuringParty
+  fullName: osrlib.Core.Encounter.AdventuringParty
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Encounter.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: AdventuringParty
+    path: GameRules/Encounter.cs
+    startLine: 40
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets the <xref href=\"osrlib.Core.Party\" data-throw-if-not-resolved=\"false\"></xref> of adventurers for the encounter.\n"
+  remarks: This is typically the party controlled by the player.
+  example: []
+  syntax:
+    content: public Party AdventuringParty { get; }
+    parameters: []
+    return:
+      type: osrlib.Core.Party
+    content.vb: Public ReadOnly Property AdventuringParty As Party
+  overload: osrlib.Core.Encounter.AdventuringParty*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: osrlib.Core.Encounter.IsEncounterStarted
+  commentId: P:osrlib.Core.Encounter.IsEncounterStarted
+  id: IsEncounterStarted
+  parent: osrlib.Core.Encounter
+  langs:
+  - csharp
+  - vb
+  name: IsEncounterStarted
+  nameWithType: Encounter.IsEncounterStarted
+  fullName: osrlib.Core.Encounter.IsEncounterStarted
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Encounter.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: IsEncounterStarted
+    path: GameRules/Encounter.cs
+    startLine: 45
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets whether the Encounter has been started.\n"
+  example: []
+  syntax:
+    content: public bool IsEncounterStarted { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsEncounterStarted As Boolean
+  overload: osrlib.Core.Encounter.IsEncounterStarted*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: osrlib.Core.Encounter.IsEncounterEnded
+  commentId: P:osrlib.Core.Encounter.IsEncounterEnded
+  id: IsEncounterEnded
+  parent: osrlib.Core.Encounter
+  langs:
+  - csharp
+  - vb
+  name: IsEncounterEnded
+  nameWithType: Encounter.IsEncounterEnded
+  fullName: osrlib.Core.Encounter.IsEncounterEnded
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Encounter.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: IsEncounterEnded
+    path: GameRules/Encounter.cs
+    startLine: 50
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets whether the Encounter has been completed.\n"
+  example: []
+  syntax:
+    content: public bool IsEncounterEnded { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsEncounterEnded As Boolean
+  overload: osrlib.Core.Encounter.IsEncounterEnded*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: osrlib.Core.Encounter.AutoBattleEnabled
+  commentId: P:osrlib.Core.Encounter.AutoBattleEnabled
+  id: AutoBattleEnabled
+  parent: osrlib.Core.Encounter
+  langs:
+  - csharp
+  - vb
+  name: AutoBattleEnabled
+  nameWithType: Encounter.AutoBattleEnabled
+  fullName: osrlib.Core.Encounter.AutoBattleEnabled
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Encounter.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: AutoBattleEnabled
+    path: GameRules/Encounter.cs
+    startLine: 56
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets a value that specifies whether the Encounter resolves all GameActions between\nBeings in the Encounter until one side is defeated.\n"
+  example: []
+  syntax:
+    content: public bool AutoBattleEnabled { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property AutoBattleEnabled As Boolean
+  overload: osrlib.Core.Encounter.AutoBattleEnabled*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Encounter.SetAdventuringParty(osrlib.Core.Party)
+  commentId: M:osrlib.Core.Encounter.SetAdventuringParty(osrlib.Core.Party)
+  id: SetAdventuringParty(osrlib.Core.Party)
+  parent: osrlib.Core.Encounter
+  langs:
+  - csharp
+  - vb
+  name: SetAdventuringParty(Party)
+  nameWithType: Encounter.SetAdventuringParty(Party)
+  fullName: osrlib.Core.Encounter.SetAdventuringParty(osrlib.Core.Party)
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Encounter.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: SetAdventuringParty
+    path: GameRules/Encounter.cs
+    startLine: 62
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nAdds the specified <xref href=\"osrlib.Core.Party\" data-throw-if-not-resolved=\"false\"></xref> of adventurers that will perform GameActions on the <xref href=\"osrlib.Core.Encounter.EncounterParty\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public void SetAdventuringParty(Party adventurers)
+    parameters:
+    - id: adventurers
+      type: osrlib.Core.Party
+      description: The <xref href="osrlib.Core.Party" data-throw-if-not-resolved="false"></xref> of adventurers to act upon the <xref href="osrlib.Core.Encounter.EncounterParty" data-throw-if-not-resolved="false"></xref> in this <xref href="osrlib.Core.Encounter" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Sub SetAdventuringParty(adventurers As Party)
+  overload: osrlib.Core.Encounter.SetAdventuringParty*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Encounter.StartEncounter
+  commentId: M:osrlib.Core.Encounter.StartEncounter
+  id: StartEncounter
+  parent: osrlib.Core.Encounter
+  langs:
+  - csharp
+  - vb
+  name: StartEncounter()
+  nameWithType: Encounter.StartEncounter()
+  fullName: osrlib.Core.Encounter.StartEncounter()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Encounter.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: StartEncounter
+    path: GameRules/Encounter.cs
+    startLine: 85
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nStarts the Encounter. To resolve the Encounter, subscribe to all party members&apos; <xref href=\"osrlib.Core.Being.PotentialTargetsAdded\" data-throw-if-not-resolved=\"false\"></xref>\nevent, and then call <xref href=\"osrlib.Core.Encounter.PerformStep\" data-throw-if-not-resolved=\"false\"></xref> to move the Encounter forward until the <xref href=\"osrlib.Core.Encounter.EncounterEnded\" data-throw-if-not-resolved=\"false\"></xref> is raised.\n"
+  remarks: "\nBefore calling <xref href=\"osrlib.Core.Encounter.StartEncounter\" data-throw-if-not-resolved=\"false\"></xref>, subscribe to each party members&apos;\n<xref href=\"osrlib.Core.Being.PotentialTargetsAdded\" data-throw-if-not-resolved=\"false\"></xref> event to be notified when the caller should select a\ntarget and subsequently call <xref href=\"osrlib.Core.GameAction.PerformAction\" data-throw-if-not-resolved=\"false\"></xref>. After PerformAction has been called, check\n<xref href=\"osrlib.Core.Encounter.IsEncounterEnded\" data-throw-if-not-resolved=\"false\"></xref> before calling PerformStep again. If AutoBattleEnabled is <code>true</code>, this will\ninitiate resolution of the full Encounter (e.g. resolve all combat between Encounter parties).\n"
+  example: []
+  syntax:
+    content: public void StartEncounter()
+    content.vb: Public Sub StartEncounter
+  overload: osrlib.Core.Encounter.StartEncounter*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Encounter.PerformStep
+  commentId: M:osrlib.Core.Encounter.PerformStep
+  id: PerformStep
+  parent: osrlib.Core.Encounter
+  langs:
+  - csharp
+  - vb
+  name: PerformStep()
+  nameWithType: Encounter.PerformStep()
+  fullName: osrlib.Core.Encounter.PerformStep()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Encounter.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: PerformStep
+    path: GameRules/Encounter.cs
+    startLine: 164
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nMoves the Encounter forward one step by dequeuing an attacker and adding as potential targets the opposing\nparty&apos;s living members.\n"
+  remarks: "\nThis method first fills the Encounter&apos;s attack queue if it&apos;s empty, then dequeues a Being and populates its\n<xref href=\"osrlib.Core.Being.PotentialTargets\" data-throw-if-not-resolved=\"false\"></xref> collection with living Beings from the opposing party. Doing so raises\nits <xref href=\"osrlib.Core.Being.PotentialTargetsAdded\" data-throw-if-not-resolved=\"false\"></xref> event which allows subscribers (such as a GUI application) to\nprompt for target selection. Targets are selected by adding calling <xref href=\"osrlib.Core.Being.SelectTarget(osrlib.Core.Being)\" data-throw-if-not-resolved=\"false\"></xref>&quot;/>\nmethod.\n"
+  example: []
+  syntax:
+    content: public void PerformStep()
+    content.vb: Public Sub PerformStep
+  overload: osrlib.Core.Encounter.PerformStep*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: osrlib.Core.Party
+  commentId: T:osrlib.Core.Party
+  parent: osrlib.Core
+  name: Party
+  nameWithType: Party
+  fullName: osrlib.Core.Party
+- uid: osrlib.Core
+  commentId: N:osrlib.Core
+  name: osrlib.Core
+  nameWithType: osrlib.Core
+  fullName: osrlib.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: osrlib.Core.GameAction
+  commentId: T:osrlib.Core.GameAction
+  parent: osrlib.Core
+  name: GameAction
+  nameWithType: GameAction
+  fullName: osrlib.Core.GameAction
+- uid: System.EventHandler
+  commentId: T:System.EventHandler
+  parent: System
+  isExternal: true
+  name: EventHandler
+  nameWithType: EventHandler
+  fullName: System.EventHandler
+- uid: osrlib.Core.Dungeon
+  commentId: T:osrlib.Core.Dungeon
+  parent: osrlib.Core
+  name: Dungeon
+  nameWithType: Dungeon
+  fullName: osrlib.Core.Dungeon
+- uid: osrlib.Core.Encounter.Position*
+  commentId: Overload:osrlib.Core.Encounter.Position
+  name: Position
+  nameWithType: Encounter.Position
+  fullName: osrlib.Core.Encounter.Position
+- uid: osrlib.Core.GamePosition
+  commentId: T:osrlib.Core.GamePosition
+  parent: osrlib.Core
+  name: GamePosition
+  nameWithType: GamePosition
+  fullName: osrlib.Core.GamePosition
+- uid: osrlib.Core.Encounter.EncounterParty*
+  commentId: Overload:osrlib.Core.Encounter.EncounterParty
+  name: EncounterParty
+  nameWithType: Encounter.EncounterParty
+  fullName: osrlib.Core.Encounter.EncounterParty
+- uid: osrlib.Core.Encounter.AdventuringParty*
+  commentId: Overload:osrlib.Core.Encounter.AdventuringParty
+  name: AdventuringParty
+  nameWithType: Encounter.AdventuringParty
+  fullName: osrlib.Core.Encounter.AdventuringParty
+- uid: osrlib.Core.Encounter.IsEncounterStarted*
+  commentId: Overload:osrlib.Core.Encounter.IsEncounterStarted
+  name: IsEncounterStarted
+  nameWithType: Encounter.IsEncounterStarted
+  fullName: osrlib.Core.Encounter.IsEncounterStarted
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: osrlib.Core.Encounter.IsEncounterEnded*
+  commentId: Overload:osrlib.Core.Encounter.IsEncounterEnded
+  name: IsEncounterEnded
+  nameWithType: Encounter.IsEncounterEnded
+  fullName: osrlib.Core.Encounter.IsEncounterEnded
+- uid: osrlib.Core.Encounter.AutoBattleEnabled*
+  commentId: Overload:osrlib.Core.Encounter.AutoBattleEnabled
+  name: AutoBattleEnabled
+  nameWithType: Encounter.AutoBattleEnabled
+  fullName: osrlib.Core.Encounter.AutoBattleEnabled
+- uid: osrlib.Core.Encounter.EncounterParty
+  commentId: P:osrlib.Core.Encounter.EncounterParty
+  isExternal: true
+- uid: osrlib.Core.Encounter
+  commentId: T:osrlib.Core.Encounter
+  parent: osrlib.Core
+  name: Encounter
+  nameWithType: Encounter
+  fullName: osrlib.Core.Encounter
+- uid: osrlib.Core.Encounter.SetAdventuringParty*
+  commentId: Overload:osrlib.Core.Encounter.SetAdventuringParty
+  name: SetAdventuringParty
+  nameWithType: Encounter.SetAdventuringParty
+  fullName: osrlib.Core.Encounter.SetAdventuringParty
+- uid: osrlib.Core.Being.PotentialTargetsAdded
+  commentId: E:osrlib.Core.Being.PotentialTargetsAdded
+  isExternal: true
+- uid: osrlib.Core.Encounter.PerformStep
+  commentId: M:osrlib.Core.Encounter.PerformStep
+  isExternal: true
+- uid: osrlib.Core.Encounter.EncounterEnded
+  commentId: E:osrlib.Core.Encounter.EncounterEnded
+  isExternal: true
+- uid: osrlib.Core.Encounter.StartEncounter
+  commentId: M:osrlib.Core.Encounter.StartEncounter
+  isExternal: true
+- uid: osrlib.Core.GameAction.PerformAction
+  commentId: M:osrlib.Core.GameAction.PerformAction
+  isExternal: true
+- uid: osrlib.Core.Encounter.IsEncounterEnded
+  commentId: P:osrlib.Core.Encounter.IsEncounterEnded
+  isExternal: true
+- uid: osrlib.Core.Encounter.StartEncounter*
+  commentId: Overload:osrlib.Core.Encounter.StartEncounter
+  name: StartEncounter
+  nameWithType: Encounter.StartEncounter
+  fullName: osrlib.Core.Encounter.StartEncounter
+- uid: osrlib.Core.Being.PotentialTargets
+  commentId: P:osrlib.Core.Being.PotentialTargets
+  isExternal: true
+- uid: osrlib.Core.Being.SelectTarget(osrlib.Core.Being)
+  commentId: M:osrlib.Core.Being.SelectTarget(osrlib.Core.Being)
+  isExternal: true
+- uid: osrlib.Core.Encounter.PerformStep*
+  commentId: Overload:osrlib.Core.Encounter.PerformStep
+  name: PerformStep
+  nameWithType: Encounter.PerformStep
+  fullName: osrlib.Core.Encounter.PerformStep

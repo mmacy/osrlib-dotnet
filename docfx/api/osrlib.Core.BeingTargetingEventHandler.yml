@@ -1,0 +1,74 @@
+### YamlMime:ManagedReference
+items:
+- uid: osrlib.Core.BeingTargetingEventHandler
+  commentId: T:osrlib.Core.BeingTargetingEventHandler
+  id: BeingTargetingEventHandler
+  parent: osrlib.Core
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: BeingTargetingEventHandler
+  nameWithType: BeingTargetingEventHandler
+  fullName: osrlib.Core.BeingTargetingEventHandler
+  type: Delegate
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: BeingTargetingEventHandler
+    path: GameRules/Being.cs
+    startLine: 14
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nRepresents the method that handles a Being&apos;s <xref href=\"osrlib.Core.Being.TargetSelected\" data-throw-if-not-resolved=\"false\"></xref> or\n<xref href=\"osrlib.Core.Being.SelectedAsTarget\" data-throw-if-not-resolved=\"false\"></xref> event.\n"
+  example: []
+  syntax:
+    content: public delegate void BeingTargetingEventHandler(object sender, BeingTargetingEventArgs e);
+    parameters:
+    - id: sender
+      type: System.Object
+      description: The object generating the event.
+    - id: e
+      type: osrlib.Core.BeingTargetingEventArgs
+      description: The information for the event.
+    content.vb: Public Delegate Sub BeingTargetingEventHandler(sender As Object, e As BeingTargetingEventArgs)
+  modifiers.csharp:
+  - public
+  - delegate
+  modifiers.vb:
+  - Public
+  - Delegate
+references:
+- uid: osrlib.Core.Being.TargetSelected
+  commentId: E:osrlib.Core.Being.TargetSelected
+  isExternal: true
+- uid: osrlib.Core.Being.SelectedAsTarget
+  commentId: E:osrlib.Core.Being.SelectedAsTarget
+  isExternal: true
+- uid: osrlib.Core
+  commentId: N:osrlib.Core
+  name: osrlib.Core
+  nameWithType: osrlib.Core
+  fullName: osrlib.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: osrlib.Core.BeingTargetingEventArgs
+  commentId: T:osrlib.Core.BeingTargetingEventArgs
+  parent: osrlib.Core
+  name: BeingTargetingEventArgs
+  nameWithType: BeingTargetingEventArgs
+  fullName: osrlib.Core.BeingTargetingEventArgs
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System

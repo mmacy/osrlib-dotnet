@@ -1,0 +1,767 @@
+### YamlMime:ManagedReference
+items:
+- uid: osrlib.Controllers.GameManager
+  commentId: T:osrlib.Controllers.GameManager
+  id: GameManager
+  parent: osrlib.Controllers
+  children:
+  - osrlib.Controllers.GameManager.ActiveAdventure
+  - osrlib.Controllers.GameManager.AdventureLoaded
+  - osrlib.Controllers.GameManager.AdventureSaved
+  - osrlib.Controllers.GameManager.AdventureStarted
+  - osrlib.Controllers.GameManager.Instance
+  - osrlib.Controllers.GameManager.LoadAdventure(osrlib.SaveLoad.SaveType,System.String)
+  - osrlib.Controllers.GameManager.SaveActiveAdventure(osrlib.SaveLoad.SaveType,System.String)
+  - osrlib.Controllers.GameManager.SetActiveAdventure(osrlib.Core.Adventure)
+  - osrlib.Controllers.GameManager.StartAdventure
+  langs:
+  - csharp
+  - vb
+  name: GameManager
+  nameWithType: GameManager
+  fullName: osrlib.Controllers.GameManager
+  type: Class
+  source:
+    remote:
+      path: src/osrlib.Core/Controllers/GameManager.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: GameManager
+    path: Controllers/GameManager.cs
+    startLine: 10
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Controllers
+  summary: "\nThe GameManager singleton handles game execution lifecycle.\n"
+  remarks: The GameManager singleton should be accessed only via the <xref href="osrlib.Controllers.GameManager.Instance" data-throw-if-not-resolved="false"></xref> property.
+  example: []
+  syntax:
+    content: public class GameManager
+    content.vb: Public Class GameManager
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: osrlib.Controllers.GameManager.Instance
+  commentId: P:osrlib.Controllers.GameManager.Instance
+  id: Instance
+  parent: osrlib.Controllers.GameManager
+  langs:
+  - csharp
+  - vb
+  name: Instance
+  nameWithType: GameManager.Instance
+  fullName: osrlib.Controllers.GameManager.Instance
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/Controllers/GameManager.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Instance
+    path: Controllers/GameManager.cs
+    startLine: 15
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Controllers
+  summary: "\nGets the singleton instance of the <xref href=\"osrlib.Controllers.GameManager\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public static GameManager Instance { get; }
+    parameters: []
+    return:
+      type: osrlib.Controllers.GameManager
+    content.vb: Public Shared ReadOnly Property Instance As GameManager
+  overload: osrlib.Controllers.GameManager.Instance*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: osrlib.Controllers.GameManager.ActiveAdventure
+  commentId: P:osrlib.Controllers.GameManager.ActiveAdventure
+  id: ActiveAdventure
+  parent: osrlib.Controllers.GameManager
+  langs:
+  - csharp
+  - vb
+  name: ActiveAdventure
+  nameWithType: GameManager.ActiveAdventure
+  fullName: osrlib.Controllers.GameManager.ActiveAdventure
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/Controllers/GameManager.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: ActiveAdventure
+    path: Controllers/GameManager.cs
+    startLine: 21
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Controllers
+  summary: "\nGets the current <xref href=\"osrlib.Core.Adventure\" data-throw-if-not-resolved=\"false\"></xref> for the game.\n"
+  example: []
+  syntax:
+    content: public Adventure ActiveAdventure { get; }
+    parameters: []
+    return:
+      type: osrlib.Core.Adventure
+      description: ''
+    content.vb: Public ReadOnly Property ActiveAdventure As Adventure
+  overload: osrlib.Controllers.GameManager.ActiveAdventure*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: osrlib.Controllers.GameManager.AdventureLoaded
+  commentId: E:osrlib.Controllers.GameManager.AdventureLoaded
+  id: AdventureLoaded
+  parent: osrlib.Controllers.GameManager
+  langs:
+  - csharp
+  - vb
+  name: AdventureLoaded
+  nameWithType: GameManager.AdventureLoaded
+  fullName: osrlib.Controllers.GameManager.AdventureLoaded
+  type: Event
+  source:
+    remote:
+      path: src/osrlib.Core/Controllers/GameManager.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: AdventureLoaded
+    path: Controllers/GameManager.cs
+    startLine: 26
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Controllers
+  summary: "\nEvent raised when the <xref href=\"osrlib.Controllers.GameManager.ActiveAdventure\" data-throw-if-not-resolved=\"false\"></xref> is loaded.\n"
+  example: []
+  syntax:
+    content: public event EventHandler AdventureLoaded
+    return:
+      type: System.EventHandler
+    content.vb: Public Event AdventureLoaded As EventHandler
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Controllers.GameManager.AdventureSaved
+  commentId: E:osrlib.Controllers.GameManager.AdventureSaved
+  id: AdventureSaved
+  parent: osrlib.Controllers.GameManager
+  langs:
+  - csharp
+  - vb
+  name: AdventureSaved
+  nameWithType: GameManager.AdventureSaved
+  fullName: osrlib.Controllers.GameManager.AdventureSaved
+  type: Event
+  source:
+    remote:
+      path: src/osrlib.Core/Controllers/GameManager.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: AdventureSaved
+    path: Controllers/GameManager.cs
+    startLine: 31
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Controllers
+  summary: "\nEvent raised when the <xref href=\"osrlib.Controllers.GameManager.ActiveAdventure\" data-throw-if-not-resolved=\"false\"></xref> is saved.\n"
+  example: []
+  syntax:
+    content: public event EventHandler AdventureSaved
+    return:
+      type: System.EventHandler
+    content.vb: Public Event AdventureSaved As EventHandler
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Controllers.GameManager.AdventureStarted
+  commentId: E:osrlib.Controllers.GameManager.AdventureStarted
+  id: AdventureStarted
+  parent: osrlib.Controllers.GameManager
+  langs:
+  - csharp
+  - vb
+  name: AdventureStarted
+  nameWithType: GameManager.AdventureStarted
+  fullName: osrlib.Controllers.GameManager.AdventureStarted
+  type: Event
+  source:
+    remote:
+      path: src/osrlib.Core/Controllers/GameManager.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: AdventureStarted
+    path: Controllers/GameManager.cs
+    startLine: 36
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Controllers
+  summary: "\nEvent raised when the <xref href=\"osrlib.Controllers.GameManager.ActiveAdventure\" data-throw-if-not-resolved=\"false\"></xref> is started.\n"
+  example: []
+  syntax:
+    content: public event EventHandler AdventureStarted
+    return:
+      type: System.EventHandler
+    content.vb: Public Event AdventureStarted As EventHandler
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Controllers.GameManager.SetActiveAdventure(osrlib.Core.Adventure)
+  commentId: M:osrlib.Controllers.GameManager.SetActiveAdventure(osrlib.Core.Adventure)
+  id: SetActiveAdventure(osrlib.Core.Adventure)
+  parent: osrlib.Controllers.GameManager
+  langs:
+  - csharp
+  - vb
+  name: SetActiveAdventure(Adventure)
+  nameWithType: GameManager.SetActiveAdventure(Adventure)
+  fullName: osrlib.Controllers.GameManager.SetActiveAdventure(osrlib.Core.Adventure)
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/Controllers/GameManager.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: SetActiveAdventure
+    path: Controllers/GameManager.cs
+    startLine: 48
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Controllers
+  summary: "\nSets the active <xref href=\"osrlib.Core.Adventure\" data-throw-if-not-resolved=\"false\"></xref> for the game session.\n"
+  example: []
+  syntax:
+    content: public void SetActiveAdventure(Adventure adventure)
+    parameters:
+    - id: adventure
+      type: osrlib.Core.Adventure
+      description: The <xref href="osrlib.Core.Adventure" data-throw-if-not-resolved="false"></xref> to set for the current game session.
+    content.vb: Public Sub SetActiveAdventure(adventure As Adventure)
+  overload: osrlib.Controllers.GameManager.SetActiveAdventure*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Controllers.GameManager.LoadAdventure(osrlib.SaveLoad.SaveType,System.String)
+  commentId: M:osrlib.Controllers.GameManager.LoadAdventure(osrlib.SaveLoad.SaveType,System.String)
+  id: LoadAdventure(osrlib.SaveLoad.SaveType,System.String)
+  parent: osrlib.Controllers.GameManager
+  langs:
+  - csharp
+  - vb
+  name: LoadAdventure(SaveType, String)
+  nameWithType: GameManager.LoadAdventure(SaveType, String)
+  fullName: osrlib.Controllers.GameManager.LoadAdventure(osrlib.SaveLoad.SaveType, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/Controllers/GameManager.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: LoadAdventure
+    path: Controllers/GameManager.cs
+    startLine: 59
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Controllers
+  summary: "\nLoads the specified <xref href=\"osrlib.Core.Adventure\" data-throw-if-not-resolved=\"false\"></xref> into the GameManager, and sets it as the <xref href=\"osrlib.Controllers.GameManager.ActiveAdventure\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public bool LoadAdventure(SaveType saveType, string path)
+    parameters:
+    - id: saveType
+      type: osrlib.SaveLoad.SaveType
+      description: The type of save/load operation.
+    - id: path
+      type: System.String
+      description: The path or URL to the <xref href="osrlib.Core.Adventure" data-throw-if-not-resolved="false"></xref> to load.
+    return:
+      type: System.Boolean
+      description: Whether the operation was successful.
+    content.vb: Public Function LoadAdventure(saveType As SaveType, path As String) As Boolean
+  overload: osrlib.Controllers.GameManager.LoadAdventure*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Controllers.GameManager.SaveActiveAdventure(osrlib.SaveLoad.SaveType,System.String)
+  commentId: M:osrlib.Controllers.GameManager.SaveActiveAdventure(osrlib.SaveLoad.SaveType,System.String)
+  id: SaveActiveAdventure(osrlib.SaveLoad.SaveType,System.String)
+  parent: osrlib.Controllers.GameManager
+  langs:
+  - csharp
+  - vb
+  name: SaveActiveAdventure(SaveType, String)
+  nameWithType: GameManager.SaveActiveAdventure(SaveType, String)
+  fullName: osrlib.Controllers.GameManager.SaveActiveAdventure(osrlib.SaveLoad.SaveType, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/Controllers/GameManager.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: SaveActiveAdventure
+    path: Controllers/GameManager.cs
+    startLine: 103
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Controllers
+  summary: "\nSaves the <xref href=\"osrlib.Controllers.GameManager.ActiveAdventure\" data-throw-if-not-resolved=\"false\"></xref> to the specified storage location.\n"
+  example: []
+  syntax:
+    content: public bool SaveActiveAdventure(SaveType saveType, string path)
+    parameters:
+    - id: saveType
+      type: osrlib.SaveLoad.SaveType
+      description: The type of save/load operation.
+    - id: path
+      type: System.String
+      description: The path or URL to which to save the <xref href="osrlib.Core.Adventure" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Boolean
+      description: Whether the operation was successful.
+    content.vb: Public Function SaveActiveAdventure(saveType As SaveType, path As String) As Boolean
+  overload: osrlib.Controllers.GameManager.SaveActiveAdventure*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Controllers.GameManager.StartAdventure
+  commentId: M:osrlib.Controllers.GameManager.StartAdventure
+  id: StartAdventure
+  parent: osrlib.Controllers.GameManager
+  langs:
+  - csharp
+  - vb
+  name: StartAdventure()
+  nameWithType: GameManager.StartAdventure()
+  fullName: osrlib.Controllers.GameManager.StartAdventure()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/Controllers/GameManager.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: StartAdventure
+    path: Controllers/GameManager.cs
+    startLine: 144
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Controllers
+  summary: "\nStarts the active <xref href=\"osrlib.Core.Adventure\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public void StartAdventure()
+    content.vb: Public Sub StartAdventure
+  overload: osrlib.Controllers.GameManager.StartAdventure*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: osrlib.Controllers.GameManager.Instance
+  commentId: P:osrlib.Controllers.GameManager.Instance
+  isExternal: true
+- uid: osrlib.Controllers
+  commentId: N:osrlib.Controllers
+  name: osrlib.Controllers
+  nameWithType: osrlib.Controllers
+  fullName: osrlib.Controllers
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: osrlib.Controllers.GameManager
+  commentId: T:osrlib.Controllers.GameManager
+  parent: osrlib.Controllers
+  name: GameManager
+  nameWithType: GameManager
+  fullName: osrlib.Controllers.GameManager
+- uid: osrlib.Controllers.GameManager.Instance*
+  commentId: Overload:osrlib.Controllers.GameManager.Instance
+  name: Instance
+  nameWithType: GameManager.Instance
+  fullName: osrlib.Controllers.GameManager.Instance
+- uid: osrlib.Core.Adventure
+  commentId: T:osrlib.Core.Adventure
+  parent: osrlib.Core
+  name: Adventure
+  nameWithType: Adventure
+  fullName: osrlib.Core.Adventure
+- uid: osrlib.Controllers.GameManager.ActiveAdventure*
+  commentId: Overload:osrlib.Controllers.GameManager.ActiveAdventure
+  name: ActiveAdventure
+  nameWithType: GameManager.ActiveAdventure
+  fullName: osrlib.Controllers.GameManager.ActiveAdventure
+- uid: osrlib.Core
+  commentId: N:osrlib.Core
+  name: osrlib.Core
+  nameWithType: osrlib.Core
+  fullName: osrlib.Core
+- uid: osrlib.Controllers.GameManager.ActiveAdventure
+  commentId: P:osrlib.Controllers.GameManager.ActiveAdventure
+  isExternal: true
+- uid: System.EventHandler
+  commentId: T:System.EventHandler
+  parent: System
+  isExternal: true
+  name: EventHandler
+  nameWithType: EventHandler
+  fullName: System.EventHandler
+- uid: osrlib.Controllers.GameManager.SetActiveAdventure*
+  commentId: Overload:osrlib.Controllers.GameManager.SetActiveAdventure
+  name: SetActiveAdventure
+  nameWithType: GameManager.SetActiveAdventure
+  fullName: osrlib.Controllers.GameManager.SetActiveAdventure
+- uid: osrlib.Controllers.GameManager.LoadAdventure*
+  commentId: Overload:osrlib.Controllers.GameManager.LoadAdventure
+  name: LoadAdventure
+  nameWithType: GameManager.LoadAdventure
+  fullName: osrlib.Controllers.GameManager.LoadAdventure
+- uid: osrlib.SaveLoad.SaveType
+  commentId: T:osrlib.SaveLoad.SaveType
+  parent: osrlib.SaveLoad
+  name: SaveType
+  nameWithType: SaveType
+  fullName: osrlib.SaveLoad.SaveType
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: osrlib.SaveLoad
+  commentId: N:osrlib.SaveLoad
+  name: osrlib.SaveLoad
+  nameWithType: osrlib.SaveLoad
+  fullName: osrlib.SaveLoad
+- uid: osrlib.Controllers.GameManager.SaveActiveAdventure*
+  commentId: Overload:osrlib.Controllers.GameManager.SaveActiveAdventure
+  name: SaveActiveAdventure
+  nameWithType: GameManager.SaveActiveAdventure
+  fullName: osrlib.Controllers.GameManager.SaveActiveAdventure
+- uid: osrlib.Controllers.GameManager.StartAdventure*
+  commentId: Overload:osrlib.Controllers.GameManager.StartAdventure
+  name: StartAdventure
+  nameWithType: GameManager.StartAdventure
+  fullName: osrlib.Controllers.GameManager.StartAdventure

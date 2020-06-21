@@ -1,0 +1,153 @@
+### YamlMime:ManagedReference
+items:
+- uid: osrlib.Core.WeaponType
+  commentId: T:osrlib.Core.WeaponType
+  id: WeaponType
+  parent: osrlib.Core
+  children:
+  - osrlib.Core.WeaponType.Melee
+  - osrlib.Core.WeaponType.Ranged
+  - osrlib.Core.WeaponType.Spell
+  langs:
+  - csharp
+  - vb
+  name: WeaponType
+  nameWithType: WeaponType
+  fullName: osrlib.Core.WeaponType
+  type: Enum
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/WeaponType.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: WeaponType
+    path: GameRules/WeaponType.cs
+    startLine: 7
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nSpecifies the type of weapon or whether the weapon is an offensive (attack) spell.\nUsed in determining which ability modifiers to apply to attack and damage rolls,\nas well as whether a target is within attack range.\n"
+  example: []
+  syntax:
+    content: public enum WeaponType
+    content.vb: Public Enum WeaponType
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: osrlib.Core.WeaponType.Melee
+  commentId: F:osrlib.Core.WeaponType.Melee
+  id: Melee
+  parent: osrlib.Core.WeaponType
+  langs:
+  - csharp
+  - vb
+  name: Melee
+  nameWithType: WeaponType.Melee
+  fullName: osrlib.Core.WeaponType.Melee
+  type: Field
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/WeaponType.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Melee
+    path: GameRules/WeaponType.cs
+    startLine: 12
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nMartial weapon wielded in close combat. Examples: sword, axe, mace, spear.\n"
+  example: []
+  syntax:
+    content: Melee = 0
+    return:
+      type: osrlib.Core.WeaponType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: osrlib.Core.WeaponType.Ranged
+  commentId: F:osrlib.Core.WeaponType.Ranged
+  id: Ranged
+  parent: osrlib.Core.WeaponType
+  langs:
+  - csharp
+  - vb
+  name: Ranged
+  nameWithType: WeaponType.Ranged
+  fullName: osrlib.Core.WeaponType.Ranged
+  type: Field
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/WeaponType.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Ranged
+    path: GameRules/WeaponType.cs
+    startLine: 16
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nMartial weapon with extended attack range. Examples: bow, javelin, dart, throwing axe.\n"
+  example: []
+  syntax:
+    content: Ranged = 1
+    return:
+      type: osrlib.Core.WeaponType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: osrlib.Core.WeaponType.Spell
+  commentId: F:osrlib.Core.WeaponType.Spell
+  id: Spell
+  parent: osrlib.Core.WeaponType
+  langs:
+  - csharp
+  - vb
+  name: Spell
+  nameWithType: WeaponType.Spell
+  fullName: osrlib.Core.WeaponType.Spell
+  type: Field
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/WeaponType.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Spell
+    path: GameRules/WeaponType.cs
+    startLine: 20
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nOffensive (attack) spell. All offensive spells are considered ranged weapons.\n"
+  example: []
+  syntax:
+    content: Spell = 2
+    return:
+      type: osrlib.Core.WeaponType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: osrlib.Core
+  commentId: N:osrlib.Core
+  name: osrlib.Core
+  nameWithType: osrlib.Core
+  fullName: osrlib.Core
+- uid: osrlib.Core.WeaponType
+  commentId: T:osrlib.Core.WeaponType
+  parent: osrlib.Core
+  name: WeaponType
+  nameWithType: WeaponType
+  fullName: osrlib.Core.WeaponType

@@ -1,0 +1,71 @@
+### YamlMime:ManagedReference
+items:
+- uid: osrlib.Dice.DiceRolledEventHandler
+  commentId: T:osrlib.Dice.DiceRolledEventHandler
+  id: DiceRolledEventHandler
+  parent: osrlib.Dice
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: DiceRolledEventHandler
+  nameWithType: DiceRolledEventHandler
+  fullName: osrlib.Dice.DiceRolledEventHandler
+  type: Delegate
+  source:
+    remote:
+      path: src/osrlib.Core/Dice/DiceRolledEventArgs.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: DiceRolledEventHandler
+    path: Dice/DiceRolledEventArgs.cs
+    startLine: 9
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Dice
+  summary: "\nRepresents the method that handles a <xref href=\"osrlib.Dice.DiceRoll.DiceRolled\" data-throw-if-not-resolved=\"false\"></xref> event.\n"
+  example: []
+  syntax:
+    content: public delegate void DiceRolledEventHandler(object sender, DiceRolledEventArgs e);
+    parameters:
+    - id: sender
+      type: System.Object
+      description: The object that generated the event.
+    - id: e
+      type: osrlib.Dice.DiceRolledEventArgs
+      description: The information for the event.
+    content.vb: Public Delegate Sub DiceRolledEventHandler(sender As Object, e As DiceRolledEventArgs)
+  modifiers.csharp:
+  - public
+  - delegate
+  modifiers.vb:
+  - Public
+  - Delegate
+references:
+- uid: osrlib.Dice.DiceRoll.DiceRolled
+  commentId: E:osrlib.Dice.DiceRoll.DiceRolled
+  isExternal: true
+- uid: osrlib.Dice
+  commentId: N:osrlib.Dice
+  name: osrlib.Dice
+  nameWithType: osrlib.Dice
+  fullName: osrlib.Dice
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: osrlib.Dice.DiceRolledEventArgs
+  commentId: T:osrlib.Dice.DiceRolledEventArgs
+  parent: osrlib.Dice
+  name: DiceRolledEventArgs
+  nameWithType: DiceRolledEventArgs
+  fullName: osrlib.Dice.DiceRolledEventArgs
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System

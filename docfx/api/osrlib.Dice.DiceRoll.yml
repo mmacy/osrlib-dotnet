@@ -1,0 +1,1143 @@
+### YamlMime:ManagedReference
+items:
+- uid: osrlib.Dice.DiceRoll
+  commentId: T:osrlib.Dice.DiceRoll
+  id: DiceRoll
+  parent: osrlib.Dice
+  children:
+  - osrlib.Dice.DiceRoll.#ctor(osrlib.Dice.DiceHand)
+  - osrlib.Dice.DiceRoll.AddDice(osrlib.Dice.DiceHand)
+  - osrlib.Dice.DiceRoll.AddDice(System.Collections.Generic.List{osrlib.Dice.Die})
+  - osrlib.Dice.DiceRoll.AddDie(osrlib.Dice.Die)
+  - osrlib.Dice.DiceRoll.AddModifier(System.Int32)
+  - osrlib.Dice.DiceRoll.BaseRoll
+  - osrlib.Dice.DiceRoll.ClearDice
+  - osrlib.Dice.DiceRoll.ClearModifiers
+  - osrlib.Dice.DiceRoll.Dice
+  - osrlib.Dice.DiceRoll.DiceRolled
+  - osrlib.Dice.DiceRoll.LastRoll
+  - osrlib.Dice.DiceRoll.ModifierTotal
+  - osrlib.Dice.DiceRoll.RemoveDie(osrlib.Dice.Die)
+  - osrlib.Dice.DiceRoll.RollDice
+  - osrlib.Dice.DiceRoll.RollDice(osrlib.Dice.DiceHand,System.Int32)
+  - osrlib.Dice.DiceRoll.ToString
+  langs:
+  - csharp
+  - vb
+  name: DiceRoll
+  nameWithType: DiceRoll
+  fullName: osrlib.Dice.DiceRoll
+  type: Class
+  source:
+    remote:
+      path: src/osrlib.Core/Dice/DiceRoll.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: DiceRoll
+    path: Dice/DiceRoll.cs
+    startLine: 31
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Dice
+  summary: "\nThe DiceRoll owns a set of <xref href=\"osrlib.Dice.DiceRoll.Dice\" data-throw-if-not-resolved=\"false\"></xref> that can be rolled for result.\n"
+  remarks: "\nAdd dice to the DiceRoll as a <xref href=\"osrlib.Dice.DiceHand\" data-throw-if-not-resolved=\"false\"></xref>, then get the roll result by calling  <xref href=\"osrlib.Dice.DiceRoll.RollDice\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example:
+  - "\nRoll 1d20 using the DiceRoll object\n<pre><code>DiceHand hand = new DiceHand(1, DieType.d20);\nDiceRoll roll = new DiceRoll(hand);\nint toHitRoll = roll.RollDice();</code></pre>\n"
+  - "\nRoll 3d6 using the static method\n<pre><code>int strengthScore = DiceRoll.RollDice(new DiceHand(3, DieType.d6))</code></pre>\n"
+  - "\nRoll 1d20 + 3 using the static method\n<pre><code>int strengthScore = DiceRoll.RollDice(new DiceHand(1, DieType.d20), 3)</code></pre>\n"
+  syntax:
+    content: public class DiceRoll
+    content.vb: Public Class DiceRoll
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: osrlib.Dice.DiceRoll.DiceRolled
+  commentId: E:osrlib.Dice.DiceRoll.DiceRolled
+  id: DiceRolled
+  parent: osrlib.Dice.DiceRoll
+  langs:
+  - csharp
+  - vb
+  name: DiceRolled
+  nameWithType: DiceRoll.DiceRolled
+  fullName: osrlib.Dice.DiceRoll.DiceRolled
+  type: Event
+  source:
+    remote:
+      path: src/osrlib.Core/Dice/DiceRoll.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: DiceRolled
+    path: Dice/DiceRoll.cs
+    startLine: 42
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Dice
+  summary: "\nEvent raised immediately after <xref href=\"osrlib.Dice.DiceRoll.RollDice\" data-throw-if-not-resolved=\"false\"></xref> is called.\n"
+  example: []
+  syntax:
+    content: public event DiceRolledEventHandler DiceRolled
+    return:
+      type: osrlib.Dice.DiceRolledEventHandler
+    content.vb: Public Event DiceRolled As DiceRolledEventHandler
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Dice.DiceRoll.#ctor(osrlib.Dice.DiceHand)
+  commentId: M:osrlib.Dice.DiceRoll.#ctor(osrlib.Dice.DiceHand)
+  id: '#ctor(osrlib.Dice.DiceHand)'
+  parent: osrlib.Dice.DiceRoll
+  langs:
+  - csharp
+  - vb
+  name: DiceRoll(DiceHand)
+  nameWithType: DiceRoll.DiceRoll(DiceHand)
+  fullName: osrlib.Dice.DiceRoll.DiceRoll(osrlib.Dice.DiceHand)
+  type: Constructor
+  source:
+    remote:
+      path: src/osrlib.Core/Dice/DiceRoll.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: .ctor
+    path: Dice/DiceRoll.cs
+    startLine: 49
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Dice
+  summary: "\nCreates a new instance of a DiceRoll, adding the specified dice to the DiceRoll&apos;s Dice collection.\n"
+  example: []
+  syntax:
+    content: public DiceRoll(DiceHand diceHand)
+    parameters:
+    - id: diceHand
+      type: osrlib.Dice.DiceHand
+      description: The DiceHand specifying the Dice to add to the DiceRoll.
+    content.vb: Public Sub New(diceHand As DiceHand)
+  overload: osrlib.Dice.DiceRoll.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Dice.DiceRoll.AddDie(osrlib.Dice.Die)
+  commentId: M:osrlib.Dice.DiceRoll.AddDie(osrlib.Dice.Die)
+  id: AddDie(osrlib.Dice.Die)
+  parent: osrlib.Dice.DiceRoll
+  langs:
+  - csharp
+  - vb
+  name: AddDie(Die)
+  nameWithType: DiceRoll.AddDie(Die)
+  fullName: osrlib.Dice.DiceRoll.AddDie(osrlib.Dice.Die)
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/Dice/DiceRoll.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: AddDie
+    path: Dice/DiceRoll.cs
+    startLine: 62
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Dice
+  summary: "\nAdds the specified Die to this DiceRoll&apos;s Dice collection.\n"
+  example: []
+  syntax:
+    content: public void AddDie(Die die)
+    parameters:
+    - id: die
+      type: osrlib.Dice.Die
+      description: The Dice.Die to add to the DiceRoll&apos;s Dice collection.
+    content.vb: Public Sub AddDie(die As Die)
+  overload: osrlib.Dice.DiceRoll.AddDie*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Dice.DiceRoll.AddDice(System.Collections.Generic.List{osrlib.Dice.Die})
+  commentId: M:osrlib.Dice.DiceRoll.AddDice(System.Collections.Generic.List{osrlib.Dice.Die})
+  id: AddDice(System.Collections.Generic.List{osrlib.Dice.Die})
+  parent: osrlib.Dice.DiceRoll
+  langs:
+  - csharp
+  - vb
+  name: AddDice(List<Die>)
+  nameWithType: DiceRoll.AddDice(List<Die>)
+  fullName: osrlib.Dice.DiceRoll.AddDice(System.Collections.Generic.List<osrlib.Dice.Die>)
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/Dice/DiceRoll.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: AddDice
+    path: Dice/DiceRoll.cs
+    startLine: 71
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Dice
+  summary: "\nAdds the Die contained in the specified Dice collection to this DiceRoll&apos;s Dice collection.\n"
+  example: []
+  syntax:
+    content: public void AddDice(List<Die> dice)
+    parameters:
+    - id: dice
+      type: System.Collections.Generic.List{osrlib.Dice.Die}
+      description: Collection Die objects to add to the DiceRoll&apos;s Dice collection.
+    content.vb: Public Sub AddDice(dice As List(Of Die))
+  overload: osrlib.Dice.DiceRoll.AddDice*
+  nameWithType.vb: DiceRoll.AddDice(List(Of Die))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: osrlib.Dice.DiceRoll.AddDice(System.Collections.Generic.List(Of osrlib.Dice.Die))
+  name.vb: AddDice(List(Of Die))
+- uid: osrlib.Dice.DiceRoll.AddDice(osrlib.Dice.DiceHand)
+  commentId: M:osrlib.Dice.DiceRoll.AddDice(osrlib.Dice.DiceHand)
+  id: AddDice(osrlib.Dice.DiceHand)
+  parent: osrlib.Dice.DiceRoll
+  langs:
+  - csharp
+  - vb
+  name: AddDice(DiceHand)
+  nameWithType: DiceRoll.AddDice(DiceHand)
+  fullName: osrlib.Dice.DiceRoll.AddDice(osrlib.Dice.DiceHand)
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/Dice/DiceRoll.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: AddDice
+    path: Dice/DiceRoll.cs
+    startLine: 80
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Dice
+  summary: "\nAdds the Dice represented by the specified DiceHand to the DiceRoll&apos;s Dice collection.\n"
+  example: []
+  syntax:
+    content: public void AddDice(DiceHand diceHand)
+    parameters:
+    - id: diceHand
+      type: osrlib.Dice.DiceHand
+      description: The DiceHand specifying the number and type (number of sides) of Die that should be added to the DiceRoll&apos;s Dice collection.
+    content.vb: Public Sub AddDice(diceHand As DiceHand)
+  overload: osrlib.Dice.DiceRoll.AddDice*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Dice.DiceRoll.AddModifier(System.Int32)
+  commentId: M:osrlib.Dice.DiceRoll.AddModifier(System.Int32)
+  id: AddModifier(System.Int32)
+  parent: osrlib.Dice.DiceRoll
+  langs:
+  - csharp
+  - vb
+  name: AddModifier(Int32)
+  nameWithType: DiceRoll.AddModifier(Int32)
+  fullName: osrlib.Dice.DiceRoll.AddModifier(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/Dice/DiceRoll.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: AddModifier
+    path: Dice/DiceRoll.cs
+    startLine: 89
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Dice
+  summary: "\nAdds the specified modifier to the DiceRoll. The value can be negative.\n"
+  example: []
+  syntax:
+    content: public void AddModifier(int modifier)
+    parameters:
+    - id: modifier
+      type: System.Int32
+      description: A value that will modify the DiceRoll.
+    content.vb: Public Sub AddModifier(modifier As Integer)
+  overload: osrlib.Dice.DiceRoll.AddModifier*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Dice.DiceRoll.ClearDice
+  commentId: M:osrlib.Dice.DiceRoll.ClearDice
+  id: ClearDice
+  parent: osrlib.Dice.DiceRoll
+  langs:
+  - csharp
+  - vb
+  name: ClearDice()
+  nameWithType: DiceRoll.ClearDice()
+  fullName: osrlib.Dice.DiceRoll.ClearDice()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/Dice/DiceRoll.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: ClearDice
+    path: Dice/DiceRoll.cs
+    startLine: 97
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Dice
+  summary: "\nRemoves all Dice from the DiceRoll.\n"
+  example: []
+  syntax:
+    content: public void ClearDice()
+    content.vb: Public Sub ClearDice
+  overload: osrlib.Dice.DiceRoll.ClearDice*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Dice.DiceRoll.ClearModifiers
+  commentId: M:osrlib.Dice.DiceRoll.ClearModifiers
+  id: ClearModifiers
+  parent: osrlib.Dice.DiceRoll
+  langs:
+  - csharp
+  - vb
+  name: ClearModifiers()
+  nameWithType: DiceRoll.ClearModifiers()
+  fullName: osrlib.Dice.DiceRoll.ClearModifiers()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/Dice/DiceRoll.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: ClearModifiers
+    path: Dice/DiceRoll.cs
+    startLine: 105
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Dice
+  summary: "\nRemoves all Modifiers from the DiceRoll.\n"
+  example: []
+  syntax:
+    content: public void ClearModifiers()
+    content.vb: Public Sub ClearModifiers
+  overload: osrlib.Dice.DiceRoll.ClearModifiers*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Dice.DiceRoll.RemoveDie(osrlib.Dice.Die)
+  commentId: M:osrlib.Dice.DiceRoll.RemoveDie(osrlib.Dice.Die)
+  id: RemoveDie(osrlib.Dice.Die)
+  parent: osrlib.Dice.DiceRoll
+  langs:
+  - csharp
+  - vb
+  name: RemoveDie(Die)
+  nameWithType: DiceRoll.RemoveDie(Die)
+  fullName: osrlib.Dice.DiceRoll.RemoveDie(osrlib.Dice.Die)
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/Dice/DiceRoll.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: RemoveDie
+    path: Dice/DiceRoll.cs
+    startLine: 114
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Dice
+  summary: "\nRemoves the specified Die from this DiceRoll&apos;s Dice collection,if it exists in the collection.\n"
+  example: []
+  syntax:
+    content: public void RemoveDie(Die die)
+    parameters:
+    - id: die
+      type: osrlib.Dice.Die
+      description: The Dice.Die to remove from the DiceRoll&apos;s Dice collection.
+    content.vb: Public Sub RemoveDie(die As Die)
+  overload: osrlib.Dice.DiceRoll.RemoveDie*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Dice.DiceRoll.RollDice
+  commentId: M:osrlib.Dice.DiceRoll.RollDice
+  id: RollDice
+  parent: osrlib.Dice.DiceRoll
+  langs:
+  - csharp
+  - vb
+  name: RollDice()
+  nameWithType: DiceRoll.RollDice()
+  fullName: osrlib.Dice.DiceRoll.RollDice()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/Dice/DiceRoll.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: RollDice
+    path: Dice/DiceRoll.cs
+    startLine: 124
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Dice
+  summary: "\nRolls each <xref href=\"osrlib.Dice.Die\" data-throw-if-not-resolved=\"false\"></xref> in this DiceRolls&apos;s <xref href=\"osrlib.Dice.DiceRoll.Dice\" data-throw-if-not-resolved=\"false\"></xref> collection and returns the aggregate.\n"
+  example: []
+  syntax:
+    content: public int RollDice()
+    return:
+      type: System.Int32
+      description: The sum of the result of a roll of each Die in this DiceRoll&apos;s Dice collection.
+    content.vb: Public Function RollDice As Integer
+  overload: osrlib.Dice.DiceRoll.RollDice*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Dice.DiceRoll.RollDice(osrlib.Dice.DiceHand,System.Int32)
+  commentId: M:osrlib.Dice.DiceRoll.RollDice(osrlib.Dice.DiceHand,System.Int32)
+  id: RollDice(osrlib.Dice.DiceHand,System.Int32)
+  parent: osrlib.Dice.DiceRoll
+  langs:
+  - csharp
+  - vb
+  name: RollDice(DiceHand, Int32)
+  nameWithType: DiceRoll.RollDice(DiceHand, Int32)
+  fullName: osrlib.Dice.DiceRoll.RollDice(osrlib.Dice.DiceHand, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/Dice/DiceRoll.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: RollDice
+    path: Dice/DiceRoll.cs
+    startLine: 153
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Dice
+  summary: "\nRolls the dice in the specified <xref href=\"osrlib.Dice.DiceHand\" data-throw-if-not-resolved=\"false\"></xref> and returns the roll - the sum of each rolled die and the modifier, if specified.\n"
+  example: []
+  syntax:
+    content: public static int RollDice(DiceHand diceHand, int modifier = 0)
+    parameters:
+    - id: diceHand
+      type: osrlib.Dice.DiceHand
+      description: The handful of dice to roll.
+    - id: modifier
+      type: System.Int32
+      description: The modifer value to apply to the roll.
+    return:
+      type: System.Int32
+      description: The resultant DiceRoll (a DiceRoll with its <xref href="osrlib.Dice.DiceRoll.RollDice" data-throw-if-not-resolved="false"></xref> method having been called).
+    content.vb: Public Shared Function RollDice(diceHand As DiceHand, modifier As Integer = 0) As Integer
+  overload: osrlib.Dice.DiceRoll.RollDice*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: osrlib.Dice.DiceRoll.ModifierTotal
+  commentId: P:osrlib.Dice.DiceRoll.ModifierTotal
+  id: ModifierTotal
+  parent: osrlib.Dice.DiceRoll
+  langs:
+  - csharp
+  - vb
+  name: ModifierTotal
+  nameWithType: DiceRoll.ModifierTotal
+  fullName: osrlib.Dice.DiceRoll.ModifierTotal
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/Dice/DiceRoll.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: ModifierTotal
+    path: Dice/DiceRoll.cs
+    startLine: 197
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Dice
+  summary: "\nGets the sum of all modifiers applied to the roll with <xref href=\"osrlib.Dice.DiceRoll.AddModifier(System.Int32)\" data-throw-if-not-resolved=\"false\"></xref>.\nThe <xref href=\"osrlib.Dice.DiceRoll.RollDice\" data-throw-if-not-resolved=\"false\"></xref> method adds this value to the <xref href=\"osrlib.Dice.DiceRoll.BaseRoll\" data-throw-if-not-resolved=\"false\"></xref> to obtain its result.\n"
+  example: []
+  syntax:
+    content: public int ModifierTotal { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property ModifierTotal As Integer
+  overload: osrlib.Dice.DiceRoll.ModifierTotal*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: osrlib.Dice.DiceRoll.BaseRoll
+  commentId: P:osrlib.Dice.DiceRoll.BaseRoll
+  id: BaseRoll
+  parent: osrlib.Dice.DiceRoll
+  langs:
+  - csharp
+  - vb
+  name: BaseRoll
+  nameWithType: DiceRoll.BaseRoll
+  fullName: osrlib.Dice.DiceRoll.BaseRoll
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/Dice/DiceRoll.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: BaseRoll
+    path: Dice/DiceRoll.cs
+    startLine: 202
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Dice
+  summary: "\nGets the last roll result without any <xref href=\"osrlib.Dice.DiceRoll.ModifierTotal\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public int BaseRoll { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property BaseRoll As Integer
+  overload: osrlib.Dice.DiceRoll.BaseRoll*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: osrlib.Dice.DiceRoll.LastRoll
+  commentId: P:osrlib.Dice.DiceRoll.LastRoll
+  id: LastRoll
+  parent: osrlib.Dice.DiceRoll
+  langs:
+  - csharp
+  - vb
+  name: LastRoll
+  nameWithType: DiceRoll.LastRoll
+  fullName: osrlib.Dice.DiceRoll.LastRoll
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/Dice/DiceRoll.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: LastRoll
+    path: Dice/DiceRoll.cs
+    startLine: 208
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Dice
+  summary: "\nGets the result of the last time <xref href=\"osrlib.Dice.DiceRoll.RollDice\" data-throw-if-not-resolved=\"false\"></xref> was called.\nThis value includes all modifiers applied to the roll.\n"
+  example: []
+  syntax:
+    content: public int LastRoll { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property LastRoll As Integer
+  overload: osrlib.Dice.DiceRoll.LastRoll*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: osrlib.Dice.DiceRoll.Dice
+  commentId: P:osrlib.Dice.DiceRoll.Dice
+  id: Dice
+  parent: osrlib.Dice.DiceRoll
+  langs:
+  - csharp
+  - vb
+  name: Dice
+  nameWithType: DiceRoll.Dice
+  fullName: osrlib.Dice.DiceRoll.Dice
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/Dice/DiceRoll.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Dice
+    path: Dice/DiceRoll.cs
+    startLine: 213
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Dice
+  summary: "\nGets the Dice collection for the DiceRoll.\n"
+  example: []
+  syntax:
+    content: public List<Die> Dice { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{osrlib.Dice.Die}
+    content.vb: Public ReadOnly Property Dice As List(Of Die)
+  overload: osrlib.Dice.DiceRoll.Dice*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: osrlib.Dice.DiceRoll.ToString
+  commentId: M:osrlib.Dice.DiceRoll.ToString
+  id: ToString
+  parent: osrlib.Dice.DiceRoll
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: DiceRoll.ToString()
+  fullName: osrlib.Dice.DiceRoll.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/Dice/DiceRoll.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: ToString
+    path: Dice/DiceRoll.cs
+    startLine: 223
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Dice
+  summary: "\nReturns the string representation of the latest roll of this DiceRoll in the format &apos;N (NdN +/- N)&apos;. For example: &quot;16 (1d20 + 2)&quot;.\n"
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: String representation of the roll.
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: osrlib.Dice.DiceRoll.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: osrlib.Dice.DiceRoll.Dice
+  commentId: P:osrlib.Dice.DiceRoll.Dice
+  isExternal: true
+- uid: osrlib.Dice.DiceHand
+  commentId: T:osrlib.Dice.DiceHand
+  parent: osrlib.Dice
+  name: DiceHand
+  nameWithType: DiceHand
+  fullName: osrlib.Dice.DiceHand
+- uid: osrlib.Dice.DiceRoll.RollDice
+  commentId: M:osrlib.Dice.DiceRoll.RollDice
+  isExternal: true
+- uid: osrlib.Dice
+  commentId: N:osrlib.Dice
+  name: osrlib.Dice
+  nameWithType: osrlib.Dice
+  fullName: osrlib.Dice
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: osrlib.Dice.DiceRolledEventHandler
+  commentId: T:osrlib.Dice.DiceRolledEventHandler
+  parent: osrlib.Dice
+  name: DiceRolledEventHandler
+  nameWithType: DiceRolledEventHandler
+  fullName: osrlib.Dice.DiceRolledEventHandler
+- uid: osrlib.Dice.DiceRoll.#ctor*
+  commentId: Overload:osrlib.Dice.DiceRoll.#ctor
+  name: DiceRoll
+  nameWithType: DiceRoll.DiceRoll
+  fullName: osrlib.Dice.DiceRoll.DiceRoll
+- uid: osrlib.Dice.DiceRoll.AddDie*
+  commentId: Overload:osrlib.Dice.DiceRoll.AddDie
+  name: AddDie
+  nameWithType: DiceRoll.AddDie
+  fullName: osrlib.Dice.DiceRoll.AddDie
+- uid: osrlib.Dice.Die
+  commentId: T:osrlib.Dice.Die
+  parent: osrlib.Dice
+  name: Die
+  nameWithType: Die
+  fullName: osrlib.Dice.Die
+- uid: osrlib.Dice.DiceRoll.AddDice*
+  commentId: Overload:osrlib.Dice.DiceRoll.AddDice
+  name: AddDice
+  nameWithType: DiceRoll.AddDice
+  fullName: osrlib.Dice.DiceRoll.AddDice
+- uid: System.Collections.Generic.List{osrlib.Dice.Die}
+  commentId: T:System.Collections.Generic.List{osrlib.Dice.Die}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Die>
+  nameWithType: List<Die>
+  fullName: System.Collections.Generic.List<osrlib.Dice.Die>
+  nameWithType.vb: List(Of Die)
+  fullName.vb: System.Collections.Generic.List(Of osrlib.Dice.Die)
+  name.vb: List(Of Die)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: osrlib.Dice.Die
+    name: Die
+    nameWithType: Die
+    fullName: osrlib.Dice.Die
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: osrlib.Dice.Die
+    name: Die
+    nameWithType: Die
+    fullName: osrlib.Dice.Die
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: osrlib.Dice.DiceRoll.AddModifier*
+  commentId: Overload:osrlib.Dice.DiceRoll.AddModifier
+  name: AddModifier
+  nameWithType: DiceRoll.AddModifier
+  fullName: osrlib.Dice.DiceRoll.AddModifier
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: osrlib.Dice.DiceRoll.ClearDice*
+  commentId: Overload:osrlib.Dice.DiceRoll.ClearDice
+  name: ClearDice
+  nameWithType: DiceRoll.ClearDice
+  fullName: osrlib.Dice.DiceRoll.ClearDice
+- uid: osrlib.Dice.DiceRoll.ClearModifiers*
+  commentId: Overload:osrlib.Dice.DiceRoll.ClearModifiers
+  name: ClearModifiers
+  nameWithType: DiceRoll.ClearModifiers
+  fullName: osrlib.Dice.DiceRoll.ClearModifiers
+- uid: osrlib.Dice.DiceRoll.RemoveDie*
+  commentId: Overload:osrlib.Dice.DiceRoll.RemoveDie
+  name: RemoveDie
+  nameWithType: DiceRoll.RemoveDie
+  fullName: osrlib.Dice.DiceRoll.RemoveDie
+- uid: osrlib.Dice.DiceRoll.RollDice*
+  commentId: Overload:osrlib.Dice.DiceRoll.RollDice
+  name: RollDice
+  nameWithType: DiceRoll.RollDice
+  fullName: osrlib.Dice.DiceRoll.RollDice
+- uid: osrlib.Dice.DiceRoll.AddModifier(System.Int32)
+  commentId: M:osrlib.Dice.DiceRoll.AddModifier(System.Int32)
+  isExternal: true
+- uid: osrlib.Dice.DiceRoll.BaseRoll
+  commentId: P:osrlib.Dice.DiceRoll.BaseRoll
+  isExternal: true
+- uid: osrlib.Dice.DiceRoll.ModifierTotal*
+  commentId: Overload:osrlib.Dice.DiceRoll.ModifierTotal
+  name: ModifierTotal
+  nameWithType: DiceRoll.ModifierTotal
+  fullName: osrlib.Dice.DiceRoll.ModifierTotal
+- uid: osrlib.Dice.DiceRoll.ModifierTotal
+  commentId: P:osrlib.Dice.DiceRoll.ModifierTotal
+  isExternal: true
+- uid: osrlib.Dice.DiceRoll.BaseRoll*
+  commentId: Overload:osrlib.Dice.DiceRoll.BaseRoll
+  name: BaseRoll
+  nameWithType: DiceRoll.BaseRoll
+  fullName: osrlib.Dice.DiceRoll.BaseRoll
+- uid: osrlib.Dice.DiceRoll.LastRoll*
+  commentId: Overload:osrlib.Dice.DiceRoll.LastRoll
+  name: LastRoll
+  nameWithType: DiceRoll.LastRoll
+  fullName: osrlib.Dice.DiceRoll.LastRoll
+- uid: osrlib.Dice.DiceRoll.Dice*
+  commentId: Overload:osrlib.Dice.DiceRoll.Dice
+  name: Dice
+  nameWithType: DiceRoll.Dice
+  fullName: osrlib.Dice.DiceRoll.Dice
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: osrlib.Dice.DiceRoll.ToString*
+  commentId: Overload:osrlib.Dice.DiceRoll.ToString
+  name: ToString
+  nameWithType: DiceRoll.ToString
+  fullName: osrlib.Dice.DiceRoll.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

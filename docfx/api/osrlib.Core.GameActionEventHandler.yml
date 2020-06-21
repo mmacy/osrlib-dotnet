@@ -1,0 +1,80 @@
+### YamlMime:ManagedReference
+items:
+- uid: osrlib.Core.GameActionEventHandler
+  commentId: T:osrlib.Core.GameActionEventHandler
+  id: GameActionEventHandler
+  parent: osrlib.Core
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: GameActionEventHandler
+  nameWithType: GameActionEventHandler
+  fullName: osrlib.Core.GameActionEventHandler
+  type: Delegate
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Being.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: GameActionEventHandler
+    path: GameRules/Being.cs
+    startLine: 22
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nRepresents the method that handles a Being&apos;s <xref href=\"osrlib.Core.Being.PerformingAction\" data-throw-if-not-resolved=\"false\"></xref> or\n<xref href=\"osrlib.Core.Being.ActionPerformed\" data-throw-if-not-resolved=\"false\"></xref> events.\n"
+  example: []
+  syntax:
+    content: public delegate void GameActionEventHandler(object sender, GameActionEventArgs e);
+    parameters:
+    - id: sender
+      type: System.Object
+      description: The object generating the event.
+    - id: e
+      type: osrlib.Core.GameActionEventArgs
+      description: The <xref href="osrlib.Core.GameAction" data-throw-if-not-resolved="false"></xref> for the event.
+    content.vb: Public Delegate Sub GameActionEventHandler(sender As Object, e As GameActionEventArgs)
+  modifiers.csharp:
+  - public
+  - delegate
+  modifiers.vb:
+  - Public
+  - Delegate
+references:
+- uid: osrlib.Core.Being.PerformingAction
+  commentId: E:osrlib.Core.Being.PerformingAction
+  isExternal: true
+- uid: osrlib.Core.Being.ActionPerformed
+  commentId: E:osrlib.Core.Being.ActionPerformed
+  isExternal: true
+- uid: osrlib.Core.GameAction
+  commentId: T:osrlib.Core.GameAction
+  parent: osrlib.Core
+  name: GameAction
+  nameWithType: GameAction
+  fullName: osrlib.Core.GameAction
+- uid: osrlib.Core
+  commentId: N:osrlib.Core
+  name: osrlib.Core
+  nameWithType: osrlib.Core
+  fullName: osrlib.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: osrlib.Core.GameActionEventArgs
+  commentId: T:osrlib.Core.GameActionEventArgs
+  parent: osrlib.Core
+  name: GameActionEventArgs
+  nameWithType: GameActionEventArgs
+  fullName: osrlib.Core.GameActionEventArgs
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System

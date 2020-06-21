@@ -1,0 +1,783 @@
+### YamlMime:ManagedReference
+items:
+- uid: osrlib.Core.Ability
+  commentId: T:osrlib.Core.Ability
+  id: Ability
+  parent: osrlib.Core
+  children:
+  - osrlib.Core.Ability.BaseValue
+  - osrlib.Core.Ability.GetModifier
+  - osrlib.Core.Ability.RollAbilityScore
+  - osrlib.Core.Ability.ScoreModifiers
+  - osrlib.Core.Ability.ToString
+  - osrlib.Core.Ability.Type
+  - osrlib.Core.Ability.Value
+  langs:
+  - csharp
+  - vb
+  name: Ability
+  nameWithType: Ability
+  fullName: osrlib.Core.Ability
+  type: Class
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Ability.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Ability
+    path: GameRules/Ability.cs
+    startLine: 10
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nA <xref href=\"osrlib.Core.Being\" data-throw-if-not-resolved=\"false\"></xref> has one or more abilities (strength, dexterity, intelligence, etc.) that are\nreferenced when calculating the success of a <xref href=\"osrlib.Core.GameAction\" data-throw-if-not-resolved=\"false\"></xref>. \n"
+  example: []
+  syntax:
+    content: public class Ability
+    content.vb: Public Class Ability
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: osrlib.Core.Ability.Type
+  commentId: P:osrlib.Core.Ability.Type
+  id: Type
+  parent: osrlib.Core.Ability
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: Ability.Type
+  fullName: osrlib.Core.Ability.Type
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Ability.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Type
+    path: GameRules/Ability.cs
+    startLine: 15
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the type (strength, dexterity, intelligence, etc.) of this Ability.\n"
+  example: []
+  syntax:
+    content: public AbilityType Type { get; set; }
+    parameters: []
+    return:
+      type: osrlib.Core.AbilityType
+    content.vb: Public Property Type As AbilityType
+  overload: osrlib.Core.Ability.Type*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Ability.BaseValue
+  commentId: P:osrlib.Core.Ability.BaseValue
+  id: BaseValue
+  parent: osrlib.Core.Ability
+  langs:
+  - csharp
+  - vb
+  name: BaseValue
+  nameWithType: Ability.BaseValue
+  fullName: osrlib.Core.Ability.BaseValue
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Ability.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: BaseValue
+    path: GameRules/Ability.cs
+    startLine: 21
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the base value of this Ability. This is raw &quot;rolled&quot; value set with <xref href=\"osrlib.Core.Ability.RollAbilityScore\" data-throw-if-not-resolved=\"false\"></xref>,\nwithout any modifiers.\n"
+  example: []
+  syntax:
+    content: public int BaseValue { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property BaseValue As Integer
+  overload: osrlib.Core.Ability.BaseValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Ability.ScoreModifiers
+  commentId: P:osrlib.Core.Ability.ScoreModifiers
+  id: ScoreModifiers
+  parent: osrlib.Core.Ability
+  langs:
+  - csharp
+  - vb
+  name: ScoreModifiers
+  nameWithType: Ability.ScoreModifiers
+  fullName: osrlib.Core.Ability.ScoreModifiers
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Ability.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: ScoreModifiers
+    path: GameRules/Ability.cs
+    startLine: 29
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the collection of <xref href=\"osrlib.Core.Modifier\" data-throw-if-not-resolved=\"false\"></xref>s that adjust the score of this Ability.\n"
+  remarks: >
+    These are the modifiers that grant a bonus or a impose a penalty on the modifier value.
+
+    For example, enhancements from potions or penalties from curse-type spells.
+  example: []
+  syntax:
+    content: public List<Modifier> ScoreModifiers { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{osrlib.Core.Modifier}
+    content.vb: Public Property ScoreModifiers As List(Of Modifier)
+  overload: osrlib.Core.Ability.ScoreModifiers*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Ability.GetModifier
+  commentId: M:osrlib.Core.Ability.GetModifier
+  id: GetModifier
+  parent: osrlib.Core.Ability
+  langs:
+  - csharp
+  - vb
+  name: GetModifier()
+  nameWithType: Ability.GetModifier()
+  fullName: osrlib.Core.Ability.GetModifier()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Ability.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: GetModifier
+    path: GameRules/Ability.cs
+    startLine: 41
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets the bonus granted or penalty imposed by the Ability.\n"
+  remarks: "\nThis value is based on the Ability&apos;s <xref href=\"osrlib.Core.Ability.Value\" data-throw-if-not-resolved=\"false\"></xref>, which is the sum of its <xref href=\"osrlib.Core.Ability.BaseValue\" data-throw-if-not-resolved=\"false\"></xref>\nand <xref href=\"osrlib.Core.Ability.ScoreModifiers\" data-throw-if-not-resolved=\"false\"></xref>, if any.\nFor example, for an Ability score of 18, this method returns 3 (that is, a +3). Use this method when\nadjusting dice rolls typically affected by ability scores, for example attack and damage rolls.\n"
+  example: []
+  syntax:
+    content: public int GetModifier()
+    return:
+      type: System.Int32
+      description: The bonus or penalty value of the Ability.
+    content.vb: Public Function GetModifier As Integer
+  overload: osrlib.Core.Ability.GetModifier*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Ability.RollAbilityScore
+  commentId: M:osrlib.Core.Ability.RollAbilityScore
+  id: RollAbilityScore
+  parent: osrlib.Core.Ability
+  langs:
+  - csharp
+  - vb
+  name: RollAbilityScore()
+  nameWithType: Ability.RollAbilityScore()
+  fullName: osrlib.Core.Ability.RollAbilityScore()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Ability.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: RollAbilityScore
+    path: GameRules/Ability.cs
+    startLine: 61
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nRolls and sets the <xref href=\"osrlib.Core.Ability.BaseValue\" data-throw-if-not-resolved=\"false\"></xref> of the Ability.\n"
+  example: []
+  syntax:
+    content: public int RollAbilityScore()
+    return:
+      type: System.Int32
+      description: The rolled score.
+    content.vb: Public Function RollAbilityScore As Integer
+  overload: osrlib.Core.Ability.RollAbilityScore*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Ability.Value
+  commentId: P:osrlib.Core.Ability.Value
+  id: Value
+  parent: osrlib.Core.Ability
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: Ability.Value
+  fullName: osrlib.Core.Ability.Value
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Ability.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Value
+    path: GameRules/Ability.cs
+    startLine: 73
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets the total value of the Ability, the sum of its <xref href=\"osrlib.Core.Ability.BaseValue\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"osrlib.Core.Ability.ScoreModifiers\" data-throw-if-not-resolved=\"false\"></xref>, if any.\n"
+  example: []
+  syntax:
+    content: public int Value { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Value As Integer
+  overload: osrlib.Core.Ability.Value*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: osrlib.Core.Ability.ToString
+  commentId: M:osrlib.Core.Ability.ToString
+  id: ToString
+  parent: osrlib.Core.Ability
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Ability.ToString()
+  fullName: osrlib.Core.Ability.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Ability.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: ToString
+    path: GameRules/Ability.cs
+    startLine: 91
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets a string representation of the Ability. For example, <code>Strength: 18 (17 + 1)</code>.\n"
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: Single-line text representation of the Ability.
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: osrlib.Core.Ability.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: osrlib.Core.Being
+  commentId: T:osrlib.Core.Being
+  parent: osrlib.Core
+  name: Being
+  nameWithType: Being
+  fullName: osrlib.Core.Being
+- uid: osrlib.Core.GameAction
+  commentId: T:osrlib.Core.GameAction
+  parent: osrlib.Core
+  name: GameAction
+  nameWithType: GameAction
+  fullName: osrlib.Core.GameAction
+- uid: osrlib.Core
+  commentId: N:osrlib.Core
+  name: osrlib.Core
+  nameWithType: osrlib.Core
+  fullName: osrlib.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: osrlib.Core.Ability.Type*
+  commentId: Overload:osrlib.Core.Ability.Type
+  name: Type
+  nameWithType: Ability.Type
+  fullName: osrlib.Core.Ability.Type
+- uid: osrlib.Core.AbilityType
+  commentId: T:osrlib.Core.AbilityType
+  parent: osrlib.Core
+  name: AbilityType
+  nameWithType: AbilityType
+  fullName: osrlib.Core.AbilityType
+- uid: osrlib.Core.Ability.RollAbilityScore
+  commentId: M:osrlib.Core.Ability.RollAbilityScore
+  isExternal: true
+- uid: osrlib.Core.Ability.BaseValue*
+  commentId: Overload:osrlib.Core.Ability.BaseValue
+  name: BaseValue
+  nameWithType: Ability.BaseValue
+  fullName: osrlib.Core.Ability.BaseValue
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: osrlib.Core.Modifier
+  commentId: T:osrlib.Core.Modifier
+  parent: osrlib.Core
+  name: Modifier
+  nameWithType: Modifier
+  fullName: osrlib.Core.Modifier
+- uid: osrlib.Core.Ability.ScoreModifiers*
+  commentId: Overload:osrlib.Core.Ability.ScoreModifiers
+  name: ScoreModifiers
+  nameWithType: Ability.ScoreModifiers
+  fullName: osrlib.Core.Ability.ScoreModifiers
+- uid: System.Collections.Generic.List{osrlib.Core.Modifier}
+  commentId: T:System.Collections.Generic.List{osrlib.Core.Modifier}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Modifier>
+  nameWithType: List<Modifier>
+  fullName: System.Collections.Generic.List<osrlib.Core.Modifier>
+  nameWithType.vb: List(Of Modifier)
+  fullName.vb: System.Collections.Generic.List(Of osrlib.Core.Modifier)
+  name.vb: List(Of Modifier)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: osrlib.Core.Modifier
+    name: Modifier
+    nameWithType: Modifier
+    fullName: osrlib.Core.Modifier
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: osrlib.Core.Modifier
+    name: Modifier
+    nameWithType: Modifier
+    fullName: osrlib.Core.Modifier
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: osrlib.Core.Ability.Value
+  commentId: P:osrlib.Core.Ability.Value
+  isExternal: true
+- uid: osrlib.Core.Ability.BaseValue
+  commentId: P:osrlib.Core.Ability.BaseValue
+  isExternal: true
+- uid: osrlib.Core.Ability.ScoreModifiers
+  commentId: P:osrlib.Core.Ability.ScoreModifiers
+  isExternal: true
+- uid: osrlib.Core.Ability.GetModifier*
+  commentId: Overload:osrlib.Core.Ability.GetModifier
+  name: GetModifier
+  nameWithType: Ability.GetModifier
+  fullName: osrlib.Core.Ability.GetModifier
+- uid: osrlib.Core.Ability.RollAbilityScore*
+  commentId: Overload:osrlib.Core.Ability.RollAbilityScore
+  name: RollAbilityScore
+  nameWithType: Ability.RollAbilityScore
+  fullName: osrlib.Core.Ability.RollAbilityScore
+- uid: osrlib.Core.Ability.Value*
+  commentId: Overload:osrlib.Core.Ability.Value
+  name: Value
+  nameWithType: Ability.Value
+  fullName: osrlib.Core.Ability.Value
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: osrlib.Core.Ability.ToString*
+  commentId: Overload:osrlib.Core.Ability.ToString
+  name: ToString
+  nameWithType: Ability.ToString
+  fullName: osrlib.Core.Ability.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

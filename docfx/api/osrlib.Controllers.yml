@@ -1,0 +1,28 @@
+### YamlMime:ManagedReference
+items:
+- uid: osrlib.Controllers
+  commentId: N:osrlib.Controllers
+  id: osrlib.Controllers
+  children:
+  - osrlib.Controllers.GameManager
+  langs:
+  - csharp
+  - vb
+  name: osrlib.Controllers
+  nameWithType: osrlib.Controllers
+  fullName: osrlib.Controllers
+  type: Namespace
+  assemblies:
+  - osrlib.Core
+references:
+- uid: osrlib.Controllers.GameManager
+  commentId: T:osrlib.Controllers.GameManager
+  parent: osrlib.Controllers
+  name: GameManager
+  nameWithType: GameManager
+  fullName: osrlib.Controllers.GameManager
+- uid: osrlib.Controllers
+  commentId: N:osrlib.Controllers
+  name: osrlib.Controllers
+  nameWithType: osrlib.Controllers
+  fullName: osrlib.Controllers

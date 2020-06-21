@@ -1,0 +1,229 @@
+### YamlMime:ManagedReference
+items:
+- uid: osrlib.Core.Alignment
+  commentId: T:osrlib.Core.Alignment
+  id: Alignment
+  parent: osrlib.Core
+  children:
+  - osrlib.Core.Alignment.ChaoticEvil
+  - osrlib.Core.Alignment.Evil
+  - osrlib.Core.Alignment.Good
+  - osrlib.Core.Alignment.LawfulGood
+  - osrlib.Core.Alignment.Unaligned
+  langs:
+  - csharp
+  - vb
+  name: Alignment
+  nameWithType: Alignment
+  fullName: osrlib.Core.Alignment
+  type: Enum
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Alignment.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Alignment
+    path: GameRules/Alignment.cs
+    startLine: 5
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nSpecifies the alignment of a <xref href=\"osrlib.Core.Being\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public enum Alignment
+    content.vb: Public Enum Alignment
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: osrlib.Core.Alignment.LawfulGood
+  commentId: F:osrlib.Core.Alignment.LawfulGood
+  id: LawfulGood
+  parent: osrlib.Core.Alignment
+  langs:
+  - csharp
+  - vb
+  name: LawfulGood
+  nameWithType: Alignment.LawfulGood
+  fullName: osrlib.Core.Alignment.LawfulGood
+  type: Field
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Alignment.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: LawfulGood
+    path: GameRules/Alignment.cs
+    startLine: 8
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: Civilization and order.
+  example: []
+  syntax:
+    content: LawfulGood = 0
+    return:
+      type: osrlib.Core.Alignment
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: osrlib.Core.Alignment.Good
+  commentId: F:osrlib.Core.Alignment.Good
+  id: Good
+  parent: osrlib.Core.Alignment
+  langs:
+  - csharp
+  - vb
+  name: Good
+  nameWithType: Alignment.Good
+  fullName: osrlib.Core.Alignment.Good
+  type: Field
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Alignment.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Good
+    path: GameRules/Alignment.cs
+    startLine: 10
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: Freedom and kindness.
+  example: []
+  syntax:
+    content: Good = 1
+    return:
+      type: osrlib.Core.Alignment
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: osrlib.Core.Alignment.Evil
+  commentId: F:osrlib.Core.Alignment.Evil
+  id: Evil
+  parent: osrlib.Core.Alignment
+  langs:
+  - csharp
+  - vb
+  name: Evil
+  nameWithType: Alignment.Evil
+  fullName: osrlib.Core.Alignment.Evil
+  type: Field
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Alignment.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Evil
+    path: GameRules/Alignment.cs
+    startLine: 12
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: Tyranny and hatred.
+  example: []
+  syntax:
+    content: Evil = 2
+    return:
+      type: osrlib.Core.Alignment
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: osrlib.Core.Alignment.ChaoticEvil
+  commentId: F:osrlib.Core.Alignment.ChaoticEvil
+  id: ChaoticEvil
+  parent: osrlib.Core.Alignment
+  langs:
+  - csharp
+  - vb
+  name: ChaoticEvil
+  nameWithType: Alignment.ChaoticEvil
+  fullName: osrlib.Core.Alignment.ChaoticEvil
+  type: Field
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Alignment.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: ChaoticEvil
+    path: GameRules/Alignment.cs
+    startLine: 14
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: Entropy and destruction.
+  example: []
+  syntax:
+    content: ChaoticEvil = 3
+    return:
+      type: osrlib.Core.Alignment
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: osrlib.Core.Alignment.Unaligned
+  commentId: F:osrlib.Core.Alignment.Unaligned
+  id: Unaligned
+  parent: osrlib.Core.Alignment
+  langs:
+  - csharp
+  - vb
+  name: Unaligned
+  nameWithType: Alignment.Unaligned
+  fullName: osrlib.Core.Alignment.Unaligned
+  type: Field
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Alignment.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Unaligned
+    path: GameRules/Alignment.cs
+    startLine: 16
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: Having no alignment; not taking a stand.
+  example: []
+  syntax:
+    content: Unaligned = 4
+    return:
+      type: osrlib.Core.Alignment
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: osrlib.Core.Being
+  commentId: T:osrlib.Core.Being
+  parent: osrlib.Core
+  name: Being
+  nameWithType: Being
+  fullName: osrlib.Core.Being
+- uid: osrlib.Core
+  commentId: N:osrlib.Core
+  name: osrlib.Core
+  nameWithType: osrlib.Core
+  fullName: osrlib.Core
+- uid: osrlib.Core.Alignment
+  commentId: T:osrlib.Core.Alignment
+  parent: osrlib.Core
+  name: Alignment
+  nameWithType: Alignment
+  fullName: osrlib.Core.Alignment
