@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: osrlib.Utility
+  commentId: N:osrlib.Utility
+  id: osrlib.Utility
+  children:
+  - osrlib.Utility.Randomizer
+  langs:
+  - csharp
+  - vb
+  name: osrlib.Utility
+  nameWithType: osrlib.Utility
+  fullName: osrlib.Utility
+  type: Namespace
+  assemblies:
+  - osrlib.Core
+references:
+- uid: osrlib.Utility.Randomizer
+  commentId: T:osrlib.Utility.Randomizer
+  name: Randomizer
+  nameWithType: Randomizer
+  fullName: osrlib.Utility.Randomizer

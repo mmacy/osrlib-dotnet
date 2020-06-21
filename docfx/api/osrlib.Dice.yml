@@ -1,0 +1,56 @@
+### YamlMime:ManagedReference
+items:
+- uid: osrlib.Dice
+  commentId: N:osrlib.Dice
+  id: osrlib.Dice
+  children:
+  - osrlib.Dice.DiceHand
+  - osrlib.Dice.DiceRoll
+  - osrlib.Dice.DiceRolledEventArgs
+  - osrlib.Dice.DiceRolledEventHandler
+  - osrlib.Dice.Die
+  langs:
+  - csharp
+  - vb
+  name: osrlib.Dice
+  nameWithType: osrlib.Dice
+  fullName: osrlib.Dice
+  type: Namespace
+  assemblies:
+  - osrlib.Core
+references:
+- uid: osrlib.Dice.DiceHand
+  commentId: T:osrlib.Dice.DiceHand
+  parent: osrlib.Dice
+  name: DiceHand
+  nameWithType: DiceHand
+  fullName: osrlib.Dice.DiceHand
+- uid: osrlib.Dice.DiceRoll
+  commentId: T:osrlib.Dice.DiceRoll
+  parent: osrlib.Dice
+  name: DiceRoll
+  nameWithType: DiceRoll
+  fullName: osrlib.Dice.DiceRoll
+- uid: osrlib.Dice.DiceRolledEventHandler
+  commentId: T:osrlib.Dice.DiceRolledEventHandler
+  parent: osrlib.Dice
+  name: DiceRolledEventHandler
+  nameWithType: DiceRolledEventHandler
+  fullName: osrlib.Dice.DiceRolledEventHandler
+- uid: osrlib.Dice.DiceRolledEventArgs
+  commentId: T:osrlib.Dice.DiceRolledEventArgs
+  parent: osrlib.Dice
+  name: DiceRolledEventArgs
+  nameWithType: DiceRolledEventArgs
+  fullName: osrlib.Dice.DiceRolledEventArgs
+- uid: osrlib.Dice.Die
+  commentId: T:osrlib.Dice.Die
+  parent: osrlib.Dice
+  name: Die
+  nameWithType: Die
+  fullName: osrlib.Dice.Die
+- uid: osrlib.Dice
+  commentId: N:osrlib.Dice
+  name: osrlib.Dice
+  nameWithType: osrlib.Dice
+  fullName: osrlib.Dice

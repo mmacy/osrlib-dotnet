@@ -1,0 +1,52 @@
+### YamlMime:ManagedReference
+items:
+- uid: osrlib.Tests
+  commentId: N:osrlib.Tests
+  id: osrlib.Tests
+  children:
+  - osrlib.Tests.CoreRulesTests
+  - osrlib.Tests.DiceTests
+  - osrlib.Tests.PartyGenerator
+  - osrlib.Tests.ReadMeTests
+  - osrlib.Tests.SaveLoadTests
+  - osrlib.Tests.SteppedBattleTests
+  langs:
+  - csharp
+  - vb
+  name: osrlib.Tests
+  nameWithType: osrlib.Tests
+  fullName: osrlib.Tests
+  type: Namespace
+  assemblies:
+  - osrlib.Tests
+references:
+- uid: osrlib.Tests.CoreRulesTests
+  commentId: T:osrlib.Tests.CoreRulesTests
+  name: CoreRulesTests
+  nameWithType: CoreRulesTests
+  fullName: osrlib.Tests.CoreRulesTests
+- uid: osrlib.Tests.DiceTests
+  commentId: T:osrlib.Tests.DiceTests
+  name: DiceTests
+  nameWithType: DiceTests
+  fullName: osrlib.Tests.DiceTests
+- uid: osrlib.Tests.PartyGenerator
+  commentId: T:osrlib.Tests.PartyGenerator
+  name: PartyGenerator
+  nameWithType: PartyGenerator
+  fullName: osrlib.Tests.PartyGenerator
+- uid: osrlib.Tests.ReadMeTests
+  commentId: T:osrlib.Tests.ReadMeTests
+  name: ReadMeTests
+  nameWithType: ReadMeTests
+  fullName: osrlib.Tests.ReadMeTests
+- uid: osrlib.Tests.SaveLoadTests
+  commentId: T:osrlib.Tests.SaveLoadTests
+  name: SaveLoadTests
+  nameWithType: SaveLoadTests
+  fullName: osrlib.Tests.SaveLoadTests
+- uid: osrlib.Tests.SteppedBattleTests
+  commentId: T:osrlib.Tests.SteppedBattleTests
+  name: SteppedBattleTests
+  nameWithType: SteppedBattleTests
+  fullName: osrlib.Tests.SteppedBattleTests

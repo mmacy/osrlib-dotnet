@@ -1,0 +1,576 @@
+### YamlMime:ManagedReference
+items:
+- uid: osrlib.Tests.CoreRulesTests
+  commentId: T:osrlib.Tests.CoreRulesTests
+  id: CoreRulesTests
+  parent: osrlib.Tests
+  children:
+  - osrlib.Tests.CoreRulesTests.CreateFullyInitializedCharacter
+  - osrlib.Tests.CoreRulesTests.DoEncounterAutoBattle
+  - osrlib.Tests.CoreRulesTests.ExecuteDungeonBattle
+  - osrlib.Tests.CoreRulesTests.InitGameManager
+  - osrlib.Tests.CoreRulesTests.InitMajorGameEntities
+  langs:
+  - csharp
+  - vb
+  name: CoreRulesTests
+  nameWithType: CoreRulesTests
+  fullName: osrlib.Tests.CoreRulesTests
+  type: Class
+  source:
+    remote:
+      path: src/osrlib.Tests/CoreRulesTests.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: CoreRulesTests
+    path: ../osrlib.Tests/CoreRulesTests.cs
+    startLine: 8
+  assemblies:
+  - osrlib.Tests
+  namespace: osrlib.Tests
+  syntax:
+    content: public class CoreRulesTests
+    content.vb: Public Class CoreRulesTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: osrlib.Tests.CoreRulesTests.InitMajorGameEntities
+  commentId: M:osrlib.Tests.CoreRulesTests.InitMajorGameEntities
+  id: InitMajorGameEntities
+  parent: osrlib.Tests.CoreRulesTests
+  langs:
+  - csharp
+  - vb
+  name: InitMajorGameEntities()
+  nameWithType: CoreRulesTests.InitMajorGameEntities()
+  fullName: osrlib.Tests.CoreRulesTests.InitMajorGameEntities()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Tests/CoreRulesTests.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: InitMajorGameEntities
+    path: ../osrlib.Tests/CoreRulesTests.cs
+    startLine: 10
+  assemblies:
+  - osrlib.Tests
+  namespace: osrlib.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void InitMajorGameEntities()
+    content.vb: >-
+      <Fact>
+
+      Public Sub InitMajorGameEntities
+  overload: osrlib.Tests.CoreRulesTests.InitMajorGameEntities*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Tests.CoreRulesTests.ExecuteDungeonBattle
+  commentId: M:osrlib.Tests.CoreRulesTests.ExecuteDungeonBattle
+  id: ExecuteDungeonBattle
+  parent: osrlib.Tests.CoreRulesTests
+  langs:
+  - csharp
+  - vb
+  name: ExecuteDungeonBattle()
+  nameWithType: CoreRulesTests.ExecuteDungeonBattle()
+  fullName: osrlib.Tests.CoreRulesTests.ExecuteDungeonBattle()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Tests/CoreRulesTests.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: ExecuteDungeonBattle
+    path: ../osrlib.Tests/CoreRulesTests.cs
+    startLine: 45
+  assemblies:
+  - osrlib.Tests
+  namespace: osrlib.Tests
+  syntax:
+    content: >-
+      [Fact(Skip = "Test not yet implemented.")]
+
+      public void ExecuteDungeonBattle()
+    content.vb: >-
+      <Fact(Skip:="Test not yet implemented.")>
+
+      Public Sub ExecuteDungeonBattle
+  overload: osrlib.Tests.CoreRulesTests.ExecuteDungeonBattle*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Skip
+      type: System.String
+      value: Test not yet implemented.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Tests.CoreRulesTests.InitGameManager
+  commentId: M:osrlib.Tests.CoreRulesTests.InitGameManager
+  id: InitGameManager
+  parent: osrlib.Tests.CoreRulesTests
+  langs:
+  - csharp
+  - vb
+  name: InitGameManager()
+  nameWithType: CoreRulesTests.InitGameManager()
+  fullName: osrlib.Tests.CoreRulesTests.InitGameManager()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Tests/CoreRulesTests.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: InitGameManager
+    path: ../osrlib.Tests/CoreRulesTests.cs
+    startLine: 58
+  assemblies:
+  - osrlib.Tests
+  namespace: osrlib.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void InitGameManager()
+    content.vb: >-
+      <Fact>
+
+      Public Sub InitGameManager
+  overload: osrlib.Tests.CoreRulesTests.InitGameManager*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Tests.CoreRulesTests.DoEncounterAutoBattle
+  commentId: M:osrlib.Tests.CoreRulesTests.DoEncounterAutoBattle
+  id: DoEncounterAutoBattle
+  parent: osrlib.Tests.CoreRulesTests
+  langs:
+  - csharp
+  - vb
+  name: DoEncounterAutoBattle()
+  nameWithType: CoreRulesTests.DoEncounterAutoBattle()
+  fullName: osrlib.Tests.CoreRulesTests.DoEncounterAutoBattle()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Tests/CoreRulesTests.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: DoEncounterAutoBattle
+    path: ../osrlib.Tests/CoreRulesTests.cs
+    startLine: 65
+  assemblies:
+  - osrlib.Tests
+  namespace: osrlib.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void DoEncounterAutoBattle()
+    content.vb: >-
+      <Fact>
+
+      Public Sub DoEncounterAutoBattle
+  overload: osrlib.Tests.CoreRulesTests.DoEncounterAutoBattle*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Tests.CoreRulesTests.CreateFullyInitializedCharacter
+  commentId: M:osrlib.Tests.CoreRulesTests.CreateFullyInitializedCharacter
+  id: CreateFullyInitializedCharacter
+  parent: osrlib.Tests.CoreRulesTests
+  langs:
+  - csharp
+  - vb
+  name: CreateFullyInitializedCharacter()
+  nameWithType: CoreRulesTests.CreateFullyInitializedCharacter()
+  fullName: osrlib.Tests.CoreRulesTests.CreateFullyInitializedCharacter()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Tests/CoreRulesTests.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: CreateFullyInitializedCharacter
+    path: ../osrlib.Tests/CoreRulesTests.cs
+    startLine: 87
+  assemblies:
+  - osrlib.Tests
+  namespace: osrlib.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void CreateFullyInitializedCharacter()
+    content.vb: >-
+      <Fact>
+
+      Public Sub CreateFullyInitializedCharacter
+  overload: osrlib.Tests.CoreRulesTests.CreateFullyInitializedCharacter*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: osrlib.Tests
+  commentId: N:osrlib.Tests
+  name: osrlib.Tests
+  nameWithType: osrlib.Tests
+  fullName: osrlib.Tests
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: osrlib.Tests.CoreRulesTests.InitMajorGameEntities*
+  commentId: Overload:osrlib.Tests.CoreRulesTests.InitMajorGameEntities
+  name: InitMajorGameEntities
+  nameWithType: CoreRulesTests.InitMajorGameEntities
+  fullName: osrlib.Tests.CoreRulesTests.InitMajorGameEntities
+- uid: osrlib.Tests.CoreRulesTests.ExecuteDungeonBattle*
+  commentId: Overload:osrlib.Tests.CoreRulesTests.ExecuteDungeonBattle
+  name: ExecuteDungeonBattle
+  nameWithType: CoreRulesTests.ExecuteDungeonBattle
+  fullName: osrlib.Tests.CoreRulesTests.ExecuteDungeonBattle
+- uid: osrlib.Tests.CoreRulesTests.InitGameManager*
+  commentId: Overload:osrlib.Tests.CoreRulesTests.InitGameManager
+  name: InitGameManager
+  nameWithType: CoreRulesTests.InitGameManager
+  fullName: osrlib.Tests.CoreRulesTests.InitGameManager
+- uid: osrlib.Tests.CoreRulesTests.DoEncounterAutoBattle*
+  commentId: Overload:osrlib.Tests.CoreRulesTests.DoEncounterAutoBattle
+  name: DoEncounterAutoBattle
+  nameWithType: CoreRulesTests.DoEncounterAutoBattle
+  fullName: osrlib.Tests.CoreRulesTests.DoEncounterAutoBattle
+- uid: osrlib.Tests.CoreRulesTests.CreateFullyInitializedCharacter*
+  commentId: Overload:osrlib.Tests.CoreRulesTests.CreateFullyInitializedCharacter
+  name: CreateFullyInitializedCharacter
+  nameWithType: CoreRulesTests.CreateFullyInitializedCharacter
+  fullName: osrlib.Tests.CoreRulesTests.CreateFullyInitializedCharacter

@@ -1,0 +1,794 @@
+### YamlMime:ManagedReference
+items:
+- uid: osrlib.Core.Adventure
+  commentId: T:osrlib.Core.Adventure
+  id: Adventure
+  parent: osrlib.Core
+  children:
+  - osrlib.Core.Adventure.ActiveDungeon
+  - osrlib.Core.Adventure.ActiveParty
+  - osrlib.Core.Adventure.AddDungeon(osrlib.Core.Dungeon)
+  - osrlib.Core.Adventure.Dungeons
+  - osrlib.Core.Adventure.Quests
+  - osrlib.Core.Adventure.SetActiveDungeon(osrlib.Core.Dungeon)
+  - osrlib.Core.Adventure.SetActiveParty(osrlib.Core.Party)
+  langs:
+  - csharp
+  - vb
+  name: Adventure
+  nameWithType: Adventure
+  fullName: osrlib.Core.Adventure
+  type: Class
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Adventure.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Adventure
+    path: GameRules/Adventure.cs
+    startLine: 7
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nAn Adventure contains one or more <xref href=\"osrlib.Core.Dungeon\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"osrlib.Core.Quest\" data-throw-if-not-resolved=\"false\"></xref> objects.\n"
+  example: []
+  syntax:
+    content: public class Adventure
+    content.vb: Public Class Adventure
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: osrlib.Core.Adventure.ActiveParty
+  commentId: P:osrlib.Core.Adventure.ActiveParty
+  id: ActiveParty
+  parent: osrlib.Core.Adventure
+  langs:
+  - csharp
+  - vb
+  name: ActiveParty
+  nameWithType: Adventure.ActiveParty
+  fullName: osrlib.Core.Adventure.ActiveParty
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Adventure.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: ActiveParty
+    path: GameRules/Adventure.cs
+    startLine: 12
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the active player <xref href=\"osrlib.Core.Party\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public Party ActiveParty { get; set; }
+    parameters: []
+    return:
+      type: osrlib.Core.Party
+    content.vb: Public Property ActiveParty As Party
+  overload: osrlib.Core.Adventure.ActiveParty*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Adventure.ActiveDungeon
+  commentId: P:osrlib.Core.Adventure.ActiveDungeon
+  id: ActiveDungeon
+  parent: osrlib.Core.Adventure
+  langs:
+  - csharp
+  - vb
+  name: ActiveDungeon
+  nameWithType: Adventure.ActiveDungeon
+  fullName: osrlib.Core.Adventure.ActiveDungeon
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Adventure.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: ActiveDungeon
+    path: GameRules/Adventure.cs
+    startLine: 17
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets the active <xref href=\"osrlib.Core.Dungeon\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public Dungeon ActiveDungeon { get; }
+    parameters: []
+    return:
+      type: osrlib.Core.Dungeon
+    content.vb: Public ReadOnly Property ActiveDungeon As Dungeon
+  overload: osrlib.Core.Adventure.ActiveDungeon*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: osrlib.Core.Adventure.Dungeons
+  commentId: P:osrlib.Core.Adventure.Dungeons
+  id: Dungeons
+  parent: osrlib.Core.Adventure
+  langs:
+  - csharp
+  - vb
+  name: Dungeons
+  nameWithType: Adventure.Dungeons
+  fullName: osrlib.Core.Adventure.Dungeons
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Adventure.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Dungeons
+    path: GameRules/Adventure.cs
+    startLine: 22
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the Dungeons in the Adventure.\n"
+  example: []
+  syntax:
+    content: public List<Dungeon> Dungeons { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{osrlib.Core.Dungeon}
+    content.vb: Public Property Dungeons As List(Of Dungeon)
+  overload: osrlib.Core.Adventure.Dungeons*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Adventure.Quests
+  commentId: P:osrlib.Core.Adventure.Quests
+  id: Quests
+  parent: osrlib.Core.Adventure
+  langs:
+  - csharp
+  - vb
+  name: Quests
+  nameWithType: Adventure.Quests
+  fullName: osrlib.Core.Adventure.Quests
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Adventure.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Quests
+    path: GameRules/Adventure.cs
+    startLine: 27
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the Quests in the Adventure.\n"
+  example: []
+  syntax:
+    content: public List<Quest> Quests { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{osrlib.Core.Quest}
+    content.vb: Public Property Quests As List(Of Quest)
+  overload: osrlib.Core.Adventure.Quests*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Adventure.AddDungeon(osrlib.Core.Dungeon)
+  commentId: M:osrlib.Core.Adventure.AddDungeon(osrlib.Core.Dungeon)
+  id: AddDungeon(osrlib.Core.Dungeon)
+  parent: osrlib.Core.Adventure
+  langs:
+  - csharp
+  - vb
+  name: AddDungeon(Dungeon)
+  nameWithType: Adventure.AddDungeon(Dungeon)
+  fullName: osrlib.Core.Adventure.AddDungeon(osrlib.Core.Dungeon)
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Adventure.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: AddDungeon
+    path: GameRules/Adventure.cs
+    startLine: 33
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nAdds the specified <xref href=\"osrlib.Core.Dungeon\" data-throw-if-not-resolved=\"false\"></xref> to the Adventure.\n"
+  example: []
+  syntax:
+    content: public void AddDungeon(Dungeon dungeon)
+    parameters:
+    - id: dungeon
+      type: osrlib.Core.Dungeon
+      description: The <xref href="osrlib.Core.Dungeon" data-throw-if-not-resolved="false"></xref> to add to the Adventure.
+    content.vb: Public Sub AddDungeon(dungeon As Dungeon)
+  overload: osrlib.Core.Adventure.AddDungeon*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Adventure.SetActiveDungeon(osrlib.Core.Dungeon)
+  commentId: M:osrlib.Core.Adventure.SetActiveDungeon(osrlib.Core.Dungeon)
+  id: SetActiveDungeon(osrlib.Core.Dungeon)
+  parent: osrlib.Core.Adventure
+  langs:
+  - csharp
+  - vb
+  name: SetActiveDungeon(Dungeon)
+  nameWithType: Adventure.SetActiveDungeon(Dungeon)
+  fullName: osrlib.Core.Adventure.SetActiveDungeon(osrlib.Core.Dungeon)
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Adventure.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: SetActiveDungeon
+    path: GameRules/Adventure.cs
+    startLine: 42
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nSets the active <xref href=\"osrlib.Core.Dungeon\" data-throw-if-not-resolved=\"false\"></xref> for the Adventure.\n"
+  example: []
+  syntax:
+    content: public void SetActiveDungeon(Dungeon dungeon)
+    parameters:
+    - id: dungeon
+      type: osrlib.Core.Dungeon
+      description: The <xref href="osrlib.Core.Dungeon" data-throw-if-not-resolved="false"></xref> to set as active.
+    content.vb: Public Sub SetActiveDungeon(dungeon As Dungeon)
+  overload: osrlib.Core.Adventure.SetActiveDungeon*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Adventure.SetActiveParty(osrlib.Core.Party)
+  commentId: M:osrlib.Core.Adventure.SetActiveParty(osrlib.Core.Party)
+  id: SetActiveParty(osrlib.Core.Party)
+  parent: osrlib.Core.Adventure
+  langs:
+  - csharp
+  - vb
+  name: SetActiveParty(Party)
+  nameWithType: Adventure.SetActiveParty(Party)
+  fullName: osrlib.Core.Adventure.SetActiveParty(osrlib.Core.Party)
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Adventure.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: SetActiveParty
+    path: GameRules/Adventure.cs
+    startLine: 51
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nSets the active player <xref href=\"osrlib.Core.Party\" data-throw-if-not-resolved=\"false\"></xref> for the Adventure. This is the Party that will enter combat with this Adventure&apos;s <xref href=\"osrlib.Core.Dungeon\" data-throw-if-not-resolved=\"false\"></xref> <xref href=\"osrlib.Core.Encounter\" data-throw-if-not-resolved=\"false\"></xref>s.\n"
+  example: []
+  syntax:
+    content: public void SetActiveParty(Party activeParty)
+    parameters:
+    - id: activeParty
+      type: osrlib.Core.Party
+      description: The player&apos;s <xref href="osrlib.Core.Party" data-throw-if-not-resolved="false"></xref> to set as active.
+    content.vb: Public Sub SetActiveParty(activeParty As Party)
+  overload: osrlib.Core.Adventure.SetActiveParty*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: osrlib.Core.Dungeon
+  commentId: T:osrlib.Core.Dungeon
+  parent: osrlib.Core
+  name: Dungeon
+  nameWithType: Dungeon
+  fullName: osrlib.Core.Dungeon
+- uid: osrlib.Core.Quest
+  commentId: T:osrlib.Core.Quest
+  name: Quest
+  nameWithType: Quest
+  fullName: osrlib.Core.Quest
+- uid: osrlib.Core
+  commentId: N:osrlib.Core
+  name: osrlib.Core
+  nameWithType: osrlib.Core
+  fullName: osrlib.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: osrlib.Core.Party
+  commentId: T:osrlib.Core.Party
+  parent: osrlib.Core
+  name: Party
+  nameWithType: Party
+  fullName: osrlib.Core.Party
+- uid: osrlib.Core.Adventure.ActiveParty*
+  commentId: Overload:osrlib.Core.Adventure.ActiveParty
+  name: ActiveParty
+  nameWithType: Adventure.ActiveParty
+  fullName: osrlib.Core.Adventure.ActiveParty
+- uid: osrlib.Core.Adventure.ActiveDungeon*
+  commentId: Overload:osrlib.Core.Adventure.ActiveDungeon
+  name: ActiveDungeon
+  nameWithType: Adventure.ActiveDungeon
+  fullName: osrlib.Core.Adventure.ActiveDungeon
+- uid: osrlib.Core.Adventure.Dungeons*
+  commentId: Overload:osrlib.Core.Adventure.Dungeons
+  name: Dungeons
+  nameWithType: Adventure.Dungeons
+  fullName: osrlib.Core.Adventure.Dungeons
+- uid: System.Collections.Generic.List{osrlib.Core.Dungeon}
+  commentId: T:System.Collections.Generic.List{osrlib.Core.Dungeon}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Dungeon>
+  nameWithType: List<Dungeon>
+  fullName: System.Collections.Generic.List<osrlib.Core.Dungeon>
+  nameWithType.vb: List(Of Dungeon)
+  fullName.vb: System.Collections.Generic.List(Of osrlib.Core.Dungeon)
+  name.vb: List(Of Dungeon)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: osrlib.Core.Dungeon
+    name: Dungeon
+    nameWithType: Dungeon
+    fullName: osrlib.Core.Dungeon
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: osrlib.Core.Dungeon
+    name: Dungeon
+    nameWithType: Dungeon
+    fullName: osrlib.Core.Dungeon
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: osrlib.Core.Adventure.Quests*
+  commentId: Overload:osrlib.Core.Adventure.Quests
+  name: Quests
+  nameWithType: Adventure.Quests
+  fullName: osrlib.Core.Adventure.Quests
+- uid: System.Collections.Generic.List{osrlib.Core.Quest}
+  commentId: T:System.Collections.Generic.List{osrlib.Core.Quest}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Quest>
+  nameWithType: List<Quest>
+  fullName: System.Collections.Generic.List<osrlib.Core.Quest>
+  nameWithType.vb: List(Of Quest)
+  fullName.vb: System.Collections.Generic.List(Of osrlib.Core.Quest)
+  name.vb: List(Of Quest)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: osrlib.Core.Quest
+    name: Quest
+    nameWithType: Quest
+    fullName: osrlib.Core.Quest
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: osrlib.Core.Quest
+    name: Quest
+    nameWithType: Quest
+    fullName: osrlib.Core.Quest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: osrlib.Core.Adventure.AddDungeon*
+  commentId: Overload:osrlib.Core.Adventure.AddDungeon
+  name: AddDungeon
+  nameWithType: Adventure.AddDungeon
+  fullName: osrlib.Core.Adventure.AddDungeon
+- uid: osrlib.Core.Adventure.SetActiveDungeon*
+  commentId: Overload:osrlib.Core.Adventure.SetActiveDungeon
+  name: SetActiveDungeon
+  nameWithType: Adventure.SetActiveDungeon
+  fullName: osrlib.Core.Adventure.SetActiveDungeon
+- uid: osrlib.Core.Encounter
+  commentId: T:osrlib.Core.Encounter
+  parent: osrlib.Core
+  name: Encounter
+  nameWithType: Encounter
+  fullName: osrlib.Core.Encounter
+- uid: osrlib.Core.Adventure.SetActiveParty*
+  commentId: Overload:osrlib.Core.Adventure.SetActiveParty
+  name: SetActiveParty
+  nameWithType: Adventure.SetActiveParty
+  fullName: osrlib.Core.Adventure.SetActiveParty

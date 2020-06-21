@@ -1,0 +1,893 @@
+### YamlMime:ManagedReference
+items:
+- uid: osrlib.Core.Weapon
+  commentId: T:osrlib.Core.Weapon
+  id: Weapon
+  parent: osrlib.Core
+  children:
+  - osrlib.Core.Weapon.AttackModifiers
+  - osrlib.Core.Weapon.DamageDie
+  - osrlib.Core.Weapon.DamageModifiers
+  - osrlib.Core.Weapon.Description
+  - osrlib.Core.Weapon.GetAttackRoll(System.Int32)
+  - osrlib.Core.Weapon.GetDamageRoll(System.Int32)
+  - osrlib.Core.Weapon.Name
+  - osrlib.Core.Weapon.ToString
+  - osrlib.Core.Weapon.Type
+  langs:
+  - csharp
+  - vb
+  name: Weapon
+  nameWithType: Weapon
+  fullName: osrlib.Core.Weapon
+  type: Class
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Weapon.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Weapon
+    path: GameRules/Weapon.cs
+    startLine: 47
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nA Weapon is a melee or ranged martial weapon, or an offensive spell.\n"
+  example:
+  - "\nCreate a basic melee weapon\n<pre><code>Weapon dagger = new Weapon\n{\n    Name = &quot;Dagger&quot;,\n    Description = &quot;A standard dagger.&quot;,\n    Type = WeaponType.Melee,\n    DamageDie = new DiceHand(1, DieType.d4)\n};</code></pre>\n"
+  - "\nCreate a magical weapon\n<pre><code>Weapon magicSword = new Weapon\n{\n    Name = &quot;Long Sword + 1&quot;,\n    Description = &quot;A finely crafted sword, its blade dimly glows.&quot;,\n    Type = WeaponType.Melee,\n    DamageDie = new DiceHand(1, DieType.d8)\n};\nmagicSword.AttackModifiers.Add(new Modifier { ModifierSource = magicSword, ModifierValue = 1 });\nmagicSword.DamageModifiers.Add(new Modifier { ModifierSource = magicSword, ModifierValue = 1 });</code></pre>\n"
+  - "\nCreate an offensive spell\n<pre><code>Weapon flameJet = new Weapon\n{\n    Name = &quot;Flame Jet&quot;,\n    Description = &quot;A jet of flame issues forth from the caster&apos;s hands.&quot;,\n    Type = WeaponType.Spell,\n    DamageDie = new DiceHand(1, DieType.d12)\n};</code></pre>\n"
+  syntax:
+    content: public class Weapon
+    content.vb: Public Class Weapon
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: osrlib.Core.Weapon.Name
+  commentId: P:osrlib.Core.Weapon.Name
+  id: Name
+  parent: osrlib.Core.Weapon
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: Weapon.Name
+  fullName: osrlib.Core.Weapon.Name
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Weapon.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Name
+    path: GameRules/Weapon.cs
+    startLine: 52
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the name of the weapon or spell.\n"
+  example: []
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: osrlib.Core.Weapon.Name*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Weapon.Description
+  commentId: P:osrlib.Core.Weapon.Description
+  id: Description
+  parent: osrlib.Core.Weapon
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: Weapon.Description
+  fullName: osrlib.Core.Weapon.Description
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Weapon.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Description
+    path: GameRules/Weapon.cs
+    startLine: 57
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the weapon or spell&apos;s description.\n"
+  example: []
+  syntax:
+    content: public string Description { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Description As String
+  overload: osrlib.Core.Weapon.Description*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Weapon.Type
+  commentId: P:osrlib.Core.Weapon.Type
+  id: Type
+  parent: osrlib.Core.Weapon
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: Weapon.Type
+  fullName: osrlib.Core.Weapon.Type
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Weapon.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Type
+    path: GameRules/Weapon.cs
+    startLine: 62
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the weapon type. An offensive spell is considered a weapon.\n"
+  example: []
+  syntax:
+    content: public WeaponType Type { get; set; }
+    parameters: []
+    return:
+      type: osrlib.Core.WeaponType
+    content.vb: Public Property Type As WeaponType
+  overload: osrlib.Core.Weapon.Type*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Weapon.DamageDie
+  commentId: P:osrlib.Core.Weapon.DamageDie
+  id: DamageDie
+  parent: osrlib.Core.Weapon
+  langs:
+  - csharp
+  - vb
+  name: DamageDie
+  nameWithType: Weapon.DamageDie
+  fullName: osrlib.Core.Weapon.DamageDie
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Weapon.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: DamageDie
+    path: GameRules/Weapon.cs
+    startLine: 67
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the die rolled when calculating the weapon or spell&apos;s damage. Default: <code>1d4</code>.\n"
+  example: []
+  syntax:
+    content: public DiceHand DamageDie { get; set; }
+    parameters: []
+    return:
+      type: osrlib.Dice.DiceHand
+    content.vb: Public Property DamageDie As DiceHand
+  overload: osrlib.Core.Weapon.DamageDie*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Weapon.GetAttackRoll(System.Int32)
+  commentId: M:osrlib.Core.Weapon.GetAttackRoll(System.Int32)
+  id: GetAttackRoll(System.Int32)
+  parent: osrlib.Core.Weapon
+  langs:
+  - csharp
+  - vb
+  name: GetAttackRoll(Int32)
+  nameWithType: Weapon.GetAttackRoll(Int32)
+  fullName: osrlib.Core.Weapon.GetAttackRoll(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Weapon.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: GetAttackRoll
+    path: GameRules/Weapon.cs
+    startLine: 78
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nRolls a <xref href=\"DieType.d20\" data-throw-if-not-resolved=\"false\"></xref>, sums any modifiers, and returns the result.\n"
+  remarks: "\nThe modifier is typically supplied by <xref href=\"osrlib.Core.Ability\" data-throw-if-not-resolved=\"false\"></xref> bonuses/penalties or\nenchantments/curses applied to the <xref href=\"osrlib.Core.Being\" data-throw-if-not-resolved=\"false\"></xref> wielding the weapon or spell.\n"
+  example: []
+  syntax:
+    content: public DiceRoll GetAttackRoll(int modifier = 0)
+    parameters:
+    - id: modifier
+      type: System.Int32
+      description: 'The bonus or penalty to apply to the roll. Default: <code>0</code>.'
+    return:
+      type: osrlib.Dice.DiceRoll
+      description: The to-hit roll after its <xref href="osrlib.Dice.DiceRoll.RollDice" data-throw-if-not-resolved="false"></xref> has been called.
+    content.vb: Public Function GetAttackRoll(modifier As Integer = 0) As DiceRoll
+  overload: osrlib.Core.Weapon.GetAttackRoll*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Weapon.GetDamageRoll(System.Int32)
+  commentId: M:osrlib.Core.Weapon.GetDamageRoll(System.Int32)
+  id: GetDamageRoll(System.Int32)
+  parent: osrlib.Core.Weapon
+  langs:
+  - csharp
+  - vb
+  name: GetDamageRoll(Int32)
+  nameWithType: Weapon.GetDamageRoll(Int32)
+  fullName: osrlib.Core.Weapon.GetDamageRoll(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Weapon.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: GetDamageRoll
+    path: GameRules/Weapon.cs
+    startLine: 103
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nRolls the weapon&apos;s <xref href=\"osrlib.Core.Weapon.DamageDie\" data-throw-if-not-resolved=\"false\"></xref>, sums any modifiers, and returns the result.\n"
+  remarks: "\nThe modifier is typically supplied by <xref href=\"osrlib.Core.Ability\" data-throw-if-not-resolved=\"false\"></xref> bonuses/penalties or\nenchantments/curses applied to the <xref href=\"osrlib.Core.Being\" data-throw-if-not-resolved=\"false\"></xref> wielding the weapon or spell.\n"
+  example: []
+  syntax:
+    content: public DiceRoll GetDamageRoll(int modifier = 0)
+    parameters:
+    - id: modifier
+      type: System.Int32
+      description: 'The bonus or penalty to apply to the roll. Default: <code>0</code>.'
+    return:
+      type: osrlib.Dice.DiceRoll
+      description: The damage roll after its <xref href="osrlib.Dice.DiceRoll.RollDice" data-throw-if-not-resolved="false"></xref> has been called.
+    content.vb: Public Function GetDamageRoll(modifier As Integer = 0) As DiceRoll
+  overload: osrlib.Core.Weapon.GetDamageRoll*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Weapon.AttackModifiers
+  commentId: P:osrlib.Core.Weapon.AttackModifiers
+  id: AttackModifiers
+  parent: osrlib.Core.Weapon
+  langs:
+  - csharp
+  - vb
+  name: AttackModifiers
+  nameWithType: Weapon.AttackModifiers
+  fullName: osrlib.Core.Weapon.AttackModifiers
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Weapon.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: AttackModifiers
+    path: GameRules/Weapon.cs
+    startLine: 129
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the to-hit enchantments (bonuses) or curses (penalties) for the weapon or spell.\n"
+  remarks: "\nAttackModifiers and DamageModifiers are typically static for the life of the weapon. For example,\nto make a Long Sword +1, add both an AttackModifier and DamageModifier with ModifierValue of <code>1</code>.\n\nDon&apos;t add a Being&apos;s <xref href=\"osrlib.Core.Ability\" data-throw-if-not-resolved=\"false\"></xref> modifiers to this collection - instead, pass those when you\ncall <xref href=\"osrlib.Core.Weapon.GetAttackRoll(System.Int32)\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public List<Modifier> AttackModifiers { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{osrlib.Core.Modifier}
+    content.vb: Public Property AttackModifiers As List(Of Modifier)
+  overload: osrlib.Core.Weapon.AttackModifiers*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Weapon.DamageModifiers
+  commentId: P:osrlib.Core.Weapon.DamageModifiers
+  id: DamageModifiers
+  parent: osrlib.Core.Weapon
+  langs:
+  - csharp
+  - vb
+  name: DamageModifiers
+  nameWithType: Weapon.DamageModifiers
+  fullName: osrlib.Core.Weapon.DamageModifiers
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Weapon.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: DamageModifiers
+    path: GameRules/Weapon.cs
+    startLine: 140
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the damage enchantments (bonuses) or curses (penalties) for the weapon or spell.\n"
+  remarks: "\nAttackModifiers and DamageModifiers are typically static for the life of the weapon. For example,\nto make a Long Sword +1, add both an AttackModifier and DamageModifier with ModifierValue of <code>1</code>.\nDon&apos;t add a Being&apos;s <xref href=\"osrlib.Core.Ability\" data-throw-if-not-resolved=\"false\"></xref> modifiers to this collection - instead, pass those when you\ncall <xref href=\"osrlib.Core.Weapon.GetDamageRoll(System.Int32)\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public List<Modifier> DamageModifiers { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{osrlib.Core.Modifier}
+    content.vb: Public Property DamageModifiers As List(Of Modifier)
+  overload: osrlib.Core.Weapon.DamageModifiers*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.Weapon.ToString
+  commentId: M:osrlib.Core.Weapon.ToString
+  id: ToString
+  parent: osrlib.Core.Weapon
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Weapon.ToString()
+  fullName: osrlib.Core.Weapon.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/Weapon.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: ToString
+    path: GameRules/Weapon.cs
+    startLine: 146
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets the string representation of the Weapon.\n"
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: Single-line text representation of the Weapon.
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: osrlib.Core.Weapon.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: osrlib.Core
+  commentId: N:osrlib.Core
+  name: osrlib.Core
+  nameWithType: osrlib.Core
+  fullName: osrlib.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: osrlib.Core.Weapon.Name*
+  commentId: Overload:osrlib.Core.Weapon.Name
+  name: Name
+  nameWithType: Weapon.Name
+  fullName: osrlib.Core.Weapon.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: osrlib.Core.Weapon.Description*
+  commentId: Overload:osrlib.Core.Weapon.Description
+  name: Description
+  nameWithType: Weapon.Description
+  fullName: osrlib.Core.Weapon.Description
+- uid: osrlib.Core.Weapon.Type*
+  commentId: Overload:osrlib.Core.Weapon.Type
+  name: Type
+  nameWithType: Weapon.Type
+  fullName: osrlib.Core.Weapon.Type
+- uid: osrlib.Core.WeaponType
+  commentId: T:osrlib.Core.WeaponType
+  parent: osrlib.Core
+  name: WeaponType
+  nameWithType: WeaponType
+  fullName: osrlib.Core.WeaponType
+- uid: osrlib.Core.Weapon.DamageDie*
+  commentId: Overload:osrlib.Core.Weapon.DamageDie
+  name: DamageDie
+  nameWithType: Weapon.DamageDie
+  fullName: osrlib.Core.Weapon.DamageDie
+- uid: osrlib.Dice.DiceHand
+  commentId: T:osrlib.Dice.DiceHand
+  parent: osrlib.Dice
+  name: DiceHand
+  nameWithType: DiceHand
+  fullName: osrlib.Dice.DiceHand
+- uid: osrlib.Dice
+  commentId: N:osrlib.Dice
+  name: osrlib.Dice
+  nameWithType: osrlib.Dice
+  fullName: osrlib.Dice
+- uid: DieType.d20
+  commentId: F:DieType.d20
+  isExternal: true
+- uid: osrlib.Core.Ability
+  commentId: T:osrlib.Core.Ability
+  parent: osrlib.Core
+  name: Ability
+  nameWithType: Ability
+  fullName: osrlib.Core.Ability
+- uid: osrlib.Core.Being
+  commentId: T:osrlib.Core.Being
+  parent: osrlib.Core
+  name: Being
+  nameWithType: Being
+  fullName: osrlib.Core.Being
+- uid: osrlib.Dice.DiceRoll.RollDice
+  commentId: M:osrlib.Dice.DiceRoll.RollDice
+  isExternal: true
+- uid: osrlib.Core.Weapon.GetAttackRoll*
+  commentId: Overload:osrlib.Core.Weapon.GetAttackRoll
+  name: GetAttackRoll
+  nameWithType: Weapon.GetAttackRoll
+  fullName: osrlib.Core.Weapon.GetAttackRoll
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: osrlib.Dice.DiceRoll
+  commentId: T:osrlib.Dice.DiceRoll
+  parent: osrlib.Dice
+  name: DiceRoll
+  nameWithType: DiceRoll
+  fullName: osrlib.Dice.DiceRoll
+- uid: osrlib.Core.Weapon.DamageDie
+  commentId: P:osrlib.Core.Weapon.DamageDie
+  isExternal: true
+- uid: osrlib.Core.Weapon.GetDamageRoll*
+  commentId: Overload:osrlib.Core.Weapon.GetDamageRoll
+  name: GetDamageRoll
+  nameWithType: Weapon.GetDamageRoll
+  fullName: osrlib.Core.Weapon.GetDamageRoll
+- uid: osrlib.Core.Weapon.GetAttackRoll(System.Int32)
+  commentId: M:osrlib.Core.Weapon.GetAttackRoll(System.Int32)
+  isExternal: true
+- uid: osrlib.Core.Weapon.AttackModifiers*
+  commentId: Overload:osrlib.Core.Weapon.AttackModifiers
+  name: AttackModifiers
+  nameWithType: Weapon.AttackModifiers
+  fullName: osrlib.Core.Weapon.AttackModifiers
+- uid: System.Collections.Generic.List{osrlib.Core.Modifier}
+  commentId: T:System.Collections.Generic.List{osrlib.Core.Modifier}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Modifier>
+  nameWithType: List<Modifier>
+  fullName: System.Collections.Generic.List<osrlib.Core.Modifier>
+  nameWithType.vb: List(Of Modifier)
+  fullName.vb: System.Collections.Generic.List(Of osrlib.Core.Modifier)
+  name.vb: List(Of Modifier)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: osrlib.Core.Modifier
+    name: Modifier
+    nameWithType: Modifier
+    fullName: osrlib.Core.Modifier
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: osrlib.Core.Modifier
+    name: Modifier
+    nameWithType: Modifier
+    fullName: osrlib.Core.Modifier
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: osrlib.Core.Weapon.GetDamageRoll(System.Int32)
+  commentId: M:osrlib.Core.Weapon.GetDamageRoll(System.Int32)
+  isExternal: true
+- uid: osrlib.Core.Weapon.DamageModifiers*
+  commentId: Overload:osrlib.Core.Weapon.DamageModifiers
+  name: DamageModifiers
+  nameWithType: Weapon.DamageModifiers
+  fullName: osrlib.Core.Weapon.DamageModifiers
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: osrlib.Core.Weapon.ToString*
+  commentId: Overload:osrlib.Core.Weapon.ToString
+  name: ToString
+  nameWithType: Weapon.ToString
+  fullName: osrlib.Core.Weapon.ToString

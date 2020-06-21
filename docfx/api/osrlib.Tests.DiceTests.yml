@@ -1,0 +1,447 @@
+### YamlMime:ManagedReference
+items:
+- uid: osrlib.Tests.DiceTests
+  commentId: T:osrlib.Tests.DiceTests
+  id: DiceTests
+  parent: osrlib.Tests
+  children:
+  - osrlib.Tests.DiceTests.DiceRollsAlwaysWithinBounds
+  - osrlib.Tests.DiceTests.InvalidDiceRollThrowsException
+  langs:
+  - csharp
+  - vb
+  name: DiceTests
+  nameWithType: DiceTests
+  fullName: osrlib.Tests.DiceTests
+  type: Class
+  source:
+    remote:
+      path: src/osrlib.Tests/DiceTests.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: DiceTests
+    path: ../osrlib.Tests/DiceTests.cs
+    startLine: 6
+  assemblies:
+  - osrlib.Tests
+  namespace: osrlib.Tests
+  syntax:
+    content: public class DiceTests
+    content.vb: Public Class DiceTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: osrlib.Tests.DiceTests.DiceRollsAlwaysWithinBounds
+  commentId: M:osrlib.Tests.DiceTests.DiceRollsAlwaysWithinBounds
+  id: DiceRollsAlwaysWithinBounds
+  parent: osrlib.Tests.DiceTests
+  langs:
+  - csharp
+  - vb
+  name: DiceRollsAlwaysWithinBounds()
+  nameWithType: DiceTests.DiceRollsAlwaysWithinBounds()
+  fullName: osrlib.Tests.DiceTests.DiceRollsAlwaysWithinBounds()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Tests/DiceTests.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: DiceRollsAlwaysWithinBounds
+    path: ../osrlib.Tests/DiceTests.cs
+    startLine: 11
+  assemblies:
+  - osrlib.Tests
+  namespace: osrlib.Tests
+  summary: "\nEnsures that the <xref href=\"osrlib.Dice.DiceRoll\" data-throw-if-not-resolved=\"false\"></xref> always returns values within the desired range.\n"
+  example: []
+  syntax:
+    content: >-
+      [Fact]
+
+      public void DiceRollsAlwaysWithinBounds()
+    content.vb: >-
+      <Fact>
+
+      Public Sub DiceRollsAlwaysWithinBounds
+  overload: osrlib.Tests.DiceTests.DiceRollsAlwaysWithinBounds*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Tests.DiceTests.InvalidDiceRollThrowsException
+  commentId: M:osrlib.Tests.DiceTests.InvalidDiceRollThrowsException
+  id: InvalidDiceRollThrowsException
+  parent: osrlib.Tests.DiceTests
+  langs:
+  - csharp
+  - vb
+  name: InvalidDiceRollThrowsException()
+  nameWithType: DiceTests.InvalidDiceRollThrowsException()
+  fullName: osrlib.Tests.DiceTests.InvalidDiceRollThrowsException()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Tests/DiceTests.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: InvalidDiceRollThrowsException
+    path: ../osrlib.Tests/DiceTests.cs
+    startLine: 40
+  assemblies:
+  - osrlib.Tests
+  namespace: osrlib.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void InvalidDiceRollThrowsException()
+    content.vb: >-
+      <Fact>
+
+      Public Sub InvalidDiceRollThrowsException
+  overload: osrlib.Tests.DiceTests.InvalidDiceRollThrowsException*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: osrlib.Tests
+  commentId: N:osrlib.Tests
+  name: osrlib.Tests
+  nameWithType: osrlib.Tests
+  fullName: osrlib.Tests
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: osrlib.Dice.DiceRoll
+  commentId: T:osrlib.Dice.DiceRoll
+  parent: osrlib.Dice
+  name: DiceRoll
+  nameWithType: DiceRoll
+  fullName: osrlib.Dice.DiceRoll
+- uid: osrlib.Tests.DiceTests.DiceRollsAlwaysWithinBounds*
+  commentId: Overload:osrlib.Tests.DiceTests.DiceRollsAlwaysWithinBounds
+  name: DiceRollsAlwaysWithinBounds
+  nameWithType: DiceTests.DiceRollsAlwaysWithinBounds
+  fullName: osrlib.Tests.DiceTests.DiceRollsAlwaysWithinBounds
+- uid: osrlib.Dice
+  commentId: N:osrlib.Dice
+  name: osrlib.Dice
+  nameWithType: osrlib.Dice
+  fullName: osrlib.Dice
+- uid: osrlib.Tests.DiceTests.InvalidDiceRollThrowsException*
+  commentId: Overload:osrlib.Tests.DiceTests.InvalidDiceRollThrowsException
+  name: InvalidDiceRollThrowsException
+  nameWithType: DiceTests.InvalidDiceRollThrowsException
+  fullName: osrlib.Tests.DiceTests.InvalidDiceRollThrowsException

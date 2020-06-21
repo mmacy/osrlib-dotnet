@@ -1,0 +1,507 @@
+### YamlMime:ManagedReference
+items:
+- uid: osrlib.Core.GamePosition
+  commentId: T:osrlib.Core.GamePosition
+  id: GamePosition
+  parent: osrlib.Core
+  children:
+  - osrlib.Core.GamePosition.#ctor(System.Int32,System.Int32,System.Int32)
+  - osrlib.Core.GamePosition.X
+  - osrlib.Core.GamePosition.Y
+  - osrlib.Core.GamePosition.Z
+  langs:
+  - csharp
+  - vb
+  name: GamePosition
+  nameWithType: GamePosition
+  fullName: osrlib.Core.GamePosition
+  type: Struct
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/GamePosition.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: GamePosition
+    path: GameRules/GamePosition.cs
+    startLine: 5
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nRepresents an object&apos;s location within a <xref href=\"osrlib.Core.Dungeon\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public struct GamePosition
+    content.vb: Public Structure GamePosition
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  modifiers.csharp:
+  - public
+  - struct
+  modifiers.vb:
+  - Public
+  - Structure
+- uid: osrlib.Core.GamePosition.#ctor(System.Int32,System.Int32,System.Int32)
+  commentId: M:osrlib.Core.GamePosition.#ctor(System.Int32,System.Int32,System.Int32)
+  id: '#ctor(System.Int32,System.Int32,System.Int32)'
+  parent: osrlib.Core.GamePosition
+  langs:
+  - csharp
+  - vb
+  name: GamePosition(Int32, Int32, Int32)
+  nameWithType: GamePosition.GamePosition(Int32, Int32, Int32)
+  fullName: osrlib.Core.GamePosition.GamePosition(System.Int32, System.Int32, System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/GamePosition.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: .ctor
+    path: GameRules/GamePosition.cs
+    startLine: 13
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nCreates a new instance of GamePosition with the specified coordinates.\n"
+  example: []
+  syntax:
+    content: public GamePosition(int x, int y, int z = 0)
+    parameters:
+    - id: x
+      type: System.Int32
+      description: The position on the X axis.
+    - id: y
+      type: System.Int32
+      description: The position on the y axis.
+    - id: z
+      type: System.Int32
+      description: The position on the z axis.
+    content.vb: Public Sub New(x As Integer, y As Integer, z As Integer = 0)
+  overload: osrlib.Core.GamePosition.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.GamePosition.X
+  commentId: P:osrlib.Core.GamePosition.X
+  id: X
+  parent: osrlib.Core.GamePosition
+  langs:
+  - csharp
+  - vb
+  name: X
+  nameWithType: GamePosition.X
+  fullName: osrlib.Core.GamePosition.X
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/GamePosition.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: X
+    path: GameRules/GamePosition.cs
+    startLine: 23
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nThe position on the x axis.\n"
+  example: []
+  syntax:
+    content: public int X { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property X As Integer
+  overload: osrlib.Core.GamePosition.X*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.GamePosition.Y
+  commentId: P:osrlib.Core.GamePosition.Y
+  id: Y
+  parent: osrlib.Core.GamePosition
+  langs:
+  - csharp
+  - vb
+  name: Y
+  nameWithType: GamePosition.Y
+  fullName: osrlib.Core.GamePosition.Y
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/GamePosition.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Y
+    path: GameRules/GamePosition.cs
+    startLine: 28
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nThe position on the y axis.\n"
+  example: []
+  syntax:
+    content: public int Y { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Y As Integer
+  overload: osrlib.Core.GamePosition.Y*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.GamePosition.Z
+  commentId: P:osrlib.Core.GamePosition.Z
+  id: Z
+  parent: osrlib.Core.GamePosition
+  langs:
+  - csharp
+  - vb
+  name: Z
+  nameWithType: GamePosition.Z
+  fullName: osrlib.Core.GamePosition.Z
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/GamePosition.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Z
+    path: GameRules/GamePosition.cs
+    startLine: 33
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nThe position on the z axis.\n"
+  example: []
+  syntax:
+    content: public int Z { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Z As Integer
+  overload: osrlib.Core.GamePosition.Z*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: osrlib.Core.Dungeon
+  commentId: T:osrlib.Core.Dungeon
+  parent: osrlib.Core
+  name: Dungeon
+  nameWithType: Dungeon
+  fullName: osrlib.Core.Dungeon
+- uid: osrlib.Core
+  commentId: N:osrlib.Core
+  name: osrlib.Core
+  nameWithType: osrlib.Core
+  fullName: osrlib.Core
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: ValueType.Equals(Object)
+  fullName: System.ValueType.Equals(System.Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    nameWithType: ValueType.Equals
+    fullName: System.ValueType.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    nameWithType: ValueType.Equals
+    fullName: System.ValueType.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    nameWithType: ValueType.GetHashCode
+    fullName: System.ValueType.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    nameWithType: ValueType.GetHashCode
+    fullName: System.ValueType.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    nameWithType: ValueType.ToString
+    fullName: System.ValueType.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    nameWithType: ValueType.ToString
+    fullName: System.ValueType.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: osrlib.Core.GamePosition.#ctor*
+  commentId: Overload:osrlib.Core.GamePosition.#ctor
+  name: GamePosition
+  nameWithType: GamePosition.GamePosition
+  fullName: osrlib.Core.GamePosition.GamePosition
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: osrlib.Core.GamePosition.X*
+  commentId: Overload:osrlib.Core.GamePosition.X
+  name: X
+  nameWithType: GamePosition.X
+  fullName: osrlib.Core.GamePosition.X
+- uid: osrlib.Core.GamePosition.Y*
+  commentId: Overload:osrlib.Core.GamePosition.Y
+  name: Y
+  nameWithType: GamePosition.Y
+  fullName: osrlib.Core.GamePosition.Y
+- uid: osrlib.Core.GamePosition.Z*
+  commentId: Overload:osrlib.Core.GamePosition.Z
+  name: Z
+  nameWithType: GamePosition.Z
+  fullName: osrlib.Core.GamePosition.Z

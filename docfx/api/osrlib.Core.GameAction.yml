@@ -1,0 +1,671 @@
+### YamlMime:ManagedReference
+items:
+- uid: osrlib.Core.GameAction
+  commentId: T:osrlib.Core.GameAction
+  id: GameAction
+  parent: osrlib.Core
+  children:
+  - osrlib.Core.GameAction.#ctor(osrlib.Core.Being,osrlib.Core.Being)
+  - osrlib.Core.GameAction.ActionSource
+  - osrlib.Core.GameAction.ActionTarget
+  - osrlib.Core.GameAction.AttackRoll
+  - osrlib.Core.GameAction.DamageRoll
+  - osrlib.Core.GameAction.PerformAction
+  - osrlib.Core.GameAction.Victor
+  langs:
+  - csharp
+  - vb
+  name: GameAction
+  nameWithType: GameAction
+  fullName: osrlib.Core.GameAction
+  type: Class
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/GameAction.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: GameAction
+    path: GameRules/GameAction.cs
+    startLine: 10
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nThe GameAction represents an act initiated by one entity on another, such as a\nmelee attack from one Being on another, or a lockpick attempt from a Being on\na locked treasure chest.\n"
+  example: []
+  syntax:
+    content: public class GameAction
+    content.vb: Public Class GameAction
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: osrlib.Core.GameAction.AttackRoll
+  commentId: P:osrlib.Core.GameAction.AttackRoll
+  id: AttackRoll
+  parent: osrlib.Core.GameAction
+  langs:
+  - csharp
+  - vb
+  name: AttackRoll
+  nameWithType: GameAction.AttackRoll
+  fullName: osrlib.Core.GameAction.AttackRoll
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/GameAction.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: AttackRoll
+    path: GameRules/GameAction.cs
+    startLine: 16
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets the attack roll result of the GameAction.\n"
+  example: []
+  syntax:
+    content: public DiceRoll AttackRoll { get; }
+    parameters: []
+    return:
+      type: osrlib.Dice.DiceRoll
+      description: The attack roll associated with the GameAction&apos;s attack operation.
+    content.vb: Public ReadOnly Property AttackRoll As DiceRoll
+  overload: osrlib.Core.GameAction.AttackRoll*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: osrlib.Core.GameAction.DamageRoll
+  commentId: P:osrlib.Core.GameAction.DamageRoll
+  id: DamageRoll
+  parent: osrlib.Core.GameAction
+  langs:
+  - csharp
+  - vb
+  name: DamageRoll
+  nameWithType: GameAction.DamageRoll
+  fullName: osrlib.Core.GameAction.DamageRoll
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/GameAction.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: DamageRoll
+    path: GameRules/GameAction.cs
+    startLine: 22
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets the damage roll result of the GameAction.\n"
+  example: []
+  syntax:
+    content: public DiceRoll DamageRoll { get; }
+    parameters: []
+    return:
+      type: osrlib.Dice.DiceRoll
+      description: The damage roll associated with the GameAction&apos;s damage operation.
+    content.vb: Public ReadOnly Property DamageRoll As DiceRoll
+  overload: osrlib.Core.GameAction.DamageRoll*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: osrlib.Core.GameAction.#ctor(osrlib.Core.Being,osrlib.Core.Being)
+  commentId: M:osrlib.Core.GameAction.#ctor(osrlib.Core.Being,osrlib.Core.Being)
+  id: '#ctor(osrlib.Core.Being,osrlib.Core.Being)'
+  parent: osrlib.Core.GameAction
+  langs:
+  - csharp
+  - vb
+  name: GameAction(Being, Being)
+  nameWithType: GameAction.GameAction(Being, Being)
+  fullName: osrlib.Core.GameAction.GameAction(osrlib.Core.Being, osrlib.Core.Being)
+  type: Constructor
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/GameAction.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: .ctor
+    path: GameRules/GameAction.cs
+    startLine: 29
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nCreates a new instance of the GameAction with the specified attacker and defender.\n"
+  example: []
+  syntax:
+    content: public GameAction(Being source, Being target)
+    parameters:
+    - id: source
+      type: osrlib.Core.Being
+      description: The <xref href="osrlib.Core.Being" data-throw-if-not-resolved="false"></xref> performing the action.
+    - id: target
+      type: osrlib.Core.Being
+      description: The <xref href="osrlib.Core.Being" data-throw-if-not-resolved="false"></xref> that is the target of the action.
+    content.vb: Public Sub New(source As Being, target As Being)
+  overload: osrlib.Core.GameAction.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.GameAction.ActionSource
+  commentId: P:osrlib.Core.GameAction.ActionSource
+  id: ActionSource
+  parent: osrlib.Core.GameAction
+  langs:
+  - csharp
+  - vb
+  name: ActionSource
+  nameWithType: GameAction.ActionSource
+  fullName: osrlib.Core.GameAction.ActionSource
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/GameAction.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: ActionSource
+    path: GameRules/GameAction.cs
+    startLine: 38
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the <xref href=\"osrlib.Core.Being\" data-throw-if-not-resolved=\"false\"></xref> performing the action.\n"
+  example: []
+  syntax:
+    content: public Being ActionSource { get; set; }
+    parameters: []
+    return:
+      type: osrlib.Core.Being
+    content.vb: Public Property ActionSource As Being
+  overload: osrlib.Core.GameAction.ActionSource*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.GameAction.ActionTarget
+  commentId: P:osrlib.Core.GameAction.ActionTarget
+  id: ActionTarget
+  parent: osrlib.Core.GameAction
+  langs:
+  - csharp
+  - vb
+  name: ActionTarget
+  nameWithType: GameAction.ActionTarget
+  fullName: osrlib.Core.GameAction.ActionTarget
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/GameAction.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: ActionTarget
+    path: GameRules/GameAction.cs
+    startLine: 43
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets or sets the target <xref href=\"osrlib.Core.Being\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public Being ActionTarget { get; set; }
+    parameters: []
+    return:
+      type: osrlib.Core.Being
+    content.vb: Public Property ActionTarget As Being
+  overload: osrlib.Core.GameAction.ActionTarget*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: osrlib.Core.GameAction.Victor
+  commentId: P:osrlib.Core.GameAction.Victor
+  id: Victor
+  parent: osrlib.Core.GameAction
+  langs:
+  - csharp
+  - vb
+  name: Victor
+  nameWithType: GameAction.Victor
+  fullName: osrlib.Core.GameAction.Victor
+  type: Property
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/GameAction.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: Victor
+    path: GameRules/GameAction.cs
+    startLine: 48
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nGets the victor of the GameAction.\n"
+  example: []
+  syntax:
+    content: public Being Victor { get; }
+    parameters: []
+    return:
+      type: osrlib.Core.Being
+    content.vb: Public ReadOnly Property Victor As Being
+  overload: osrlib.Core.GameAction.Victor*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: osrlib.Core.GameAction.PerformAction
+  commentId: M:osrlib.Core.GameAction.PerformAction
+  id: PerformAction
+  parent: osrlib.Core.GameAction
+  langs:
+  - csharp
+  - vb
+  name: PerformAction()
+  nameWithType: GameAction.PerformAction()
+  fullName: osrlib.Core.GameAction.PerformAction()
+  type: Method
+  source:
+    remote:
+      path: src/osrlib.Core/GameRules/GameAction.cs
+      branch: doc-experiment-01
+      repo: git@github.com:mmacy/osrlib-dotnet.git
+    id: PerformAction
+    path: GameRules/GameAction.cs
+    startLine: 56
+  assemblies:
+  - osrlib.Core
+  namespace: osrlib.Core
+  summary: "\nPerforms the <xref href=\"osrlib.Core.GameAction\" data-throw-if-not-resolved=\"false\"></xref> by applying the attacker&apos;s attack roll to the defender&apos;s defense\nvalue, and applying damage to the defender if the attack roll succeeded.\n"
+  remarks: The victor in the GameAction can be the defending GamePiece.
+  example: []
+  syntax:
+    content: public Being PerformAction()
+    return:
+      type: osrlib.Core.Being
+      description: The victor in the GameAction.
+    content.vb: Public Function PerformAction As Being
+  overload: osrlib.Core.GameAction.PerformAction*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: osrlib.Core
+  commentId: N:osrlib.Core
+  name: osrlib.Core
+  nameWithType: osrlib.Core
+  fullName: osrlib.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: osrlib.Core.GameAction.AttackRoll*
+  commentId: Overload:osrlib.Core.GameAction.AttackRoll
+  name: AttackRoll
+  nameWithType: GameAction.AttackRoll
+  fullName: osrlib.Core.GameAction.AttackRoll
+- uid: osrlib.Dice.DiceRoll
+  commentId: T:osrlib.Dice.DiceRoll
+  parent: osrlib.Dice
+  name: DiceRoll
+  nameWithType: DiceRoll
+  fullName: osrlib.Dice.DiceRoll
+- uid: osrlib.Dice
+  commentId: N:osrlib.Dice
+  name: osrlib.Dice
+  nameWithType: osrlib.Dice
+  fullName: osrlib.Dice
+- uid: osrlib.Core.GameAction.DamageRoll*
+  commentId: Overload:osrlib.Core.GameAction.DamageRoll
+  name: DamageRoll
+  nameWithType: GameAction.DamageRoll
+  fullName: osrlib.Core.GameAction.DamageRoll
+- uid: osrlib.Core.Being
+  commentId: T:osrlib.Core.Being
+  parent: osrlib.Core
+  name: Being
+  nameWithType: Being
+  fullName: osrlib.Core.Being
+- uid: osrlib.Core.GameAction.#ctor*
+  commentId: Overload:osrlib.Core.GameAction.#ctor
+  name: GameAction
+  nameWithType: GameAction.GameAction
+  fullName: osrlib.Core.GameAction.GameAction
+- uid: osrlib.Core.GameAction.ActionSource*
+  commentId: Overload:osrlib.Core.GameAction.ActionSource
+  name: ActionSource
+  nameWithType: GameAction.ActionSource
+  fullName: osrlib.Core.GameAction.ActionSource
+- uid: osrlib.Core.GameAction.ActionTarget*
+  commentId: Overload:osrlib.Core.GameAction.ActionTarget
+  name: ActionTarget
+  nameWithType: GameAction.ActionTarget
+  fullName: osrlib.Core.GameAction.ActionTarget
+- uid: osrlib.Core.GameAction.Victor*
+  commentId: Overload:osrlib.Core.GameAction.Victor
+  name: Victor
+  nameWithType: GameAction.Victor
+  fullName: osrlib.Core.GameAction.Victor
+- uid: osrlib.Core.GameAction
+  commentId: T:osrlib.Core.GameAction
+  parent: osrlib.Core
+  name: GameAction
+  nameWithType: GameAction
+  fullName: osrlib.Core.GameAction
+- uid: osrlib.Core.GameAction.PerformAction*
+  commentId: Overload:osrlib.Core.GameAction.PerformAction
+  name: PerformAction
+  nameWithType: GameAction.PerformAction
+  fullName: osrlib.Core.GameAction.PerformAction
