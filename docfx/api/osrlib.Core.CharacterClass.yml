@@ -15,10 +15,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/CharacterClass.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: CharacterClass
-    path: GameRules/CharacterClass.cs
+    path: ../src/osrlib.Core/GameRules/CharacterClass.cs
     startLine: 5
   assemblies:
   - osrlib.Core

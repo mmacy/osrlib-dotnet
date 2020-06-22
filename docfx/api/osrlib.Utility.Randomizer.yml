@@ -16,10 +16,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Utility/Randomizer.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Randomizer
-    path: Utility/Randomizer.cs
+    path: ../src/osrlib.Core/Utility/Randomizer.cs
     startLine: 7
   assemblies:
   - osrlib.Core
@@ -60,10 +60,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Utility/Randomizer.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: GetRandomInt
-    path: Utility/Randomizer.cs
+    path: ../src/osrlib.Core/Utility/Randomizer.cs
     startLine: 16
   assemblies:
   - osrlib.Core

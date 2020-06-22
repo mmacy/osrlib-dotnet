@@ -21,15 +21,15 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/AbilityType.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: AbilityType
-    path: GameRules/AbilityType.cs
+    path: ../src/osrlib.Core/GameRules/AbilityType.cs
     startLine: 5
   assemblies:
   - osrlib.Core
   namespace: osrlib.Core
-  summary: "\nSpecifies the type of an Ability.\n"
+  summary: "\nSpecifies the type of an <xref href=\"osrlib.Core.Ability\" data-throw-if-not-resolved=\"false\"></xref>.\n"
   example: []
   syntax:
     content: public enum AbilityType
@@ -54,10 +54,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/AbilityType.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Strength
-    path: GameRules/AbilityType.cs
+    path: ../src/osrlib.Core/GameRules/AbilityType.cs
     startLine: 8
   assemblies:
   - osrlib.Core
@@ -88,10 +88,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/AbilityType.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Dexterity
-    path: GameRules/AbilityType.cs
+    path: ../src/osrlib.Core/GameRules/AbilityType.cs
     startLine: 10
   assemblies:
   - osrlib.Core
@@ -122,10 +122,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/AbilityType.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Constitution
-    path: GameRules/AbilityType.cs
+    path: ../src/osrlib.Core/GameRules/AbilityType.cs
     startLine: 12
   assemblies:
   - osrlib.Core
@@ -156,10 +156,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/AbilityType.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Intelligence
-    path: GameRules/AbilityType.cs
+    path: ../src/osrlib.Core/GameRules/AbilityType.cs
     startLine: 14
   assemblies:
   - osrlib.Core
@@ -190,10 +190,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/AbilityType.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Wisdom
-    path: GameRules/AbilityType.cs
+    path: ../src/osrlib.Core/GameRules/AbilityType.cs
     startLine: 16
   assemblies:
   - osrlib.Core
@@ -224,10 +224,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/AbilityType.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Charisma
-    path: GameRules/AbilityType.cs
+    path: ../src/osrlib.Core/GameRules/AbilityType.cs
     startLine: 18
   assemblies:
   - osrlib.Core
@@ -245,6 +245,12 @@ items:
   - Public
   - Const
 references:
+- uid: osrlib.Core.Ability
+  commentId: T:osrlib.Core.Ability
+  parent: osrlib.Core
+  name: Ability
+  nameWithType: Ability
+  fullName: osrlib.Core.Ability
 - uid: osrlib.Core
   commentId: N:osrlib.Core
   name: osrlib.Core

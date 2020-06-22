@@ -17,10 +17,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/User.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: User
-    path: GameRules/User.cs
+    path: ../src/osrlib.Core/GameRules/User.cs
     startLine: 5
   assemblies:
   - osrlib.Core
@@ -60,10 +60,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/User.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Id
-    path: GameRules/User.cs
+    path: ../src/osrlib.Core/GameRules/User.cs
     startLine: 10
   assemblies:
   - osrlib.Core
@@ -97,10 +97,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/User.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Name
-    path: GameRules/User.cs
+    path: ../src/osrlib.Core/GameRules/User.cs
     startLine: 15
   assemblies:
   - osrlib.Core

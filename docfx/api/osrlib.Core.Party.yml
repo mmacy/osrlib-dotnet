@@ -25,10 +25,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Party.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Party
-    path: GameRules/Party.cs
+    path: ../src/osrlib.Core/GameRules/Party.cs
     startLine: 11
   assemblies:
   - osrlib.Core
@@ -67,10 +67,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Party.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Defeated
-    path: GameRules/Party.cs
+    path: ../src/osrlib.Core/GameRules/Party.cs
     startLine: 18
   assemblies:
   - osrlib.Core
@@ -100,10 +100,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Party.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: AddPartyMember
-    path: GameRules/Party.cs
+    path: ../src/osrlib.Core/GameRules/Party.cs
     startLine: 25
   assemblies:
   - osrlib.Core
@@ -136,10 +136,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Party.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: AddPartyMembers
-    path: GameRules/Party.cs
+    path: ../src/osrlib.Core/GameRules/Party.cs
     startLine: 40
   assemblies:
   - osrlib.Core
@@ -175,10 +175,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Party.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: RemovePartyMember
-    path: GameRules/Party.cs
+    path: ../src/osrlib.Core/GameRules/Party.cs
     startLine: 52
   assemblies:
   - osrlib.Core
@@ -211,10 +211,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Party.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ClearParty
-    path: GameRules/Party.cs
+    path: ../src/osrlib.Core/GameRules/Party.cs
     startLine: 66
   assemblies:
   - osrlib.Core
@@ -243,10 +243,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Party.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ToString
-    path: GameRules/Party.cs
+    path: ../src/osrlib.Core/GameRules/Party.cs
     startLine: 95
   assemblies:
   - osrlib.Core
@@ -281,10 +281,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Party.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: UserId
-    path: GameRules/Party.cs
+    path: ../src/osrlib.Core/GameRules/Party.cs
     startLine: 124
   assemblies:
   - osrlib.Core
@@ -318,10 +318,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Party.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: IsAlive
-    path: GameRules/Party.cs
+    path: ../src/osrlib.Core/GameRules/Party.cs
     startLine: 130
   assemblies:
   - osrlib.Core
@@ -355,10 +355,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Party.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Members
-    path: GameRules/Party.cs
+    path: ../src/osrlib.Core/GameRules/Party.cs
     startLine: 136
   assemblies:
   - osrlib.Core
@@ -393,10 +393,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Party.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: LivingMembers
-    path: GameRules/Party.cs
+    path: ../src/osrlib.Core/GameRules/Party.cs
     startLine: 142
   assemblies:
   - osrlib.Core

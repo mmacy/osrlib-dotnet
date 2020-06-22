@@ -22,10 +22,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Ability.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Ability
-    path: GameRules/Ability.cs
+    path: ../src/osrlib.Core/GameRules/Ability.cs
     startLine: 10
   assemblies:
   - osrlib.Core
@@ -64,10 +64,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Ability.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Type
-    path: GameRules/Ability.cs
+    path: ../src/osrlib.Core/GameRules/Ability.cs
     startLine: 15
   assemblies:
   - osrlib.Core
@@ -101,10 +101,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Ability.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: BaseValue
-    path: GameRules/Ability.cs
+    path: ../src/osrlib.Core/GameRules/Ability.cs
     startLine: 21
   assemblies:
   - osrlib.Core
@@ -138,10 +138,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Ability.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ScoreModifiers
-    path: GameRules/Ability.cs
+    path: ../src/osrlib.Core/GameRules/Ability.cs
     startLine: 29
   assemblies:
   - osrlib.Core
@@ -179,10 +179,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Ability.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: GetModifier
-    path: GameRules/Ability.cs
+    path: ../src/osrlib.Core/GameRules/Ability.cs
     startLine: 41
   assemblies:
   - osrlib.Core
@@ -215,10 +215,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Ability.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: RollAbilityScore
-    path: GameRules/Ability.cs
+    path: ../src/osrlib.Core/GameRules/Ability.cs
     startLine: 61
   assemblies:
   - osrlib.Core
@@ -250,10 +250,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Ability.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Value
-    path: GameRules/Ability.cs
+    path: ../src/osrlib.Core/GameRules/Ability.cs
     startLine: 73
   assemblies:
   - osrlib.Core
@@ -287,10 +287,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Ability.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ToString
-    path: GameRules/Ability.cs
+    path: ../src/osrlib.Core/GameRules/Ability.cs
     startLine: 91
   assemblies:
   - osrlib.Core

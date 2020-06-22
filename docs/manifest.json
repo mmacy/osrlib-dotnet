@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/marsh/repos/osrlib-dotnet/src/osrlib.Core",
+  "source_base_path": "C:/Users/marsh/repos/osrlib-dotnet/docfx",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -9,10 +9,10 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Controllers.GameManager.html",
-          "hash": "GtAj1fnstMABQ2TT6cM9wA=="
+          "hash": "AQ/v8xcQm3G1zbnDUY3KNw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -24,7 +24,7 @@
           "hash": "VQYrymuvRI4i1F4ai9BGLA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -33,10 +33,10 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Core.Ability.html",
-          "hash": "lxlHUc5OCTm6WE/u/nJvtw=="
+          "hash": "dvxi6ja2kSjWxZ8UarmylA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -45,10 +45,10 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Core.AbilityType.html",
-          "hash": "8lENHcIrQybqfA3xUgpRgg=="
+          "hash": "QdCS+kzXhNwohuS4nMKDjA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -57,10 +57,10 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Core.Adventure.html",
-          "hash": "EKAZ5T+yZEqsinkDonxpVg=="
+          "hash": "/+ywxnaBaQUycfjfffwyyA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -69,10 +69,10 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Core.Alignment.html",
-          "hash": "Z/5qaUkL8NkmiMME1gr5mg=="
+          "hash": "pd8XVwjs1fwRYLrxEv226A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -81,10 +81,10 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Core.Being.html",
-          "hash": "ReCCm1hhiFW1ZNRaFlSZQg=="
+          "hash": "yBGqgOHdcsjDOE8aq6vk0w=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -93,10 +93,10 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Core.BeingTargetingEventArgs.html",
-          "hash": "5Ah4CCrwxU6/0yXPjFduCg=="
+          "hash": "9xxbMdTeBEJJ4y15E67+/A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -105,10 +105,10 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Core.BeingTargetingEventHandler.html",
-          "hash": "Py3r2GBKQeuNg4C4zxgJ3g=="
+          "hash": "7XBnOWnAQiAwcilu6pr0tA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Core.CharacterClass.html",
-          "hash": "zaom/stTOZd1RiisEuThqQ=="
+          "hash": "jyAMO8uR0i/bGLBcU+Cdtw=="
         }
       },
       "is_incremental": true,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Core.Dungeon.html",
-          "hash": "SgulcNSy0Dyjj90DNXOmow=="
+          "hash": "nlwFQ33KCP2pwxPC58OISA=="
         }
       },
       "is_incremental": true,
@@ -141,10 +141,10 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Core.Encounter.html",
-          "hash": "FbSdymWoaHKdo2hDGqC8mw=="
+          "hash": "yzPO7VDJH0UAbxCOBmAXXw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -153,10 +153,10 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Core.GameAction.html",
-          "hash": "OxwCRrCzMJ1dcsZOvqmtcQ=="
+          "hash": "KAIDnMeY5dZ1E1B2sguyPA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Core.GameActionEventArgs.html",
-          "hash": "B+9iDdUELKTJ4oQzGDNR4g=="
+          "hash": "7L3MEDtyyNW7JvP20HcwxA=="
         }
       },
       "is_incremental": true,
@@ -177,10 +177,10 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Core.GameActionEventHandler.html",
-          "hash": "+/Qe7vV6gMv9q6WzeuVAfQ=="
+          "hash": "HJpwjAlEHSGlvcLGVrGZwQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Core.GamePosition.html",
-          "hash": "EpFsF29Y3mQXHFeEoqFdzQ=="
+          "hash": "CHwp4a6mhVSPUnx5pv4gXA=="
         }
       },
       "is_incremental": true,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Core.Modifier.html",
-          "hash": "crcajXq0Z7FqR3XFWbEInw=="
+          "hash": "CPrgnKz8kCvOXa8/Ck/Yjg=="
         }
       },
       "is_incremental": true,
@@ -213,10 +213,10 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Core.Party.html",
-          "hash": "IXUEIabbAB14JoLTtaWKRA=="
+          "hash": "icjKFe+tpj8Y8n2o4NoO1g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -225,10 +225,10 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Core.Quest.html",
-          "hash": "ghW9OboeUXOIc3wseiEC8A=="
+          "hash": "UscbtEASP6k/rYO9/l90vg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Core.User.html",
-          "hash": "acRcmKqfCG/QCyqS1GKrDQ=="
+          "hash": "Sf44VgBD05jooftevdjNLw=="
         }
       },
       "is_incremental": true,
@@ -249,10 +249,10 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Core.Weapon.html",
-          "hash": "LdF77RNFACAxMhhpRfJtkQ=="
+          "hash": "gPtboF/ajs6sAVtqFzHvSQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Core.WeaponType.html",
-          "hash": "akSdm6I/gPA6I1Q2fByMiw=="
+          "hash": "lDFx4LH7BCpBCirojrgyLA=="
         }
       },
       "is_incremental": true,
@@ -273,10 +273,10 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Core.html",
-          "hash": "P3NjTMqc1584i4Y0VLF+Lg=="
+          "hash": "7TEehRZ0TYIiSr+MUV2hgQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -285,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Dice.DiceHand.html",
-          "hash": "7wIKEta7tWlKUpq92gON/Q=="
+          "hash": "ni6Ney/OmXxsghidQyYE+A=="
         }
       },
       "is_incremental": true,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Dice.DiceRoll.html",
-          "hash": "QucERrbMWjy9o8IqOsFnVw=="
+          "hash": "7AuUmYtxVyWVf1aufoJvgA=="
         }
       },
       "is_incremental": true,
@@ -309,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Dice.DiceRolledEventArgs.html",
-          "hash": "ElT+mn+lVqC1wvVn6fgIKA=="
+          "hash": "Mgc6X8UcMkV4eAvSOaUWRA=="
         }
       },
       "is_incremental": true,
@@ -321,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Dice.DiceRolledEventHandler.html",
-          "hash": "nUgP57z9AegSrepSrlg+Ow=="
+          "hash": "M0q547l9J8G4katdc1RXzA=="
         }
       },
       "is_incremental": true,
@@ -333,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Dice.Die.html",
-          "hash": "TvxxvbCGqra5AcVcpFQs9Q=="
+          "hash": "jcJ3ONed8krFEfjz82K1dQ=="
         }
       },
       "is_incremental": true,
@@ -357,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.SaveLoad.SaveLoadLocal.html",
-          "hash": "4oX6yHKafLdKd7d+PQ/oUg=="
+          "hash": "HPiFcv/ydQeLCezOglf1aQ=="
         }
       },
       "is_incremental": true,
@@ -369,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.SaveLoad.SaveType.html",
-          "hash": "oRVxmRuBNSdTODcLEyPe/w=="
+          "hash": "Bv0b4uIeM847oiwSGvNfLQ=="
         }
       },
       "is_incremental": true,
@@ -381,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.SaveLoad.html",
-          "hash": "Jmg5uUSGCR08y76wSMHJrA=="
+          "hash": "wUu4a1+Q8jneYhkYr0HWaQ=="
         }
       },
       "is_incremental": true,
@@ -393,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Tests.CoreRulesTests.html",
-          "hash": "91aQJFvdzd+/lOCHtTCjVQ=="
+          "hash": "iseju3CYzapIb21gR8WkXQ=="
         }
       },
       "is_incremental": true,
@@ -405,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Tests.DiceTests.html",
-          "hash": "xMFr6ABr+0WVFZxnaDOHXQ=="
+          "hash": "vqfIdcNqE3KASS4PE/X0jA=="
         }
       },
       "is_incremental": true,
@@ -417,7 +417,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Tests.PartyGenerator.html",
-          "hash": "jrME+Vw9CrRKNCtUnGJ0rA=="
+          "hash": "d20oXI9qAqM8OiNGioLixg=="
         }
       },
       "is_incremental": true,
@@ -429,7 +429,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Tests.ReadMeTests.html",
-          "hash": "1z0G/E19kEnvqdov2dr7rQ=="
+          "hash": "v04zieHQINjtXEI7NbdvQg=="
         }
       },
       "is_incremental": true,
@@ -441,7 +441,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Tests.SaveLoadTests.html",
-          "hash": "7uoT8E5fw5buIngDQymPpA=="
+          "hash": "Gp/5B9mKXemmUG9hjgaHRg=="
         }
       },
       "is_incremental": true,
@@ -453,7 +453,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Tests.SteppedBattleTests.html",
-          "hash": "zQic63YF5uj9x/5w6632iA=="
+          "hash": "ULM1AJMD5E19bZ33PChMig=="
         }
       },
       "is_incremental": true,
@@ -465,7 +465,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Tests.html",
-          "hash": "WPj0V5uqVTIhWpi9Ad79WQ=="
+          "hash": "FhdoawBH5GjFHL51bgaDGg=="
         }
       },
       "is_incremental": true,
@@ -477,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Utility.Randomizer.html",
-          "hash": "0e8r4XFk7YtCbU29MBQ+Ig=="
+          "hash": "vS3dJL3wOd9U4ayg3RmVew=="
         }
       },
       "is_incremental": true,
@@ -489,7 +489,7 @@
       "output": {
         ".html": {
           "relative_path": "api/osrlib.Utility.html",
-          "hash": "2HzOwPknXfSosfGkXfzfoQ=="
+          "hash": "0EC/h9w8Y/oTpvG8+vq7Og=="
         }
       },
       "is_incremental": true,
@@ -537,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "ZJdnhTSkYDhh7uT18aPUTw=="
+          "hash": "KMT1Zs5bJzXnvtNYt3D8Kg=="
         }
       },
       "is_incremental": true,
@@ -563,7 +563,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 41,
-          "skipped_file_count": 41
+          "skipped_file_count": 37
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,

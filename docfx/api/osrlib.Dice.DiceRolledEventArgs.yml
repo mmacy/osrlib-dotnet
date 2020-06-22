@@ -17,10 +17,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceRolledEventArgs.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: DiceRolledEventArgs
-    path: Dice/DiceRolledEventArgs.cs
+    path: ../src/osrlib.Core/Dice/DiceRolledEventArgs.cs
     startLine: 14
   assemblies:
   - osrlib.Core
@@ -64,10 +64,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceRolledEventArgs.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: .ctor
-    path: Dice/DiceRolledEventArgs.cs
+    path: ../src/osrlib.Core/Dice/DiceRolledEventArgs.cs
     startLine: 20
   assemblies:
   - osrlib.Core
@@ -100,10 +100,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceRolledEventArgs.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: RolledDice
-    path: Dice/DiceRolledEventArgs.cs
+    path: ../src/osrlib.Core/Dice/DiceRolledEventArgs.cs
     startLine: 28
   assemblies:
   - osrlib.Core

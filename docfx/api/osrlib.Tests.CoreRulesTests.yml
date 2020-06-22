@@ -20,10 +20,10 @@ items:
   source:
     remote:
       path: src/osrlib.Tests/CoreRulesTests.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: CoreRulesTests
-    path: ../osrlib.Tests/CoreRulesTests.cs
+    path: ../src/osrlib.Tests/CoreRulesTests.cs
     startLine: 8
   assemblies:
   - osrlib.Tests
@@ -61,10 +61,10 @@ items:
   source:
     remote:
       path: src/osrlib.Tests/CoreRulesTests.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: InitMajorGameEntities
-    path: ../osrlib.Tests/CoreRulesTests.cs
+    path: ../src/osrlib.Tests/CoreRulesTests.cs
     startLine: 10
   assemblies:
   - osrlib.Tests
@@ -101,10 +101,10 @@ items:
   source:
     remote:
       path: src/osrlib.Tests/CoreRulesTests.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ExecuteDungeonBattle
-    path: ../osrlib.Tests/CoreRulesTests.cs
+    path: ../src/osrlib.Tests/CoreRulesTests.cs
     startLine: 45
   assemblies:
   - osrlib.Tests
@@ -145,10 +145,10 @@ items:
   source:
     remote:
       path: src/osrlib.Tests/CoreRulesTests.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: InitGameManager
-    path: ../osrlib.Tests/CoreRulesTests.cs
+    path: ../src/osrlib.Tests/CoreRulesTests.cs
     startLine: 58
   assemblies:
   - osrlib.Tests
@@ -185,10 +185,10 @@ items:
   source:
     remote:
       path: src/osrlib.Tests/CoreRulesTests.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: DoEncounterAutoBattle
-    path: ../osrlib.Tests/CoreRulesTests.cs
+    path: ../src/osrlib.Tests/CoreRulesTests.cs
     startLine: 65
   assemblies:
   - osrlib.Tests
@@ -225,10 +225,10 @@ items:
   source:
     remote:
       path: src/osrlib.Tests/CoreRulesTests.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: CreateFullyInitializedCharacter
-    path: ../osrlib.Tests/CoreRulesTests.cs
+    path: ../src/osrlib.Tests/CoreRulesTests.cs
     startLine: 87
   assemblies:
   - osrlib.Tests

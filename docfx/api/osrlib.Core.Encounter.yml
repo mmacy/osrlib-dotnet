@@ -26,10 +26,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Encounter.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Encounter
-    path: GameRules/Encounter.cs
+    path: ../src/osrlib.Core/GameRules/Encounter.cs
     startLine: 10
   assemblies:
   - osrlib.Core
@@ -69,10 +69,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Encounter.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: EncounterStarted
-    path: GameRules/Encounter.cs
+    path: ../src/osrlib.Core/GameRules/Encounter.cs
     startLine: 18
   assemblies:
   - osrlib.Core
@@ -102,10 +102,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Encounter.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: EncounterEnded
-    path: GameRules/Encounter.cs
+    path: ../src/osrlib.Core/GameRules/Encounter.cs
     startLine: 24
   assemblies:
   - osrlib.Core
@@ -135,10 +135,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Encounter.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Position
-    path: GameRules/Encounter.cs
+    path: ../src/osrlib.Core/GameRules/Encounter.cs
     startLine: 29
   assemblies:
   - osrlib.Core
@@ -172,10 +172,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Encounter.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: EncounterParty
-    path: GameRules/Encounter.cs
+    path: ../src/osrlib.Core/GameRules/Encounter.cs
     startLine: 34
   assemblies:
   - osrlib.Core
@@ -209,10 +209,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Encounter.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: AdventuringParty
-    path: GameRules/Encounter.cs
+    path: ../src/osrlib.Core/GameRules/Encounter.cs
     startLine: 40
   assemblies:
   - osrlib.Core
@@ -247,10 +247,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Encounter.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: IsEncounterStarted
-    path: GameRules/Encounter.cs
+    path: ../src/osrlib.Core/GameRules/Encounter.cs
     startLine: 45
   assemblies:
   - osrlib.Core
@@ -284,10 +284,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Encounter.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: IsEncounterEnded
-    path: GameRules/Encounter.cs
+    path: ../src/osrlib.Core/GameRules/Encounter.cs
     startLine: 50
   assemblies:
   - osrlib.Core
@@ -321,10 +321,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Encounter.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: AutoBattleEnabled
-    path: GameRules/Encounter.cs
+    path: ../src/osrlib.Core/GameRules/Encounter.cs
     startLine: 56
   assemblies:
   - osrlib.Core
@@ -358,10 +358,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Encounter.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: SetAdventuringParty
-    path: GameRules/Encounter.cs
+    path: ../src/osrlib.Core/GameRules/Encounter.cs
     startLine: 62
   assemblies:
   - osrlib.Core
@@ -394,10 +394,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Encounter.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: StartEncounter
-    path: GameRules/Encounter.cs
+    path: ../src/osrlib.Core/GameRules/Encounter.cs
     startLine: 85
   assemblies:
   - osrlib.Core
@@ -427,10 +427,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Encounter.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: PerformStep
-    path: GameRules/Encounter.cs
+    path: ../src/osrlib.Core/GameRules/Encounter.cs
     startLine: 164
   assemblies:
   - osrlib.Core

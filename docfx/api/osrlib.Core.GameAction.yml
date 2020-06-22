@@ -22,10 +22,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/GameAction.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: GameAction
-    path: GameRules/GameAction.cs
+    path: ../src/osrlib.Core/GameRules/GameAction.cs
     startLine: 10
   assemblies:
   - osrlib.Core
@@ -65,10 +65,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/GameAction.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: AttackRoll
-    path: GameRules/GameAction.cs
+    path: ../src/osrlib.Core/GameRules/GameAction.cs
     startLine: 16
   assemblies:
   - osrlib.Core
@@ -103,10 +103,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/GameAction.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: DamageRoll
-    path: GameRules/GameAction.cs
+    path: ../src/osrlib.Core/GameRules/GameAction.cs
     startLine: 22
   assemblies:
   - osrlib.Core
@@ -141,10 +141,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/GameAction.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: .ctor
-    path: GameRules/GameAction.cs
+    path: ../src/osrlib.Core/GameRules/GameAction.cs
     startLine: 29
   assemblies:
   - osrlib.Core
@@ -180,10 +180,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/GameAction.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ActionSource
-    path: GameRules/GameAction.cs
+    path: ../src/osrlib.Core/GameRules/GameAction.cs
     startLine: 38
   assemblies:
   - osrlib.Core
@@ -217,10 +217,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/GameAction.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ActionTarget
-    path: GameRules/GameAction.cs
+    path: ../src/osrlib.Core/GameRules/GameAction.cs
     startLine: 43
   assemblies:
   - osrlib.Core
@@ -254,10 +254,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/GameAction.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Victor
-    path: GameRules/GameAction.cs
+    path: ../src/osrlib.Core/GameRules/GameAction.cs
     startLine: 48
   assemblies:
   - osrlib.Core
@@ -291,10 +291,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/GameAction.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: PerformAction
-    path: GameRules/GameAction.cs
+    path: ../src/osrlib.Core/GameRules/GameAction.cs
     startLine: 56
   assemblies:
   - osrlib.Core

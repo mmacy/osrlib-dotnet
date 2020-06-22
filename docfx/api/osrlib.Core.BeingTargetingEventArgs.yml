@@ -17,10 +17,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/BeingTargetingEventArgs.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: BeingTargetingEventArgs
-    path: GameRules/BeingTargetingEventArgs.cs
+    path: ../src/osrlib.Core/GameRules/BeingTargetingEventArgs.cs
     startLine: 6
   assemblies:
   - osrlib.Core
@@ -60,10 +60,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/BeingTargetingEventArgs.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: TargetingBeing
-    path: GameRules/BeingTargetingEventArgs.cs
+    path: ../src/osrlib.Core/GameRules/BeingTargetingEventArgs.cs
     startLine: 11
   assemblies:
   - osrlib.Core
@@ -97,10 +97,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/BeingTargetingEventArgs.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: TargetedBeing
-    path: GameRules/BeingTargetingEventArgs.cs
+    path: ../src/osrlib.Core/GameRules/BeingTargetingEventArgs.cs
     startLine: 16
   assemblies:
   - osrlib.Core

@@ -19,10 +19,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/GamePosition.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: GamePosition
-    path: GameRules/GamePosition.cs
+    path: ../src/osrlib.Core/GameRules/GamePosition.cs
     startLine: 5
   assemblies:
   - osrlib.Core
@@ -59,10 +59,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/GamePosition.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: .ctor
-    path: GameRules/GamePosition.cs
+    path: ../src/osrlib.Core/GameRules/GamePosition.cs
     startLine: 13
   assemblies:
   - osrlib.Core
@@ -101,10 +101,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/GamePosition.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: X
-    path: GameRules/GamePosition.cs
+    path: ../src/osrlib.Core/GameRules/GamePosition.cs
     startLine: 23
   assemblies:
   - osrlib.Core
@@ -138,10 +138,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/GamePosition.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Y
-    path: GameRules/GamePosition.cs
+    path: ../src/osrlib.Core/GameRules/GamePosition.cs
     startLine: 28
   assemblies:
   - osrlib.Core
@@ -175,10 +175,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/GamePosition.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Z
-    path: GameRules/GamePosition.cs
+    path: ../src/osrlib.Core/GameRules/GamePosition.cs
     startLine: 33
   assemblies:
   - osrlib.Core

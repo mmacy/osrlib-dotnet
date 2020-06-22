@@ -15,15 +15,16 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Quest.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Quest
-    path: GameRules/Quest.cs
-    startLine: 5
+    path: ../src/osrlib.Core/GameRules/Quest.cs
+    startLine: 8
   assemblies:
   - osrlib.Core
   namespace: osrlib.Core
-  summary: "\nThe Quest is associated with one <xref href=\"osrlib.Core.Adventure\" data-throw-if-not-resolved=\"false\"></xref>, and one or <xref href=\"osrlib.Core.Dungeon\" data-throw-if-not-resolved=\"false\"></xref> objects.\n"
+  summary: "\nThe Quest is associated with one <xref href=\"osrlib.Core.Adventure\" data-throw-if-not-resolved=\"false\"></xref>, and one or more <xref href=\"osrlib.Core.Dungeon\" data-throw-if-not-resolved=\"false\"></xref> objects.\n"
+  remarks: "\nThis class is NOT YET IMPLEMENTED.\n"
   example: []
   syntax:
     content: public class Quest
