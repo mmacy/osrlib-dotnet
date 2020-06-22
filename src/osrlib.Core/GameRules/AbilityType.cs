@@ -1,7 +1,7 @@
 ﻿namespace osrlib.Core
 {
     /// <summary>
-    /// Specifies the type of an Ability.
+    /// Specifies the type of an <see cref="Ability"/>.
     /// </summary>
     public enum AbilityType
     {

@@ -2,7 +2,7 @@
 
 |Build status (master) |Docs|Reference|Package|
 |:-|:-|:-|:-:|
-| [![Build Status](https://marshallmacy.visualstudio.com/osrlib-dotnet/_apis/build/status/osrlib-dotnet?branchName=master)](https://marshallmacy.visualstudio.com/osrlib-dotnet/_build/latest?definitionId=1&branchName=master) | [Documentation](docs/README.md) | API reference | NuGet |
+| [![Build Status](https://marshallmacy.visualstudio.com/osrlib-dotnet/_apis/build/status/osrlib-dotnet?branchName=master)](https://marshallmacy.visualstudio.com/osrlib-dotnet/_build/latest?definitionId=1&branchName=master) | [Documentation][docs] | [API reference][api-ref] | NuGet |
 
 OSRlib.NET is a .NET Core class library written in C# that provides an API for turn-based role-playing games (RPGs) in the [old school revival](https://en.wikipedia.org/wiki/Old_School_Revival) (OSR) style.
 
@@ -224,6 +224,9 @@ This was quick intro to a few of the primary types in OSRlib, as well as how tho
 
 If you'd like to see the full code sample for the preceding snippets, see [`src/osrlib.Tests/ReadMeTests.cs`](src/osrlib.Tests/ReadMeTests.cs).
 
-And be sure to check out the [API reference (NOT YET PUBLISHED)](404.md) and the rest of the [documentation](docs/README.md) (currently minimal).
+And be sure to check out the [API reference][api-ref] and the rest of the [documentation][docs] (currently minimal).
 
 Have fun!
+
+[docs]: https://mmacy.github.io/osrlib-dotnet
+[api-ref]: https://mmacy.github.io/osrlib-dotnet/api/osrlib.Core.html
