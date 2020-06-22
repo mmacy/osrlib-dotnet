@@ -100,7 +100,7 @@ namespace osrlib.Controllers
         /// </summary>
         /// <param name="saveType">The type of save/load operation.</param>
         /// <param name="path">The path or URL to which to save the <see cref="Adventure"/>.</param>
-        /// <returns>Whether the operation was successful.</returns>
+        /// <returns>Whether the save operation was successful.</returns>
         public bool SaveActiveAdventure(SaveType saveType, string path)
         {
             bool saved = true;
