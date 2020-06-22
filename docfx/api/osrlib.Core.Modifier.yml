@@ -17,10 +17,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Modifier.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Modifier
-    path: GameRules/Modifier.cs
+    path: ../src/osrlib.Core/GameRules/Modifier.cs
     startLine: 6
   assemblies:
   - osrlib.Core
@@ -61,10 +61,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Modifier.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ModifierSource
-    path: GameRules/Modifier.cs
+    path: ../src/osrlib.Core/GameRules/Modifier.cs
     startLine: 11
   assemblies:
   - osrlib.Core
@@ -98,10 +98,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Modifier.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ModifierValue
-    path: GameRules/Modifier.cs
+    path: ../src/osrlib.Core/GameRules/Modifier.cs
     startLine: 16
   assemblies:
   - osrlib.Core

@@ -31,10 +31,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceRoll.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: DiceRoll
-    path: Dice/DiceRoll.cs
+    path: ../src/osrlib.Core/Dice/DiceRoll.cs
     startLine: 31
   assemblies:
   - osrlib.Core
@@ -77,10 +77,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceRoll.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: DiceRolled
-    path: Dice/DiceRoll.cs
+    path: ../src/osrlib.Core/Dice/DiceRoll.cs
     startLine: 42
   assemblies:
   - osrlib.Core
@@ -110,10 +110,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceRoll.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: .ctor
-    path: Dice/DiceRoll.cs
+    path: ../src/osrlib.Core/Dice/DiceRoll.cs
     startLine: 49
   assemblies:
   - osrlib.Core
@@ -146,10 +146,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceRoll.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: AddDie
-    path: Dice/DiceRoll.cs
+    path: ../src/osrlib.Core/Dice/DiceRoll.cs
     startLine: 62
   assemblies:
   - osrlib.Core
@@ -182,10 +182,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceRoll.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: AddDice
-    path: Dice/DiceRoll.cs
+    path: ../src/osrlib.Core/Dice/DiceRoll.cs
     startLine: 71
   assemblies:
   - osrlib.Core
@@ -221,10 +221,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceRoll.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: AddDice
-    path: Dice/DiceRoll.cs
+    path: ../src/osrlib.Core/Dice/DiceRoll.cs
     startLine: 80
   assemblies:
   - osrlib.Core
@@ -257,10 +257,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceRoll.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: AddModifier
-    path: Dice/DiceRoll.cs
+    path: ../src/osrlib.Core/Dice/DiceRoll.cs
     startLine: 89
   assemblies:
   - osrlib.Core
@@ -293,10 +293,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceRoll.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ClearDice
-    path: Dice/DiceRoll.cs
+    path: ../src/osrlib.Core/Dice/DiceRoll.cs
     startLine: 97
   assemblies:
   - osrlib.Core
@@ -325,10 +325,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceRoll.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ClearModifiers
-    path: Dice/DiceRoll.cs
+    path: ../src/osrlib.Core/Dice/DiceRoll.cs
     startLine: 105
   assemblies:
   - osrlib.Core
@@ -357,10 +357,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceRoll.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: RemoveDie
-    path: Dice/DiceRoll.cs
+    path: ../src/osrlib.Core/Dice/DiceRoll.cs
     startLine: 114
   assemblies:
   - osrlib.Core
@@ -393,10 +393,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceRoll.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: RollDice
-    path: Dice/DiceRoll.cs
+    path: ../src/osrlib.Core/Dice/DiceRoll.cs
     startLine: 124
   assemblies:
   - osrlib.Core
@@ -428,10 +428,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceRoll.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: RollDice
-    path: Dice/DiceRoll.cs
+    path: ../src/osrlib.Core/Dice/DiceRoll.cs
     startLine: 153
   assemblies:
   - osrlib.Core
@@ -472,10 +472,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceRoll.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ModifierTotal
-    path: Dice/DiceRoll.cs
+    path: ../src/osrlib.Core/Dice/DiceRoll.cs
     startLine: 197
   assemblies:
   - osrlib.Core
@@ -509,10 +509,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceRoll.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: BaseRoll
-    path: Dice/DiceRoll.cs
+    path: ../src/osrlib.Core/Dice/DiceRoll.cs
     startLine: 202
   assemblies:
   - osrlib.Core
@@ -546,10 +546,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceRoll.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: LastRoll
-    path: Dice/DiceRoll.cs
+    path: ../src/osrlib.Core/Dice/DiceRoll.cs
     startLine: 208
   assemblies:
   - osrlib.Core
@@ -583,10 +583,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceRoll.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Dice
-    path: Dice/DiceRoll.cs
+    path: ../src/osrlib.Core/Dice/DiceRoll.cs
     startLine: 213
   assemblies:
   - osrlib.Core
@@ -620,10 +620,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceRoll.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ToString
-    path: Dice/DiceRoll.cs
+    path: ../src/osrlib.Core/Dice/DiceRoll.cs
     startLine: 223
   assemblies:
   - osrlib.Core

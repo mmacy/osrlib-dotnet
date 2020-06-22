@@ -26,10 +26,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Dungeon.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Dungeon
-    path: GameRules/Dungeon.cs
+    path: ../src/osrlib.Core/GameRules/Dungeon.cs
     startLine: 9
   assemblies:
   - osrlib.Core
@@ -69,10 +69,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Dungeon.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Encountered
-    path: GameRules/Dungeon.cs
+    path: ../src/osrlib.Core/GameRules/Dungeon.cs
     startLine: 16
   assemblies:
   - osrlib.Core
@@ -103,10 +103,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Dungeon.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Width
-    path: GameRules/Dungeon.cs
+    path: ../src/osrlib.Core/GameRules/Dungeon.cs
     startLine: 21
   assemblies:
   - osrlib.Core
@@ -140,10 +140,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Dungeon.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Height
-    path: GameRules/Dungeon.cs
+    path: ../src/osrlib.Core/GameRules/Dungeon.cs
     startLine: 26
   assemblies:
   - osrlib.Core
@@ -177,10 +177,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Dungeon.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: StartPosition
-    path: GameRules/Dungeon.cs
+    path: ../src/osrlib.Core/GameRules/Dungeon.cs
     startLine: 31
   assemblies:
   - osrlib.Core
@@ -214,10 +214,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Dungeon.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: CurrentPosition
-    path: GameRules/Dungeon.cs
+    path: ../src/osrlib.Core/GameRules/Dungeon.cs
     startLine: 36
   assemblies:
   - osrlib.Core
@@ -251,10 +251,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Dungeon.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: DungeonId
-    path: GameRules/Dungeon.cs
+    path: ../src/osrlib.Core/GameRules/Dungeon.cs
     startLine: 41
   assemblies:
   - osrlib.Core
@@ -288,10 +288,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Dungeon.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: NextDungeonId
-    path: GameRules/Dungeon.cs
+    path: ../src/osrlib.Core/GameRules/Dungeon.cs
     startLine: 46
   assemblies:
   - osrlib.Core
@@ -325,10 +325,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Dungeon.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: PrevDungeonId
-    path: GameRules/Dungeon.cs
+    path: ../src/osrlib.Core/GameRules/Dungeon.cs
     startLine: 51
   assemblies:
   - osrlib.Core
@@ -362,10 +362,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Dungeon.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: MoveParty
-    path: GameRules/Dungeon.cs
+    path: ../src/osrlib.Core/GameRules/Dungeon.cs
     startLine: 62
   assemblies:
   - osrlib.Core
@@ -411,10 +411,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Dungeon.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ActiveEncounter
-    path: GameRules/Dungeon.cs
+    path: ../src/osrlib.Core/GameRules/Dungeon.cs
     startLine: 88
   assemblies:
   - osrlib.Core
@@ -448,10 +448,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Dungeon.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Encounters
-    path: GameRules/Dungeon.cs
+    path: ../src/osrlib.Core/GameRules/Dungeon.cs
     startLine: 93
   assemblies:
   - osrlib.Core

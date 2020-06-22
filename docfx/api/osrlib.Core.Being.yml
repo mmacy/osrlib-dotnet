@@ -44,10 +44,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Being
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 55
   assemblies:
   - osrlib.Core
@@ -88,10 +88,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Killed
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 60
   assemblies:
   - osrlib.Core
@@ -121,10 +121,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: PotentialTargetsAdded
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 65
   assemblies:
   - osrlib.Core
@@ -154,10 +154,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: TargetSelected
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 70
   assemblies:
   - osrlib.Core
@@ -187,10 +187,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: SelectedAsTarget
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 77
   assemblies:
   - osrlib.Core
@@ -220,15 +220,15 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: PerformingAction
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 88
   assemblies:
   - osrlib.Core
   namespace: osrlib.Core
-  summary: "\nEvent raised when this being is about to perform a <xref href=\"osrlib.Core.GameAction\" data-throw-if-not-resolved=\"false\"></xref>, such as when the\nBeing is about to attack an enemy.\n"
+  summary: "\nEvent raised when this Being is about to perform a <xref href=\"osrlib.Core.GameAction\" data-throw-if-not-resolved=\"false\"></xref>, such as when the\nBeing is about to attack an enemy.\n"
   remarks: "\nSubscribe to this event to obtain information about the Being on which this Being is performing an action.\nFor example, you might use this to display the name of this Being and stats about the the weapon or spell\nthey&apos;re wielding (via the <xref href=\"osrlib.Core.Being.ActiveWeapon\" data-throw-if-not-resolved=\"false\"></xref> property).\n"
   example: []
   syntax:
@@ -254,15 +254,15 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ActionPerformed
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 100
   assemblies:
   - osrlib.Core
   namespace: osrlib.Core
-  summary: "\nEvent raised when this being has performed a <xref href=\"osrlib.Core.GameAction\" data-throw-if-not-resolved=\"false\"></xref>, such as when the\nBeing attacks an enemy.\n"
+  summary: "\nEvent raised when this Being has performed a <xref href=\"osrlib.Core.GameAction\" data-throw-if-not-resolved=\"false\"></xref>, such as when the\nBeing attacks an enemy.\n"
   remarks: "\nSubscribe to this event to obtain information about the Being on which this Being is performing an action\nand determine the victor of the action. For example, you might use this to display the name of this Being,\nthe stats about the the weapon or spell they wielded (via the <xref href=\"osrlib.Core.Being.ActiveWeapon\" data-throw-if-not-resolved=\"false\"></xref> property), and\nwhether the action was successful (whether they hit and the damage dealt).\n"
   example: []
   syntax:
@@ -288,10 +288,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Name
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 106
   assemblies:
   - osrlib.Core
@@ -325,10 +325,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Class
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 112
   assemblies:
   - osrlib.Core
@@ -363,10 +363,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Alignment
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 117
   assemblies:
   - osrlib.Core
@@ -400,10 +400,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Abilities
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 122
   assemblies:
   - osrlib.Core
@@ -437,10 +437,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: HitPoints
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 127
   assemblies:
   - osrlib.Core
@@ -474,10 +474,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: MaxHitPoints
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 132
   assemblies:
   - osrlib.Core
@@ -511,10 +511,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ExperiencePoints
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 138
   assemblies:
   - osrlib.Core
@@ -549,10 +549,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: IsAlive
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 143
   assemblies:
   - osrlib.Core
@@ -586,10 +586,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: IsTargetable
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 148
   assemblies:
   - osrlib.Core
@@ -623,10 +623,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ActiveWeapon
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 154
   assemblies:
   - osrlib.Core
@@ -660,10 +660,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Defense
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 165
   assemblies:
   - osrlib.Core
@@ -697,10 +697,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: PotentialTargets
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 171
   assemblies:
   - osrlib.Core
@@ -735,10 +735,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: SelectedTargets
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 182
   assemblies:
   - osrlib.Core
@@ -773,15 +773,15 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: AddAbilityModifier
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 198
   assemblies:
   - osrlib.Core
   namespace: osrlib.Core
-  summary: "\nAdds a modifier to the specified ability&apos;s <xref href=\"osrlib.Core.Ability.ScoreModifiers\" data-throw-if-not-resolved=\"false\"></xref> collection.\nThis acts as a bonus or penalty, effectively an enchantment or a curse.\n"
+  summary: "\nAdds a modifier to the specified ability&apos;s <xref href=\"osrlib.Core.Ability.ScoreModifiers\" data-throw-if-not-resolved=\"false\"></xref> collection.\nThis acts as a bonus or penalty, for example due to an enchantment or curse affecting the Being.\n"
   example: []
   syntax:
     content: public void AddAbilityModifier(Modifier modifier, AbilityType abilityType)
@@ -812,10 +812,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: GetAttackRoll
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 217
   assemblies:
   - osrlib.Core
@@ -847,10 +847,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: GetDamageRoll
-    path: GameRules/Being.cs
+    path: ../src/osrlib.Core/GameRules/Being.cs
     startLine: 229
   assemblies:
   - osrlib.Core
@@ -882,21 +882,16 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ApplyDamage
-    path: GameRules/Being.cs
-    startLine: 244
+    path: ../src/osrlib.Core/GameRules/Being.cs
+    startLine: 246
   assemblies:
   - osrlib.Core
   namespace: osrlib.Core
   summary: "\nDeducts the specified amount of HitPoints from the Being.\n"
-  remarks: >-
-    If the Being is killed by this damage, the <xref href="osrlib.Core.Being.OnKilled" data-throw-if-not-resolved="false"></xref> event is raised.
-
-    The event is only raised if the Being was previously alive. This method will return <code>true</code>
-
-    only if the Being was alive prior to taking this damage.
+  remarks: "\nIf the Being is killed by this damage, the <xref href=\"osrlib.Core.Being.OnKilled\" data-throw-if-not-resolved=\"false\"></xref> event is raised.\nThe event is raised only if the Being was previously alive, and returns <code>true</code>\nonly if the Being was alive prior to taking this damage.\n"
   example: []
   syntax:
     content: public bool ApplyDamage(int damage)
@@ -927,11 +922,11 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: SelectTarget
-    path: GameRules/Being.cs
-    startLine: 273
+    path: ../src/osrlib.Core/GameRules/Being.cs
+    startLine: 275
   assemblies:
   - osrlib.Core
   namespace: osrlib.Core
@@ -966,11 +961,11 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: SelectTargets
-    path: GameRules/Being.cs
-    startLine: 297
+    path: ../src/osrlib.Core/GameRules/Being.cs
+    startLine: 299
   assemblies:
   - osrlib.Core
   namespace: osrlib.Core
@@ -1008,16 +1003,16 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: PerformActionOnSelectedTargets
-    path: GameRules/Being.cs
-    startLine: 311
+    path: ../src/osrlib.Core/GameRules/Being.cs
+    startLine: 314
   assemblies:
   - osrlib.Core
   namespace: osrlib.Core
-  summary: "\nFor each <xref href=\"osrlib.Core.Being\" data-throw-if-not-resolved=\"false\"></xref> in <xref href=\"osrlib.Core.Being.SelectedTargets\" data-throw-if-not-resolved=\"false\"></xref>, creates and performs a <xref href=\"osrlib.Core.GameAction\" data-throw-if-not-resolved=\"false\"></xref>.\n"
-  remarks: "\nCall this after the <xref href=\"osrlib.Core.Being.SelectedTargets\" data-throw-if-not-resolved=\"false\"></xref> collection has been populated with <xref href=\"osrlib.Core.Being.SelectTarget(osrlib.Core.Being)\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  summary: "\nFor each <xref href=\"osrlib.Core.Being\" data-throw-if-not-resolved=\"false\"></xref> in its <xref href=\"osrlib.Core.Being.SelectedTargets\" data-throw-if-not-resolved=\"false\"></xref> collection, creates and performs a <xref href=\"osrlib.Core.GameAction\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  remarks: "\nCall this after the <xref href=\"osrlib.Core.Being.SelectedTargets\" data-throw-if-not-resolved=\"false\"></xref> collection has been populated with\n<xref href=\"osrlib.Core.Being.SelectTarget(osrlib.Core.Being)\" data-throw-if-not-resolved=\"false\"></xref> or <xref href=\"osrlib.Core.Being.SelectTargets(System.Collections.Generic.List%7bosrlib.Core.Being%7d)\" data-throw-if-not-resolved=\"false\"></xref>.\n"
   example: []
   syntax:
     content: public void PerformActionOnSelectedTargets()
@@ -1041,11 +1036,11 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: RollAbilityScore
-    path: GameRules/Being.cs
-    startLine: 330
+    path: ../src/osrlib.Core/GameRules/Being.cs
+    startLine: 333
   assemblies:
   - osrlib.Core
   namespace: osrlib.Core
@@ -1059,7 +1054,7 @@ items:
       description: The type of ability to roll and add to the <xref href="osrlib.Core.Being.Abilities" data-throw-if-not-resolved="false"></xref> collection.
     return:
       type: osrlib.Core.Ability
-      description: The newly rolled Ability.
+      description: The newly rolled <xref href="osrlib.Core.Ability" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Function RollAbilityScore(abilityType As AbilityType) As Ability
   overload: osrlib.Core.Being.RollAbilityScore*
   modifiers.csharp:
@@ -1080,11 +1075,11 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: RollAbilities
-    path: GameRules/Being.cs
-    startLine: 353
+    path: ../src/osrlib.Core/GameRules/Being.cs
+    startLine: 356
   assemblies:
   - osrlib.Core
   namespace: osrlib.Core
@@ -1115,11 +1110,11 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Being.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ToString
-    path: GameRules/Being.cs
-    startLine: 367
+    path: ../src/osrlib.Core/GameRules/Being.cs
+    startLine: 370
   assemblies:
   - osrlib.Core
   namespace: osrlib.Core
@@ -1845,6 +1840,9 @@ references:
     fullName: )
 - uid: osrlib.Core.Being.SelectedTargets
   commentId: P:osrlib.Core.Being.SelectedTargets
+  isExternal: true
+- uid: osrlib.Core.Being.SelectTargets(System.Collections.Generic.List{osrlib.Core.Being})
+  commentId: M:osrlib.Core.Being.SelectTargets(System.Collections.Generic.List{osrlib.Core.Being})
   isExternal: true
 - uid: osrlib.Core.Being.PerformActionOnSelectedTargets*
   commentId: Overload:osrlib.Core.Being.PerformActionOnSelectedTargets

@@ -17,10 +17,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/Die.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Die
-    path: Dice/Die.cs
+    path: ../src/osrlib.Core/Dice/Die.cs
     startLine: 7
   assemblies:
   - osrlib.Core
@@ -60,10 +60,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/Die.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: .ctor
-    path: Dice/Die.cs
+    path: ../src/osrlib.Core/Dice/Die.cs
     startLine: 19
   assemblies:
   - osrlib.Core
@@ -96,10 +96,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/Die.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Sides
-    path: Dice/Die.cs
+    path: ../src/osrlib.Core/Dice/Die.cs
     startLine: 47
   assemblies:
   - osrlib.Core

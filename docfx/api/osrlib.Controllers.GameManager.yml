@@ -24,10 +24,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Controllers/GameManager.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: GameManager
-    path: Controllers/GameManager.cs
+    path: ../src/osrlib.Core/Controllers/GameManager.cs
     startLine: 10
   assemblies:
   - osrlib.Core
@@ -68,10 +68,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Controllers/GameManager.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Instance
-    path: Controllers/GameManager.cs
+    path: ../src/osrlib.Core/Controllers/GameManager.cs
     startLine: 15
   assemblies:
   - osrlib.Core
@@ -107,10 +107,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Controllers/GameManager.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ActiveAdventure
-    path: Controllers/GameManager.cs
+    path: ../src/osrlib.Core/Controllers/GameManager.cs
     startLine: 21
   assemblies:
   - osrlib.Core
@@ -145,10 +145,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Controllers/GameManager.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: AdventureLoaded
-    path: Controllers/GameManager.cs
+    path: ../src/osrlib.Core/Controllers/GameManager.cs
     startLine: 26
   assemblies:
   - osrlib.Core
@@ -178,10 +178,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Controllers/GameManager.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: AdventureSaved
-    path: Controllers/GameManager.cs
+    path: ../src/osrlib.Core/Controllers/GameManager.cs
     startLine: 31
   assemblies:
   - osrlib.Core
@@ -211,10 +211,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Controllers/GameManager.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: AdventureStarted
-    path: Controllers/GameManager.cs
+    path: ../src/osrlib.Core/Controllers/GameManager.cs
     startLine: 36
   assemblies:
   - osrlib.Core
@@ -244,10 +244,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Controllers/GameManager.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: SetActiveAdventure
-    path: Controllers/GameManager.cs
+    path: ../src/osrlib.Core/Controllers/GameManager.cs
     startLine: 48
   assemblies:
   - osrlib.Core
@@ -280,10 +280,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Controllers/GameManager.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: LoadAdventure
-    path: Controllers/GameManager.cs
+    path: ../src/osrlib.Core/Controllers/GameManager.cs
     startLine: 59
   assemblies:
   - osrlib.Core
@@ -322,10 +322,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Controllers/GameManager.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: SaveActiveAdventure
-    path: Controllers/GameManager.cs
+    path: ../src/osrlib.Core/Controllers/GameManager.cs
     startLine: 103
   assemblies:
   - osrlib.Core
@@ -343,7 +343,7 @@ items:
       description: The path or URL to which to save the <xref href="osrlib.Core.Adventure" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Boolean
-      description: Whether the operation was successful.
+      description: Whether the save operation was successful.
     content.vb: Public Function SaveActiveAdventure(saveType As SaveType, path As String) As Boolean
   overload: osrlib.Controllers.GameManager.SaveActiveAdventure*
   modifiers.csharp:
@@ -364,10 +364,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Controllers/GameManager.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: StartAdventure
-    path: Controllers/GameManager.cs
+    path: ../src/osrlib.Core/Controllers/GameManager.cs
     startLine: 144
   assemblies:
   - osrlib.Core

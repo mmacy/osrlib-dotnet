@@ -22,10 +22,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Adventure.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Adventure
-    path: GameRules/Adventure.cs
+    path: ../src/osrlib.Core/GameRules/Adventure.cs
     startLine: 7
   assemblies:
   - osrlib.Core
@@ -65,10 +65,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Adventure.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ActiveParty
-    path: GameRules/Adventure.cs
+    path: ../src/osrlib.Core/GameRules/Adventure.cs
     startLine: 12
   assemblies:
   - osrlib.Core
@@ -102,10 +102,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Adventure.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ActiveDungeon
-    path: GameRules/Adventure.cs
+    path: ../src/osrlib.Core/GameRules/Adventure.cs
     startLine: 17
   assemblies:
   - osrlib.Core
@@ -139,10 +139,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Adventure.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Dungeons
-    path: GameRules/Adventure.cs
+    path: ../src/osrlib.Core/GameRules/Adventure.cs
     startLine: 22
   assemblies:
   - osrlib.Core
@@ -176,10 +176,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Adventure.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Quests
-    path: GameRules/Adventure.cs
+    path: ../src/osrlib.Core/GameRules/Adventure.cs
     startLine: 27
   assemblies:
   - osrlib.Core
@@ -213,10 +213,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Adventure.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: AddDungeon
-    path: GameRules/Adventure.cs
+    path: ../src/osrlib.Core/GameRules/Adventure.cs
     startLine: 33
   assemblies:
   - osrlib.Core
@@ -249,10 +249,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Adventure.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: SetActiveDungeon
-    path: GameRules/Adventure.cs
+    path: ../src/osrlib.Core/GameRules/Adventure.cs
     startLine: 42
   assemblies:
   - osrlib.Core
@@ -285,10 +285,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Adventure.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: SetActiveParty
-    path: GameRules/Adventure.cs
+    path: ../src/osrlib.Core/GameRules/Adventure.cs
     startLine: 51
   assemblies:
   - osrlib.Core

@@ -17,10 +17,10 @@ items:
   source:
     remote:
       path: src/osrlib.Tests/DiceTests.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: DiceTests
-    path: ../osrlib.Tests/DiceTests.cs
+    path: ../src/osrlib.Tests/DiceTests.cs
     startLine: 6
   assemblies:
   - osrlib.Tests
@@ -58,10 +58,10 @@ items:
   source:
     remote:
       path: src/osrlib.Tests/DiceTests.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: DiceRollsAlwaysWithinBounds
-    path: ../osrlib.Tests/DiceTests.cs
+    path: ../src/osrlib.Tests/DiceTests.cs
     startLine: 11
   assemblies:
   - osrlib.Tests
@@ -100,10 +100,10 @@ items:
   source:
     remote:
       path: src/osrlib.Tests/DiceTests.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: InvalidDiceRollThrowsException
-    path: ../osrlib.Tests/DiceTests.cs
+    path: ../src/osrlib.Tests/DiceTests.cs
     startLine: 40
   assemblies:
   - osrlib.Tests

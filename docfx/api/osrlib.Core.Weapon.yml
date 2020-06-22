@@ -24,10 +24,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Weapon.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Weapon
-    path: GameRules/Weapon.cs
+    path: ../src/osrlib.Core/GameRules/Weapon.cs
     startLine: 47
   assemblies:
   - osrlib.Core
@@ -69,10 +69,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Weapon.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Name
-    path: GameRules/Weapon.cs
+    path: ../src/osrlib.Core/GameRules/Weapon.cs
     startLine: 52
   assemblies:
   - osrlib.Core
@@ -106,10 +106,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Weapon.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Description
-    path: GameRules/Weapon.cs
+    path: ../src/osrlib.Core/GameRules/Weapon.cs
     startLine: 57
   assemblies:
   - osrlib.Core
@@ -143,10 +143,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Weapon.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Type
-    path: GameRules/Weapon.cs
+    path: ../src/osrlib.Core/GameRules/Weapon.cs
     startLine: 62
   assemblies:
   - osrlib.Core
@@ -180,10 +180,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Weapon.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: DamageDie
-    path: GameRules/Weapon.cs
+    path: ../src/osrlib.Core/GameRules/Weapon.cs
     startLine: 67
   assemblies:
   - osrlib.Core
@@ -217,10 +217,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Weapon.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: GetAttackRoll
-    path: GameRules/Weapon.cs
+    path: ../src/osrlib.Core/GameRules/Weapon.cs
     startLine: 78
   assemblies:
   - osrlib.Core
@@ -257,10 +257,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Weapon.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: GetDamageRoll
-    path: GameRules/Weapon.cs
+    path: ../src/osrlib.Core/GameRules/Weapon.cs
     startLine: 103
   assemblies:
   - osrlib.Core
@@ -297,10 +297,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Weapon.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: AttackModifiers
-    path: GameRules/Weapon.cs
+    path: ../src/osrlib.Core/GameRules/Weapon.cs
     startLine: 129
   assemblies:
   - osrlib.Core
@@ -335,10 +335,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Weapon.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: DamageModifiers
-    path: GameRules/Weapon.cs
+    path: ../src/osrlib.Core/GameRules/Weapon.cs
     startLine: 140
   assemblies:
   - osrlib.Core
@@ -373,10 +373,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Weapon.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ToString
-    path: GameRules/Weapon.cs
+    path: ../src/osrlib.Core/GameRules/Weapon.cs
     startLine: 146
   assemblies:
   - osrlib.Core

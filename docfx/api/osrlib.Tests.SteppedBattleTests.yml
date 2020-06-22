@@ -16,10 +16,10 @@ items:
   source:
     remote:
       path: src/osrlib.Tests/SteppedBattleTests.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: SteppedBattleTests
-    path: ../osrlib.Tests/SteppedBattleTests.cs
+    path: ../src/osrlib.Tests/SteppedBattleTests.cs
     startLine: 13
   assemblies:
   - osrlib.Tests
@@ -59,10 +59,10 @@ items:
   source:
     remote:
       path: src/osrlib.Tests/SteppedBattleTests.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: TestSteppedBattle
-    path: ../osrlib.Tests/SteppedBattleTests.cs
+    path: ../src/osrlib.Tests/SteppedBattleTests.cs
     startLine: 15
   assemblies:
   - osrlib.Tests

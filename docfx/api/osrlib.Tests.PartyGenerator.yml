@@ -17,10 +17,10 @@ items:
   source:
     remote:
       path: src/osrlib.Tests/PartyGenerator.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: PartyGenerator
-    path: ../osrlib.Tests/PartyGenerator.cs
+    path: ../src/osrlib.Tests/PartyGenerator.cs
     startLine: 5
   assemblies:
   - osrlib.Tests
@@ -59,10 +59,10 @@ items:
   source:
     remote:
       path: src/osrlib.Tests/PartyGenerator.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: GetPlayerParty
-    path: ../osrlib.Tests/PartyGenerator.cs
+    path: ../src/osrlib.Tests/PartyGenerator.cs
     startLine: 7
   assemblies:
   - osrlib.Tests
@@ -93,10 +93,10 @@ items:
   source:
     remote:
       path: src/osrlib.Tests/PartyGenerator.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: GetMonsterParty
-    path: ../osrlib.Tests/PartyGenerator.cs
+    path: ../src/osrlib.Tests/PartyGenerator.cs
     startLine: 24
   assemblies:
   - osrlib.Tests

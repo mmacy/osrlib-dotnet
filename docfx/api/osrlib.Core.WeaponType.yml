@@ -18,10 +18,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/WeaponType.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: WeaponType
-    path: GameRules/WeaponType.cs
+    path: ../src/osrlib.Core/GameRules/WeaponType.cs
     startLine: 7
   assemblies:
   - osrlib.Core
@@ -51,10 +51,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/WeaponType.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Melee
-    path: GameRules/WeaponType.cs
+    path: ../src/osrlib.Core/GameRules/WeaponType.cs
     startLine: 12
   assemblies:
   - osrlib.Core
@@ -85,10 +85,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/WeaponType.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Ranged
-    path: GameRules/WeaponType.cs
+    path: ../src/osrlib.Core/GameRules/WeaponType.cs
     startLine: 16
   assemblies:
   - osrlib.Core
@@ -119,10 +119,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/WeaponType.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Spell
-    path: GameRules/WeaponType.cs
+    path: ../src/osrlib.Core/GameRules/WeaponType.cs
     startLine: 20
   assemblies:
   - osrlib.Core

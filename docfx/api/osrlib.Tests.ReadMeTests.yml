@@ -16,10 +16,10 @@ items:
   source:
     remote:
       path: src/osrlib.Tests/ReadMeTests.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ReadMeTests
-    path: ../osrlib.Tests/ReadMeTests.cs
+    path: ../src/osrlib.Tests/ReadMeTests.cs
     startLine: 20
   assemblies:
   - osrlib.Tests
@@ -59,10 +59,10 @@ items:
   source:
     remote:
       path: src/osrlib.Tests/ReadMeTests.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: TestReadMeSnippets
-    path: ../osrlib.Tests/ReadMeTests.cs
+    path: ../src/osrlib.Tests/ReadMeTests.cs
     startLine: 22
   assemblies:
   - osrlib.Tests

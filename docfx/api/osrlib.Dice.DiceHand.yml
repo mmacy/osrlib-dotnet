@@ -18,10 +18,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceHand.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: DiceHand
-    path: Dice/DiceHand.cs
+    path: ../src/osrlib.Core/Dice/DiceHand.cs
     startLine: 21
   assemblies:
   - osrlib.Core
@@ -63,10 +63,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceHand.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: .ctor
-    path: Dice/DiceHand.cs
+    path: ../src/osrlib.Core/Dice/DiceHand.cs
     startLine: 28
   assemblies:
   - osrlib.Core
@@ -102,10 +102,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceHand.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: DieCount
-    path: Dice/DiceHand.cs
+    path: ../src/osrlib.Core/Dice/DiceHand.cs
     startLine: 46
   assemblies:
   - osrlib.Core
@@ -139,10 +139,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/Dice/DiceHand.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: DieSides
-    path: Dice/DiceHand.cs
+    path: ../src/osrlib.Core/Dice/DiceHand.cs
     startLine: 51
   assemblies:
   - osrlib.Core

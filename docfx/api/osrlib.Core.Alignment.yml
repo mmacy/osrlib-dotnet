@@ -20,10 +20,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Alignment.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Alignment
-    path: GameRules/Alignment.cs
+    path: ../src/osrlib.Core/GameRules/Alignment.cs
     startLine: 5
   assemblies:
   - osrlib.Core
@@ -53,10 +53,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Alignment.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: LawfulGood
-    path: GameRules/Alignment.cs
+    path: ../src/osrlib.Core/GameRules/Alignment.cs
     startLine: 8
   assemblies:
   - osrlib.Core
@@ -87,10 +87,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Alignment.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Good
-    path: GameRules/Alignment.cs
+    path: ../src/osrlib.Core/GameRules/Alignment.cs
     startLine: 10
   assemblies:
   - osrlib.Core
@@ -121,10 +121,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Alignment.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Evil
-    path: GameRules/Alignment.cs
+    path: ../src/osrlib.Core/GameRules/Alignment.cs
     startLine: 12
   assemblies:
   - osrlib.Core
@@ -155,10 +155,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Alignment.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: ChaoticEvil
-    path: GameRules/Alignment.cs
+    path: ../src/osrlib.Core/GameRules/Alignment.cs
     startLine: 14
   assemblies:
   - osrlib.Core
@@ -189,10 +189,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/GameRules/Alignment.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Unaligned
-    path: GameRules/Alignment.cs
+    path: ../src/osrlib.Core/GameRules/Alignment.cs
     startLine: 16
   assemblies:
   - osrlib.Core

@@ -17,10 +17,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/SaveLoad/SaveLoadLocal.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: SaveLoadLocal
-    path: SaveLoad/SaveLoadLocal.cs
+    path: ../src/osrlib.Core/SaveLoad/SaveLoadLocal.cs
     startLine: 10
   assemblies:
   - osrlib.Core
@@ -61,10 +61,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/SaveLoad/SaveLoadLocal.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Save
-    path: SaveLoad/SaveLoadLocal.cs
+    path: ../src/osrlib.Core/SaveLoad/SaveLoadLocal.cs
     startLine: 18
   assemblies:
   - osrlib.Core
@@ -105,10 +105,10 @@ items:
   source:
     remote:
       path: src/osrlib.Core/SaveLoad/SaveLoadLocal.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: Load
-    path: SaveLoad/SaveLoadLocal.cs
+    path: ../src/osrlib.Core/SaveLoad/SaveLoadLocal.cs
     startLine: 41
   assemblies:
   - osrlib.Core

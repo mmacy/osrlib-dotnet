@@ -16,10 +16,10 @@ items:
   source:
     remote:
       path: src/osrlib.Tests/SaveLoadTests.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: SaveLoadTests
-    path: ../osrlib.Tests/SaveLoadTests.cs
+    path: ../src/osrlib.Tests/SaveLoadTests.cs
     startLine: 8
   assemblies:
   - osrlib.Tests
@@ -57,10 +57,10 @@ items:
   source:
     remote:
       path: src/osrlib.Tests/SaveLoadTests.cs
-      branch: doc-experiment-01
+      branch: docgen
       repo: git@github.com:mmacy/osrlib-dotnet.git
     id: SaveAndLoadAdventureFile
-    path: ../osrlib.Tests/SaveLoadTests.cs
+    path: ../src/osrlib.Tests/SaveLoadTests.cs
     startLine: 13
   assemblies:
   - osrlib.Tests
