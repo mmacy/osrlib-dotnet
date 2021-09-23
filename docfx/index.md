@@ -12,19 +12,19 @@ The object model of OSRlib is intended to be simple and intuitive. The following
 
 ### Being
 
-A [Being](/api/osrlib.Core.Being) is any living entity that can initiate interaction with another entity within the game world, or can be interacted with by another Being. Player characters (PCs), non-player characters (NPCs), and monsters are all **Beings**.
+A [Being](/api/osrlib.Core.Being.html) is any living entity that can initiate interaction with another entity within the game world, or can be interacted with by another Being. Player characters (PCs), non-player characters (NPCs), and monsters are all **Beings**.
 
 ![OSRlib Being diagram](./images/being_sm.png)
 
 ### Party
 
-A [Party](/api/osrlib.Core.Party) is a collection of **Beings**. Two Party objects are added to an [Encounter](#adventure-dungeon--encounter), whose Beings can then battle.
+A [Party](/api/osrlib.Core.Party.html) is a collection of **Beings**. Two Party objects are added to an [Encounter](#adventure-dungeon--encounter), whose Beings can then battle.
 
 ![OSRlib Party diagram](./images/party_sm.png)
 
 ### Adventure, Dungeon, & Encounter
 
-An [Adventure](/api/osrlib.Core.Adventure) consists of one or more [Dungeons](/api/osrlib.Core.Dungeon). Each Dungeon is comprised of one or more [Encounters](/api/osrlib.Core.Encounter).
+An [Adventure](/api/osrlib.Core.Adventure.html) consists of one or more [Dungeons](/api/osrlib.Core.Dungeon.html). Each Dungeon is comprised of one or more [Encounters](/api/osrlib.Core.Encounter.html).
 
 An Encounter is typically populated with a monster [Party](#party). Adding a player Party to the Encounter starts the Encounter (begins the battle).
 
