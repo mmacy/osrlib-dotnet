@@ -4,9 +4,9 @@
 |:-|:-|:-|:-:|
 | [![Build Status](https://marshallmacy.visualstudio.com/osrlib-dotnet/_apis/build/status/osrlib-dotnet?branchName=master)](https://marshallmacy.visualstudio.com/osrlib-dotnet/_build/latest?definitionId=1&branchName=master) | [Documentation][docs] | [API reference][api-ref] | NuGet |
 
-OSRlib.NET is a .NET Core class library written in C# that provides an API for turn-based role-playing games (RPGs) in the [old school revival](https://en.wikipedia.org/wiki/Old_School_Revival) (OSR) style.
+OSRlib.NET is a .NET Core class library written in C# that provides an API for turn-based role-playing games (RPGs) in the [Old School Renaissance](https://en.wikipedia.org/wiki/Old_School_Renaissance) (OSR) style.
 
-It's designed for use as the core rules engine of a computer role-playing game (CRPG) in the Dungeons & Dragons Basic/Expert (or *B/X*) flavor, and lends itself well to turn-based game play in the style of The Bard's Tale.
+It's designed for use as the core rules engine of a computer role-playing game (CRPG) in the *Dungeons & Dragons* Basic/Expert (or *B/X*) flavor, and lends itself well to turn-based game play in the style of The Bard's Tale.
 
 Add your own UI to interact with the OSRlib.NET API and you have yourself a turn-based RPG.
 
@@ -18,8 +18,8 @@ Add your own UI to interact with the OSRlib.NET API and you have yourself a turn
 ## Install the package
 
 ```console
-# NOT YET IMPLEMENTED - no NuGet package (yet)
-nuget install Osrlib.Net -OutputDirectory packages
+# NOT IMPLEMENTED (NuGet package not yet available)
+# nuget install Osrlib.Net -OutputDirectory packages
 ```
 
 ## Getting started
