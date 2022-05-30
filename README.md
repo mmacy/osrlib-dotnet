@@ -33,13 +33,12 @@ Any game you build with OSRlib.NET will include at least these four core operati
 - [Subscribe to battle events](#subscribe-to-battle-events)
 - [Start the battle](#start-the-battle)
 
-> :information_source: _You can see these code snippets in context in OSRlib.NET's test project:_ [src/osrlib.Tests/ReadMeTests.cs](src/osrlib.Tests/ReadMeTests.cs)_._
+> :information_source: TIP: You can see these code snippets in context in OSRlib.NET's test project: [_src/osrlib.Tests/ReadMeTests.cs_](src/osrlib.Tests/ReadMeTests.cs)
 
 ### Create a character
 
-<!-- START SECTION_CREATE_A_CHARACTER -->
 ```csharp
-// Get our ten-sided die ready
+// Get a ten-sided die ready
 DiceRoll roll = new DiceRoll(new DiceHand(1, DieType.d10));
 
 // Roll up a fighter-type character
@@ -68,11 +67,9 @@ fighter.ActiveWeapon = magicSword;
 Party playerParty = new Party();
 playerParty.AddPartyMember(fighter);
 ```
-<!-- END SECTION_CREATE_A_CHARACTER -->
 
 ### Stock the dungeon
 
-<!-- START SECTION_STOCK_THE_DUNGEON -->
 ```csharp
 Dungeon dungeon = new Dungeon();
 
@@ -110,17 +107,16 @@ Encounter encounter = new Encounter
 // Add the encounter to the dungeon
 dungeon.Encounters.Add(encounter);
 ```
-<!-- END SECTION_STOCK_THE_DUNGEON -->
 
 ### Subscribe to battle events
 
 The `Encounter`, like most top-level entities in OSRlib, exposes events to notify subscribers of actions it performs and actions performed on it. Subscribe to events like these and use them as triggers to update your game's user interface or perform other runtime actions.
 
-<!-- START SECTION_BATTLE_SETUP -->
 ```csharp
-// OSRlib is heavily event-driven and most major entities have public events. Subscribe to events
-// like these to change the state of your UI and/or prompt the player for action (such as selecting
-// a target to attack during an encounter).
+// OSRlib is heavily event-driven and most top-level classes expose public events.
+// Determine when and how to change the state of your game at runtime (prompt for
+// target selection, play a sound when a monster is killed, etc.) by subscribing
+// to events exposed by objects you create.
 encounter.EncounterStarted += (sender, eventArgs) =>
     {
         Console.WriteLine($"Encounter has started! Monsters:\r\n{((Encounter)sender).EncounterParty}");
@@ -142,7 +138,6 @@ encounter.EncounterEnded += (sender, eventArgs) =>
         }
     };
 ```
-<!-- END SECTION_BATTLE_SETUP -->
 
 ### Start the battle
 
@@ -194,11 +189,10 @@ foreach (Being combatant in combatants)
 // until one side has been defeated.
 encounter.StartEncounter();
 ```
-<!-- END SECTION_BATTLE_START -->
 
-### View event output
+### Display event data
 
-The battle resolves fully (because we set `Encounter.AutoBattleEnabled = true`) and, because we subscribed to a few `Being` and `Encounter` events, we can see what transpires during the battle:
+The battle resolves fully (because we set `Encounter.AutoBattleEnabled = true`) and, because we subscribed `Being` and `Encounter` events, we can see what transpires during the battle:
 
 ```console
 Encounter has started! Monsters:

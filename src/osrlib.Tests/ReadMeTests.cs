@@ -9,13 +9,13 @@ namespace osrlib.Tests
 {
     /// <summary>
     /// The code in these tests back the code snippets in the OSRLib.NET repository README:
-    /// https://github.com/mmacy/osrlib-dotnet/blob/master/README.md
+    /// https://github.com/mmacy/osrlib-dotnet/blob/main/README.md
     ///
     /// Each section of the README has a matching #region, and the README contains HTML comments
     /// that match match these region names.
     ///
     /// *************************************************************************************************
-    /// WARNING: If you update ANY of the code in this file, you MUST backfill the changes to the README!
+    /// WARNING: If you modify this file, you MUST backfill the changes to the repo README!
     /// *************************************************************************************************
     /// </summary>
     public class ReadMeTests
@@ -24,7 +24,7 @@ namespace osrlib.Tests
         public void TestReadMeSnippets()
         {
             #region SECTION_CREATE_A_CHARACTER
-            // Get our ten-sided die ready
+            // Get a ten-sided die ready
             DiceRoll roll = new DiceRoll(new DiceHand(1, DieType.d10));
 
             // Roll up a fighter-type character
@@ -93,9 +93,10 @@ namespace osrlib.Tests
             #endregion
 
             #region SECTION_BATTLE_SETUP
-            // OSRlib is heavily event-driven and most major entities have public events. Subscribe to events
-            // like these to change the state of your UI and/or prompt the player for action (such as selecting
-            // a target to attack during an encounter).
+            // OSRlib is heavily event-driven and most top-level classes expose public events.
+            // Determine when and how to change the state of your game at runtime (prompt for
+            // target selection, play a sound when a monster is killed, etc.) by subscribing
+            // to events exposed by objects you create.
             encounter.EncounterStarted += (sender, eventArgs) =>
                 {
                     Console.WriteLine($"Encounter has started! Monsters:\r\n{((Encounter)sender).EncounterParty}");
