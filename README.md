@@ -26,12 +26,14 @@ Add your own UI to interact with the OSRlib.NET API and you have yourself a turn
 
 OSRlib.NET provides an object model representing well-known RPG entities like adventures, dungeons, beings (player characters and monsters), encounters, and weapons. It has an event-based interaction model for manipulating these entities, their relationships, and state.
 
-Examples of a few primary OSRlib operations follow:
+Any game you build with OSRlib.NET will include at least these four core operations, presented here with example code and in typical order of operation:
 
-- [Create a character](#create-a-character)
-- [Stock the dungeon](#stock-the-dungeon)
+- [Create a player character](#create-a-character)
+- [Stock the dungeon](#stock-the-dungeon) with monsters and encounters
 - [Subscribe to battle events](#subscribe-to-battle-events)
 - [Start the battle](#start-the-battle)
+
+> :information_source: _You can see these code snippets in context in OSRlib.NET's test project:_ [src/osrlib.Tests/ReadMeTests.cs](src/osrlib.Tests/ReadMeTests.cs)_._
 
 ### Create a character
 
@@ -112,7 +114,7 @@ dungeon.Encounters.Add(encounter);
 
 ### Subscribe to battle events
 
-The `Encounter`, just like most of the top-level entities in OSRlib, exposes several events to help you update your game's UI when those events occur.
+The `Encounter`, like most top-level entities in OSRlib, exposes events to notify subscribers of actions it performs and actions performed on it. Subscribe to events like these and use them as triggers to update your game's user interface or perform other runtime actions.
 
 <!-- START SECTION_BATTLE_SETUP -->
 ```csharp
@@ -220,11 +222,11 @@ Blarg the Destructor (17/18) rolled a 13 (1d20+1) and hit for 3 (1d8+1) points o
 
 ## Next steps
 
-This was quick intro to a few of the primary types in OSRlib, as well as how those types can interact.
+This README was a quick intro to a few of the types and operations available in OSRlib. Here are some other resources to help you use OSRlib.NET in your turn-based RPG:
 
-If you'd like to see the full code sample for the preceding snippets, see [`src/osrlib.Tests/ReadMeTests.cs`](src/osrlib.Tests/ReadMeTests.cs).
-
-And be sure to check out the [API reference][api-ref] and the rest of the [documentation][docs] (currently minimal).
+- [API reference][api-ref]
+- [Library documentation][docs]
+- [OSRlib tests](src/osrlib.Tests)
 
 Have fun!
 
