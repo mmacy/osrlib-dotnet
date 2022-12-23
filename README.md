@@ -4,16 +4,15 @@
 |:-|:-|:-|:-:|
 | [![Build Status](https://marshallmacy.visualstudio.com/osrlib-dotnet/_apis/build/status/osrlib-dotnet?branchName=main)](https://marshallmacy.visualstudio.com/osrlib-dotnet/_build/latest?definitionId=1&branchName=main) | [Documentation][docs] | [API reference][api-ref] | NuGet |
 
-OSRlib.NET is a .NET Core class library written in C# that provides an API for turn-based role-playing games (RPGs) in the [Old School Renaissance](https://en.wikipedia.org/wiki/Old_School_Renaissance) (OSR) style.
+OSRlib.NET is a .NET Core class library written in C# that you can use as the engine for your turn-based computer role-playing game (CRPG).
 
-It's designed for use as the core rules engine of a computer role-playing game (CRPG) in the *Dungeons & Dragons* Basic/Expert (or *B/X*) flavor, and lends itself well to turn-based game play in the style of The Bard's Tale.
+The `osrlib` engine and API were designed with the original *Bard's Tale* and similar CRPGs in mind. Its single-assembly library is appropriate for use in any game modeled after the *Dungeons & Dragons* Basic/Expert (or *B/X*) edition or other tabletop RPG in the [Old School Renaissance](https://en.wikipedia.org/wiki/Old_School_Renaissance) (OSR) style.
 
-Add your own UI to interact with the OSRlib.NET API and you have yourself a turn-based RPG.
+Add your own UI (or even CLI) that talks to the OSRlib.NET API, and you've got yourself a turn-based RPG!
 
 ## Prerequisites
 
-- Visual Studio Code or another code editor
-- .NET Core SDK 3.1+
+- .NET SDK 7.0+
 
 ## Install the package
 
@@ -221,6 +220,7 @@ This README was a quick intro to a few of the types and operations available in 
 - [API reference][api-ref]
 - [Library documentation][docs]
 - [OSRlib tests](src/osrlib.Tests)
+- [ASP.NET Web API for OSRlib.NET](https://github.com/mmacy/osrlib-demo-api) (a work-in-progress code sample)
 
 Have fun!
 
