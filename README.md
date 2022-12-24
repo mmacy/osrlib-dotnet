@@ -1,10 +1,10 @@
-# OSRlib.NET [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+# OSRlib.NET
 
 ![OSRlib.NET logo](https://raw.githubusercontent.com/mmacy/osrlib-dotnet/d0260ced0b34194121a220ab6f4b596806af2c50/docs/images/logo-osr-128x128.png)
 
-|Build status (main) |Docs|Reference|Package|
-|:-|:-|:-|:-:|
-| [![Build Status](https://dev.azure.com/marshallmacy/osrlib-dotnet/_apis/build/status/osrlib-dotnet?branchName=main)](https://marshallmacy.visualstudio.com/osrlib-dotnet/_build/latest?definitionId=1&branchName=main) | [Documentation][docs] | [API reference][api-ref] | NuGet |
+|License|Build status (main) |Docs|Reference|Package|
+|:-|:-|:-|:-|:-:|
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)| [![Build Status](https://dev.azure.com/marshallmacy/osrlib-dotnet/_apis/build/status/osrlib-dotnet?branchName=main)](https://marshallmacy.visualstudio.com/osrlib-dotnet/_build/latest?definitionId=1&branchName=main) | [Documentation][docs] | [API reference][api-ref] | [NuGet](https://www.nuget.org/packages/osrlib.Core) |
 
 OSRlib.NET is a .NET Core class library written in C# that you can use as the game mechanics engine for a turn-based computer role-playing game (CRPG).
 
@@ -20,8 +20,10 @@ Add your own UI (or even CLI) that talks to the OSRlib.NET API, and you've got y
 
 ## Install the package
 
+Run this `dotnet` CLI command to add a reference to your project:
+
 ```bash
-dotnet add package osrlib.Core
+dotnet add package osrlib.Core --version 0.0.1-alpha
 ```
 
 ## Getting started
