@@ -1,10 +1,12 @@
 # OSRlib.NET [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
+![OSRlib.NET logo](docs/images/logo-osr-128x128.png)
+
 |Build status (main) |Docs|Reference|Package|
 |:-|:-|:-|:-:|
 | [![Build Status](https://dev.azure.com/marshallmacy/osrlib-dotnet/_apis/build/status/osrlib-dotnet?branchName=main)](https://marshallmacy.visualstudio.com/osrlib-dotnet/_build/latest?definitionId=1&branchName=main) | [Documentation][docs] | [API reference][api-ref] | NuGet |
 
-![OSRlib.NET logo](docs/images/logo-osr-128x128.png) OSRlib.NET is a .NET Core class library written in C# that you can use as the game mechanics engine for a turn-based computer role-playing game (CRPG).
+OSRlib.NET is a .NET Core class library written in C# that you can use as the game mechanics engine for a turn-based computer role-playing game (CRPG).
 
 The `osrlib.Core` object model and API were designed with the original *Bard's Tale* and similar CRPGs in mind. The library is appropriate for use in any game modeled after the *Dungeons & Dragons* Basic/Expert (or *B/X*) edition or other tabletop RPG in the [Old School Renaissance](https://en.wikipedia.org/wiki/Old_School_Renaissance) (OSR) style.
 
