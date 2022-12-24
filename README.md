@@ -21,7 +21,7 @@ Add your own UI (or even CLI) that talks to the OSRlib.NET API, and you've got y
 ## Install the package
 
 ```bash
-nuget install osrlib.Core
+dotnet add package osrlib.Core
 ```
 
 ## Getting started
