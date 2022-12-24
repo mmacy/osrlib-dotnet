@@ -1,14 +1,18 @@
 # OSRlib.NET [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
+![OSRlib.NET logo](https://raw.githubusercontent.com/mmacy/osrlib-dotnet/d0260ced0b34194121a220ab6f4b596806af2c50/docs/images/logo-osr-128x128.png)
+
 |Build status (main) |Docs|Reference|Package|
 |:-|:-|:-|:-:|
-| [![Build Status](https://marshallmacy.visualstudio.com/osrlib-dotnet/_apis/build/status/osrlib-dotnet?branchName=main)](https://marshallmacy.visualstudio.com/osrlib-dotnet/_build/latest?definitionId=1&branchName=main) | [Documentation][docs] | [API reference][api-ref] | NuGet |
+| [![Build Status](https://dev.azure.com/marshallmacy/osrlib-dotnet/_apis/build/status/osrlib-dotnet?branchName=main)](https://marshallmacy.visualstudio.com/osrlib-dotnet/_build/latest?definitionId=1&branchName=main) | [Documentation][docs] | [API reference][api-ref] | NuGet |
 
-OSRlib.NET is a .NET Core class library written in C# that you can use as the engine for your turn-based computer role-playing game (CRPG).
+OSRlib.NET is a .NET Core class library written in C# that you can use as the game mechanics engine for a turn-based computer role-playing game (CRPG).
 
-The `osrlib` engine and API were designed with the original *Bard's Tale* and similar CRPGs in mind. Its single-assembly library is appropriate for use in any game modeled after the *Dungeons & Dragons* Basic/Expert (or *B/X*) edition or other tabletop RPG in the [Old School Renaissance](https://en.wikipedia.org/wiki/Old_School_Renaissance) (OSR) style.
+The `osrlib.Core` object model and API were designed with the original *Bard's Tale* and similar CRPGs in mind. The library is appropriate for use in any game modeled after the *Dungeons & Dragons* Basic/Expert (or *B/X*) edition or other tabletop RPG in the [Old School Renaissance](https://en.wikipedia.org/wiki/Old_School_Renaissance) (OSR) style.
 
 Add your own UI (or even CLI) that talks to the OSRlib.NET API, and you've got yourself a turn-based RPG!
+
+> :warning: OSRlib.NET is early in development and several critical systems have yet to be built. To get an idea of what's missing, [check out the open issues](https://github.com/mmacy/osrlib-dotnet/issues?q=is%3Aissue+is%3Aopen).
 
 ## Prerequisites
 
@@ -16,9 +20,8 @@ Add your own UI (or even CLI) that talks to the OSRlib.NET API, and you've got y
 
 ## Install the package
 
-```console
-# NOT IMPLEMENTED (NuGet package not yet available)
-# nuget install Osrlib.Net -OutputDirectory packages
+```bash
+dotnet add package osrlib.Core
 ```
 
 ## Getting started
