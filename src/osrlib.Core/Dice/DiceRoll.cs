@@ -149,7 +149,7 @@ namespace osrlib.Dice
         /// Rolls the dice in the specified <see cref="DiceHand"/> and returns the roll - the sum of each rolled die and the modifier, if specified.
         /// </summary>
         /// <param name="diceHand">The handful of dice to roll.</param>
-        /// <param name="modifier">The modifer value to apply to the roll.</param>
+        /// <param name="modifier">The modifier value to apply to the roll.</param>
         /// <returns>The resultant DiceRoll (a DiceRoll with its <see cref="DiceRoll.RollDice()"/> method having been called).</returns>
         public static int RollDice(DiceHand diceHand, int modifier = 0)
         {
@@ -205,6 +205,7 @@ namespace osrlib.Dice
         /// <summary>
         /// Gets the result of the last time <see cref="RollDice()"/> was called.
         /// This value includes all modifiers applied to the roll.
+        /// The default value prior to the first roll is <code>0</code>.
         /// </summary>
         public int LastRoll { get; private set; } = 0;
 
@@ -218,7 +219,7 @@ namespace osrlib.Dice
         #endregion
 
         /// <summary>
-        /// Returns the string representation of the latest roll of this DiceRoll in the format 'N (NdN +/- N)'. For example: "16 (1d20 + 2)".
+        /// Returns the string representation of the latest roll of this DiceRoll in the format <code>N (NdN +/- N)</code>. For example: "16 (1d20 + 2)".
         /// </summary>
         /// <returns>String representation of the roll.</returns>
         public override string ToString()

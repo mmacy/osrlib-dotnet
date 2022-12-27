@@ -36,7 +36,12 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
+<<<<<<< Updated upstream
 .fake
 
 # Misc
+=======
+# Misc
+.fake
+>>>>>>> Stashed changes
 .DS_Store
