@@ -43,6 +43,11 @@ namespace osrlib.Dice
         }
 
         /// <summary>
+        /// Gets the type of die.
+        /// </summary>
+        public DieType DieType { get { return _dieType; } }
+
+        /// <summary>
         /// Gets the number of sides of the Die.
         /// </summary>
         public int Sides { get { return (int)_dieType; } }
