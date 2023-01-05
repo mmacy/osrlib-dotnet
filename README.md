@@ -1,10 +1,10 @@
 # OSRlib.NET
 
-![OSRlib.NET logo](https://raw.githubusercontent.com/mmacy/osrlib-dotnet/d0260ced0b34194121a220ab6f4b596806af2c50/docs/images/logo-osr-128x128.png)
-
 |License|Build status (main) |Docs|Reference|Package|
 |:-|:-|:-|:-|:-:|
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)| [![Build Status](https://dev.azure.com/marshallmacy/osrlib-dotnet/_apis/build/status/osrlib-dotnet?branchName=main)](https://marshallmacy.visualstudio.com/osrlib-dotnet/_build/latest?definitionId=1&branchName=main) | [Documentation][docs] | [API reference][api-ref] | [NuGet](https://www.nuget.org/packages/osrlib.Core) |
+
+![OSRlib.NET logo](https://raw.githubusercontent.com/mmacy/osrlib-dotnet/d0260ced0b34194121a220ab6f4b596806af2c50/docs/images/logo-osr-128x128.png)
 
 OSRlib.NET is a .NET Core class library written in C# that you can use as the game mechanics engine for a turn-based computer role-playing game (CRPG).
 
@@ -28,7 +28,7 @@ dotnet add package osrlib.Core --version 0.0.1-alpha
 
 ## Getting started
 
-OSRlib.NET provides an object model representing well-known RPG entities like adventures, dungeons, beings (player characters and monsters), encounters, and weapons. It has an event-based interaction model for manipulating these entities, their relationships, and state.
+The OSRlib.NET object model represents well-known RPG entities like adventures, dungeons, beings (player characters and monsters), encounters, and weapons. It has an event-based interaction model for manipulating these entities, their relationships, and state.
 
 Any game you build with OSRlib.NET will include at least these four core operations, presented here with example code and in typical order of operation:
 
@@ -114,20 +114,24 @@ dungeon.Encounters.Add(encounter);
 
 ### Subscribe to battle events
 
-The `Encounter`, like most top-level entities in OSRlib, exposes events to notify subscribers of actions it performs and actions performed on it. Subscribe to events like these and use them as triggers to update your game's user interface or perform other runtime actions.
+The `Encounter`, like most top-level entities in OSRlib, exposes events to notify subscribers of actions it performs and actions performed on it.
+
+Subscribe to events like these and use them as triggers to update your game's user interface or perform other runtime actions.
 
 ```csharp
-// OSRlib is heavily event-driven and most top-level classes expose public events.
-// Determine when and how to change the state of your game at runtime (prompt for
-// target selection, play a sound when a monster is killed, etc.) by subscribing
-// to events exposed by objects you create.
+// OSRlib is heavily event-driven and most top-level classes expose public
+// events. Determine when and how to change the state of your game at
+// runtime by subscribing to events exposed by the objects you create.
+// For example, to know when to prompt for target selection or play a
+// sound when a monster is killed, etc.)
 encounter.EncounterStarted += (sender, eventArgs) =>
     {
         Console.WriteLine($"Encounter has started! Monsters:\r\n{((Encounter)sender).EncounterParty}");
     };
 
-// Example of subscribing to an event that you might use to update the UI state to notify the player
-// or make some other changes within your application.
+// Example of subscribing to an event that you might use to update the UI
+// state to notify the player or make some other changes within your
+// application.
 encounter.EncounterEnded += (sender, eventArgs) =>
     {
         Encounter enc = sender as Encounter;
@@ -149,14 +153,16 @@ Finally we're ready to let the adventuring party (currently comprised of only on
 
 <!-- START SECTION_BATTLE_START -->
 ```csharp
-// Encounters can be set to auto-resolve the battle. This is OPTIONAL! In your game, you'd not
-// typically set this to true, and instead allow your players to select a target(s) for a character.
+// Encounters can be set to auto-resolve the battle. This is OPTIONAL!
+// In your game, you wouldn't typically set this to true, and instead you
+// would allow your player to select a target(s) for a character.
 encounter.AutoBattleEnabled = true;
 
 // Add the adventuring party to the encounter
 encounter.SetAdventuringParty(playerParty);
 
-// Subscribe to some events on the combatants so we can respond to things that happen to them.
+// Subscribe to some events on the combatants so we can respond to things
+// that happen to them.
 List<Being> combatants = encounter.AdventuringParty.Members.Concat(encounter.EncounterParty.Members).ToList();
 foreach (Being combatant in combatants)
 {
@@ -187,10 +193,11 @@ foreach (Being combatant in combatants)
         };
 }
 
-// Start the battle. This will fire the EncounterStarted event we subscribed to
-// above, and since we set this encounter to resolve all combat automatically with
-// AutoBattleEnabled, each member of both parties takes turns attacking each other
-// until one side has been defeated.
+// Start the battle. This will fire the EncounterStarted event we
+// subscribed to above, and since we set this encounter to resolve all
+// combat automatically with AutoBattleEnabled, each member of both
+// parties takes turns attacking each other until one side has been
+// defeated.
 encounter.StartEncounter();
 ```
 
