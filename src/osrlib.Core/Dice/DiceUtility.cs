@@ -26,7 +26,6 @@ namespace osrlib.Dice
         /// diceNotation = osrlib.Dice.DiceUtility.SanitizeDiceNotation(diceNotation);
         /// </code>
         /// </example>
-
         public static string SanitizeDiceNotation(string diceNotation)
         {
             // Use a regular expression to match the required format

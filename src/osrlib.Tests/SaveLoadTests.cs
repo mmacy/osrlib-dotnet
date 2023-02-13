@@ -15,8 +15,6 @@ namespace osrlib.Tests
         private static string _saveFile = "tbrpg-adventure.json";
         private static string _savePath = Path.Combine(_saveDir, _saveFile);
 
-        private bool _disposed;
-
         [Fact, TestPriority(1)]
         public void SaveAdventureFile_ShouldSucceed()
         {

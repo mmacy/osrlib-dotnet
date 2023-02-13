@@ -65,9 +65,17 @@ namespace osrlib.Tests
         private static TValue GetOrCreate<TKey, TValue>(
             IDictionary<TKey, TValue> dictionary, TKey key)
             where TKey : struct
-            where TValue : new() =>
-            dictionary.TryGetValue(key, out TValue? result)
-                ? result
-                : (dictionary[key] = new TValue());
+            where TValue : new()
+        {
+            TValue result;
+            if (dictionary.TryGetValue(key, out result))
+            {
+                return result;
+            }
+
+            result = new TValue();
+            dictionary[key] = result;
+            return result;
+        }
     }
 }
