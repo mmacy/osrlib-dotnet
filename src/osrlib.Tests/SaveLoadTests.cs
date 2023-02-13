@@ -8,10 +8,14 @@ namespace osrlib.Tests
 {
 
     [Collection("SaveLoadTests")]
-    public class SaveLoadTests
+    [TestCaseOrderer("osrlib.Tests.PriorityOrderer", "osrlib.Tests")]
+    public class SaveLoadTests //: IDisposable
     {
-        private string _saveDir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-        private string _saveFile = "tbrpg-adventure.json";
+        private static string _saveDir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+        private static string _saveFile = "tbrpg-adventure.json";
+        private static string _savePath = Path.Combine(_saveDir, _saveFile);
+
+        private bool _disposed;
 
         [Fact, TestPriority(1)]
         public void SaveAdventureFile_ShouldSucceed()
@@ -20,23 +24,31 @@ namespace osrlib.Tests
             Adventure adventure = GetInitializedAdventure();
 
             // Act
-            bool result = SaveLoadLocal.Save(adventure, Path.Combine(_saveDir, _saveFile));
+            bool fileWritten = SaveLoadLocal.Save(adventure, _savePath);
+
+            if (fileWritten)
+            {
+                Console.WriteLine($"File successfully written to " + _savePath);
+            }
 
             // Assert
-            Assert.True(result);
+            Assert.True(fileWritten);
         }
 
         [Fact, TestPriority(2)]
         public void LoadAdventureFile_ShouldSucceed()
         {
-            // Arrange
-            string savePath = Path.Combine(_saveDir, _saveFile);
-
             // Act
-            Adventure loadedAdventure = SaveLoadLocal.Load(savePath);
+            Adventure loadedAdventure = SaveLoadLocal.Load(_savePath);
 
             // Assert
             Assert.NotNull(loadedAdventure);
+
+            // Clean up
+            if (File.Exists(_savePath))
+            {
+                File.Delete(_savePath);
+            }
         }
 
         private Adventure GetInitializedAdventure()
