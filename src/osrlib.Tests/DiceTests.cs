@@ -46,5 +46,45 @@ namespace osrlib.Tests
 
             Exception ex = Assert.Throws<ArgumentException>(() => new DiceHand(numDie, dieType));
         }
+
+
+        [Fact]
+        public void SanitizeDiceNotation_ValidInput_ReturnsExpectedResult()
+        {
+            // Arrange
+            string diceNotation = " 2d6 ";
+
+            // Act
+            string result = DiceUtility.SanitizeDiceNotation(diceNotation);
+
+            // Assert
+            Assert.Equal("2d6", result);
+        }
+
+        [Fact]
+        public void SanitizeDiceNotation_SingleDieFormat_ReturnsExpectedResult()
+        {
+            // Arrange
+            string diceNotation = "d6";
+
+            // Act
+            string result = DiceUtility.SanitizeDiceNotation(diceNotation);
+
+            // Assert
+            Assert.Equal("1d6", result);
+        }
+
+        [Theory]
+        [InlineData("2d")]
+        [InlineData("2d6d8")]
+        [InlineData("2d6d")]
+        [InlineData("2 ")]
+        [InlineData("^&$#^&#$&*(#@)~")]
+        public void SanitizeDiceNotation_InvalidInput_ThrowsArgumentException(string diceNotation)
+        {
+            // Act and Assert
+            Assert.Throws<ArgumentException>(() => DiceUtility.SanitizeDiceNotation(diceNotation));
+        }
+
     }
 }
