@@ -13,7 +13,7 @@
 
     <!--NuGet package metadata properties https://docs.microsoft.com/dotnet/core/tools/csproj#nuget-metadata-properties -->
     <PackageId>osrlib.Core</PackageId>
-    <Version>0.0.2-alpha</Version>
+    <Version>0.0.3-alpha</Version>
     <Authors>Marsh Macy</Authors>
     <Copyright>Copyright (c) Marsh Macy 2022</Copyright>
     <Title>OSRlib.NET</Title>
