@@ -9,42 +9,33 @@ namespace osrlib.Tests
     public class CoreRulesTests
     {
         [Fact]
-        public void InitMajorGameEntities()
+        public void TestInitializingMajorGameEntities()
         {
-            // TODO: This isn't really a "unit test." Should break these out
-            // TODO: into their own methods, and perhaps use a playlist to execute
-            // TODO: them in order, populating member fields of this test class
-            // TODO: and referencing those in downstream tests.
+            // Arrange
+            Party monsterParty = PartyGenerator.GetMonsterParty();
+            GamePosition position = new GamePosition(10, 10);
 
-            // Create Encounter
+            // Act
             Encounter encounter = new Encounter
             {
-                EncounterParty = PartyGenerator.GetMonsterParty(),
+                EncounterParty = monsterParty,
                 AutoBattleEnabled = true,
-                Position = new GamePosition(10, 10)
+                Position = position
             };
-            // Create Adventure
             Adventure adventure = new Adventure();
-
-            // Create Dungeon
             Dungeon dungeon = new Dungeon();
-            // Add Encounter to Dungeon
             dungeon.Encounters.Add(encounter);
-            // Add Dungeon to Adventure
             adventure.AddDungeon(dungeon);
-            // Set active Dungeon for Adventure
             adventure.SetActiveDungeon(dungeon);
-
-            // Set active Adventure for GameManager
             GameManager.Instance.SetActiveAdventure(adventure);
-            // Set active Party for Adventure
             GameManager.Instance.StartAdventure();
 
+            // Assert
             Assert.NotNull(GameManager.Instance.ActiveAdventure);
         }
 
         [Fact(Skip = "Test not yet implemented.")]
-        public void ExecuteDungeonBattle()
+        public void DoDungeonBattle()
         {
             // Get fully initialized GameManager (from InitGameSystemModel?)
             // Set autobattle ON (this is on the Encounter, but where best to set? Probably at the Adventure level - maybe need an AdventureSettings class)
@@ -57,15 +48,16 @@ namespace osrlib.Tests
         }
 
         [Fact]
-        public void InitGameManager()
+        public void TestGameManagerInitialization()
         {
             // TODO: Get fully initialized GameManager (from InitCoreRulesModel?)
             Assert.NotNull(GameManager.Instance);
         }
 
         [Fact]
-        public void DoEncounterAutoBattle()
+        public void TestAutoBattleInEncounter()
         {
+            // Arrange
             Party playerParty = PartyGenerator.GetPlayerParty();
             Party monsterParty = PartyGenerator.GetMonsterParty();
 
@@ -74,37 +66,39 @@ namespace osrlib.Tests
                 EncounterParty = monsterParty,
                 AutoBattleEnabled = true
             };
-            encounter.EncounterEnded += (object sender, EventArgs e) =>
+
+            bool encounterEndedEventFired = false;
+            void HandleEncounterEndedEvent(object sender, EventArgs e)
             {
                 Encounter enc = sender as Encounter;
-                Assert.True(enc.IsEncounterEnded);
-            };
+                encounterEndedEventFired = enc.IsEncounterEnded;
+            }
+            encounter.EncounterEnded += HandleEncounterEndedEvent;
 
-            // Add the adventuring party and start the battle
+            // Act
             encounter.SetAdventuringParty(playerParty);
             encounter.StartEncounter();
+
+            // Assert
+            Assert.True(encounterEndedEventFired);
         }
 
         [Fact]
-        public void CreateFullyInitializedCharacter()
+        public void TestCreatingFullyInitializedCharacter()
         {
-            // Another "unit test" that's not really a unit test.
-            // Using this temporarily (ha!) to debug modifier work.
-
-            DiceRoll roll = new DiceRoll(new DiceHand(1, DieType.d10));
-
+            // Arrange
+            DiceHand diceHand = new DiceHand(1, DieType.d10);
+            DiceRoll defenseRoll = new DiceRoll(diceHand);
+            DiceRoll hitPointsRoll = new DiceRoll(diceHand);
             Being fighter = new Being
             {
                 Name = "Cro Mag",
-                Defense = roll.RollDice(),
-                MaxHitPoints = roll.RollDice() + 10
+                Defense = defenseRoll.RollDice(),
+                MaxHitPoints = hitPointsRoll.RollDice() + 10
             };
             fighter.HitPoints = fighter.MaxHitPoints;
-            fighter.RollAbilities();
 
             Modifier mod = new Modifier { ModifierSource = "Potion of Strength", ModifierValue = 2 };
-            fighter.AddAbilityModifier(mod, AbilityType.Strength);
-
             Weapon sword = new Weapon
             {
                 Name = "Long Sword + 1",
@@ -114,18 +108,20 @@ namespace osrlib.Tests
             };
             sword.AttackModifiers.Add(new Modifier { ModifierValue = 1, ModifierSource = sword });
             sword.DamageModifiers.Add(new Modifier { ModifierValue = 1, ModifierSource = sword });
-
-            // Equip the sword
             fighter.ActiveWeapon = sword;
 
-            // Verify the ability collection has the expected abilities
-            Assert.Collection(fighter.Abilities,
-                ability => Assert.Equal(AbilityType.Strength, ability.Type),
-                ability => Assert.Equal(AbilityType.Dexterity, ability.Type),
-                ability => Assert.Equal(AbilityType.Constitution, ability.Type),
-                ability => Assert.Equal(AbilityType.Intelligence, ability.Type),
-                ability => Assert.Equal(AbilityType.Wisdom, ability.Type),
-                ability => Assert.Equal(AbilityType.Charisma, ability.Type));
+            // Act
+            fighter.RollAbilities();
+            fighter.AddAbilityModifier(mod, AbilityType.Strength);
+
+            // Assert
+            Assert.Equal(6, fighter.Abilities.Count);
+            Assert.Equal(AbilityType.Strength, fighter.Abilities[0].Type);
+            Assert.Equal(AbilityType.Dexterity, fighter.Abilities[1].Type);
+            Assert.Equal(AbilityType.Constitution, fighter.Abilities[2].Type);
+            Assert.Equal(AbilityType.Intelligence, fighter.Abilities[3].Type);
+            Assert.Equal(AbilityType.Wisdom, fighter.Abilities[4].Type);
+            Assert.Equal(AbilityType.Charisma, fighter.Abilities[5].Type);
         }
     }
 }
