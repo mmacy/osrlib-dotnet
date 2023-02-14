@@ -23,7 +23,7 @@ Add your own UI (or even CLI) that talks to the OSRlib.NET API, and you've got y
 Run this `dotnet` CLI command to add a reference to your project:
 
 ```bash
-dotnet add package osrlib.Core --version 0.0.1-alpha
+dotnet add package osrlib.Core --version 0.0.2-alpha
 ```
 
 ## Getting started
@@ -119,19 +119,16 @@ The `Encounter`, like most top-level entities in OSRlib, exposes events to notif
 Subscribe to events like these and use them as triggers to update your game's user interface or perform other runtime actions.
 
 ```csharp
-// OSRlib is heavily event-driven and most top-level classes expose public
-// events. Determine when and how to change the state of your game at
-// runtime by subscribing to events exposed by the objects you create.
-// For example, to know when to prompt for target selection or play a
-// sound when a monster is killed, etc.)
+// OSRlib is heavily event-driven and most top-level classes expose public events. Determine when and
+// how to change the state of your game at runtime by subscribing to events exposed such objects. For
+// example, to know when to prompt for target selection or play a sound when a monster is killed.
 encounter.EncounterStarted += (sender, eventArgs) =>
     {
         Console.WriteLine($"Encounter has started! Monsters:\r\n{((Encounter)sender).EncounterParty}");
     };
 
-// Example of subscribing to an event that you might use to update the UI
-// state to notify the player or make some other changes within your
-// application.
+// Example of subscribing to an event that you might use to update the UI state to notify the player or
+// make some other change in your application at runtime.
 encounter.EncounterEnded += (sender, eventArgs) =>
     {
         Encounter enc = sender as Encounter;
@@ -149,13 +146,13 @@ encounter.EncounterEnded += (sender, eventArgs) =>
 
 ### Start the battle
 
-Finally we're ready to let the adventuring party (currently comprised of only one character, *Blarg the Destructor*) and the encounter party (the evil orcs) battle to the death.
+We're now ready to let the adventuring party (currently comprised of only one character, *Blarg the Destructor*) and the encounter party (the evil orcs) battle to the death.
 
 <!-- START SECTION_BATTLE_START -->
 ```csharp
-// Encounters can be set to auto-resolve the battle. This is OPTIONAL!
-// In your game, you wouldn't typically set this to true, and instead you
-// would allow your player to select a target(s) for a character.
+// You can set encounters auto-resolve the battle as is done in this example. In a typical game, however,
+// you wouldn't enable auto-battle, and instead would prompt your player to select a target(s) or perform
+// some other action before proceeding with the next battle step.
 encounter.AutoBattleEnabled = true;
 
 // Add the adventuring party to the encounter
@@ -193,11 +190,9 @@ foreach (Being combatant in combatants)
         };
 }
 
-// Start the battle. This will fire the EncounterStarted event we
-// subscribed to above, and since we set this encounter to resolve all
-// combat automatically with AutoBattleEnabled, each member of both
-// parties takes turns attacking each other until one side has been
-// defeated.
+// Start the battle. This will fire the EncounterStarted event we subscribed to above, and since we set
+// this encounter to resolve all combat automatically with AutoBattleEnabled, each member of both parties
+// takes turns attacking each other until one side has been defeated.
 encounter.StartEncounter();
 ```
 

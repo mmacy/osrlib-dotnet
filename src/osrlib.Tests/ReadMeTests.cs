@@ -8,15 +8,14 @@ using osrlib.Dice;
 namespace osrlib.Tests
 {
     /// <summary>
+    /// ***********************************************************************************
+    /// WARNING: You MUST backfill any changes to this file to the repo's README.md file!
+    /// ***********************************************************************************
     /// The code in these tests back the code snippets in the OSRLib.NET repository README:
     /// https://github.com/mmacy/osrlib-dotnet/blob/main/README.md
     ///
     /// Each section of the README has a matching #region, and the README contains HTML comments
     /// that match match these region names.
-    ///
-    /// *************************************************************************************************
-    /// WARNING: If you modify this file, you MUST backfill the changes to the repo README!
-    /// *************************************************************************************************
     /// </summary>
     public class ReadMeTests
     {
@@ -93,17 +92,17 @@ namespace osrlib.Tests
             #endregion
 
             #region SECTION_BATTLE_SETUP
-            // OSRlib is heavily event-driven and most top-level classes expose public events.
-            // Determine when and how to change the state of your game at runtime (prompt for
-            // target selection, play a sound when a monster is killed, etc.) by subscribing
-            // to events exposed by objects you create.
+            // OSRlib is heavily event-driven and most top-level classes expose public events. Determine
+            // when and how to change the state of your game at runtime (prompt for target selection,
+            // play a sound when a monster is killed, etc.) by subscribing to events exposed by objects
+            // that you create.
             encounter.EncounterStarted += (sender, eventArgs) =>
                 {
                     Console.WriteLine($"Encounter has started! Monsters:\r\n{((Encounter)sender).EncounterParty}");
                 };
 
-            // Example of subscribing to an event that you might use to update the UI state to notify the player
-            // or make some other changes within your application.
+            // Example of subscribing to an event that you might use to update the UI state to notify
+            // the player or make some other changes within your application.
             encounter.EncounterEnded += (sender, eventArgs) =>
                 {
                     Encounter enc = sender as Encounter;
@@ -120,14 +119,15 @@ namespace osrlib.Tests
             #endregion
 
             #region SECTION_BATTLE_START
-            // Encounters can be set to auto-resolve the battle. This is OPTIONAL! In your game, you'd not
-            // typically set this to true, and instead allow your players to select a target(s) for a character.
+            // Encounters can be set to auto-resolve the battle. This is OPTIONAL! In your game, you
+            // typically wouldn't want to set this to true and instead allow your player to select the
+            // target of their attack.
             encounter.AutoBattleEnabled = true;
 
             // Add the adventuring party to the encounter
             encounter.SetAdventuringParty(playerParty);
 
-            // Subscribe to some events on the combatants so we can respond to things that happen to them.
+            // Subscribe to events on the combatants so we can respond to things that happen to them.
             List<Being> combatants = encounter.AdventuringParty.Members.Concat(encounter.EncounterParty.Members).ToList();
             foreach (Being combatant in combatants)
             {
@@ -158,10 +158,10 @@ namespace osrlib.Tests
                     };
             }
 
-            // Start the battle. This will fire the EncounterStarted event we subscribed to
-            // above, and since we set this encounter to resolve all combat automatically with
-            // AutoBattleEnabled, each member of both parties takes turns attacking each other
-            // until one side has been defeated.
+            // Start the battle. This will fire the EncounterStarted event we subscribed to above, and
+            // since we set this encounter to resolve all combat automatically with AutoBattleEnabled,
+            // each member of both parties takes turns attacking each other until one side has been
+            // defeated.
             encounter.StartEncounter();
             #endregion
         }
