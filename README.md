@@ -63,8 +63,10 @@ Weapon magicSword = new Weapon
     Type = WeaponType.Melee,
     DamageDie = new DiceHand(1, DieType.d8)
 };
-magicSword.AttackModifiers.Add(new Modifier { ModifierSource = magicSword, ModifierValue = 1 });
-magicSword.DamageModifiers.Add(new Modifier { ModifierSource = magicSword, ModifierValue = 1 });
+magicSword.AttackModifiers.Add(
+    new Modifier { ModifierSource = magicSword, ModifierValue = 1 });
+magicSword.DamageModifiers.Add(
+    new Modifier { ModifierSource = magicSword, ModifierValue = 1 });
 fighter.ActiveWeapon = magicSword;
 
 // Now, add the fighter to the player's party
@@ -119,9 +121,10 @@ The `Encounter`, like most top-level entities in OSRlib, exposes events to notif
 Subscribe to events like these and use them as triggers to update your game's user interface or perform other runtime actions.
 
 ```csharp
-// OSRlib is heavily event-driven and most top-level classes expose public events. Determine when and
-// how to change the state of your game at runtime by subscribing to events exposed such objects. For
-// example, to know when to prompt for target selection or play a sound when a monster is killed.
+// OSRlib is heavily event-driven and most top-level classes expose public events.
+// Determine when and how to change the state of your game at runtime by subscribing
+// to events exposed such objects. For example, to know when to prompt for target
+// selection or play a sound when a monster is killed.
 encounter.EncounterStarted += (sender, eventArgs) =>
     {
         Console.WriteLine($"Encounter has started! Monsters:\r\n{((Encounter)sender).EncounterParty}");
@@ -150,9 +153,10 @@ We're now ready to let the adventuring party (currently comprised of only one ch
 
 <!-- START SECTION_BATTLE_START -->
 ```csharp
-// You can set encounters auto-resolve the battle as is done in this example. In a typical game, however,
-// you wouldn't enable auto-battle, and instead would prompt your player to select a target(s) or perform
-// some other action before proceeding with the next battle step.
+// You can set encounters auto-resolve the battle as is done in this example. In a
+// typical game, however, you wouldn't enable auto-battle, and instead would prompt
+// your player to select a target(s) or perform some other action before proceeding
+// with the next battle step.
 encounter.AutoBattleEnabled = true;
 
 // Add the adventuring party to the encounter
@@ -190,9 +194,10 @@ foreach (Being combatant in combatants)
         };
 }
 
-// Start the battle. This will fire the EncounterStarted event we subscribed to above, and since we set
-// this encounter to resolve all combat automatically with AutoBattleEnabled, each member of both parties
-// takes turns attacking each other until one side has been defeated.
+// Start the battle. This will fire the EncounterStarted event we subscribed to
+// above, and since we set this encounter to resolve all combat automatically with
+// AutoBattleEnabled, each member of both parties takes turns attacking each other
+// until one side is defeated.
 encounter.StartEncounter();
 ```
 
