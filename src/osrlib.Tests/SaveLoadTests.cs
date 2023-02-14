@@ -6,23 +6,47 @@ using osrlib.Core;
 
 namespace osrlib.Tests
 {
-    public class SaveLoadTests
+
+    [Collection("SaveLoadTests")]
+    [TestCaseOrderer("osrlib.Tests.PriorityOrderer", "osrlib.Tests")]
+    public class SaveLoadTests //: IDisposable
     {
-        private string _saveDir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-        private string _saveFile = "tbrpg-adventure.json";
+        private static string _saveDir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+        private static string _saveFile = "tbrpg-adventure.json";
+        private static string _savePath = Path.Combine(_saveDir, _saveFile);
 
-        [Fact]
-        public void SaveAndLoadAdventureFile()
+        [Fact, TestPriority(1)]
+        public void SaveAdventureFile_ShouldSucceed()
         {
-            // Since xUnit runs all tests in parallel, we can't guarantee that the save-to-file test would be
-            // completed prior to the load-from-file test, so run them both here so that the load-from-file has
-            // a file to load.
-
+            // Arrange
             Adventure adventure = GetInitializedAdventure();
-            Assert.True(SaveLoadLocal.Save(adventure, Path.Combine(_saveDir, _saveFile)));
 
-            Adventure loadedAdventure = SaveLoadLocal.Load(Path.Combine(_saveDir, _saveFile));
+            // Act
+            bool fileWritten = SaveLoadLocal.Save(adventure, _savePath);
+
+            if (fileWritten)
+            {
+                Console.WriteLine($"File successfully written to " + _savePath);
+            }
+
+            // Assert
+            Assert.True(fileWritten);
+        }
+
+        [Fact, TestPriority(2)]
+        public void LoadAdventureFile_ShouldSucceed()
+        {
+            // Act
+            Adventure loadedAdventure = SaveLoadLocal.Load(_savePath);
+
+            // Assert
             Assert.NotNull(loadedAdventure);
+
+            // Clean up
+            if (File.Exists(_savePath))
+            {
+                File.Delete(_savePath);
+            }
         }
 
         private Adventure GetInitializedAdventure()

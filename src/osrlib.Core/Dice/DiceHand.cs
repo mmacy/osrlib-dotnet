@@ -11,24 +11,23 @@ namespace osrlib.Dice
     /// the creation of a DiceRoll. Create a DiceHand, add it to a <see cref="DiceRoll"/>, then
     /// call its <see cref="DiceRoll.RollDice()"/> method to get the result.
     /// </remarks>
-    /// <example>
-    /// <code>
-    /// // Roll one twenty-sided die
-    /// DiceHand hand = new DiceHand(1, DieType.d20);
-    /// DiceRoll roll = new DiceRoll(hand);
-    /// int result = roll.RollDice();
-    /// </code>
-    /// </example>
     public class DiceHand
     {
         /// <summary>
-        /// Creates a new instance of DiceHand, appropriate for passing to the <see cref="DiceRoll"/> constructor.
+        /// Initializes a new instance of the <see cref="DiceHand"/> class using the specified number of dice and sides.
         /// </summary>
-        /// <param name="count">The number of Dice in the DiceHand - the first value in the '#d#' format (the '3' in 3d6).</param>
-        /// <param name="sides">The number of sides per Die in the DiceHand.</param>
+        /// <param name="count">The number of dice in the DiceHand.</param>
+        /// <param name="sides">The number of sides of each die in the DiceHand.</param>
+        /// <example>
+        /// The following example demonstrates how to create a new instance of the <see cref="DiceHand"/> class using two 6-sided dice and pass it to the DiceRoll constructor:
+        /// <code>
+        /// DiceHand diceHand = new DiceHand(2, DieType.d6);
+        /// DiceRoll diceRoll = new DiceRoll(diceHand);
+        /// </code>
+        /// </example>
         public DiceHand(int count, DieType sides)
         {
-            //Perform some validity checks to ensure the count and sides params are at least 0.
+            // Perform some validity checks to ensure the count and sides params are at least 0.
 
             if (count > 0)
             {
@@ -42,6 +41,46 @@ namespace osrlib.Dice
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="DiceHand"/> class using the specified dice notation.
+        /// </summary>
+        /// <param name="diceNotation">The dice notation string, in the format "NdN", where N is a positive integer.</param>
+        /// <example>
+        /// The following example demonstrates how to create a new instance of the <see cref="DiceHand"/> class using the dice notation string "2d6" and pass it to the DiceRoll constructor:
+        /// <code>
+        /// DiceHand diceHand = new DiceHand("2d6");
+        /// DiceRoll diceRoll = new DiceRoll(diceHand);
+        /// </code>
+        /// </example>
+        public DiceHand(string diceNotation)
+        {
+            try
+            {
+                // Sanitize the dice notation
+                diceNotation = DiceUtility.SanitizeDiceNotation(diceNotation);
+            }
+            catch (ArgumentException)
+            {
+                // Rethrow the exception if it was thrown by SanitizeDiceNotation
+                throw new ArgumentException("Incorrect dice notation format. Use NdN, where N is first the number of dice and then the number of sides.");
+            }
+
+            // Split the dice notation into the number of dice and the number of sides
+            string[] parts = diceNotation.Split('d');
+            int count = int.Parse(parts[0]);
+            int sides = int.Parse(parts[1]);
+
+            if (count <= 0)
+            {
+                // Must have at least one (1) die to roll.
+                throw new ArgumentException("Incorrect dice notation format. Use NdN, where N is first the number of dice and then the number of sides.");
+            }
+
+            // Set the properties
+            DieCount = count;
+            DieSides = (DieType)sides;
+        }
+
+        /// <summary>
         /// Gets or sets the number of dice in the DiceHand.
         /// </summary>
         public int DieCount { get; set; }
@@ -51,4 +90,5 @@ namespace osrlib.Dice
         /// </summary>
         public DieType DieSides { get; set; }
     }
+
 }
