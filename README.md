@@ -23,7 +23,7 @@ Add your own UI (or even CLI) that talks to the OSRlib.NET API, and you've got y
 Run this `dotnet` CLI command to add a reference to your project:
 
 ```bash
-dotnet add package osrlib.Core --version 0.0.2-alpha
+dotnet add package osrlib.Core
 ```
 
 ## Getting started
