@@ -51,9 +51,10 @@ namespace osrlib.Tests
         }
 
         [Theory]
-        [InlineData("2d0", "Incorrect dice notation format. Use ndn, where n is the number of dice and the number of sides.")]
-        [InlineData("2d", "Incorrect dice notation format. Use ndn, where n is the number of dice and the number of sides.")]
-        [InlineData("abc", "Incorrect dice notation format. Use ndn, where n is the number of dice and the number of sides.")]
+        [InlineData("d0", "Incorrect dice notation format. Use NdN, where N is first the number of dice and then the number of sides.")]
+        [InlineData("2d0", "Incorrect dice notation format. Use NdN, where N is first the number of dice and then the number of sides.")]
+        [InlineData("2d",  "Incorrect dice notation format. Use NdN, where N is first the number of dice and then the number of sides.")]
+        [InlineData("abc", "Incorrect dice notation format. Use NdN, where N is first the number of dice and then the number of sides.")]
         public void DiceHand_StringConstructor_ThrowsArgumentException_WhenDiceNotationIsInvalid(string diceNotation, string expectedMessage)
         {
             // Act
@@ -122,6 +123,19 @@ namespace osrlib.Tests
             Assert.Equal("2d6", result);
         }
 
+        [Theory]
+        [InlineData("2d")]
+        [InlineData("2d6d8")]
+        [InlineData("2d6d")]
+        [InlineData("2 ")]
+        [InlineData("^&$#^&#$&*(#@)~")]
+        [InlineData("02d6")]
+        public void SanitizeDiceNotation_InvalidInput_ThrowsArgumentException(string diceNotation)
+        {
+            // Act and Assert
+            Assert.Throws<ArgumentException>(() => DiceUtility.SanitizeDiceNotation(diceNotation));
+        }
+
         [Fact]
         public void SanitizeDiceNotation_SingleDieFormat_ReturnsExpectedResult()
         {
@@ -133,18 +147,6 @@ namespace osrlib.Tests
 
             // Assert
             Assert.Equal("1d6", result);
-        }
-
-        [Theory]
-        [InlineData("2d")]
-        [InlineData("2d6d8")]
-        [InlineData("2d6d")]
-        [InlineData("2 ")]
-        [InlineData("^&$#^&#$&*(#@)~")]
-        public void SanitizeDiceNotation_InvalidInput_ThrowsArgumentException(string diceNotation)
-        {
-            // Act and Assert
-            Assert.Throws<ArgumentException>(() => DiceUtility.SanitizeDiceNotation(diceNotation));
         }
 
     }

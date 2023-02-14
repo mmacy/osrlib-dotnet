@@ -58,16 +58,22 @@ namespace osrlib.Dice
                 // Sanitize the dice notation
                 diceNotation = DiceUtility.SanitizeDiceNotation(diceNotation);
             }
-            catch (ArgumentException ex)
+            catch (ArgumentException)
             {
                 // Rethrow the exception if it was thrown by SanitizeDiceNotation
-                throw new ArgumentException("Incorrect dice notation format. Use ndn, where n is the number of dice and the number of sides.");
+                throw new ArgumentException("Incorrect dice notation format. Use NdN, where N is first the number of dice and then the number of sides.");
             }
 
             // Split the dice notation into the number of dice and the number of sides
             string[] parts = diceNotation.Split('d');
             int count = int.Parse(parts[0]);
             int sides = int.Parse(parts[1]);
+
+            if (count <= 0)
+            {
+                // Must have at least one (1) die to roll.
+                throw new ArgumentException("Incorrect dice notation format. Use NdN, where N is first the number of dice and then the number of sides.");
+            }
 
             // Set the properties
             DieCount = count;

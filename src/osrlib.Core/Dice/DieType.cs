@@ -3,7 +3,7 @@
 /// </summary>
 public enum DieType
 {
-    /// <summary>One-sided die.</summary>
+    /// <summary>Single-sided die.</summary>
     d1 = 1,
     /// <summary>Two-sided die.</summary>
     d2 = 2,
@@ -19,6 +19,6 @@ public enum DieType
     d12 = 12,
     /// <summary>Twenty-sided die.</summary>
     d20 = 20,
-    /// <summary>One-hundred-sided die.</summary>
+    /// <summary>Percentage die.</summary>
     d100 = 100
 }
