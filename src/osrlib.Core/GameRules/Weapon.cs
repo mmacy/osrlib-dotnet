@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using osrlib.Dice;
-
-namespace osrlib.Core
+﻿namespace osrlib.Core
 {
     /// <summary>
     /// A Weapon is a melee or ranged martial weapon, or an offensive spell.

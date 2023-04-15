@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace osrlib.Dice
+﻿namespace osrlib.Dice
 {
     /// <summary>
     /// The DiceRoll owns a set of <see cref="Dice"/> that can be rolled for result.

@@ -1,55 +1,51 @@
-﻿using System;
-
-namespace osrlib.Dice
+﻿namespace osrlib.Dice
 {
     /// <summary>
-    /// Represents a single Die with a given number of sides.
+    /// Represents a single die with a given number of sides.
     /// </summary>
     public class Die
     {
-        #region Fields
-        private DieType _dieType = DieType.d20;
         private int _minValue = 1;
         private int _rolledValue = 0;
-        #endregion
 
         /// <summary>
-        /// Creates a new instance of a Die.
+        /// Initializes a new instance of the <see cref="Die"/> class with the specified number of sides.
         /// </summary>
-        /// <param name="type">The number of sides for the Die. This value must be greater than or equal to 2.</param>
-        public Die(DieType type) => _dieType = type;
+        /// <param name="type">The number of sides for the die. This value must be greater than or equal to 2.</param>
+        public Die(DieType type) => DieType = type;
 
         /// <summary>
-        /// Returns a random value between the MinValue of the Die and its number of sides (i.e. it "rolls" the Die).
+        /// Rolls the die and returns a random value between the minimum value and the number of sides.
         /// </summary>
-        /// <returns>int value of the rolled Die.</returns>
+        /// <returns>An integer value representing the result of the die roll.</returns>
         internal int Roll()
         {
-            _rolledValue = Utility.Randomizer.GetRandomInt(_minValue, (int)_dieType);
+            _rolledValue = Utility.Randomizer.GetRandomInt(_minValue, (int)DieType);
 
             return _rolledValue;
         }
 
         /// <summary>
-        /// Sets the minimum value for the Die. This value must be equal to or greater than 0. Default: 1.
+        /// Sets the minimum value for the die. This value must be equal to or greater than 0. Default: 1.
         /// </summary>
-        /// <param name="minValue">The minimum int value of the Die, typically 1.</param>
+        /// <param name="minValue">The minimum integer value of the die, typically 1.</param>
+        /// <exception cref="ArgumentException">Thrown when the provided minimum value is less than 0.</exception>
         internal void SetMinimumValue(int minValue)
         {
             if (minValue >= 0)
                 _minValue = minValue;
             else
-                throw new ArgumentException("A Die must have a minimum value equal to or greater than 0.", "minValue");
+                throw new ArgumentException("A die must have a minimum value equal to or greater than 0.", nameof(minValue));
         }
 
         /// <summary>
-        /// Gets the type of die.
+        /// Gets the type of the die.
         /// </summary>
-        public DieType DieType { get { return _dieType; } }
+        public DieType DieType { get; }
 
         /// <summary>
-        /// Gets the number of sides of the Die.
+        /// Gets the number of sides of the die.
         /// </summary>
-        public int Sides { get { return (int)_dieType; } }
+        public int Sides => (int)DieType;
     }
 }

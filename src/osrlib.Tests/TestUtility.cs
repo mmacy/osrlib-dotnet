@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Xunit.Abstractions;
 using Xunit.Sdk;
 
@@ -20,7 +17,7 @@ namespace osrlib.Tests
     }
 
     /// <summary>
-    /// The PriorityOrderer is used to order test cases based on their priority.
+    /// The PriorityOrderer orders test cases based on their priority.
     /// </summary>
     public class PriorityOrderer : ITestCaseOrderer
     {

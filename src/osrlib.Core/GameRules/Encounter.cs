@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace osrlib.Core
+﻿namespace osrlib.Core
 {
     /// <summary>
     /// The Encounter contains a <see cref="Party"/>, can accept a <see cref="Party"/> to initiate a battle,

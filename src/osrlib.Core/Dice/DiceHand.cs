@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace osrlib.Dice
+﻿namespace osrlib.Dice
 {
     /// <summary>
     /// Represents a "handful of dice."
