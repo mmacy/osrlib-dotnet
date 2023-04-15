@@ -1,8 +1,4 @@
-﻿using System;
-using Xunit;
-using osrlib.Dice;
-
-namespace osrlib.Tests
+﻿namespace osrlib.Tests
 {
     public class DiceTests
     {

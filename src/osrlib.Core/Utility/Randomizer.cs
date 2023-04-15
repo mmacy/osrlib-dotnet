@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace osrlib.Utility
+﻿namespace osrlib.Utility
 {
     /// <summary>
     /// Utility class providing helper methods for working with random numbers.

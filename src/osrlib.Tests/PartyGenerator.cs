@@ -1,7 +1,4 @@
-﻿using osrlib.Core;
-using System;
-
-namespace osrlib.Tests
+﻿namespace osrlib.Tests
 {
     public static class PartyGenerator
     {

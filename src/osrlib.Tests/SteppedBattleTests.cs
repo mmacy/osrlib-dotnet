@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Xunit;
-using osrlib.Core;
-using osrlib.Dice;
-
-namespace osrlib.Tests
+﻿namespace osrlib.Tests
 {
     /// <summary>
     /// Tests the functionality of the <see cref="Encounter.PerformStep"/> method is used to

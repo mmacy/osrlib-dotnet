@@ -1,12 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using osrlib.Dice;
-
-namespace osrlib.Core
+﻿namespace osrlib.Core
 {
     /// <summary>
     /// A <see cref="Being"/> has one or more abilities (strength, dexterity, intelligence, etc.) that are
-    /// referenced when calculating the success of a <see cref="GameAction"/>. 
+    /// referenced when calculating the success of a <see cref="GameAction"/>.
     /// </summary>
     public class Ability
     {

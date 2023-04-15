@@ -2,8 +2,8 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
-    <None Include="../../docs/images/logo-osr-128x128.png" Pack="true" PackagePath="/"/>
-    <None Include="../../README.md" Pack="true" PackagePath="/"/>
+    <None Include="../../docs/images/logo-osr-128x128.png" Pack="true" PackagePath="/" />
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
   </ItemGroup>
 
   <PropertyGroup>
@@ -13,13 +13,13 @@
 
     <!--NuGet package metadata properties https://docs.microsoft.com/dotnet/core/tools/csproj#nuget-metadata-properties -->
     <PackageId>osrlib.Core</PackageId>
-    <Version>0.0.4-alpha</Version>
+    <Version>0.0.5-alpha</Version>
     <Authors>Marsh Macy</Authors>
     <Copyright>Copyright (c) Marsh Macy 2023</Copyright>
     <Title>OSRlib.NET</Title>
-    <PackageDescription>A .NET Core class library for powering turn-based CRPGs in the Old School Revival (OSR) style.</PackageDescription>
+    <PackageDescription>A .NET Core class library for powering turn-based dungeon crawler RPGs in the Old School Revival (OSR) style.</PackageDescription>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageReleaseNotes>Initial NuGet release of OSRlib.NET.</PackageReleaseNotes>
+    <PackageReleaseNotes>NuGet release of OSRlib.NET.</PackageReleaseNotes>
     <PackageTags>rpg;turn-based;osr;game;engine;bard's tale;dungeons and dragons</PackageTags>
     <PackageIcon>logo-osr-128x128.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>

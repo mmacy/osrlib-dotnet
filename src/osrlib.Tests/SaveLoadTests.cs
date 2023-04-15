@@ -1,8 +1,5 @@
-﻿using System;
-using System.IO;
-using Xunit;
+﻿using System.IO;
 using osrlib.SaveLoad;
-using osrlib.Core;
 
 namespace osrlib.Tests
 {

@@ -1,10 +1,4 @@
-﻿using System;
-using Xunit;
-using osrlib.Controllers;
-using osrlib.Core;
-using osrlib.Dice;
-
-namespace osrlib.Tests
+﻿namespace osrlib.Tests
 {
     public class CoreRulesTests
     {

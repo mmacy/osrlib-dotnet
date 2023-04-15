@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace osrlib.Dice
+﻿namespace osrlib.Dice
 {
     /// <summary>
     /// Represents the method that handles a <see cref="DiceRoll.DiceRolled"/> event.

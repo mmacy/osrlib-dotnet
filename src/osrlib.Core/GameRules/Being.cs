@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using osrlib.Dice;
-
-namespace osrlib.Core
+﻿namespace osrlib.Core
 {
     /// <summary>
     /// Represents the method that handles a Being's <see cref="osrlib.Core.Being.TargetSelected"/> or
