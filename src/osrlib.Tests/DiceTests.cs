@@ -49,7 +49,7 @@
         [Theory]
         [InlineData("d0", "Incorrect dice notation format. Use NdN, where N is first the number of dice and then the number of sides.")]
         [InlineData("2d0", "Incorrect dice notation format. Use NdN, where N is first the number of dice and then the number of sides.")]
-        [InlineData("2d",  "Incorrect dice notation format. Use NdN, where N is first the number of dice and then the number of sides.")]
+        [InlineData("2d", "Incorrect dice notation format. Use NdN, where N is first the number of dice and then the number of sides.")]
         [InlineData("abc", "Incorrect dice notation format. Use NdN, where N is first the number of dice and then the number of sides.")]
         public void DiceHand_StringConstructor_ThrowsArgumentException_WhenDiceNotationIsInvalid(string diceNotation, string expectedMessage)
         {
@@ -120,6 +120,8 @@
         }
 
         [Theory]
+        [InlineData(null)]
+        [InlineData("")]
         [InlineData("2d")]
         [InlineData("2d6d8")]
         [InlineData("2d6d")]
@@ -131,6 +133,7 @@
             // Act and Assert
             Assert.Throws<ArgumentException>(() => DiceUtility.SanitizeDiceNotation(diceNotation));
         }
+
 
         [Fact]
         public void SanitizeDiceNotation_SingleDieFormat_ReturnsExpectedResult()
