@@ -32,8 +32,8 @@
         }
 
         [Theory]
-        [InlineData(0, "The count parameter (number of dice) must be equal to or greater than 1.")]
-        [InlineData(-2, "The count parameter (number of dice) must be equal to or greater than 1.")]
+        [InlineData(0, ErrorConstants.DiceCountInvalid)]
+        [InlineData(-2, ErrorConstants.DiceCountInvalid)]
         public void DiceHand_IntConstructor_ThrowsArgumentException_WhenCountIsInvalid(int count, string expectedMessage)
         {
             // Arrange
@@ -47,10 +47,10 @@
         }
 
         [Theory]
-        [InlineData("d0", "Incorrect dice notation format. Use NdN, where N is first the number of dice and then the number of sides.")]
-        [InlineData("2d0", "Incorrect dice notation format. Use NdN, where N is first the number of dice and then the number of sides.")]
-        [InlineData("2d", "Incorrect dice notation format. Use NdN, where N is first the number of dice and then the number of sides.")]
-        [InlineData("abc", "Incorrect dice notation format. Use NdN, where N is first the number of dice and then the number of sides.")]
+        [InlineData("d0", ErrorConstants.DiceNotationInvalid)]
+        [InlineData("2d0", ErrorConstants.DiceNotationInvalid)]
+        [InlineData("2d", ErrorConstants.DiceNotationInvalid)]
+        [InlineData("abc", ErrorConstants.DiceNotationInvalid)]
         public void DiceHand_StringConstructor_ThrowsArgumentException_WhenDiceNotationIsInvalid(string diceNotation, string expectedMessage)
         {
             // Act

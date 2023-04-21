@@ -34,7 +34,8 @@
             }
             else
             {
-                throw new ArgumentException("The count parameter (number of dice) must be equal to or greater than 1.");
+                // The number of dice is either zero less than zero - throw error.
+                throw new ArgumentException(ErrorConstants.DiceCountInvalid);
             }
         }
 
@@ -59,7 +60,7 @@
             catch (ArgumentException)
             {
                 // Rethrow the exception if it was thrown by SanitizeDiceNotation
-                throw new ArgumentException("Incorrect dice notation format. Use NdN, where N is first the number of dice and then the number of sides. The number of dice must be greater than 0 and the number of sides must be greater than 1. Example: 3d6");
+                throw new ArgumentException(ErrorConstants.DiceNotationInvalid);
             }
 
             // Split the dice notation into the number of dice and the number of sides
@@ -70,7 +71,7 @@
             if (count <= 0)
             {
                 // Must have at least one (1) die to roll.
-                throw new ArgumentException("Incorrect dice notation format. Use NdN, where N is first the number of dice and then the number of sides. The number of dice must be greater than 0 and the number of sides must be greater than 1. Example: 3d6");
+                throw new ArgumentException(ErrorConstants.DiceNotationInvalid);
             }
 
             // Set the properties

@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices.JavaScript;
 using System.Text.RegularExpressions;
 
 namespace osrlib.Dice
@@ -49,7 +50,7 @@ namespace osrlib.Dice
             if (!regex.IsMatch(diceNotation))
             {
                 throw new ArgumentException(
-                    "Incorrect dice notation format. Use NdN, where N is first the number of dice and then the number of sides. Example: 3d6");
+                    ErrorConstants.DiceNotationInvalid);
             }
 
             // Get the number of sides in the dice notation
@@ -58,8 +59,7 @@ namespace osrlib.Dice
             // Check that the number of sides is one of the values in the DieType enum
             if (!Enum.IsDefined(typeof(DieType), sides))
             {
-                throw new ArgumentException(
-                    $"Invalid number of sides. Must be one of the values in the {nameof(DieType)} enum.");
+                throw new ArgumentException(ErrorConstants.DiceCountInvalid);
             }
 
             // Convert the notation to lowercase for consistency
