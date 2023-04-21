@@ -17,8 +17,11 @@
     public delegate void GameActionEventHandler(object sender, GameActionEventArgs e);
 
     /// <summary>
-    /// The Being represents a living entity in within an <see cref="Adventure"/>, and is used for both player characters and monsters.
+    /// A Being represents a living entity in an <see cref="Adventure"/>.
     /// </summary>
+    /// <remarks>
+    /// You can use the Being for player characters, monsters, or non-player characters (NPCs).
+    /// </remarks>
     /// <example>
     /// Create a player character
     /// <code>
@@ -95,6 +98,19 @@
         public event GameActionEventHandler ActionPerformed;
 
         #region Public properties
+        /// <summary>
+        /// Gets or sets the unique identifier for the Being, typically a GUID.
+        /// </summary>
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the unique identifier of the player who owns the Being.
+        /// </summary>
+        /// <remarks>
+        /// The PlayerId should be a unique value that is complex enough to minimize ID collisions globally or within an authentication system. For example, you could use a GUID or an OAuth 2.0 subject ID.
+        /// </remarks>
+        public string PlayerId { get; set; }
+
         /// <summary>
         /// Gets or sets the name of the Being.
         /// </summary>
