@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices.JavaScript;
 using System.Text.RegularExpressions;
 
 namespace osrlib.Dice
@@ -26,27 +27,30 @@ namespace osrlib.Dice
         /// </example>
         public static string SanitizeDiceNotation(string diceNotation)
         {
-            // Regular expression matching the required NdN format
-            Regex regex = new Regex(@"^([1-9]\d{0,2})d([1-9]\d{0,1})$");
+            // Check for null or empty input
+            if (string.IsNullOrEmpty(diceNotation))
+            {
+                throw new ArgumentException("Dice notation cannot be null or empty.");
+            }
 
-            // Convert the input to lowercase
-            diceNotation = diceNotation.ToLowerInvariant();
+            // Regular expression matching the required NdN format
+            Regex regex = new Regex(@"^([1-9]\d{0,2})d([1-9]\d{0,1})$", RegexOptions.IgnoreCase);
 
             // If the input is just "dN", add a "1" to the beginning to make it "1dN"
-            if (diceNotation.StartsWith("d"))
+            if (diceNotation.StartsWith("d", StringComparison.OrdinalIgnoreCase))
             {
                 diceNotation = "1" + diceNotation;
             }
 
             // Remove any invalid characters and whitespace from the string
-            diceNotation = Regex.Replace(diceNotation, @"[^0-9d]", string.Empty);
+            diceNotation = Regex.Replace(diceNotation, @"[^0-9dD]", string.Empty);
             diceNotation = diceNotation.Trim();
 
             // Check that the string matches the required format
             if (!regex.IsMatch(diceNotation))
             {
                 throw new ArgumentException(
-                    "Incorrect dice notation format. Use NdN, where N is first the number of dice and then the number of sides.");
+                    ErrorConstants.DiceNotationInvalid);
             }
 
             // Get the number of sides in the dice notation
@@ -55,11 +59,14 @@ namespace osrlib.Dice
             // Check that the number of sides is one of the values in the DieType enum
             if (!Enum.IsDefined(typeof(DieType), sides))
             {
-                throw new ArgumentException(
-                    $"Invalid number of sides. Must be one of the values in the {nameof(DieType)} enum.");
+                throw new ArgumentException(ErrorConstants.DiceCountInvalid);
             }
+
+            // Convert the notation to lowercase for consistency
+            diceNotation = diceNotation.ToLowerInvariant();
 
             return diceNotation;
         }
+
     }
 }
