@@ -18,12 +18,12 @@
         /// <summary>
         /// Gets or sets the Dungeons in the Adventure.
         /// </summary>
-        public List<Dungeon> Dungeons { get; set; } = new List<Dungeon>();
+        public List<Dungeon> Dungeons { get; set; } = new();
 
         /// <summary>
         /// Gets or sets the Quests in the Adventure.
         /// </summary>
-        public List<Quest> Quests { get; set; } = new List<Quest>();
+        public List<Quest> Quests { get; set; } = new();
 
         /// <summary>
         /// Adds the specified <see cref="Dungeon"/> to the Adventure.

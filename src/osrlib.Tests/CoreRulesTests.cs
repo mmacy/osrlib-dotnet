@@ -62,11 +62,13 @@
             };
 
             bool encounterEndedEventFired = false;
+
             void HandleEncounterEndedEvent(object sender, EventArgs e)
             {
                 Encounter enc = sender as Encounter;
                 encounterEndedEventFired = enc.IsEncounterEnded;
             }
+
             encounter.EncounterEnded += HandleEncounterEndedEvent;
 
             // Act
@@ -84,15 +86,15 @@
             DiceHand diceHand = new DiceHand(1, DieType.d10);
             DiceRoll defenseRoll = new DiceRoll(diceHand);
             DiceRoll hitPointsRoll = new DiceRoll(diceHand);
-            Being fighter = new Being
+            
+            Being fighter = new Being("Cro Mag")
             {
-                Name = "Cro Mag",
                 Defense = defenseRoll.RollDice(),
-                MaxHitPoints = hitPointsRoll.RollDice() + 10
+                MaxHitPoints = hitPointsRoll.RollDice() + 1
             };
             fighter.HitPoints = fighter.MaxHitPoints;
 
-            Modifier mod = new Modifier { ModifierSource = "Potion of Strength", ModifierValue = 2 };
+            Modifier mod = new Modifier("Potion of Strength", 2);
             Weapon sword = new Weapon
             {
                 Name = "Long Sword + 1",
@@ -100,8 +102,8 @@
                 Type = WeaponType.Melee,
                 DamageDie = new DiceHand(1, DieType.d8),
             };
-            sword.AttackModifiers.Add(new Modifier { ModifierValue = 1, ModifierSource = sword });
-            sword.DamageModifiers.Add(new Modifier { ModifierValue = 1, ModifierSource = sword });
+            sword.AttackModifiers.Add(new Modifier(sword, 1));
+            sword.DamageModifiers.Add(new Modifier(sword, 1));
             fighter.ActiveWeapon = sword;
 
             // Act

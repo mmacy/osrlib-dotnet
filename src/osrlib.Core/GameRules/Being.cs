@@ -53,6 +53,16 @@
     public class Being
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="Being"/> class with optional parameters.
+        /// </summary>
+        /// <param name="name">The name of the being.</param>
+        /// <param name="activeWeapon">The being's active weapon. Passing <c>null</c> here initializes the being with a generic weapon that does 1d4 damage.</param>
+        public Being(string name)
+        {
+            Name = name;
+        }
+        
+        /// <summary>
         /// Event raised when the Being's HitPoints reach zero or below.
         /// </summary>
         public event EventHandler Killed;
@@ -98,6 +108,7 @@
         public event GameActionEventHandler ActionPerformed;
 
         #region Public properties
+
         /// <summary>
         /// Gets or sets the unique identifier for the Being, typically a GUID.
         /// </summary>
@@ -130,7 +141,7 @@
         /// <summary>
         /// Gets or sets the Being's <see cref="Ability"/> collection.
         /// </summary>
-        public List<Ability> Abilities { get; set; } = new List<Ability>();
+        public List<Ability> Abilities { get; } = new List<Ability>();
 
         /// <summary>
         /// Gets or sets the number of hit points for the Being.
@@ -163,17 +174,14 @@
         /// used when when the Being attacks another being.
         /// </summary>
         public Weapon ActiveWeapon { get; set; } =
-            new Weapon
-            {
-                Name = "Fists",
-                Description = "Default weapon.",
-                DamageDie = new DiceHand(1, DieType.d2)
-            };
+            new Weapon("Fists", "Default weapon for new beings.",
+                WeaponType.Melee, new DiceHand(1, DieType.d2));
 
         /// <summary>
         /// Gets or sets the minimum attack roll needed to hit the GamePiece.
         /// </summary>
-        public int Defense { get; set; } //TODO: Defense to take into account armor and all modifiers like dexterity mod and magic items or enchantments/spells.
+        public int
+            Defense { get; set; } //TODO: Defense to take into account armor and all modifiers like dexterity mod and magic items or enchantments/spells.
 
         /// <summary>
         /// Gets the list of targets from which this Being can select one or more targets before calling <see cref="PerformActionOnSelectedTargets"/>.
@@ -181,7 +189,7 @@
         /// <remarks>You can't populate this list directly. Use <see cref="AddPotentialTargets(List{Being})"/> instead.</remarks>
         public ReadOnlyCollection<Being> PotentialTargets => _potentialTargets.AsReadOnly();
 
-        private List<Being> _potentialTargets = new List<Being>();
+        private List<Being> _potentialTargets = new();
 
         /// <summary>
         /// Gets the list of targets that the Being has selected for its next <see cref="GameAction"/>.
@@ -194,7 +202,8 @@
         {
             get { return _selectedTargets.AsReadOnly(); }
         }
-        private List<Being> _selectedTargets = new List<Being>();
+
+        private List<Being> _selectedTargets = new();
 
         #endregion Public properties
 
@@ -216,7 +225,8 @@
             }
             else
             {
-                throw new InvalidOperationException($"No ability of type {abilityType.ToString()} exists in the Being's Abilities collection. Have you called RollAbilities()?");
+                throw new InvalidOperationException(
+                    $"No ability of type {abilityType.ToString()} exists in the Being's Abilities collection. Have you called RollAbilities()?");
             }
         }
 
@@ -352,8 +362,7 @@
             }
 
             // Create the new ability
-            ability = new Ability { Type = abilityType };
-            ability.RollAbilityScore();
+            ability = new Ability(abilityType);
             this.Abilities.Add(ability);
 
             return ability;
@@ -412,10 +421,10 @@
         {
             int modValue = weaponType switch
             {
-                WeaponType.Melee  => GetAbilityByType(AbilityType.Strength).GetModifier(),
+                WeaponType.Melee => GetAbilityByType(AbilityType.Strength).GetModifier(),
                 WeaponType.Ranged => GetAbilityByType(AbilityType.Dexterity).GetModifier(),
-                WeaponType.Spell  => GetAbilityByType(AbilityType.Intelligence).GetModifier(),
-                _                 => 0
+                WeaponType.Spell => GetAbilityByType(AbilityType.Intelligence).GetModifier(),
+                _ => 0
             };
 
             return modValue;
@@ -470,23 +479,25 @@
         /// <summary>
         /// Raises the <see cref="PotentialTargetsAdded"/> event.
         /// </summary>
-        private void OnPotentialTargetsAdded() => PotentialTargetsAdded?.Invoke(this, new EventArgs());
+        private void OnPotentialTargetsAdded() => PotentialTargetsAdded?.Invoke(this, EventArgs.Empty);
 
         /// <summary>
         /// Raises the <see cref="PerformingAction"/> event.
         /// </summary>
         /// <param name="action">The action associated with the event.</param>
-        private void OnPerformingAction(GameAction action) => PerformingAction?.Invoke(this, new GameActionEventArgs() { Action = action });
+        private void OnPerformingAction(GameAction action) =>
+            PerformingAction?.Invoke(this, new GameActionEventArgs() { Action = action });
 
         /// <summary>
         /// Raises the <see cref="ActionPerformed"/> event.
         /// </summary>
         /// <param name="action">The action associated with the event.</param>
-        private void OnActionPerformed(GameAction action) => ActionPerformed?.Invoke(this, new GameActionEventArgs() { Action = action });
+        private void OnActionPerformed(GameAction action) =>
+            ActionPerformed?.Invoke(this, new GameActionEventArgs() { Action = action });
 
         /// <summary>
         /// Raises the <see cref="Killed"/> event, signifying that the Being was just killed.
         /// </summary>
-        private void OnKilled() => Killed?.Invoke(this, new EventArgs());
+        private void OnKilled() => Killed?.Invoke(this, EventArgs.Empty);
     }
 }
