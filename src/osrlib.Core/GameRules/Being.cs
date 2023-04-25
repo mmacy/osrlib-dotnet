@@ -17,7 +17,7 @@
     public delegate void GameActionEventHandler(object sender, GameActionEventArgs e);
 
     /// <summary>
-    /// A Being represents a living entity in an <see cref="Adventure"/>.
+    /// A Being represents a living entity in an adventure.
     /// </summary>
     /// <remarks>
     /// You can use the Being for player characters, monsters, or non-player characters (NPCs).
@@ -25,12 +25,11 @@
     /// <example>
     /// Create a player character
     /// <code>
-    /// Being fighter = new Being
+    /// Being fighter = new Being("Blarg the Destructor")
     /// {
-    ///     Name = "Blarg the Destructor",
     ///     Defense = 10,
     ///     MaxHitPoints = DiceRoll.RollDice(new DiceHand(2, DieType.d6)),
-    ///     ActiveWeapon = new Weapon { Name = "Battle Axe", Type = WeaponType.Melee, DamageDie = new DiceHand(1, DieType.d12) }
+    ///     ActiveWeapon = new Weapon("Battle Axe", WeaponType.Melee, new DiceHand(1, DieType.d12))
     /// };
     /// fighter.HitPoints = fighter.MaxHitPoints;
     /// fighter.RollAbilities();
@@ -39,29 +38,27 @@
     /// <example>
     /// Create a monster
     /// <code>
-    /// Being goblin = new Being
+    /// Being goblin = new Being("Goblin Chieftain")
     /// {
-    ///     Name = "Goblin Chieftain",
     ///     Defense = 12,
     ///     MaxHitPoints = DiceRoll.RollDice(new DiceHand(4, DieType.d6)),
-    ///     ActiveWeapon = new Weapon { Name = "Javelin", Type = WeaponType.Ranged, DamageDie = new DiceHand(2, DieType.d4) }
+    ///     ActiveWeapon = new Weapon("Javelin", WeaponType.Ranged, new DiceHand(2, DieType.d4))
     /// };
-    /// goblin.HitPoints = goblin1.MaxHitPoints;
+    /// goblin.HitPoints = goblin.MaxHitPoints;
     /// goblin.RollAbilities();
     /// </code>
     /// </example>
     public class Being
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Being"/> class with optional parameters.
+        /// Initializes a new instance of the <see cref="Being"/> class with a specified name.
         /// </summary>
         /// <param name="name">The name of the being.</param>
-        /// <param name="activeWeapon">The being's active weapon. Passing <c>null</c> here initializes the being with a generic weapon that does 1d4 damage.</param>
         public Being(string name)
         {
             Name = name;
         }
-        
+
         /// <summary>
         /// Event raised when the Being's HitPoints reach zero or below.
         /// </summary>
@@ -141,7 +138,7 @@
         /// <summary>
         /// Gets or sets the Being's <see cref="Ability"/> collection.
         /// </summary>
-        public List<Ability> Abilities { get; } = new List<Ability>();
+        public List<Ability> Abilities { get; set; } = new List<Ability>();
 
         /// <summary>
         /// Gets or sets the number of hit points for the Being.
@@ -181,7 +178,11 @@
         /// Gets or sets the minimum attack roll needed to hit the GamePiece.
         /// </summary>
         public int
-            Defense { get; set; } //TODO: Defense to take into account armor and all modifiers like dexterity mod and magic items or enchantments/spells.
+            Defense
+        {
+            get;
+            set;
+        } //TODO: Defense to take into account armor and all modifiers like dexterity mod and magic items or enchantments/spells.
 
         /// <summary>
         /// Gets the list of targets from which this Being can select one or more targets before calling <see cref="PerformActionOnSelectedTargets"/>.
