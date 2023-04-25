@@ -6,62 +6,82 @@
     /// <example>
     /// Create a basic melee weapon
     /// <code>
-    /// Weapon dagger = new Weapon
-    /// {
-    ///     Name = "Dagger",
-    ///     Description = "A standard dagger.",
-    ///     Type = WeaponType.Melee,
-    ///     DamageDie = new DiceHand(1, DieType.d4)
-    /// };
+    /// Weapon dagger = new Weapon("Dagger", "A standard dagger.",
+    ///                            WeaponType.Melee, new DiceHand(1, DieType.d4));
     /// </code>
     /// </example>
     /// <example>
     /// Create a magical weapon
     /// <code>
-    /// Weapon magicSword = new Weapon
-    /// {
-    ///     Name = "Long Sword + 1",
-    ///     Description = "A finely crafted sword, its blade dimly glows.",
-    ///     Type = WeaponType.Melee,
-    ///     DamageDie = new DiceHand(1, DieType.d8)
-    /// };
-    /// magicSword.AttackModifiers.Add(new Modifier { ModifierSource = magicSword, ModifierValue = 1 });
-    /// magicSword.DamageModifiers.Add(new Modifier { ModifierSource = magicSword, ModifierValue = 1 });
+    /// Weapon magicSword = new Weapon("Long Sword + 1", "A finely crafted sword, its blade dimly glows.",
+    ///                                WeaponType.Melee, new DiceHand(1, DieType.d8));
+    /// Modifier attackModifier = new Modifier(magicSword, 1);
+    /// Modifier damageModifier = new Modifier(magicSword, 1);
+    /// magicSword.AttackModifiers.Add(attackModifier);
+    /// magicSword.DamageModifiers.Add(damageModifier);
     /// </code>
     /// </example>
     /// <example>
     /// Create an offensive spell
     /// <code>
-    /// Weapon flameJet = new Weapon
-    /// {
-    ///     Name = "Flame Jet",
-    ///     Description = "A jet of flame issues forth from the caster's hands.",
-    ///     Type = WeaponType.Spell,
-    ///     DamageDie = new DiceHand(1, DieType.d12)
-    /// };
+    /// Weapon flameJet = new Weapon("Flame Jet", "A jet of flame issues forth from the caster's hands.",
+    ///                              WeaponType.Spell, new DiceHand(1, DieType.d12));
     /// </code>
     /// </example>
     public class Weapon
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="Weapon"/> class with optional parameters.
+        /// </summary>
+        /// <param name="name">The name of the weapon or spell. Default: "Generic Weapon".</param>
+        /// <param name="description">The weapon or spell's description. Default: "This is a generic weapon.".</param>
+        /// <param name="type">The weapon type. An offensive spell is considered a weapon. Default: <see cref="WeaponType.Melee"/>.</param>
+        /// <param name="damageDie">The die rolled when calculating the weapon or spell's damage. Default: <c>1d4</c>.</param>
+        /// <example>
+        /// The following example demonstrates how to create a new instance of the <see cref="Weapon"/> class:
+        /// <code>
+        /// Weapon genericWeapon = new Weapon();
+        /// </code>
+        /// </example>
+        /// <example>
+        /// The following example demonstrates how to create a new instance of the <see cref="Weapon"/> class with custom values:
+        /// <code>
+        /// Weapon customWeapon = new Weapon("Custom Weapon", "This is a custom weapon.", WeaponType.Ranged, new DiceHand(1, DieType.d6));
+        /// </code>
+        /// </example>
+        public Weapon(string name = "Generic Weapon",
+            string description = "This is a generic weapon.",
+            WeaponType type = WeaponType.Melee,
+            DiceHand damageDie = null)
+        {
+            Name = name;
+            Description = description;
+            Type = type;
+            DamageDie = damageDie ?? new DiceHand(1, DieType.d4);
+
+            AttackModifiers = new List<Modifier>();
+            DamageModifiers = new List<Modifier>();
+        }
+
+        /// <summary>
         /// Gets or sets the name of the weapon or spell.
         /// </summary>
-        public string Name { get; set; } = "Generic Weapon";
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the weapon or spell's description.
         /// </summary>
-        public string Description { get; set; } = "This is a generic weapon.";
+        public string Description { get; set; }
 
         /// <summary>
         /// Gets or sets the weapon type. An offensive spell is considered a weapon.
         /// </summary>
-        public WeaponType Type { get; set; } = WeaponType.Melee;
+        public WeaponType Type { get; set; }
 
         /// <summary>
         /// Gets or sets the die rolled when calculating the weapon or spell's damage. Default: <c>1d4</c>.
         /// </summary>
-        public DiceHand DamageDie { get; set; } = new DiceHand(1, DieType.d4);
+        public DiceHand DamageDie { get; set; }
 
         /// <summary>
         /// Rolls a <see cref="DieType.d20"/>, sums any modifiers, and returns the result.

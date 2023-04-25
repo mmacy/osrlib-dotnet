@@ -15,9 +15,8 @@
             DiceRoll roll1d6 = new DiceRoll(new DiceHand(1, DieType.d6));
 
             // Roll up a fighter-type character
-            Being fighter = new Being
+            Being fighter = new Being("Blarg the Destructor")
             {
-                Name = "Blarg the Destructor",
                 Defense = roll1d10.RollDice() + 5,
                 MaxHitPoints = roll1d10.RollDice() + 10
             };
@@ -32,14 +31,13 @@
                 Type = WeaponType.Melee,
                 DamageDie = new DiceHand(1, DieType.d8)
             };
-            magicSword.AttackModifiers.Add(new Modifier { ModifierSource = magicSword, ModifierValue = 1 });
-            magicSword.DamageModifiers.Add(new Modifier { ModifierSource = magicSword, ModifierValue = 1 });
+            magicSword.AttackModifiers.Add(new Modifier(magicSword, 1));
+            magicSword.DamageModifiers.Add(new Modifier(magicSword, 1));
             fighter.ActiveWeapon = magicSword;
 
             // Roll up a wizard-type character
-            Being wizard = new Being
+            Being wizard = new Being("Merlin")
             {
-                Name = "Merlin",
                 Defense = roll1d6.RollDice(),
                 MaxHitPoints = roll1d6.RollDice()
             };
@@ -89,9 +87,8 @@
             Party monsterParty = new Party();
 
             // Create some monsters for an encounter
-            Being goblin1 = new Being
+            Being goblin1 = new Being("Goblin Chieftain")
             {
-                Name = "Goblin Chieftain",
                 Defense = 10,
                 MaxHitPoints = DiceRoll.RollDice(new DiceHand(4, DieType.d6)),
                 ActiveWeapon = new Weapon { Name = "Battle Axe", Type = WeaponType.Melee, DamageDie = new DiceHand(1, DieType.d12) }
@@ -102,9 +99,8 @@
 
             for (int i = 0; i < 10; i++)
             {
-                Being goblin = new Being
+                Being goblin = new Being("Goblin Soldier")
                 {
-                    Name = "Goblin Soldier",
                     Defense = 5,
                     MaxHitPoints = DiceRoll.RollDice(new DiceHand(1, DieType.d6)),
                     ActiveWeapon = new Weapon { Name = "Short Sword", Type = WeaponType.Melee, DamageDie = new DiceHand(1, DieType.d6) }

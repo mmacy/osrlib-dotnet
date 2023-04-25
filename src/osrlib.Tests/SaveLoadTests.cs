@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using osrlib.SaveLoad;
+using Xunit.Abstractions;
 
 namespace osrlib.Tests
 {
@@ -8,9 +9,15 @@ namespace osrlib.Tests
     [TestCaseOrderer("osrlib.Tests.PriorityOrderer", "osrlib.Tests")]
     public class SaveLoadTests //: IDisposable
     {
-        private static string _saveDir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-        private static string _saveFile = "tbrpg-adventure.json";
-        private static string _savePath = Path.Combine(_saveDir, _saveFile);
+        private readonly ITestOutputHelper _testOutputHelper;
+        private static readonly string _saveDir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+        private static readonly string _saveFile = "tbrpg-adventure.json";
+        private static readonly string _savePath = Path.Combine(_saveDir, _saveFile);
+
+        public SaveLoadTests(ITestOutputHelper testOutputHelper)
+        {
+            _testOutputHelper = testOutputHelper;
+        }
 
         [Fact, TestPriority(1)]
         public void SaveAdventureFile_ShouldSucceed()
@@ -23,7 +30,7 @@ namespace osrlib.Tests
 
             if (fileWritten)
             {
-                Console.WriteLine($"File successfully written to " + _savePath);
+                _testOutputHelper.WriteLine($"File successfully written to " + _savePath);
             }
 
             // Assert
@@ -46,7 +53,7 @@ namespace osrlib.Tests
             }
         }
 
-        private Adventure GetInitializedAdventure()
+        private static Adventure GetInitializedAdventure()
         {
             Encounter encounter = new Encounter
             {

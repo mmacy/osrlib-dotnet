@@ -1,4 +1,6 @@
-﻿namespace osrlib.Dice
+﻿using Newtonsoft.Json;
+
+namespace osrlib.Dice
 {
     /// <summary>
     /// Represents a "handful of dice."
@@ -11,6 +13,14 @@
     /// </remarks>
     public class DiceHand
     {
+        // Default constructor for deserialization
+        [JsonConstructor]
+        private DiceHand()
+        {
+            DieCount = 1;
+            DieSides = DieType.d6;
+        }
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="DiceHand"/> class using the specified number of dice and sides.
         /// </summary>
@@ -81,12 +91,14 @@
 
         /// <summary>
         /// Gets or sets the number of dice in the DiceHand.
-        /// </summary>
+        /// </summary>\
+        [JsonProperty(nameof(DieCount))]
         public int DieCount { get; set; }
 
         /// <summary>
         /// Gets or sets the number of sides of each die in the DiceHand.
         /// </summary>
+        [JsonProperty(nameof(DieType))]
         public DieType DieSides { get; set; }
     }
 

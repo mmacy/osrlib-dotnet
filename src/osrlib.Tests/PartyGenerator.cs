@@ -38,9 +38,8 @@
         private static Being GetBeing(string name, int hp, int defense)
         {
 
-            Being being = new Being
+            Being being = new Being(name)
             {
-                Name = name,
                 Defense = defense,
                 HitPoints = hp,
                 MaxHitPoints = hp

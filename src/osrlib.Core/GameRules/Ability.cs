@@ -1,4 +1,6 @@
-﻿namespace osrlib.Core
+﻿using Newtonsoft.Json;
+
+namespace osrlib.Core
 {
     /// <summary>
     /// A <see cref="Being"/> has one or more abilities (strength, dexterity, intelligence, etc.) that are
@@ -6,24 +8,41 @@
     /// </summary>
     public class Ability
     {
+        [JsonConstructor]
+        private Ability() { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Ability"/> class with the specified <paramref name="type"/>.
+        /// The <see cref="BaseValue"/> is rolled automatically upon initialization.
+        /// </summary>
+        /// <param name="type">The type of the ability.</param>
+        public Ability(AbilityType type)
+        {
+            Type = type;
+            BaseValue = RollAbilityScore();
+        }
+        
         /// <summary>
         /// Gets or sets the type (strength, dexterity, intelligence, etc.) of this Ability.
         /// </summary>
+        [JsonProperty(nameof(Type))]
         public AbilityType Type { get; set; }
 
         /// <summary>
         /// Gets or sets the base value of this Ability. This is raw "rolled" value set with <see cref="RollAbilityScore"/>,
         /// without any modifiers.
         /// </summary>
+        [JsonProperty(nameof(BaseValue))]
         public int BaseValue { get; set; }
 
         /// <summary>
         /// Gets or sets the collection of <see cref="Modifier"/>s that adjust the score of this Ability.
         /// </summary>
-        /// <remarks>These are the modifiers that grant a bonus or a impose a penalty on the modifier value.
+        /// <remarks>These are the modifiers that grant a bonus or impose a penalty on the ability value.
         /// For example, enhancements from potions or penalties from curse-type spells.
         /// </remarks>
-        public List<Modifier> ScoreModifiers { get; set; } = new List<Modifier>();
+        [JsonProperty(nameof(ScoreModifiers))]
+        public List<Modifier> ScoreModifiers { get; set; } = new();
 
         /// <summary>
         /// Gets the bonus granted or penalty imposed by the Ability.

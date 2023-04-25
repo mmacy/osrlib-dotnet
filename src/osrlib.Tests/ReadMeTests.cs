@@ -1,4 +1,6 @@
-﻿namespace osrlib.Tests
+﻿using Xunit.Abstractions;
+
+namespace osrlib.Tests
 {
     /// <summary>
     /// ***********************************************************************************
@@ -12,6 +14,13 @@
     /// </summary>
     public class ReadMeTests
     {
+        private readonly ITestOutputHelper _testOutputHelper;
+
+        public ReadMeTests(ITestOutputHelper testOutputHelper)
+        {
+            _testOutputHelper = testOutputHelper;
+        }
+
         [Fact]
         public void TestReadMeSnippets()
         {
@@ -20,9 +29,8 @@
             DiceRoll roll = new DiceRoll(new DiceHand(1, DieType.d10));
 
             // Roll up a fighter-type character
-            Being fighter = new Being
+            Being fighter = new Being("Blarg the Destructor")
             {
-                Name = "Blarg the Destructor",
                 Defense = roll.RollDice(),
                 MaxHitPoints = roll.RollDice() + 10
             };
@@ -37,8 +45,8 @@
                 Type = WeaponType.Melee,
                 DamageDie = new DiceHand(1, DieType.d8)
             };
-            magicSword.AttackModifiers.Add(new Modifier { ModifierSource = magicSword, ModifierValue = 1 });
-            magicSword.DamageModifiers.Add(new Modifier { ModifierSource = magicSword, ModifierValue = 1 });
+            magicSword.AttackModifiers.Add(new Modifier(magicSword, 1));
+            magicSword.DamageModifiers.Add(new Modifier(magicSword, 1));
             fighter.ActiveWeapon = magicSword;
 
             // Now, add the fighter to the player's party
@@ -50,18 +58,16 @@
             Dungeon dungeon = new Dungeon();
 
             // Create some monsters for an encounter
-            Being goblin1 = new Being
+            Being goblin1 = new Being("Goblin Chieftain")
             {
-                Name = "Goblin Chieftain",
                 Defense = 10,
                 HitPoints = 10,
                 MaxHitPoints = 10
             };
             goblin1.RollAbilities();
 
-            Being goblin2 = new Being
+            Being goblin2 = new Being("Goblin")
             {
-                Name = "Goblin",
                 Defense = 5,
                 HitPoints = 4,
                 MaxHitPoints = 4
@@ -91,7 +97,7 @@
             // that you create.
             encounter.EncounterStarted += (sender, eventArgs) =>
                 {
-                    Console.WriteLine($"Encounter has started! Monsters:\r\n{((Encounter)sender).EncounterParty}");
+                    _testOutputHelper.WriteLine($"Encounter has started! Monsters:\r\n{((Encounter)sender).EncounterParty}");
                 };
 
             // Example of subscribing to an event that you might use to update the UI state to notify
