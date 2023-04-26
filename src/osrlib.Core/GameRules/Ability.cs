@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-namespace osrlib.Core
+﻿namespace osrlib.Core
 {
     /// <summary>
     /// A <see cref="Being"/> has one or more abilities (strength, dexterity, intelligence, etc.) that are
@@ -8,7 +6,6 @@ namespace osrlib.Core
     /// </summary>
     public class Ability
     {
-        [JsonConstructor]
         private Ability() { }
 
         /// <summary>
@@ -25,14 +22,12 @@ namespace osrlib.Core
         /// <summary>
         /// Gets or sets the type (strength, dexterity, intelligence, etc.) of this Ability.
         /// </summary>
-        [JsonProperty(nameof(Type))]
         public AbilityType Type { get; set; }
 
         /// <summary>
         /// Gets or sets the base value of this Ability. This is raw "rolled" value set with <see cref="RollAbilityScore"/>,
         /// without any modifiers.
         /// </summary>
-        [JsonProperty(nameof(BaseValue))]
         public int BaseValue { get; set; }
 
         /// <summary>
@@ -41,7 +36,6 @@ namespace osrlib.Core
         /// <remarks>These are the modifiers that grant a bonus or impose a penalty on the ability value.
         /// For example, enhancements from potions or penalties from curse-type spells.
         /// </remarks>
-        [JsonProperty(nameof(ScoreModifiers))]
         public List<Modifier> ScoreModifiers { get; set; } = new();
 
         /// <summary>
