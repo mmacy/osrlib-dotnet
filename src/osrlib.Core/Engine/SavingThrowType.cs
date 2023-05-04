@@ -5,6 +5,9 @@ namespace osrlib.Core.Engine
     /// </summary>
     public enum SavingThrowType
     {
+        /// <summary>No saving throw type specified.</summary>
+        None,
+        
         ///<summary>Resistance to death magic and poison effects.</summary>
         DeathRayOrPoison,
 

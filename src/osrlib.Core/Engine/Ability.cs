@@ -48,7 +48,7 @@
         /// adjusting dice rolls typically affected by ability scores, for example attack and damage rolls.
         /// </remarks>
         /// <returns>The bonus or penalty value of the Ability.</returns>
-        public int GetModifier()
+        public int GetModifierValue()
         {
             return BaseValue switch
             {

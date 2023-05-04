@@ -2,6 +2,8 @@ global using System;
 global using System.Collections.Generic;
 global using System.Linq;
 global using Xunit;
+global using Xunit.Abstractions;
 global using osrlib.Controllers;
 global using osrlib.Core;
+global using osrlib.Core.Engine;
 global using osrlib.Dice;

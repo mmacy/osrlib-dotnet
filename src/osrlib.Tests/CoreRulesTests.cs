@@ -1,9 +1,13 @@
-﻿using osrlib.Core.Engine;
-
-namespace osrlib.Tests
+﻿namespace osrlib.Tests
 {
     public class CoreRulesTests
     {
+        private readonly ITestOutputHelper _testOutputHelper;
+        public CoreRulesTests(ITestOutputHelper testOutputHelper)
+        {
+            _testOutputHelper = testOutputHelper;
+        }
+        
         [Fact]
         public void TestInitializingMajorGameEntities()
         {
@@ -100,8 +104,6 @@ namespace osrlib.Tests
                 },
                 Defense = defenseRoll.RollDice(),
             };
-            DiceRoll hpRoll = new DiceRoll(new DiceHand(1, fighter.Class.HitDie));
-            fighter.HitPoints = new HitPoints(hpRoll.RollDice());
             
             Weapon sword = new Weapon
             {
@@ -116,12 +118,13 @@ namespace osrlib.Tests
 
             // Act
             fighter.RollAbilities();
-            Modifier conModifer = new Modifier(fighter.GetAbilityByType(AbilityType.Constitution), 
-                                                fighter.GetAbilityByType(AbilityType.Constitution).GetModifier());
-            fighter.HitPoints.Modifiers.Add(conModifer);
-            Modifier mod = new Modifier("Potion of Strength", 2);
-            fighter.AddAbilityModifier(mod, AbilityType.Strength);
+            Modifier strModifier = new Modifier("Potion of Strength", 2);
+            fighter.AddAbilityModifier(strModifier, AbilityType.Strength);
             
+            Ability constitution = fighter.GetAbilityByType(AbilityType.Constitution);
+            fighter.HitPoints = new HitPoints(fighter.Class.HitDie);
+            fighter.HitPoints.Roll(constitution.GetModifierValue());
+
             // Assert
             Assert.Equal(6, fighter.Abilities.Count);
             Assert.Equal(AbilityType.Strength, fighter.Abilities[0].Type);

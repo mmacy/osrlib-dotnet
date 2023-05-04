@@ -138,17 +138,24 @@
         /// <summary>
         /// Gets or sets the Being's <see cref="Ability"/> collection.
         /// </summary>
+        /// <value>
+        /// The collection of abilities. The default value is an empty <see cref="List{Ability}"/>.
+        /// </value>
         public List<Ability> Abilities { get; set; } = new List<Ability>();
-        
+
+
         /// <summary>
         /// Gets or sets the hit points for the Being.
         /// </summary>
-        public HitPoints HitPoints { get; set; }
+        /// <value>
+        /// The hit points. The default value is a new <see cref="HitPoints"/> instance with hit die of <see cref="DieType.d1"/> and a base value of 1.
+        /// </value>
+        public HitPoints HitPoints { get; set; } = new(DieType.d1, 1);
 
         /// <summary>
         /// Gets or sets the number of experience points for the Being.
         /// </summary>
-        /// <remarks>This is the amount of experience possessed by a player character or the XP value of a monster.</remarks>
+        /// <remarks>This is the amount of experience possessed by a player character Being, or the XP value of a monster Being.</remarks>
         public int ExperiencePoints { get; set; }
 
         /// <summary>
@@ -366,7 +373,7 @@
 
         /// <summary>
         /// Rolls the full set of ability scores for the Being. Calling this method removes any abilities currently in
-        /// the Being's <see cref="Abilities"/> collection.
+        /// the Being's <see cref="Abilities"/> collection and replaces them with a new set.
         /// </summary>
         /// <returns>The Being's newly populated <see cref="Abilities"/> collection.</returns>
         public List<Ability> RollAbilities()
@@ -417,9 +424,9 @@
         {
             int modValue = weaponType switch
             {
-                WeaponType.Melee => GetAbilityByType(AbilityType.Strength).GetModifier(),
-                WeaponType.Ranged => GetAbilityByType(AbilityType.Dexterity).GetModifier(),
-                WeaponType.Spell => GetAbilityByType(AbilityType.Intelligence).GetModifier(),
+                WeaponType.Melee => GetAbilityByType(AbilityType.Strength).GetModifierValue(),
+                WeaponType.Ranged => GetAbilityByType(AbilityType.Dexterity).GetModifierValue(),
+                WeaponType.Spell => GetAbilityByType(AbilityType.Intelligence).GetModifierValue(),
                 _ => 0
             };
 

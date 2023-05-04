@@ -1,4 +1,5 @@
 ﻿using osrlib.Core.Engine;
+using Xunit.Abstractions;
 
 namespace osrlib.Tests
 {
@@ -8,6 +9,12 @@ namespace osrlib.Tests
     /// </summary>
     public class SteppedBattleTests
     {
+        private readonly ITestOutputHelper _testOutputHelper;
+        public SteppedBattleTests(ITestOutputHelper testOutputHelper)
+        {
+            _testOutputHelper = testOutputHelper;
+        }
+        
         [Fact]
         public void TestSteppedBattle()
         {
@@ -20,9 +27,11 @@ namespace osrlib.Tests
             Being fighter = new Being("Blarg the Destructor")
             {
                 Defense = roll1d10.RollDice() + 5,
-                HitPoints = new HitPoints(roll1d10.RollDice() + 10)
+                HitPoints = new HitPoints(DieType.d8)
             };
             fighter.RollAbilities();
+            Ability constitution = fighter.GetAbilityByType(AbilityType.Constitution);
+            fighter.HitPoints.Roll(constitution.GetModifierValue());
 
             // Give Blarg a sweet sword
             Weapon magicSword = new Weapon
@@ -40,9 +49,11 @@ namespace osrlib.Tests
             Being wizard = new Being("Merlin")
             {
                 Defense = roll1d6.RollDice(),
-                HitPoints = new HitPoints(roll1d6.RollDice())
+                HitPoints = new HitPoints(DieType.d4)
             };
             wizard.RollAbilities();
+            Ability constitutionWiz = wizard.GetAbilityByType(AbilityType.Constitution);
+            wizard.HitPoints.Roll(constitutionWiz.GetModifierValue());
 
             // Give Merlin a sweet fireball spell
             Weapon fireball = new Weapon
@@ -71,11 +82,11 @@ namespace osrlib.Tests
                     // added to the character's potential target collection.
 
                     Being character = s as Being;
-                    Console.WriteLine($"Potential targets added for {character.Name} - ready for selecting targets with Being.SelectTarget().");
+                    _testOutputHelper.WriteLine($"Potential targets added for {character.Name} - ready for selecting targets with Being.SelectTarget().");
 
                     foreach (Being target in character.PotentialTargets)
                     {
-                        Console.WriteLine($".... {target}");
+                        _testOutputHelper.WriteLine($".... {target}");
                     }
                 };
             }
@@ -90,10 +101,13 @@ namespace osrlib.Tests
             Being goblin1 = new Being("Goblin Chieftain")
             {
                 Defense = 10,
-                HitPoints = new HitPoints(DiceRoll.RollDice(new DiceHand(4, DieType.d6))),
+                HitPoints = new HitPoints(DieType.d6),
                 ActiveWeapon = new Weapon { Name = "Battle Axe", Type = WeaponType.Melee, DamageDie = new DiceHand(1, DieType.d12) }
             };
             goblin1.RollAbilities();
+            Ability constitutionGoblin1 = goblin1.GetAbilityByType(AbilityType.Constitution);
+            goblin1.HitPoints.Roll(constitutionGoblin1.GetModifierValue());
+            
             monsterParty.AddPartyMember(goblin1);
 
             for (int i = 0; i < 10; i++)
@@ -101,10 +115,12 @@ namespace osrlib.Tests
                 Being goblin = new Being("Goblin Soldier")
                 {
                     Defense = 5,
-                    HitPoints = new HitPoints(DiceRoll.RollDice(new DiceHand(4, DieType.d6))),
+                    HitPoints = new HitPoints(DieType.d6),
                     ActiveWeapon = new Weapon { Name = "Short Sword", Type = WeaponType.Melee, DamageDie = new DiceHand(1, DieType.d6) }
                 };
                 goblin.RollAbilities();
+                Ability constitutionGoblin = goblin.GetAbilityByType(AbilityType.Constitution);
+                goblin.HitPoints.Roll(constitutionGoblin.GetModifierValue());
 
                 monsterParty.AddPartyMember(goblin);
             }
@@ -126,7 +142,7 @@ namespace osrlib.Tests
             // a target to attack during an encounter).
             encounter.EncounterStarted += (sender, eventArgs) =>
                 {
-                    Console.WriteLine($"Encounter has started! Monsters:\r\n{((Encounter)sender).EncounterParty}");
+                    _testOutputHelper.WriteLine($"Encounter has started! Monsters:\r\n{((Encounter)sender).EncounterParty}");
                 };
 
             // Example of subscribing to an event that you might use to update the UI state to notify the player
@@ -137,11 +153,11 @@ namespace osrlib.Tests
 
                     if (enc.AdventuringParty.IsAlive)
                     {
-                        Console.WriteLine("Your party has won the battle!");
+                        _testOutputHelper.WriteLine("Your party has won the battle!");
                     }
                     else if (enc.EncounterParty.IsAlive)
                     {
-                        Console.WriteLine("Sorry, your party has been vanquished.");
+                        _testOutputHelper.WriteLine("Sorry, your party has been vanquished.");
                     }
                 };
             #endregion

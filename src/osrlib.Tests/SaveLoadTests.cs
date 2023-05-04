@@ -10,11 +10,11 @@ namespace osrlib.Tests
     [TestCaseOrderer("osrlib.Tests.PriorityOrderer", "osrlib.Tests")]
     public class SaveLoadTests //: IDisposable
     {
-        private readonly ITestOutputHelper _testOutputHelper;
         private static readonly string _saveDir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         private static readonly string _saveFile = "tbrpg-adventure.json";
         private static readonly string _savePath = Path.Combine(_saveDir, _saveFile);
 
+        private readonly ITestOutputHelper _testOutputHelper;
         public SaveLoadTests(ITestOutputHelper testOutputHelper)
         {
             _testOutputHelper = testOutputHelper;

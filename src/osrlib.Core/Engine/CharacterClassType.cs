@@ -6,6 +6,11 @@ namespace osrlib.Core.Engine
     public enum CharacterClassType
     {
         /// <summary>
+        /// No character class assigned.
+        /// </summary>
+        None,
+        
+        /// <summary>
         /// A strong and skilled warrior with expertise in using a variety of weapons and armor.
         /// </summary>
         Fighter,
@@ -38,6 +43,16 @@ namespace osrlib.Core.Engine
         /// <summary>
         /// A combination of Fighter and Cleric, proficient in both combat and divine spellcasting, but limited in both areas.
         /// </summary>
-        Dwarf
+        Dwarf,
+        
+        /// <summary>
+        /// A non-player character (NPC).
+        /// </summary>
+        Npc,
+        
+        /// <summary>
+        /// A creature that is neither a player character (PC) or non-player character (NPC).
+        /// </summary>
+        Monster
     }
 }
