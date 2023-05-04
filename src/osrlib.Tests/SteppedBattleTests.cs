@@ -20,9 +20,8 @@ namespace osrlib.Tests
             Being fighter = new Being("Blarg the Destructor")
             {
                 Defense = roll1d10.RollDice() + 5,
-                MaxHitPoints = roll1d10.RollDice() + 10
+                HitPoints = new HitPoints(roll1d10.RollDice() + 10)
             };
-            fighter.HitPoints = fighter.MaxHitPoints;
             fighter.RollAbilities();
 
             // Give Blarg a sweet sword
@@ -41,9 +40,8 @@ namespace osrlib.Tests
             Being wizard = new Being("Merlin")
             {
                 Defense = roll1d6.RollDice(),
-                MaxHitPoints = roll1d6.RollDice()
+                HitPoints = new HitPoints(roll1d6.RollDice())
             };
-            wizard.HitPoints = wizard.MaxHitPoints;
             wizard.RollAbilities();
 
             // Give Merlin a sweet fireball spell
@@ -92,10 +90,9 @@ namespace osrlib.Tests
             Being goblin1 = new Being("Goblin Chieftain")
             {
                 Defense = 10,
-                MaxHitPoints = DiceRoll.RollDice(new DiceHand(4, DieType.d6)),
+                HitPoints = new HitPoints(DiceRoll.RollDice(new DiceHand(4, DieType.d6))),
                 ActiveWeapon = new Weapon { Name = "Battle Axe", Type = WeaponType.Melee, DamageDie = new DiceHand(1, DieType.d12) }
             };
-            goblin1.HitPoints = goblin1.MaxHitPoints;
             goblin1.RollAbilities();
             monsterParty.AddPartyMember(goblin1);
 
@@ -104,10 +101,9 @@ namespace osrlib.Tests
                 Being goblin = new Being("Goblin Soldier")
                 {
                     Defense = 5,
-                    MaxHitPoints = DiceRoll.RollDice(new DiceHand(1, DieType.d6)),
+                    HitPoints = new HitPoints(DiceRoll.RollDice(new DiceHand(4, DieType.d6))),
                     ActiveWeapon = new Weapon { Name = "Short Sword", Type = WeaponType.Melee, DamageDie = new DiceHand(1, DieType.d6) }
                 };
-                goblin.HitPoints = goblin.MaxHitPoints;
                 goblin.RollAbilities();
 
                 monsterParty.AddPartyMember(goblin);

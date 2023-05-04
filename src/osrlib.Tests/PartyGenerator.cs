@@ -48,8 +48,7 @@ namespace osrlib.Tests
             Being being = new Being(name)
             {
                 Defense = defense,
-                HitPoints = hp,
-                MaxHitPoints = hp
+                HitPoints = new HitPoints(hp)
             };
             being.RollAbilities();
 

@@ -139,16 +139,11 @@
         /// Gets or sets the Being's <see cref="Ability"/> collection.
         /// </summary>
         public List<Ability> Abilities { get; set; } = new List<Ability>();
-
+        
         /// <summary>
-        /// Gets or sets the number of hit points for the Being.
+        /// Gets or sets the hit points for the Being.
         /// </summary>
-        public int HitPoints { get; set; }
-
-        /// <summary>
-        /// Gets or sets the maximum hit points for the Being.
-        /// </summary>
-        public int MaxHitPoints { get; set; }
+        public HitPoints HitPoints { get; set; }
 
         /// <summary>
         /// Gets or sets the number of experience points for the Being.
@@ -159,7 +154,7 @@
         /// <summary>
         /// Gets whether the Being is alive (has greater than zero hit points).
         /// </summary>
-        public bool IsAlive => HitPoints > 0;
+        public bool IsAlive => HitPoints.Current > 0;
 
         /// <summary>
         /// Gets or sets whether the Being can be attacked. Default: <c>true</c>.
@@ -273,7 +268,7 @@
             // Only apply damage if it's a positive value (otherwise the Being is HEALED)
             if (damage > 0)
             {
-                this.HitPoints -= damage;
+                this.HitPoints.Wounds += damage;
 
                 // Only raise the killed event if the being was alive prior to taking this damage
                 if (wasAlive && !this.IsAlive)
@@ -388,7 +383,7 @@
         /// Gets the string representation of the Being.
         /// </summary>
         /// <returns>Single-line text representation of the Being.</returns>
-        public override string ToString() => String.Format($"{this.Name} ({this.HitPoints}/{this.MaxHitPoints})");
+        public override string ToString() => String.Format($"{this.Name} ({this.HitPoints.Current}/{this.HitPoints.Maximum})");
 
         #endregion
 
@@ -439,7 +434,7 @@
         /// The ability of the specified type from the Being's <see cref="Abilities"/> collection, or <c>null</c>
         /// if no such ability is within the collection.
         /// </returns>
-        private Ability GetAbilityByType(AbilityType abilityType)
+        public Ability GetAbilityByType(AbilityType abilityType)
         {
             if (this.Abilities.Any())
             {

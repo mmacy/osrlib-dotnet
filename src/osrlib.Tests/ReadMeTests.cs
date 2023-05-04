@@ -33,9 +33,8 @@ namespace osrlib.Tests
             Being fighter = new Being("Blarg the Destructor")
             {
                 Defense = roll.RollDice(),
-                MaxHitPoints = roll.RollDice() + 10
+                HitPoints = new HitPoints(roll.RollDice() + 10)
             };
-            fighter.HitPoints = fighter.MaxHitPoints;
             fighter.RollAbilities();
 
             // Give Blarg a sweet sword
@@ -62,16 +61,14 @@ namespace osrlib.Tests
             Being goblin1 = new Being("Goblin Chieftain")
             {
                 Defense = 10,
-                HitPoints = 10,
-                MaxHitPoints = 10
+                HitPoints = new HitPoints(10)
             };
             goblin1.RollAbilities();
 
             Being goblin2 = new Being("Goblin")
             {
                 Defense = 5,
-                HitPoints = 4,
-                MaxHitPoints = 4
+                HitPoints = new HitPoints(4)
             };
             goblin2.RollAbilities();
 

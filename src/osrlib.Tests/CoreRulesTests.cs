@@ -87,16 +87,22 @@ namespace osrlib.Tests
             // Arrange
             DiceHand diceHand = new DiceHand(1, DieType.d10);
             DiceRoll defenseRoll = new DiceRoll(diceHand);
-            DiceRoll hitPointsRoll = new DiceRoll(diceHand);
             
             Being fighter = new Being("Cro Mag")
             {
+                Class = new CharacterClass
+                {
+                    Class = CharacterClassType.Fighter,
+                    Level = 1,
+                    ExperiencePoints = 0,
+                    ExperiencePointsNeeded = 1200,
+                    HitDie = DieType.d8
+                },
                 Defense = defenseRoll.RollDice(),
-                MaxHitPoints = hitPointsRoll.RollDice() + 1
             };
-            fighter.HitPoints = fighter.MaxHitPoints;
-
-            Modifier mod = new Modifier("Potion of Strength", 2);
+            DiceRoll hpRoll = new DiceRoll(new DiceHand(1, fighter.Class.HitDie));
+            fighter.HitPoints = new HitPoints(hpRoll.RollDice());
+            
             Weapon sword = new Weapon
             {
                 Name = "Long Sword + 1",
@@ -110,8 +116,12 @@ namespace osrlib.Tests
 
             // Act
             fighter.RollAbilities();
+            Modifier conModifer = new Modifier(fighter.GetAbilityByType(AbilityType.Constitution), 
+                                                fighter.GetAbilityByType(AbilityType.Constitution).GetModifier());
+            fighter.HitPoints.Modifiers.Add(conModifer);
+            Modifier mod = new Modifier("Potion of Strength", 2);
             fighter.AddAbilityModifier(mod, AbilityType.Strength);
-
+            
             // Assert
             Assert.Equal(6, fighter.Abilities.Count);
             Assert.Equal(AbilityType.Strength, fighter.Abilities[0].Type);
