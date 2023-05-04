@@ -1,4 +1,4 @@
-﻿namespace osrlib.Core
+﻿namespace osrlib.Core.Engine
 {
     /// <summary>
     /// Represents a modifier from a single source, such as an ability or magical bonus or penalty.

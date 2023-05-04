@@ -1,20 +1,27 @@
-﻿namespace osrlib.Tests
+﻿using osrlib.Core.Engine;
+
+namespace osrlib.Tests
 {
     public static class PartyGenerator
     {
         public static Party GetPlayerParty()
         {
-            int hp = 30;
-            int def = 15;
+            const int hp = 30;
+            const int def = 15;
 
             Party party = new Party();
 
-            party.AddPartyMember(GetBeing("Blarg the Destructor", hp, def));
-            party.AddPartyMember(GetBeing("Killarvo", hp, def));
-            party.AddPartyMember(GetBeing("Vizplag", hp, def));
-            party.AddPartyMember(GetBeing("Winglar", hp, def));
-            party.AddPartyMember(GetBeing("Binzo", hp, def));
-            party.AddPartyMember(GetBeing("Ceelak", hp, def));
+            foreach (CharacterClassType characterClassType in Enum.GetValues(typeof(CharacterClassType)))
+            {
+                CharacterClass characterClass = new()
+                {
+                    Class = characterClassType,
+                };
+
+                Being playerCharacter = GetBeing(characterClass.ToString(), hp, def);
+                playerCharacter.Class = characterClass;
+                party.AddPartyMember(playerCharacter);
+            }
 
             return party;
         }
@@ -37,7 +44,7 @@
 
         private static Being GetBeing(string name, int hp, int defense)
         {
-
+ 
             Being being = new Being(name)
             {
                 Defense = defense,

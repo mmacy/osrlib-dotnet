@@ -1,4 +1,4 @@
-namespace osrlib.Core
+namespace osrlib.Core.Engine
 {
     /// <summary>
     /// Specifies the saving throw types.

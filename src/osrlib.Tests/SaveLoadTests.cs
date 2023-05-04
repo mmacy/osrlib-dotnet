@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using osrlib.Core.Engine;
 using osrlib.SaveLoad;
 using Xunit.Abstractions;
 

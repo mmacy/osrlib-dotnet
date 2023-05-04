@@ -1,4 +1,4 @@
-﻿namespace osrlib.Core
+﻿namespace osrlib.Core.Engine
 {
     /// <summary>
     /// The Encounter contains a <see cref="Party"/>, can accept a <see cref="Party"/> to initiate a battle,
@@ -21,7 +21,7 @@
         public event EventHandler EncounterEnded;
 
         /// <summary>
-        /// Gets or sets the position within the <see cref="osrlib.Core.Dungeon"/> of this Encounter.
+        /// Gets or sets the position within the <see cref="Dungeon"/> of this Encounter.
         /// </summary>
         public GamePosition Position { get; set; }
 
@@ -69,12 +69,12 @@
         }
 
         /// <summary>
-        /// Starts the Encounter. To resolve the Encounter, subscribe to all party members' <see cref="osrlib.Core.Being.PotentialTargetsAdded"/>
+        /// Starts the Encounter. To resolve the Encounter, subscribe to all party members' <see cref="Being.PotentialTargetsAdded"/>
         /// event, and then call <see cref="PerformStep"/> to move the Encounter forward until the <see cref="EncounterEnded"/> is raised.
         /// </summary>
         /// <remarks>
         /// Before calling <see cref="StartEncounter"/>, subscribe to each party members'
-        /// <see cref="osrlib.Core.Being.PotentialTargetsAdded"/> event to be notified when the caller should select a
+        /// <see cref="Being.PotentialTargetsAdded"/> event to be notified when the caller should select a
         /// target and subsequently call <see cref="GameAction.PerformAction"/>. After PerformAction has been called, check
         /// <see cref="IsEncounterEnded"/> before calling PerformStep again. If AutoBattleEnabled is <c>true</c>, this will
         /// initiate resolution of the full Encounter (e.g. resolve all combat between Encounter parties).

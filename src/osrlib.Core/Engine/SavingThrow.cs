@@ -1,4 +1,4 @@
-namespace osrlib.Core
+namespace osrlib.Core.Engine
 {
     /// <summary>
     /// Represents a saving throw, which is the chance that a special attack may be avoided or

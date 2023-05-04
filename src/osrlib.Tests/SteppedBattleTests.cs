@@ -1,4 +1,6 @@
-﻿namespace osrlib.Tests
+﻿using osrlib.Core.Engine;
+
+namespace osrlib.Tests
 {
     /// <summary>
     /// Tests the functionality of the <see cref="Encounter.PerformStep"/> method is used to

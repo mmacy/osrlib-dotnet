@@ -1,4 +1,4 @@
-﻿namespace osrlib.Core
+﻿namespace osrlib.Core.Engine
 {
     /// <summary>
     /// A <see cref="Being"/> has one or more abilities (strength, dexterity, intelligence, etc.) that are

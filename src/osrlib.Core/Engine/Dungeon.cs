@@ -1,4 +1,4 @@
-﻿namespace osrlib.Core
+﻿namespace osrlib.Core.Engine
 {
     /// <summary>
     /// The Dungeon contains and manages one or more <see cref="Encounter"/> objects, and

@@ -1,4 +1,5 @@
-﻿using Xunit.Abstractions;
+﻿using osrlib.Core.Engine;
+using Xunit.Abstractions;
 
 namespace osrlib.Tests
 {

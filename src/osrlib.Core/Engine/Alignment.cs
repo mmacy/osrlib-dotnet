@@ -1,15 +1,15 @@
-﻿namespace osrlib.Core
+﻿namespace osrlib.Core.Engine
 {
     /// <summary>
-    /// Specifies the alignment of a <see cref="Being"/> according to the 1980 B/X D&D rules.
+    /// Specifies the alignment of a <see cref="Being"/>.
     /// </summary>
     public enum Alignment
     {
-        ///<summary>Represents order, civilization, and authority.</summary>
+        ///<summary>Order, civilization, and authority.</summary>
         Lawful,
-        ///<summary>Represents balance, neutrality, and independence.</summary>
+        ///<summary>Balance, neutrality, and independence.</summary>
         Neutral,
-        ///<summary>Represents chaos, freedom, and individualism.</summary>
+        ///<summary>Chaos, freedom, and individualism.</summary>
         Chaotic
     }
 }

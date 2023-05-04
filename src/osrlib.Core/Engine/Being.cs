@@ -1,16 +1,16 @@
-﻿namespace osrlib.Core
+﻿namespace osrlib.Core.Engine
 {
     /// <summary>
-    /// Represents the method that handles a Being's <see cref="osrlib.Core.Being.TargetSelected"/> or
-    /// <see cref="osrlib.Core.Being.SelectedAsTarget"/> event.
+    /// Represents the method that handles a Being's <see cref="Being.TargetSelected"/> or
+    /// <see cref="Being.SelectedAsTarget"/> event.
     /// </summary>
     /// <param name="sender">The object generating the event.</param>
     /// <param name="e">The information for the event.</param>
     public delegate void BeingTargetingEventHandler(object sender, BeingTargetingEventArgs e);
 
     /// <summary>
-    /// Represents the method that handles a Being's <see cref="osrlib.Core.Being.PerformingAction"/> or
-    /// <see cref="osrlib.Core.Being.ActionPerformed"/> events.
+    /// Represents the method that handles a Being's <see cref="Being.PerformingAction"/> or
+    /// <see cref="Being.ActionPerformed"/> events.
     /// </summary>
     /// <param name="sender">The object generating the event.</param>
     /// <param name="e">The <see cref="GameAction"/> for the event.</param>

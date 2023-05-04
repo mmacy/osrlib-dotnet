@@ -1,11 +1,12 @@
 ﻿using System.IO;
 using Newtonsoft.Json;
 using osrlib.Core;
+using osrlib.Core.Engine;
 
 namespace osrlib.SaveLoad
 {
     /// <summary>
-    /// Performs <see cref="osrlib.Core.Adventure"/> save and load operations to and from a local text file.
+    /// Performs <see cref="Adventure"/> save and load operations to and from a local text file.
     /// </summary>
     public static class SaveLoadLocal
     {

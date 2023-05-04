@@ -1,8 +1,4 @@
-using System.Collections.Generic;
-using System.Linq;
-using osrlib.Core;
-
-namespace osrlib.Domain
+namespace osrlib.Core.Engine
 {
     /// <summary>
     /// Represents hit points for a character or creature, including base hit points, modifiers, and current wounds.

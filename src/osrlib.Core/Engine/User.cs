@@ -1,4 +1,4 @@
-﻿namespace osrlib.Core
+﻿namespace osrlib.Core.Engine
 {
     /// <summary>
     /// Represents a human player. A User can own one or more <see cref="Party"/> or <see cref="Adventure"/>.

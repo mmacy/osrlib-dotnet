@@ -1,4 +1,6 @@
-﻿namespace osrlib.Tests
+﻿using osrlib.Core.Engine;
+
+namespace osrlib.Tests
 {
     public class CoreRulesTests
     {
@@ -54,7 +56,7 @@
             // Arrange
             Party playerParty = PartyGenerator.GetPlayerParty();
             Party monsterParty = PartyGenerator.GetMonsterParty();
-
+            
             Encounter encounter = new Encounter
             {
                 EncounterParty = monsterParty,
