@@ -10,15 +10,17 @@ namespace osrlib.Tests
     public class SteppedBattleTests
     {
         private readonly ITestOutputHelper _testOutputHelper;
+
         public SteppedBattleTests(ITestOutputHelper testOutputHelper)
         {
             _testOutputHelper = testOutputHelper;
         }
-        
+
         [Fact]
         public void TestSteppedBattle()
         {
             #region CHARACTER_SETUP
+
             // Get our dice hands ready
             DiceRoll roll1d10 = new DiceRoll(new DiceHand(1, DieType.d10));
             DiceRoll roll1d6 = new DiceRoll(new DiceHand(1, DieType.d6));
@@ -26,8 +28,9 @@ namespace osrlib.Tests
             // Roll up a fighter-type character
             Being fighter = new Being("Blarg the Destructor")
             {
+                Class = new(CharacterClassType.Fighter),
                 Defense = roll1d10.RollDice() + 5,
-                HitPoints = new HitPoints(DieType.d8)
+                HitPoints = new(DieType.d8)
             };
             fighter.RollAbilities();
             Ability constitution = fighter.GetAbilityByType(AbilityType.Constitution);
@@ -39,17 +42,21 @@ namespace osrlib.Tests
                 Name = "Long Sword + 1",
                 Description = "A finely crafted sword, its blade dimly glows.",
                 Type = WeaponType.Melee,
-                DamageDie = new DiceHand(1, DieType.d8)
+                DamageDie = new(1, DieType.d8)
             };
             magicSword.AttackModifiers.Add(new Modifier(magicSword, 1));
             magicSword.DamageModifiers.Add(new Modifier(magicSword, 1));
             fighter.ActiveWeapon = magicSword;
+            
+            PrintCharacter(fighter);
+            _testOutputHelper.WriteLine("---------------");
 
             // Roll up a wizard-type character
             Being wizard = new Being("Merlin")
             {
+                Class = new(CharacterClassType.MagicUser),
                 Defense = roll1d6.RollDice(),
-                HitPoints = new HitPoints(DieType.d4)
+                HitPoints = new(DieType.d4)
             };
             wizard.RollAbilities();
             Ability constitutionWiz = wizard.GetAbilityByType(AbilityType.Constitution);
@@ -61,10 +68,13 @@ namespace osrlib.Tests
                 Name = "Fireball",
                 Description = "Launches a flaming ball that explodes upon impact.",
                 Type = WeaponType.Spell,
-                DamageDie = new DiceHand(1, DieType.d12),
+                DamageDie = new(1, DieType.d12),
             };
             wizard.ActiveWeapon = fireball;
-
+            
+            PrintCharacter(wizard);
+            _testOutputHelper.WriteLine("---------------");
+            
             // Now, add the characters to the player's party
             Party playerParty = new Party();
             playerParty.AddPartyMember(fighter);
@@ -82,7 +92,8 @@ namespace osrlib.Tests
                     // added to the character's potential target collection.
 
                     Being character = s as Being;
-                    _testOutputHelper.WriteLine($"Potential targets added for {character.Name} - ready for selecting targets with Being.SelectTarget().");
+                    _testOutputHelper.WriteLine(
+                        $"Potential targets added for {character.Name} - ready for selecting targets with Being.SelectTarget().");
 
                     foreach (Being target in character.PotentialTargets)
                     {
@@ -90,9 +101,11 @@ namespace osrlib.Tests
                     }
                 };
             }
+
             #endregion
 
             #region DUNGEON_SETUP
+
             Dungeon dungeon = new Dungeon();
 
             Party monsterParty = new Party();
@@ -100,23 +113,27 @@ namespace osrlib.Tests
             // Create some monsters for an encounter
             Being goblin1 = new Being("Goblin Chieftain")
             {
+                Class = new(CharacterClassType.Monster),
                 Defense = 10,
-                HitPoints = new HitPoints(DieType.d6),
-                ActiveWeapon = new Weapon { Name = "Battle Axe", Type = WeaponType.Melee, DamageDie = new DiceHand(1, DieType.d12) }
+                HitPoints = new(DieType.d6),
+                ActiveWeapon = new Weapon
+                    { Name = "Battle Axe", Type = WeaponType.Melee, DamageDie = new DiceHand(1, DieType.d12) }
             };
             goblin1.RollAbilities();
             Ability constitutionGoblin1 = goblin1.GetAbilityByType(AbilityType.Constitution);
             goblin1.HitPoints.Roll(constitutionGoblin1.GetModifierValue());
-            
+
             monsterParty.AddPartyMember(goblin1);
 
             for (int i = 0; i < 10; i++)
             {
                 Being goblin = new Being("Goblin Soldier")
                 {
+                    Class = new(CharacterClassType.Monster),
                     Defense = 5,
-                    HitPoints = new HitPoints(DieType.d6),
-                    ActiveWeapon = new Weapon { Name = "Short Sword", Type = WeaponType.Melee, DamageDie = new DiceHand(1, DieType.d6) }
+                    HitPoints = new(DieType.d6),
+                    ActiveWeapon = new Weapon
+                        { Name = "Short Sword", Type = WeaponType.Melee, DamageDie = new DiceHand(1, DieType.d6) }
                 };
                 goblin.RollAbilities();
                 Ability constitutionGoblin = goblin.GetAbilityByType(AbilityType.Constitution);
@@ -134,67 +151,72 @@ namespace osrlib.Tests
 
             // Add the encounter to the dungeon
             dungeon.Encounters.Add(encounter);
+
             #endregion
 
             #region BATTLE_SETUP
+
             // OSRlib is heavily event-driven and most major entities have public events. Subscribe to events
             // like these to change the state of your UI and/or prompt the player for action (such as selecting
             // a target to attack during an encounter).
             encounter.EncounterStarted += (sender, eventArgs) =>
-                {
-                    _testOutputHelper.WriteLine($"Encounter has started! Monsters:\r\n{((Encounter)sender).EncounterParty}");
-                };
+            {
+                _testOutputHelper.WriteLine(
+                    $"Encounter has started! Monsters:\r\n{((Encounter)sender).EncounterParty}");
+            };
 
             // Example of subscribing to an event that you might use to update the UI state to notify the player
             // or make some other changes within your application.
             encounter.EncounterEnded += (sender, eventArgs) =>
-                {
-                    Encounter enc = sender as Encounter;
+            {
+                Encounter enc = sender as Encounter;
 
-                    if (enc.AdventuringParty.IsAlive)
-                    {
-                        _testOutputHelper.WriteLine("Your party has won the battle!");
-                    }
-                    else if (enc.EncounterParty.IsAlive)
-                    {
-                        _testOutputHelper.WriteLine("Sorry, your party has been vanquished.");
-                    }
-                };
+                if (enc.AdventuringParty.IsAlive)
+                {
+                    _testOutputHelper.WriteLine("Your party has won the battle!");
+                }
+                else if (enc.EncounterParty.IsAlive)
+                {
+                    _testOutputHelper.WriteLine("Sorry, your party has been vanquished.");
+                }
+            };
+
             #endregion
 
             #region SECTION_BATTLE_START
+
             // Add the adventuring party to the encounter.
             encounter.SetAdventuringParty(playerParty);
 
             // Subscribe to some events on the combatants so we can respond to things that happen to them.
-            List<Being> combatants = encounter.AdventuringParty.Members.Concat(encounter.EncounterParty.Members).ToList();
+            List<Being> combatants =
+                encounter.AdventuringParty.Members.Concat(encounter.EncounterParty.Members).ToList();
             foreach (Being combatant in combatants)
             {
                 combatant.SelectedAsTarget += (s, e) =>
-                    {
-                        Being attackedBeing = s as Being;
-                        BeingTargetingEventArgs args = e as BeingTargetingEventArgs;
+                {
+                    Being attackedBeing = s as Being;
+                    BeingTargetingEventArgs args = e as BeingTargetingEventArgs;
 
-                        Console.WriteLine($"{e.TargetingBeing} attacks {attackedBeing} with their {e.TargetingBeing.ActiveWeapon}...");
-                    };
+                    _testOutputHelper.WriteLine(
+                        $"{e.TargetingBeing} attacks {attackedBeing} with their {e.TargetingBeing.ActiveWeapon}...");
+                };
                 combatant.ActionPerformed += (s, e) =>
-                    {
-                        GameActionEventArgs actionArgs = e as GameActionEventArgs;
-                        GameAction action = actionArgs.Action;
+                {
+                    GameActionEventArgs actionArgs = e as GameActionEventArgs;
+                    GameAction action = actionArgs.Action;
 
-                        if (action.Victor.Equals(combatant))
-                        {
-                            Console.WriteLine($"{combatant} rolled a {action.AttackRoll} and hit for {action.DamageRoll} points of damage.");
-                        }
-                        else
-                        {
-                            Console.WriteLine($"{combatant} rolled a {action.AttackRoll} and missed.");
-                        }
-                    };
-                combatant.Killed += (s, e) =>
+                    if (action.Victor.Equals(combatant))
                     {
-                        Console.WriteLine($"{((Being)s).Name} was killed!");
-                    };
+                        _testOutputHelper.WriteLine(
+                            $"{combatant} rolled a {action.AttackRoll} and hit for {action.DamageRoll} points of damage.");
+                    }
+                    else
+                    {
+                        _testOutputHelper.WriteLine($"{combatant} rolled a {action.AttackRoll} and missed.");
+                    }
+                };
+                combatant.Killed += (s, e) => { _testOutputHelper.WriteLine($"{((Being)s).Name} was killed!"); };
             }
 
             // Start the battle. This will fire the EncounterStarted event we subscribed to above.
@@ -204,7 +226,7 @@ namespace osrlib.Tests
             {
                 if (fighter.IsAlive)
                 {
-                    fighter.SelectTarget(fighter.PotentialTargets[0]);
+                    fighter.SelectTarget(fighter.PotentialTargets.First());
                     fighter.PerformActionOnSelectedTargets();
 
                     if (!encounter.IsEncounterEnded)
@@ -225,7 +247,23 @@ namespace osrlib.Tests
                     }
                 }
             }
+
             #endregion
+        }
+
+        private void PrintCharacter(Being character)
+        {
+            _testOutputHelper.WriteLine(character.Name);
+            _testOutputHelper.WriteLine($"  Class:   {character.Class}");
+            _testOutputHelper.WriteLine($"  Hit die: {character.HitPoints.HitDie}");
+            _testOutputHelper.WriteLine($"  HP:      {character.HitPoints}");
+            _testOutputHelper.WriteLine($"  AC:      {character.Defense}");
+            _testOutputHelper.WriteLine($"  Weapon:  {character.ActiveWeapon} ({character.ActiveWeapon.DamageDie})");
+
+            foreach (var ability in character.Abilities)
+            {
+                _testOutputHelper.WriteLine(ability.ToString());
+            }
         }
     }
 }

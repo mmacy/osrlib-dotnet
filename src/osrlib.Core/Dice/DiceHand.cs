@@ -94,6 +94,15 @@
         /// Gets or sets the number of sides of each die in the DiceHand.
         /// </summary>
         public DieType DieSides { get; set; }
+        
+        /// <summary>
+        /// Returns a string that represents the DiceHand in the dice notation form.
+        /// </summary>
+        /// <returns>A string in the format "NdN", where N is a positive integer.</returns>
+        public override string ToString()
+        {
+            return $"{DieCount}d{(int)DieSides}";
+        }
     }
 
 }

@@ -21,13 +21,13 @@ namespace osrlib.Core.Engine
         /// <param name="classType">The character class type.</param>
         public CharacterClass(CharacterClassType classType)
         {
-            Class = classType;
+            ClassType = classType;
         }
 
         /// <summary>
         /// Gets or sets the character class type. Default value is the first value of the CharacterClassType enum.
         /// </summary>
-        public CharacterClassType Class { get; set; }
+        public CharacterClassType ClassType { get; set; }
 
         /// <summary>
         /// Gets or sets the hit die type for the character class. Default value is DieType.d4.
@@ -55,7 +55,7 @@ namespace osrlib.Core.Engine
         /// <returns>A string representation of the character class type.</returns>
         public override string ToString()
         {
-            string className = Enum.GetName(typeof(CharacterClassType), Class) ?? "";
+            string className = Enum.GetName(typeof(CharacterClassType), ClassType) ?? "";
     
             // Add spaces before each uppercase letter except the first one
             return Regex.Replace(className, "(?<!^)([A-Z])", " $1");

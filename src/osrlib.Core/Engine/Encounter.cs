@@ -148,14 +148,14 @@
         }
 
         /// <summary>
-        /// Moves the Encounter forward one step by dequeuing an attacker and adding as potential targets the opposing
-        /// party's living members.
+        /// Moves the Encounter forward one step by dequeuing an attacker and adding the opposing party's living members
+        /// to the attacker's potential targets collection.
         /// </summary>
         /// <remarks>
         /// This method first fills the Encounter's attack queue if it's empty, then dequeues a Being and populates its
         /// <see cref="Being.PotentialTargets"/> collection with living Beings from the opposing party. Doing so raises
         /// its <see cref="Being.PotentialTargetsAdded"/> event which allows subscribers (such as a GUI application) to
-        /// prompt for target selection. Targets are selected by adding calling <see cref="Being.SelectTarget(Being)"/>"/>
+        /// prompt for target selection. Targets are selected by calling the <see cref="Being.SelectTarget(Being)"/>
         /// method.
         /// </remarks>
         public void PerformStep()

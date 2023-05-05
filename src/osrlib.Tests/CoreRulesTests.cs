@@ -73,9 +73,14 @@
             {
                 Encounter enc = sender as Encounter;
                 encounterEndedEventFired = enc.IsEncounterEnded;
-            }
 
+                _testOutputHelper.WriteLine("Encounter ended.");
+            }
             encounter.EncounterEnded += HandleEncounterEndedEvent;
+            encounter.EncounterStarted += (sender, args) =>
+            {
+                _testOutputHelper.WriteLine("Encounter started.");
+            };
 
             // Act
             encounter.SetAdventuringParty(playerParty);
@@ -96,7 +101,7 @@
             {
                 Class = new CharacterClass
                 {
-                    Class = CharacterClassType.Fighter,
+                    ClassType = CharacterClassType.Fighter,
                     Level = 1,
                     ExperiencePoints = 0,
                     ExperiencePointsNeeded = 1200,

@@ -1,30 +1,30 @@
 ﻿using osrlib.Core.Engine;
+using Xunit.Sdk;
 
 namespace osrlib.Tests
 {
     public static class PartyGenerator
     {
+
         public static Party GetPlayerParty()
         {
+            Party playerParty = new Party();
+            
             const DieType hitDie = DieType.d20;
             const int def = 15;
 
-            Party party = new Party();
-
             foreach (CharacterClassType characterClassType in Enum.GetValues(typeof(CharacterClassType)))
             {
-                CharacterClass characterClass = new CharacterClass(characterClassType);
-                Being playerCharacter = GetBeing(characterClass.Class, hitDie, def);
-                playerCharacter.Class = characterClass;
-                party.AddPartyMember(playerCharacter);
+                Being playerCharacter = GetBeing(characterClassType, hitDie, def);
+                playerParty.AddPartyMember(playerCharacter);
             }
 
-            return party;
+            return playerParty;
         }
 
         public static Party GetMonsterParty()
         {
-            Party party = new Party();
+            Party monsterParty = new Party();
 
             const DieType hitDie = DieType.d10;
             int defense = 10;
@@ -32,51 +32,31 @@ namespace osrlib.Tests
             for (int i = 0; i < 4; i++)
             {
                 Being monster = GetBeing(CharacterClassType.Monster, hitDie, defense);
-                monster.Class = new CharacterClass(CharacterClassType.Monster);
-                party.AddPartyMember(monster);
+                monster.Name += i.ToString();
+                monsterParty.AddPartyMember(monster);
             }
 
-            return party;
+            return monsterParty;
         }
 
         private static Being GetBeing(CharacterClassType beingType, DieType hitDie, int defense)
         {
- 
+
+            // Init the Being's critical properties
             Being being = new Being(beingType.ToString())
             {
                 Class = new CharacterClass(beingType),
-                Defense = defense,
-                HitPoints = new HitPoints(hitDie)
+                HitPoints = new HitPoints(hitDie),
+                Defense = defense
             };
+
+            // Roll the Being's abilities and hit points
             being.RollAbilities();
-            
-            // Roll the Being's hit points and include the the Constitution modifier, if any
             Ability constitution = being.GetAbilityByType(AbilityType.Constitution);
-            Modifier conModifer = new Modifier(constitution, constitution.GetModifierValue());
-            being.HitPoints = new HitPoints(being.Class.HitDie);
-            being.HitPoints.Roll(conModifer.ModifierValue);
+            int conModifer = constitution.GetModifierValue();
+            being.HitPoints.Roll(conModifer);
             
             return being;
-        }
-
-        /// <summary>
-        /// Gets the Constitution modifier value from the given set of abilities.
-        /// </summary>
-        /// <param name="being">The Being whose Constitution modifier should be returned.</param>
-        /// <returns>A integer between -3 and 3 (inclusive of 0), or 0 if the Being's Abilities collection is empty.</returns>
-        internal static int GetConstitutionModifierValue(Being being)
-        {
-            Ability constitution = being.GetAbilityByType(AbilityType.Constitution);
-
-            if (constitution != null)
-            {
-                return constitution.GetModifierValue();
-            }
-            else
-            {
-                return 0;
-            }
-            
         }
     }
 }
