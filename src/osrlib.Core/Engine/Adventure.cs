@@ -1,4 +1,4 @@
-﻿namespace osrlib.Core
+﻿namespace osrlib.Core.Engine
 {
     /// <summary>
     /// An Adventure contains one or more <see cref="Dungeon"/> and <see cref="Quest"/> objects.

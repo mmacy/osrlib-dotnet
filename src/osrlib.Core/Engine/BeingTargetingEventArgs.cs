@@ -1,4 +1,4 @@
-﻿namespace osrlib.Core
+﻿namespace osrlib.Core.Engine
 {
     /// <summary>
     /// Provides information for events in which one Being is targeting another.

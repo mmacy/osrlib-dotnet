@@ -1,4 +1,6 @@
-﻿namespace osrlib.Core
+﻿using osrlib.Core.Engine;
+
+namespace osrlib.Core
 {
     /// <summary>
     /// Specifies the type of an <see cref="Ability"/>.

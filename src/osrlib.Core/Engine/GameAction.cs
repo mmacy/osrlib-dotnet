@@ -1,4 +1,4 @@
-﻿namespace osrlib.Core
+﻿namespace osrlib.Core.Engine
 {
     /// <summary>
     /// The GameAction represents an act initiated by one entity on another, such as a

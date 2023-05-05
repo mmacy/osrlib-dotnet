@@ -1,4 +1,4 @@
-﻿namespace osrlib.Core
+﻿namespace osrlib.Core.Engine
 {
     /// <summary>
     /// A Weapon is a melee or ranged martial weapon, or an offensive spell.

@@ -1,4 +1,5 @@
-﻿using Xunit.Abstractions;
+﻿using osrlib.Core.Engine;
+using Xunit.Abstractions;
 
 namespace osrlib.Tests
 {
@@ -15,7 +16,6 @@ namespace osrlib.Tests
     public class ReadMeTests
     {
         private readonly ITestOutputHelper _testOutputHelper;
-
         public ReadMeTests(ITestOutputHelper testOutputHelper)
         {
             _testOutputHelper = testOutputHelper;
@@ -31,11 +31,13 @@ namespace osrlib.Tests
             // Roll up a fighter-type character
             Being fighter = new Being("Blarg the Destructor")
             {
+                Class = new(CharacterClassType.Fighter) { HitDie = DieType.d10 },
                 Defense = roll.RollDice(),
-                MaxHitPoints = roll.RollDice() + 10
             };
-            fighter.HitPoints = fighter.MaxHitPoints;
             fighter.RollAbilities();
+            Ability constitution = fighter.GetAbilityByType(AbilityType.Constitution);
+            fighter.HitPoints = new(fighter.Class.HitDie);
+            fighter.HitPoints.Roll(constitution.GetModifierValue());
 
             // Give Blarg a sweet sword
             Weapon magicSword = new Weapon
@@ -61,18 +63,20 @@ namespace osrlib.Tests
             Being goblin1 = new Being("Goblin Chieftain")
             {
                 Defense = 10,
-                HitPoints = 10,
-                MaxHitPoints = 10
+                HitPoints = new HitPoints(DieType.d10)
             };
             goblin1.RollAbilities();
+            Ability constitutionGoblin1 = goblin1.GetAbilityByType(AbilityType.Constitution);
+            goblin1.HitPoints.Roll(constitutionGoblin1.GetModifierValue());
 
             Being goblin2 = new Being("Goblin")
             {
                 Defense = 5,
-                HitPoints = 4,
-                MaxHitPoints = 4
+                HitPoints = new HitPoints(DieType.d4)
             };
             goblin2.RollAbilities();
+            Ability constitutionGoblin2 = goblin2.GetAbilityByType(AbilityType.Constitution);
+            goblin2.HitPoints.Roll(constitutionGoblin2.GetModifierValue());
 
             // Add the goblins to the monster party
             Party monsterParty = new Party();
@@ -108,11 +112,11 @@ namespace osrlib.Tests
 
                     if (enc.AdventuringParty.IsAlive)
                     {
-                        Console.WriteLine("Your party has won the battle!");
+                        _testOutputHelper.WriteLine("Your party has won the battle!");
                     }
                     else if (enc.EncounterParty.IsAlive)
                     {
-                        Console.WriteLine("Sorry, your party has been vanquished.");
+                        _testOutputHelper.WriteLine("Sorry, your party has been vanquished.");
                     }
                 };
             #endregion
@@ -135,7 +139,7 @@ namespace osrlib.Tests
                         Being attackedBeing = s as Being;
                         BeingTargetingEventArgs args = e as BeingTargetingEventArgs;
 
-                        Console.WriteLine($"{e.TargetingBeing} attacks {attackedBeing} with their {e.TargetingBeing.ActiveWeapon}...");
+                        _testOutputHelper.WriteLine($"{e.TargetingBeing} attacks {attackedBeing} with their {e.TargetingBeing.ActiveWeapon}...");
                     };
                 combatant.ActionPerformed += (s, e) =>
                     {
@@ -144,16 +148,16 @@ namespace osrlib.Tests
 
                         if (action.Victor.Equals(combatant))
                         {
-                            Console.WriteLine($"{combatant} rolled a {action.AttackRoll} and hit for {action.DamageRoll} points of damage.");
+                            _testOutputHelper.WriteLine($"{combatant} rolled a {action.AttackRoll} and hit for {action.DamageRoll} points of damage.");
                         }
                         else
                         {
-                            Console.WriteLine($"{combatant} rolled a {action.AttackRoll} and missed.");
+                            _testOutputHelper.WriteLine($"{combatant} rolled a {action.AttackRoll} and missed.");
                         }
                     };
                 combatant.Killed += (s, e) =>
                     {
-                        Console.WriteLine($"{((Being)s).Name} was killed!");
+                        _testOutputHelper.WriteLine($"{((Being)s).Name} was killed!");
                     };
             }
 

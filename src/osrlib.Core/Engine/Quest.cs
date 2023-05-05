@@ -1,4 +1,4 @@
-﻿namespace osrlib.Core
+﻿namespace osrlib.Core.Engine
 {
     /// <summary>
     /// The Quest is associated with one <see cref="Adventure"/>, and one or more <see cref="Dungeon"/> objects.

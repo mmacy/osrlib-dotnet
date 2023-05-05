@@ -1,51 +1,61 @@
-﻿namespace osrlib.Tests
+﻿using osrlib.Core.Engine;
+using Xunit.Sdk;
+
+namespace osrlib.Tests
 {
     public static class PartyGenerator
     {
+
         public static Party GetPlayerParty()
         {
-            int hp = 30;
-            int def = 15;
+            Party playerParty = new Party();
+            
+            const DieType hitDie = DieType.d20;
+            const int def = 15;
 
-            Party party = new Party();
+            foreach (CharacterClassType characterClassType in Enum.GetValues(typeof(CharacterClassType)))
+            {
+                Being playerCharacter = GetBeing(characterClassType, hitDie, def);
+                playerParty.AddPartyMember(playerCharacter);
+            }
 
-            party.AddPartyMember(GetBeing("Blarg the Destructor", hp, def));
-            party.AddPartyMember(GetBeing("Killarvo", hp, def));
-            party.AddPartyMember(GetBeing("Vizplag", hp, def));
-            party.AddPartyMember(GetBeing("Winglar", hp, def));
-            party.AddPartyMember(GetBeing("Binzo", hp, def));
-            party.AddPartyMember(GetBeing("Ceelak", hp, def));
-
-            return party;
+            return playerParty;
         }
 
         public static Party GetMonsterParty()
         {
-            Party party = new Party();
+            Party monsterParty = new Party();
 
-            int hp = 20;
+            const DieType hitDie = DieType.d10;
             int defense = 10;
 
             for (int i = 0; i < 4; i++)
             {
-                Being monster = GetBeing("Monster " + i.ToString(), hp, defense);
-                party.AddPartyMember(monster);
+                Being monster = GetBeing(CharacterClassType.Monster, hitDie, defense);
+                monster.Name += i.ToString();
+                monsterParty.AddPartyMember(monster);
             }
 
-            return party;
+            return monsterParty;
         }
 
-        private static Being GetBeing(string name, int hp, int defense)
+        private static Being GetBeing(CharacterClassType beingType, DieType hitDie, int defense)
         {
 
-            Being being = new Being(name)
+            // Init the Being's critical properties
+            Being being = new Being(beingType.ToString())
             {
-                Defense = defense,
-                HitPoints = hp,
-                MaxHitPoints = hp
+                Class = new CharacterClass(beingType),
+                HitPoints = new HitPoints(hitDie),
+                Defense = defense
             };
-            being.RollAbilities();
 
+            // Roll the Being's abilities and hit points
+            being.RollAbilities();
+            Ability constitution = being.GetAbilityByType(AbilityType.Constitution);
+            int conModifer = constitution.GetModifierValue();
+            being.HitPoints.Roll(conModifer);
+            
             return being;
         }
     }

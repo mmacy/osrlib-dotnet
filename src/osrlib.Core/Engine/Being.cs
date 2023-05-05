@@ -1,16 +1,16 @@
-﻿namespace osrlib.Core
+﻿namespace osrlib.Core.Engine
 {
     /// <summary>
-    /// Represents the method that handles a Being's <see cref="osrlib.Core.Being.TargetSelected"/> or
-    /// <see cref="osrlib.Core.Being.SelectedAsTarget"/> event.
+    /// Represents the method that handles a Being's <see cref="Being.TargetSelected"/> or
+    /// <see cref="Being.SelectedAsTarget"/> event.
     /// </summary>
     /// <param name="sender">The object generating the event.</param>
     /// <param name="e">The information for the event.</param>
     public delegate void BeingTargetingEventHandler(object sender, BeingTargetingEventArgs e);
 
     /// <summary>
-    /// Represents the method that handles a Being's <see cref="osrlib.Core.Being.PerformingAction"/> or
-    /// <see cref="osrlib.Core.Being.ActionPerformed"/> events.
+    /// Represents the method that handles a Being's <see cref="Being.PerformingAction"/> or
+    /// <see cref="Being.ActionPerformed"/> events.
     /// </summary>
     /// <param name="sender">The object generating the event.</param>
     /// <param name="e">The <see cref="GameAction"/> for the event.</param>
@@ -138,28 +138,30 @@
         /// <summary>
         /// Gets or sets the Being's <see cref="Ability"/> collection.
         /// </summary>
+        /// <value>
+        /// The collection of abilities. The default value is an empty <see cref="List{Ability}"/>.
+        /// </value>
         public List<Ability> Abilities { get; set; } = new List<Ability>();
 
-        /// <summary>
-        /// Gets or sets the number of hit points for the Being.
-        /// </summary>
-        public int HitPoints { get; set; }
 
         /// <summary>
-        /// Gets or sets the maximum hit points for the Being.
+        /// Gets or sets the hit points for the Being.
         /// </summary>
-        public int MaxHitPoints { get; set; }
+        /// <value>
+        /// The hit points. The default value is a new <see cref="HitPoints"/> instance with hit die of <see cref="DieType.d1"/> and a base value of 1.
+        /// </value>
+        public HitPoints HitPoints { get; set; } = new(DieType.d1, 1);
 
         /// <summary>
         /// Gets or sets the number of experience points for the Being.
         /// </summary>
-        /// <remarks>This is the amount of experience possessed by a player character or the XP value of a monster.</remarks>
+        /// <remarks>This is the amount of experience possessed by a player character Being, or the XP value of a monster Being.</remarks>
         public int ExperiencePoints { get; set; }
 
         /// <summary>
         /// Gets whether the Being is alive (has greater than zero hit points).
         /// </summary>
-        public bool IsAlive => HitPoints > 0;
+        public bool IsAlive => HitPoints.Current > 0;
 
         /// <summary>
         /// Gets or sets whether the Being can be attacked. Default: <c>true</c>.
@@ -273,7 +275,7 @@
             // Only apply damage if it's a positive value (otherwise the Being is HEALED)
             if (damage > 0)
             {
-                this.HitPoints -= damage;
+                this.HitPoints.Wounds += damage;
 
                 // Only raise the killed event if the being was alive prior to taking this damage
                 if (wasAlive && !this.IsAlive)
@@ -371,7 +373,7 @@
 
         /// <summary>
         /// Rolls the full set of ability scores for the Being. Calling this method removes any abilities currently in
-        /// the Being's <see cref="Abilities"/> collection.
+        /// the Being's <see cref="Abilities"/> collection and replaces them with a new set.
         /// </summary>
         /// <returns>The Being's newly populated <see cref="Abilities"/> collection.</returns>
         public List<Ability> RollAbilities()
@@ -388,7 +390,7 @@
         /// Gets the string representation of the Being.
         /// </summary>
         /// <returns>Single-line text representation of the Being.</returns>
-        public override string ToString() => String.Format($"{this.Name} ({this.HitPoints}/{this.MaxHitPoints})");
+        public override string ToString() => String.Format($"{this.Name} ({this.HitPoints.Current}/{this.HitPoints.Maximum})");
 
         #endregion
 
@@ -422,9 +424,9 @@
         {
             int modValue = weaponType switch
             {
-                WeaponType.Melee => GetAbilityByType(AbilityType.Strength).GetModifier(),
-                WeaponType.Ranged => GetAbilityByType(AbilityType.Dexterity).GetModifier(),
-                WeaponType.Spell => GetAbilityByType(AbilityType.Intelligence).GetModifier(),
+                WeaponType.Melee => GetAbilityByType(AbilityType.Strength).GetModifierValue(),
+                WeaponType.Ranged => GetAbilityByType(AbilityType.Dexterity).GetModifierValue(),
+                WeaponType.Spell => GetAbilityByType(AbilityType.Intelligence).GetModifierValue(),
                 _ => 0
             };
 
@@ -439,7 +441,7 @@
         /// The ability of the specified type from the Being's <see cref="Abilities"/> collection, or <c>null</c>
         /// if no such ability is within the collection.
         /// </returns>
-        private Ability GetAbilityByType(AbilityType abilityType)
+        public Ability GetAbilityByType(AbilityType abilityType)
         {
             if (this.Abilities.Any())
             {

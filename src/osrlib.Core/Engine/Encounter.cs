@@ -1,4 +1,4 @@
-﻿namespace osrlib.Core
+﻿namespace osrlib.Core.Engine
 {
     /// <summary>
     /// The Encounter contains a <see cref="Party"/>, can accept a <see cref="Party"/> to initiate a battle,
@@ -21,7 +21,7 @@
         public event EventHandler EncounterEnded;
 
         /// <summary>
-        /// Gets or sets the position within the <see cref="osrlib.Core.Dungeon"/> of this Encounter.
+        /// Gets or sets the position within the <see cref="Dungeon"/> of this Encounter.
         /// </summary>
         public GamePosition Position { get; set; }
 
@@ -69,12 +69,12 @@
         }
 
         /// <summary>
-        /// Starts the Encounter. To resolve the Encounter, subscribe to all party members' <see cref="osrlib.Core.Being.PotentialTargetsAdded"/>
+        /// Starts the Encounter. To resolve the Encounter, subscribe to all party members' <see cref="Being.PotentialTargetsAdded"/>
         /// event, and then call <see cref="PerformStep"/> to move the Encounter forward until the <see cref="EncounterEnded"/> is raised.
         /// </summary>
         /// <remarks>
         /// Before calling <see cref="StartEncounter"/>, subscribe to each party members'
-        /// <see cref="osrlib.Core.Being.PotentialTargetsAdded"/> event to be notified when the caller should select a
+        /// <see cref="Being.PotentialTargetsAdded"/> event to be notified when the caller should select a
         /// target and subsequently call <see cref="GameAction.PerformAction"/>. After PerformAction has been called, check
         /// <see cref="IsEncounterEnded"/> before calling PerformStep again. If AutoBattleEnabled is <c>true</c>, this will
         /// initiate resolution of the full Encounter (e.g. resolve all combat between Encounter parties).
@@ -148,14 +148,14 @@
         }
 
         /// <summary>
-        /// Moves the Encounter forward one step by dequeuing an attacker and adding as potential targets the opposing
-        /// party's living members.
+        /// Moves the Encounter forward one step by dequeuing an attacker and adding the opposing party's living members
+        /// to the attacker's potential targets collection.
         /// </summary>
         /// <remarks>
         /// This method first fills the Encounter's attack queue if it's empty, then dequeues a Being and populates its
         /// <see cref="Being.PotentialTargets"/> collection with living Beings from the opposing party. Doing so raises
         /// its <see cref="Being.PotentialTargetsAdded"/> event which allows subscribers (such as a GUI application) to
-        /// prompt for target selection. Targets are selected by adding calling <see cref="Being.SelectTarget(Being)"/>"/>
+        /// prompt for target selection. Targets are selected by calling the <see cref="Being.SelectTarget(Being)"/>
         /// method.
         /// </remarks>
         public void PerformStep()

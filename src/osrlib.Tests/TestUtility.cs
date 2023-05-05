@@ -3,7 +3,7 @@ using Xunit.Sdk;
 
 namespace osrlib.Tests
 {
-    // Adapted from https://learn.microsoft.com/dotnet/core/testing/order-unit-tests?pivots=xunit
+    // Test ordering methods adapted from https://learn.microsoft.com/dotnet/core/testing/order-unit-tests?pivots=xunit
 
     /// <summary>
     /// The TestPriorityAttribute is used to specify the priority of a test case.

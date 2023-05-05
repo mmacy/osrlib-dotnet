@@ -1,7 +1,15 @@
+using osrlib.Core.Engine;
+
 namespace osrlib.Tests
 {
     public class AbilityTests
     {
+        private readonly ITestOutputHelper _testOutputHelper;
+        public AbilityTests(ITestOutputHelper testOutputHelper)
+        {
+            _testOutputHelper = testOutputHelper;
+        }
+        
         [Fact]
         public void AbilityConstructor_SetsTypeAndRollsBaseValue()
         {
@@ -26,7 +34,7 @@ namespace osrlib.Tests
             };
 
             // Act
-            int modifier = ability.GetModifier();
+            int modifier = ability.GetModifierValue();
 
             // Assert
             Assert.Equal(2, modifier);

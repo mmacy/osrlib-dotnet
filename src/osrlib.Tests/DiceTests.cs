@@ -2,6 +2,12 @@
 {
     public class DiceTests
     {
+        private readonly ITestOutputHelper _testOutputHelper;
+        public DiceTests(ITestOutputHelper testOutputHelper)
+        {
+            _testOutputHelper = testOutputHelper;
+        }
+        
         [Fact]
         public void DiceHand_IntConstructor_ReturnsExpectedResult()
         {

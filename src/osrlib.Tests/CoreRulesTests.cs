@@ -2,6 +2,12 @@
 {
     public class CoreRulesTests
     {
+        private readonly ITestOutputHelper _testOutputHelper;
+        public CoreRulesTests(ITestOutputHelper testOutputHelper)
+        {
+            _testOutputHelper = testOutputHelper;
+        }
+        
         [Fact]
         public void TestInitializingMajorGameEntities()
         {
@@ -54,7 +60,7 @@
             // Arrange
             Party playerParty = PartyGenerator.GetPlayerParty();
             Party monsterParty = PartyGenerator.GetMonsterParty();
-
+            
             Encounter encounter = new Encounter
             {
                 EncounterParty = monsterParty,
@@ -67,9 +73,14 @@
             {
                 Encounter enc = sender as Encounter;
                 encounterEndedEventFired = enc.IsEncounterEnded;
-            }
 
+                _testOutputHelper.WriteLine("Encounter ended.");
+            }
             encounter.EncounterEnded += HandleEncounterEndedEvent;
+            encounter.EncounterStarted += (sender, args) =>
+            {
+                _testOutputHelper.WriteLine("Encounter started.");
+            };
 
             // Act
             encounter.SetAdventuringParty(playerParty);
@@ -85,16 +96,20 @@
             // Arrange
             DiceHand diceHand = new DiceHand(1, DieType.d10);
             DiceRoll defenseRoll = new DiceRoll(diceHand);
-            DiceRoll hitPointsRoll = new DiceRoll(diceHand);
             
             Being fighter = new Being("Cro Mag")
             {
+                Class = new CharacterClass
+                {
+                    ClassType = CharacterClassType.Fighter,
+                    Level = 1,
+                    ExperiencePoints = 0,
+                    ExperiencePointsNeeded = 1200,
+                    HitDie = DieType.d8
+                },
                 Defense = defenseRoll.RollDice(),
-                MaxHitPoints = hitPointsRoll.RollDice() + 1
             };
-            fighter.HitPoints = fighter.MaxHitPoints;
-
-            Modifier mod = new Modifier("Potion of Strength", 2);
+            
             Weapon sword = new Weapon
             {
                 Name = "Long Sword + 1",
@@ -108,7 +123,12 @@
 
             // Act
             fighter.RollAbilities();
-            fighter.AddAbilityModifier(mod, AbilityType.Strength);
+            Modifier strModifier = new Modifier("Potion of Strength", 2);
+            fighter.AddAbilityModifier(strModifier, AbilityType.Strength);
+            
+            Ability constitution = fighter.GetAbilityByType(AbilityType.Constitution);
+            fighter.HitPoints = new HitPoints(fighter.Class.HitDie);
+            fighter.HitPoints.Roll(constitution.GetModifierValue());
 
             // Assert
             Assert.Equal(6, fighter.Abilities.Count);
