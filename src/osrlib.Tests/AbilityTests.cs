@@ -21,7 +21,7 @@ namespace osrlib.Tests
 
             // Assert
             Assert.Equal(type, ability.Type);
-            Assert.True(ability.BaseValue >= 3 && ability.BaseValue <= 18);
+            Assert.True(ability.Base >= 3 && ability.Base <= 18);
         }
 
         [Fact]
@@ -30,7 +30,7 @@ namespace osrlib.Tests
             // Arrange
             Ability ability = new Ability(AbilityType.Dexterity)
             {
-                BaseValue = 16
+                Base = 16
             };
 
             // Act
@@ -50,7 +50,7 @@ namespace osrlib.Tests
             int rolledScore = ability.RollAbilityScore();
 
             // Assert
-            Assert.Equal(rolledScore, ability.BaseValue);
+            Assert.Equal(rolledScore, ability.Base);
             Assert.True(rolledScore >= 3 && rolledScore <= 18);
         }
 
@@ -60,16 +60,16 @@ namespace osrlib.Tests
             // Arrange
             Ability ability = new Ability(AbilityType.Charisma)
             {
-                BaseValue = 14,
+                Base = 14,
                 ScoreModifiers = new List<Modifier>
                 {
-                    new Modifier("Item", 2),
-                    new Modifier("Spell", -1)
+                    new Modifier(ModifierType.Enchantment, 2),
+                    new Modifier(ModifierType.Curse, -1)
                 }
             };
 
             // Act
-            int value = ability.Value;
+            int value = ability.Score;
 
             // Assert
             Assert.Equal(15, value);
@@ -81,11 +81,11 @@ namespace osrlib.Tests
             // Arrange
             Ability ability = new Ability(AbilityType.Wisdom)
             {
-                BaseValue = 12,
+                Base = 12,
                 ScoreModifiers = new List<Modifier>
                 {
-                    new Modifier("Item", 3),
-                    new Modifier("Spell", -2)
+                    new Modifier(ModifierType.Potion, 3),
+                    new Modifier(ModifierType.Curse, -2)
                 }
             };
 

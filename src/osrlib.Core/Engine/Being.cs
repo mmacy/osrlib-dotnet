@@ -143,14 +143,13 @@
         /// </value>
         public List<Ability> Abilities { get; set; } = new List<Ability>();
 
-
         /// <summary>
         /// Gets or sets the hit points for the Being.
         /// </summary>
         /// <value>
         /// The hit points. The default value is a new <see cref="HitPoints"/> instance with hit die of <see cref="DieType.d1"/> and a base value of 1.
         /// </value>
-        public HitPoints HitPoints { get; set; } = new(DieType.d1, 1);
+        public HitPoints HitPoints { get; set; } = new(DieType.d1);
 
         /// <summary>
         /// Gets or sets the number of experience points for the Being.
