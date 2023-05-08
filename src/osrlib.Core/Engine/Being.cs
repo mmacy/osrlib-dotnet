@@ -152,12 +152,6 @@
         public HitPoints HitPoints { get; set; } = new(DieType.d1);
 
         /// <summary>
-        /// Gets or sets the number of experience points for the Being.
-        /// </summary>
-        /// <remarks>This is the amount of experience possessed by a player character Being, or the XP value of a monster Being.</remarks>
-        public int ExperiencePoints { get; set; }
-
-        /// <summary>
         /// Gets whether the Being is alive (has greater than zero hit points).
         /// </summary>
         public bool IsAlive => HitPoints.Current > 0;

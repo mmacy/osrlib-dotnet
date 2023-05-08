@@ -31,12 +31,12 @@ namespace osrlib.Tests
             // Roll up a fighter-type character
             Being fighter = new Being("Blarg the Destructor")
             {
-                Class = new(CharacterClassType.Fighter) { HitDie = DieType.d10 },
+                Class = new(CharacterClassType.Fighter) { HitDieType = DieType.d10 },
                 Defense = roll.RollDice(),
             };
             fighter.RollAbilities();
             Ability constitution = fighter.GetAbilityByType(AbilityType.Constitution);
-            fighter.HitPoints = new(fighter.Class.HitDie);
+            fighter.HitPoints = new(fighter.Class.HitDieType);
             fighter.HitPoints.Roll(constitution.GetModifierValue());
 
             // Give Blarg a sweet sword
