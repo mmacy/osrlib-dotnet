@@ -27,7 +27,7 @@ namespace osrlib.Core.Engine
         public int Base { get; set; }
 
         /// <summary>
-        /// Gets the hit die (HD) used for rolling hit points. Default is <see cref="DieType.d6"/>.
+        /// Gets the hit die (HD) used for rolling hit points.
         /// </summary>
         public DieType HitDie { get; init; }
 
