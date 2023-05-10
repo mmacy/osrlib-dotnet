@@ -109,7 +109,7 @@
         /// Raises the <see cref="Defeated"/> event, notifying subscribers that the last living
         /// <see cref="Being"/> in this party was <see cref="Being.Killed"/>.
         /// </summary>
-        private void OnDefeated() => Defeated?.Invoke(this, new EventArgs());
+        private void OnDefeated() => Defeated?.Invoke(this, EventArgs.Empty);
 
         #region Public Properties
 

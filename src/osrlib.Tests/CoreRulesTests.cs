@@ -97,14 +97,13 @@
             DiceHand diceHand = new DiceHand(1, DieType.d10);
             DiceRoll defenseRoll = new DiceRoll(diceHand);
             
-            Being fighter = new Being("Cro Mag")
+            Being fighter = new Being("Core Rules Test Character")
             {
                 Class = new CharacterClass
                 {
                     ClassType = CharacterClassType.Fighter,
                     Level = 1,
                     ExperiencePoints = 0,
-                    ExperiencePointsNeeded = 1200,
                     HitDieType = DieType.d8
                 },
                 Defense = defenseRoll.RollDice(),

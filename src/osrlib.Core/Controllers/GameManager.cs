@@ -13,7 +13,7 @@ namespace osrlib.Controllers
         /// <summary>
         /// Gets the singleton instance of the <see cref="GameManager"/>.
         /// </summary>
-        public static GameManager Instance { get; } = new GameManager();
+        public static GameManager Instance { get; } = new();
 
         /// <summary>
         /// Gets the current <see cref="Adventure"/> for the game.
@@ -93,7 +93,7 @@ namespace osrlib.Controllers
         /// <summary>
         /// Raises the <see cref="AdventureLoaded"/> event.
         /// </summary>
-        private void OnAdventureLoaded() => this.AdventureLoaded?.Invoke(this, new EventArgs());
+        private void OnAdventureLoaded() => this.AdventureLoaded?.Invoke(this, EventArgs.Empty);
 
         /// <summary>
         /// Saves the <see cref="ActiveAdventure"/> to the specified storage location.
@@ -137,7 +137,7 @@ namespace osrlib.Controllers
         /// <summary>
         /// Raises the <see cref="AdventureSaved"/> event.
         /// </summary>
-        private void OnAdventureSaved() => this.AdventureSaved?.Invoke(this, new EventArgs());
+        private void OnAdventureSaved() => this.AdventureSaved?.Invoke(this, EventArgs.Empty);
 
         /// <summary>
         /// Starts the active <see cref="Adventure"/>.
@@ -150,13 +150,13 @@ namespace osrlib.Controllers
             }
             else
             {
-                throw new InvalidOperationException("There is no active Adventure. Did you call LoadAdventure or SetActiveAdventure first?");
+                throw new InvalidOperationException("There is no active Adventure. Call LoadAdventure or SetActiveAdventure before calling this method.");
             }
         }
 
         /// <summary>
         /// Raises the <see cref="AdventureStarted"/> event.
         /// </summary>
-        private void OnAdventureStarted() => this.AdventureStarted?.Invoke(this, new EventArgs());
+        private void OnAdventureStarted() => this.AdventureStarted?.Invoke(this, EventArgs.Empty);
     }
 }
