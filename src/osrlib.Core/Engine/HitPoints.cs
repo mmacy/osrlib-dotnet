@@ -8,18 +8,6 @@ namespace osrlib.Core.Engine
         private readonly DiceRoll _hitDieRoll;
         
         /// <summary>
-        /// Initializes a new instance of the <see cref="HitPoints"/> class with the specified base value and hit die.
-        /// </summary>
-        /// <param name="hitDie">The die type used when rolling hit points.</param>
-        /// <param name="baseHitPoints">The base number of hit points.</param>
-        internal HitPoints(DieType hitDie, int baseHitPoints)
-        {
-            Base = baseHitPoints;
-            HitDie = hitDie;
-            _hitDieRoll = new DiceRoll(new DiceHand(1, hitDie));
-        }
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="HitPoints"/> class with the specified hit die.
         /// </summary>
         /// <remarks>
@@ -39,7 +27,7 @@ namespace osrlib.Core.Engine
         public int Base { get; set; }
 
         /// <summary>
-        /// Gets the hit die (HD) used for rolling hit points. Default is <see cref="DieType.d6"/>.
+        /// Gets the hit die (HD) used for rolling hit points.
         /// </summary>
         public DieType HitDie { get; init; }
 
@@ -63,7 +51,7 @@ namespace osrlib.Core.Engine
         /// <summary>
         /// Gets the maximum hit points by adding all the modifiers to the base.
         /// </summary>
-        public int Maximum => Base + Modifiers.Sum(m => m.ModifierValue);
+        public int Maximum => Base + Modifiers.Sum(m => m.Value);
 
         /// <summary>
         /// Gets the current hit points by adding all the modifiers to the base and then subtracting the wounds.

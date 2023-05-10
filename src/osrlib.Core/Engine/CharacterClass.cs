@@ -32,7 +32,7 @@ namespace osrlib.Core.Engine
         /// <summary>
         /// Gets or sets the hit die type for the character class. Default value is DieType.d4.
         /// </summary>
-        public DieType HitDie { get; set; } = DieType.d4;
+        public DieType HitDieType { get; set; } = DieType.d4;
 
         /// <summary>
         /// Gets or sets the level of the character class. Default value is 1.
@@ -56,7 +56,7 @@ namespace osrlib.Core.Engine
         public override string ToString()
         {
             string className = Enum.GetName(typeof(CharacterClassType), ClassType) ?? "";
-    
+
             // Add spaces before each uppercase letter except the first one
             return Regex.Replace(className, "(?<!^)([A-Z])", " $1");
         }

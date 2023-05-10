@@ -44,8 +44,8 @@ namespace osrlib.Tests
                 Type = WeaponType.Melee,
                 DamageDie = new(1, DieType.d8)
             };
-            magicSword.AttackModifiers.Add(new Modifier(magicSword, 1));
-            magicSword.DamageModifiers.Add(new Modifier(magicSword, 1));
+            magicSword.AttackModifiers.Add(new Modifier(ModifierType.Enchantment, 1));
+            magicSword.DamageModifiers.Add(new Modifier(ModifierType.Enchantment, 1));
             fighter.ActiveWeapon = magicSword;
             
             PrintCharacter(fighter);

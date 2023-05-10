@@ -3,6 +3,9 @@ namespace osrlib.Core.Engine
     /// <summary>
     /// Specifies the character class types.
     /// </summary>
+    /// <remarks>
+    /// Class types aren't restricted to player character classes and include NPC and monster types.
+    /// </remarks>
     public enum CharacterClassType
     {
         /// <summary>
@@ -48,10 +51,10 @@ namespace osrlib.Core.Engine
         /// <summary>
         /// A non-player character (NPC).
         /// </summary>
-        Npc,
+        NPC,
         
         /// <summary>
-        /// A creature that is neither a player character (PC) or non-player character (NPC).
+        /// A creature that is neither player character (PC) nor non-player character (NPC).
         /// </summary>
         Monster
     }

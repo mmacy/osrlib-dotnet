@@ -31,12 +31,12 @@ namespace osrlib.Tests
             // Roll up a fighter-type character
             Being fighter = new Being("Blarg the Destructor")
             {
-                Class = new(CharacterClassType.Fighter) { HitDie = DieType.d10 },
+                Class = new(CharacterClassType.Fighter) { HitDieType = DieType.d10 },
                 Defense = roll.RollDice(),
             };
             fighter.RollAbilities();
             Ability constitution = fighter.GetAbilityByType(AbilityType.Constitution);
-            fighter.HitPoints = new(fighter.Class.HitDie);
+            fighter.HitPoints = new(fighter.Class.HitDieType);
             fighter.HitPoints.Roll(constitution.GetModifierValue());
 
             // Give Blarg a sweet sword
@@ -47,8 +47,8 @@ namespace osrlib.Tests
                 Type = WeaponType.Melee,
                 DamageDie = new DiceHand(1, DieType.d8)
             };
-            magicSword.AttackModifiers.Add(new Modifier(magicSword, 1));
-            magicSword.DamageModifiers.Add(new Modifier(magicSword, 1));
+            magicSword.AttackModifiers.Add(new Modifier(ModifierType.Enchantment, 1));
+            magicSword.DamageModifiers.Add(new Modifier(ModifierType.Enchantment, 1));
             fighter.ActiveWeapon = magicSword;
 
             // Now, add the fighter to the player's party

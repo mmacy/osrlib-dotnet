@@ -58,9 +58,6 @@
             Description = description;
             Type = type;
             DamageDie = damageDie ?? new DiceHand(1, DieType.d4);
-
-            AttackModifiers = new List<Modifier>();
-            DamageModifiers = new List<Modifier>();
         }
 
         /// <summary>
@@ -99,7 +96,7 @@
             // Sum the weapon's to-hit modifiers
             if (AttackModifiers.Any())
             {
-                modifier += this.AttackModifiers.Select(m => m.ModifierValue).Aggregate((x, y) => x + y);
+                modifier += this.AttackModifiers.Select(m => m.Value).Aggregate((x, y) => x + y);
             }
 
             toHitRoll.AddModifier(modifier);
@@ -124,7 +121,7 @@
             // Sum the weapon's damage modifiers
             if (DamageModifiers.Any())
             {
-                modifier += DamageModifiers.Select(m => m.ModifierValue).Aggregate((x, y) => x + y);
+                modifier += DamageModifiers.Select(m => m.Value).Aggregate((x, y) => x + y);
             }
 
             damageRoll.AddModifier(modifier);
@@ -138,23 +135,23 @@
         /// </summary>
         /// <remarks>
         /// AttackModifiers and DamageModifiers are typically static for the life of the weapon. For example,
-        /// to make a Long Sword +1, add both an AttackModifier and DamageModifier with ModifierValue of <c>1</c>.
+        /// to make a Long Sword +1, add both an AttackModifier and DamageModifier with Value of <c>1</c>.
         ///
         /// Don't add a Being's <see cref="Ability"/> modifiers to this collection - instead, pass those when you
         /// call <see cref="GetAttackRoll"/>.
         /// </remarks>
-        public List<Modifier> AttackModifiers { get; set; } = new List<Modifier>();
+        public List<Modifier> AttackModifiers { get; set; } = new();
 
         /// <summary>
         /// Gets or sets the damage enchantments (bonuses) or curses (penalties) for the weapon or spell.
         /// </summary>
         /// <remarks>
         /// AttackModifiers and DamageModifiers are typically static for the life of the weapon. For example,
-        /// to make a Long Sword +1, add both an AttackModifier and DamageModifier with ModifierValue of <c>1</c>.
+        /// to make a Long Sword +1, add both an AttackModifier and DamageModifier with Value of <c>1</c>.
         /// Don't add a Being's <see cref="Ability"/> modifiers to this collection - instead, pass those when you
         /// call <see cref="GetDamageRoll"/>.
         /// </remarks>
-        public List<Modifier> DamageModifiers { get; set; } = new List<Modifier>();
+        public List<Modifier> DamageModifiers { get; set; } = new();
 
         /// <summary>
         /// Gets the string representation of the Weapon.

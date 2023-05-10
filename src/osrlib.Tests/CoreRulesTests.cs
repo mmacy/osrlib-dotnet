@@ -105,7 +105,7 @@
                     Level = 1,
                     ExperiencePoints = 0,
                     ExperiencePointsNeeded = 1200,
-                    HitDie = DieType.d8
+                    HitDieType = DieType.d8
                 },
                 Defense = defenseRoll.RollDice(),
             };
@@ -117,17 +117,17 @@
                 Type = WeaponType.Melee,
                 DamageDie = new DiceHand(1, DieType.d8),
             };
-            sword.AttackModifiers.Add(new Modifier(sword, 1));
-            sword.DamageModifiers.Add(new Modifier(sword, 1));
+            sword.AttackModifiers.Add(new Modifier(ModifierType.Enchantment, 1));
+            sword.DamageModifiers.Add(new Modifier(ModifierType.Enchantment, 1));
             fighter.ActiveWeapon = sword;
 
             // Act
             fighter.RollAbilities();
-            Modifier strModifier = new Modifier("Potion of Strength", 2);
+            Modifier strModifier = new Modifier(ModifierType.Potion, 2);
             fighter.AddAbilityModifier(strModifier, AbilityType.Strength);
             
             Ability constitution = fighter.GetAbilityByType(AbilityType.Constitution);
-            fighter.HitPoints = new HitPoints(fighter.Class.HitDie);
+            fighter.HitPoints = new HitPoints(fighter.Class.HitDieType);
             fighter.HitPoints.Roll(constitution.GetModifierValue());
 
             // Assert

@@ -143,20 +143,13 @@
         /// </value>
         public List<Ability> Abilities { get; set; } = new List<Ability>();
 
-
         /// <summary>
         /// Gets or sets the hit points for the Being.
         /// </summary>
         /// <value>
         /// The hit points. The default value is a new <see cref="HitPoints"/> instance with hit die of <see cref="DieType.d1"/> and a base value of 1.
         /// </value>
-        public HitPoints HitPoints { get; set; } = new(DieType.d1, 1);
-
-        /// <summary>
-        /// Gets or sets the number of experience points for the Being.
-        /// </summary>
-        /// <remarks>This is the amount of experience possessed by a player character Being, or the XP value of a monster Being.</remarks>
-        public int ExperiencePoints { get; set; }
+        public HitPoints HitPoints { get; set; } = new(DieType.d1);
 
         /// <summary>
         /// Gets whether the Being is alive (has greater than zero hit points).
