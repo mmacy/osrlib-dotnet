@@ -199,10 +199,18 @@
             get { return _selectedTargets.AsReadOnly(); }
         }
 
-        private List<Being> _selectedTargets = new();
+        /// <summary>
+        /// Gets or sets the location of the being's portrait or image.
+        /// </summary>
+        /// <remarks>
+        /// This should typically be a path or URL to an image file in PNG or JPG format.
+        /// </remarks>
+        public string Portrait { get; set; }
 
         #endregion Public properties
 
+        private List<Being> _selectedTargets = new();
+        
         #region Public methods
 
         /// <summary>

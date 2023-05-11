@@ -9,7 +9,7 @@ namespace osrlib.Core.Engine
         /// <summary>
         /// Gets or initializes the type of saving throw. Default is SavingThrowType.None.
         /// </summary>
-        public SavingThrowType Type { get; init; } = SavingThrowType.None;
+        public SavingThrowType Type { get; init; } = SavingThrowType.DeathRayOrPoison;
 
         /// <summary>
         /// Gets or initializes the saving throw score for a Being. Saving throw success or failure is

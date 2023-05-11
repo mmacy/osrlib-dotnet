@@ -9,22 +9,17 @@ namespace osrlib.Core.Engine
     public enum CharacterClassType
     {
         /// <summary>
-        /// No character class assigned.
-        /// </summary>
-        None,
-        
-        /// <summary>
-        /// A strong and skilled warrior with expertise in using a variety of weapons and armor.
+        /// A strong, skilled warrior with expertise in martial weapons and armor.
         /// </summary>
         Fighter,
 
         /// <summary>
-        /// A versatile spellcaster with access to a wide range of arcane spells, but limited in physical combat.
+        /// A caster of powerful arcane spells, but limited in physical combat.
         /// </summary>
         MagicUser,
 
         /// <summary>
-        /// A divine spellcaster, skilled in healing and banishing evil, while also being proficient in combat.
+        /// A divine spellcaster, skilled in healing and "buffing," in addition to melee combat.
         /// </summary>
         Cleric,
 
@@ -34,7 +29,7 @@ namespace osrlib.Core.Engine
         Thief,
 
         /// <summary>
-        /// A combination of Fighter and Magic-User, able to wield weapons and cast arcane spells, but with limitations in both areas.
+        /// A combination of Fighter and Magic User, able to wield weapons and cast arcane spells, but with some restrictions in both.
         /// </summary>
         Elf,
 
@@ -44,7 +39,7 @@ namespace osrlib.Core.Engine
         Halfling,
 
         /// <summary>
-        /// A combination of Fighter and Cleric, proficient in both combat and divine spellcasting, but limited in both areas.
+        /// A combination of Fighter and Cleric with skills incombat and divine spellcasting (at higher levels), but with some restrictions in boths.
         /// </summary>
         Dwarf,
         
@@ -54,7 +49,7 @@ namespace osrlib.Core.Engine
         NPC,
         
         /// <summary>
-        /// A creature that is neither player character (PC) nor non-player character (NPC).
+        /// A living or undead entity that's neither player character (PC) nor non-player character (NPC).
         /// </summary>
         Monster
     }
