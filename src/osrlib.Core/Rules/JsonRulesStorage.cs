@@ -10,6 +10,12 @@ namespace osrlib.Core.Rules;
 public class JsonRulesStorage : IRulesStorage
 {
     private readonly string _jsonFilePath;
+    
+    public class CharacterClassData
+    {
+        public List<int> ExperiencePoints { get; set; }
+        public Dictionary<SavingThrowType, int> SavingThrows { get; set; }
+    }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="JsonRulesStorage"/> class with the specified JSON file path.
@@ -41,26 +47,8 @@ public class JsonRulesStorage : IRulesStorage
     /// </example>
     public Dictionary<CharacterClassType, List<int>> LoadExperiencePointsRequirements()
     {
-        try
-        {
-            var json = File.ReadAllText(_jsonFilePath);
-            var experiencePointsRequirements = JsonConvert.DeserializeObject<Dictionary<CharacterClassType, List<int>>>(json);
-            return experiencePointsRequirements;
-        }
-        catch (IOException ex)
-        {
-            Console.WriteLine($"An I/O error occurred while reading the file: {ex.Message}");
-        }
-        catch (JsonException ex)
-        {
-            Console.WriteLine($"An error occurred while deserializing the JSON data: {ex.Message}");
-        }
-        catch (UnauthorizedAccessException ex)
-        {
-            Console.WriteLine($"Access to the file is denied: {ex.Message}");
-        }
-
-        return new Dictionary<CharacterClassType, List<int>>();
+        var data = LoadData();
+        return data.ToDictionary(x => x.Key, x => x.Value.ExperiencePoints);
     }
 
     /// <summary>
@@ -82,9 +70,60 @@ public class JsonRulesStorage : IRulesStorage
     /// </example>
     public void SaveExperiencePointsRequirements(Dictionary<CharacterClassType, List<int>> experiencePointsRequirements)
     {
+        var data = LoadData();
+        foreach (var item in experiencePointsRequirements)
+        {
+            data[item.Key].ExperiencePoints = item.Value;
+        }
+        SaveData(data);
+    }
+    
+    public Dictionary<CharacterClassType, Dictionary<SavingThrowType, int>> LoadSavingThrowValues()
+    {
+        var data = LoadData();
+        return data.ToDictionary(x => x.Key, x => x.Value.SavingThrows);
+    }
+
+
+    public void SaveSavingThrowValues(Dictionary<CharacterClassType, Dictionary<SavingThrowType, int>> savingThrowValues)
+    {
+        var data = LoadData();
+        foreach (var item in savingThrowValues)
+        {
+            data[item.Key].SavingThrows = item.Value;
+        }
+        SaveData(data);
+    }
+    
+    private Dictionary<CharacterClassType, CharacterClassData> LoadData()
+    {
         try
         {
-            var json = JsonConvert.SerializeObject(experiencePointsRequirements, Formatting.Indented);
+            var json = File.ReadAllText(_jsonFilePath);
+            var data = JsonConvert.DeserializeObject<Dictionary<CharacterClassType, CharacterClassData>>(json);
+            return data ?? new Dictionary<CharacterClassType, CharacterClassData>();
+        }
+        catch (IOException ex)
+        {
+            Console.WriteLine($"An I/O error occurred while reading the file: {ex.Message}");
+        }
+        catch (JsonException ex)
+        {
+            Console.WriteLine($"An error occurred while deserializing the JSON data: {ex.Message}");
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            Console.WriteLine($"Access to the file is denied: {ex.Message}");
+        }
+
+        return new Dictionary<CharacterClassType, CharacterClassData>();
+    }
+    
+    private void SaveData(Dictionary<CharacterClassType, CharacterClassData> data)
+    {
+        try
+        {
+            var json = JsonConvert.SerializeObject(data, Formatting.Indented);
             File.WriteAllText(_jsonFilePath, json);
         }
         catch (IOException ex)

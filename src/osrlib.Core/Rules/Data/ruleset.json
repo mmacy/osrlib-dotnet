@@ -1,0 +1,72 @@
+{
+  "Fighter": {
+    "ExperiencePointsRequirements": [0, 2000, 4000, 8000, 16000, 32000, 64000, 125000, 250000, 500000, 750000],
+    "SavingThrows": {
+      "DeathRayOrPoison": 12,
+      "MagicWands": 13,
+      "ParalysisOrTurnToStone": 14,
+      "DragonBreath": 15,
+      "RodsStavesOrSpells": 16
+    }
+  },
+  "MagicUser": {
+    "ExperiencePointsRequirements": [0, 2500, 5000, 10000, 20000, 40000, 60000, 30000, 150000, 300000, 450000],
+    "SavingThrows": {
+      "DeathRayOrPoison": 13,
+      "MagicWands": 14,
+      "ParalysisOrTurnToStone": 13,
+      "DragonBreath": 16,
+      "RodsStavesOrSpells": 15
+    }
+  },
+  "Cleric": {
+    "ExperiencePointsRequirements": [0, 1500, 3000, 6000, 13000, 27500, 55000, 110000, 225000, 450000, 675000],
+    "SavingThrows": {
+      "DeathRayOrPoison": 11,
+      "MagicWands": 12,
+      "ParalysisOrTurnToStone": 14,
+      "DragonBreath": 16,
+      "RodsStavesOrSpells": 15
+    }
+  },
+  "Thief": {
+    "ExperiencePointsRequirements": [0, 1200, 2400, 4800, 9600, 19200, 38400, 78000, 157500, 315000, 472500],
+    "SavingThrows": {
+      "DeathRayOrPoison": 13,
+      "MagicWands": 14,
+      "ParalysisOrTurnToStone": 13,
+      "DragonBreath": 15,
+      "RodsStavesOrSpells": 16
+    }
+  },
+  "Elf": {
+    "ExperiencePointsRequirements": [0, 4000, 8000, 16000, 32000, 64000, 128000, 250000, 500000, 750000, 1000000],
+    "SavingThrows": {
+      "DeathRayOrPoison": 12,
+      "MagicWands": 13,
+      "ParalysisOrTurnToStone": 13,
+      "DragonBreath": 15,
+      "RodsStavesOrSpells": 15
+    }
+  },
+  "Halfling": {
+    "ExperiencePointsRequirements": [0, 2000, 4000, 8000, 16000, 32000, 64000, 125000, 250000, 375000, 500000],
+    "SavingThrows": {
+      "DeathRayOrPoison": 10,
+      "MagicWands": 11,
+      "ParalysisOrTurnToStone": 13,
+      "DragonBreath": 13,
+      "RodsStavesOrSpells": 14
+    }
+  },
+  "Dwarf": {
+    "ExperiencePointsRequirements": [0, 2200, 4400, 8800, 17600, 35200, 70400, 140000, 280000, 420000, 560000],
+    "SavingThrows": {
+      "DeathRayOrPoison": 8,
+      "MagicWands": 9,
+      "ParalysisOrTurnToStone": 10,
+      "DragonBreath": 13,
+      "RodsStavesOrSpells": 12
+    }
+  }
+}

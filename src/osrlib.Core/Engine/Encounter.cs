@@ -227,7 +227,7 @@
         /// <summary>
         /// Raises the <see cref="EncounterStarted"/> event.
         /// </summary>
-        private void OnEncounterStarted() => EncounterStarted?.Invoke(this, new EventArgs());
+        private void OnEncounterStarted() => EncounterStarted?.Invoke(this, EventArgs.Empty);
 
         /// <summary>
         /// Raises the <see cref="EncounterEnded"/> event.
@@ -236,12 +236,12 @@
         {
             this.IsEncounterEnded = true;
 
-            EncounterEnded?.Invoke(this, new EventArgs());
+            EncounterEnded?.Invoke(this, EventArgs.Empty);
         }
 
         /// <summary>
-        /// Fills the attack queues, creates GameActions for each matchup, executes those GameActions, and
-        /// resolves the encounter if one of the parties has been defeated.
+        /// Fills the attack queues, creates GameActions for each match-up, executes the GameActions, and
+        /// resolves the encounter when one of the parties is defeated.
         /// </summary>
         internal void PerformAutoBattle()
         {

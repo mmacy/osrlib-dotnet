@@ -78,7 +78,7 @@
         /// Raises the event signifying that the <see cref="Party"/> has moved to a <see cref="GamePosition"/>
         /// that is occupied by an <see cref="Encounter"/>.
         /// </summary>
-        private void OnEncountered() => Encountered?.Invoke(this, new EventArgs());
+        private void OnEncountered() => Encountered?.Invoke(this, EventArgs.Empty);
 
         /// <summary>
         /// Gets or sets the active <see cref="Encounter"/>.
