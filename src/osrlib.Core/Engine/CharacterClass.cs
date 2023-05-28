@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace osrlib.Core.Engine
 {
@@ -92,7 +90,6 @@ namespace osrlib.Core.Engine
                 }
             }
         }
-
         
         /// <summary>
         /// Gets the experience point progression for the character class.
